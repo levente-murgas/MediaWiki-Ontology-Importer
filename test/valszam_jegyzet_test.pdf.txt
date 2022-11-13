@@ -1,0 +1,160 @@
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+1. Alapfogalmak
+
+3
+
+A valószínűségszámítás praktikusságát talán nem kell bizonygatni egyetlen olvasónak sem4: a legtöbb
+kísérleti tudomány támaszkodik rá valamilyen formában. Az mégis kérdés, hogy az egyszeri halandónak
+miért nem elég a „kedvező-per-összes” józan ésszel is kitalálható magasságaiban maradni?
+
+Az egyik ok, hogy néha a naiv megközelítés helytelen vagy ellentmondásos eredményt ad. Ezt jól
+
+demonstrálja a számos valószínűségi paradoxon az irodalomban5, íme az egyik:
+
+Bertrand-féle doboz paradoxon
+
+Adott három egyforma doboz. Az elsőben két arany érme van, a másodikban két ezüst érme, a
+harmadikban pedig egy arany és egy ezüst. A dobozok tartalmát nem ismerve, (egyenletesen)
+véletlenszerűen választva kihúzunk egy dobozból egy érmét. Feltéve, hogy a kihúzott érme arany,
+mi a valószínűsége, hogy a dobozban lévő másik érme is arany?
+
+Első nekifutásra az 1
+
+2 reális tippnek tűnhet, hiszen két esetben húzhattunk arany
+érmét: ha az első vagy második dobozból húztunk. Ezek közül pedig csak az egyik
+3, amit
+esetben lesz a másik érme ezüst. Ugyanakkor a paradoxon helyes megoldása 2
+kísérlettel is igazolhatunk. Ennek magyarázata, hogy eredetileg 6-féle kimenetele lehet
+a húzásunknak az alapján, melyik érmét húzzuk (az érméket különbözőnek véve). Ebből
+a 6 esetből 3-ban húzunk arany érmét, ez tehát az összes eseteink száma. Ebből a 3
+esetből 2-ben a dobozban lévő másik érme szintén arany, így a keresett valószínűség 2
+3.
+
+A példából okulva érdemes deﬁniálnunk a vizsgált fogalmainkat.
+
+1.1. Eseménytér
+
+A valószínűség fogalmát a Kolmogorov-axiómák6 segítségével formalizálhatjuk.
+
+Kolmogorov a huszadik század nagy hatású matematikusa, aki a fentihez hasonló félreérthetőségek
+feloldásaként dolgozta ki azt a keretrendszert, aminek a kiindulópontját ma Kolmogorov-axiómáknak
+nevezünk. Maguk az axiómák a valószínűségi mező deﬁníciójában szereplő feltételek (ld 1.3 alfejezet).
+1.1.1. Deﬁníció. Legyen Ω egy tetszőleges halmaz. A következő elnevezéseket fogjuk használni:
+
+• Eseménytér: Ω,
+• Kimenetel: az eseménytér egy eleme, ω ∈ Ω,
+• Események: az eseménytér „kitüntetett” A ⊆ Ω részhalmazai,
+• Valószínűség: egy eseményhez hozzárendelt P(A)-val jelölt, 0 és 1 közti valós szám.
+
+A fenti paradoxon esetében például 6 kimenetel van, így az eseménytér 6 elemű halmaz. Annak az
+
+A eseménynek pedig, hogy „elsőre arany érmét húzunk” a P(A) valószínűsége 1
+2.
+De mi az, hogy az események „kitüntetett” részhalmazok? Honnan fogjuk tudni, egy kérdés ese-
+tében mit akarunk eseménynek nevezni, és mit nem? Röviden, azokat a részhalmazokat választjuk
+eseménynek, amikhez valószínűségeket szeretnénk hozzárendelni. Sok elemi feladat esetében ez nem
+igazi probléma: minden részhalmazt eseménynek választhatunk, mert feltesszük, hogy mindegyik rész-
+halmaznak van értelme beszélni a valószínűségéről (még ha nem is ismerjük a pontos értékét).
+1.1.2. Példa. Egy kockadobás leírásánál az eseménytér így deﬁniálható: Ω def= {1, 2, 3, 4, 5, 6}. Az Ω
+elemeit, vagyis a kimeneteleket megfeleltethetjük annak, hogy mikor milyen számot dobunk. Legyen Ω
+összes részhalmaza esemény. Például {2, 4, 6} egy esemény. Az eseményeket sokszor logikai állításokkal
+határozzuk meg, így a {2, 4, 6} eseményt röviden írhatjuk úgy is, hogy {párosat dobunk}.
+
+4Ha valakinek mégis kellene: robotics.stanford.edu/users/sahami/papers-dir/SIGCSE11-Probability.pdf
+5lásd még: [youtube] PBS Inﬁnite Series - Making Probability Mathematical
+6Az axióma – hangzásával ellentétben – nem egy lassú lefolyású megbetegedés, hanem az alapállítás másik neve.
+Olyan kijelentéseket, alapvetéseket nevezünk így, amik globális feltevések az elméletünkben: nem bizonyítjuk, viszont
+bárhol használhatjuk őket. Kolmogorov eredeti axiómáit lásd Foundations of the Theory of Probability.
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+4
+
+Felmerülhet a kérdés: „Miért nem választjuk simán mindig az összes részhalmazt eseménynek, ’oszt
+csókolom?”. Azért, mert vannak olyan helyzetek, amikor szerepe van annak, mi esemény, és mi nem.
+Ilyen esetekre példa:
+
+(1) Geometriai valószínűségek esetén területekkel (vagy azzal analóg fogalommal) deﬁniál-
+juk a valószínűségeket. Azonban ha minden részhalmazra szeretnénk értelmes területfogalmat
+deﬁniálni, az nem fog sikerülni, ellentmondásokba futunk7. A megoldás, hogy nem minden
+részhalmaz esemény, így nem kell minden részhalmazra értelmeznünk annak területét.
+
+(2) Megﬁgyelhetőségen is alapulhat, mit nevezünk eseménynek. Például ha a fenti paradoxont
+szeretnénk modellezni: Ω továbbra is deﬁniálható 6 eleműnek aszerint, hogy mit húzunk. Jelölje
+Ω elemeit a1, a2, b1, b2, c1, c2 (vegyük észre, hogy Ω elemei nem kell, hogy számok legyenek).
+Ezen húzások közül a1, a2, c1 jelöl arany érméket, a többi ezüstöt, a1, a2 az első láda tartalmát,
+b1, b2 a másodikat és így tovább. A húzás ismeretében {a1, a2, c1} illetve {b1, b2, c2} részhalma-
+zok megﬁgyelhetők, míg például {c1, c2} nem, hiszen nem tudjuk, hogy a harmadik dobozból
+húztunk-e. Néhány problémánál érdemes pontosan azon részhalmazokat eseménynek nevezni,
+amik megﬁgyelhetők. Ilyen probléma például a feltételes várható érték számolása is.
+
+(3) Folyamatok, vagyis időben változó véletlen mennyiségek esetében az idő múlásával változhat,
+hogy mit tudunk megﬁgyelni és emiatt mit tartunk eseménynek. Lásd még Markov-láncok,
+martingálok.
+
+Nézzük, milyen műveleteket végezhetünk eseményekkel.
+1.1.3. Állítás. Mivel az események halmazok, így értelmezve van események uniója (A∪B), metszete
+(A ∩ B) és Ω-ra vett komplementere (A).
+
+Két esemény különbsége az előbbiekkel leírható: A\B = A∩B. Két esemény kizáró, ha A∩B = ∅.
+Az Ω-ra használatos még a biztos esemény elnevezés. Hasonlóan, az üreshalmaz (jele: ∅) neve a
+továbbiakban lehetetlen esemény.
+1.1.4. Példa. A kockadobálós példánál maradva, a {párosat dobunk} esemény komplementere a
+{páratlant dobunk}, a {párosat dobunk} és a {3-nál nagyobbat dobunk} események metszete a {4, 6},
+míg uniója a {2, 4, 5, 6}.
+
+Végiggondolható, hogy ha az események kijelentésekkel vannak megfogalmazva (pl. {párosat do-
+bunk}), akkor az uniójuk megfelel a kijelentések szintjén a „vagy” műveletnek, metszetük az „és”-nek,
+egy esemény komplementere pedig a logikai tagadásnak.
+A halmazoknál megszokott tulajdonságok itt sem vesztik érvényüket: A∪ B = B ∪ A, A∩ Ω = A és
+
+a többi. Névvel is bíró, megjegyzendő azonosság az alábbi:
+1.1.5. Állítás.
+
+(de Morgan-azonosságok) Két halmazra:
+
+o
+
+illetve végtelen sok halmazra:
+
+A ∪ B = A ∩ B
+
+∞[
+
+∞\
+
+Ai
+
+Ai =
+
+és
+
+és
+
+i=1
+Az első állításpár Venn-diagramon könnyen ellenőrizhető.
+
+i=1
+
+i=1
+
+A ∩ B = A ∪ B,
+
+∞\
+
+Ai =
+
+∞[
+
+i=1
+
+Ai.
+
+Feladat. Legyenek A, B és C események. Írjuk fel a következő eseményeket a fenti műveletek segítsé-
+gével: a) legalább egy esemény teljesül, b) A és B teljesül, de C nem, c) minden esemény teljesül, d)
+egyik esemény sem teljesül, e) pontosan egy esemény teljesül.
+
+7lásd en.wikipedia.org/wiki/Vitali_set
+
+

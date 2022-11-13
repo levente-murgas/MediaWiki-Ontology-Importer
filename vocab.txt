@@ -1,0 +1,11007 @@
+I. BEVEZETİ 
+
+{
+
+Ω = ∀ ω : eseménytér,  F
+
+i :
+FΩ ∈ : biztos esemény. 
+
+I.1. ALAPFOGALMAK 
+Jelölések: K: véletlen kísérlet, ωi: elemi esemény, 
+eseményalgebra,  A F∈ : esemény, 
+Mőveletek eseményekkel: összegzés: A+B (halmazunió), szorzás: AB (halmazmetszet), negálás: 
+A
+Két esemény kapcsolata: A maga után vonja B-t ( A B⊆ ), A és B kizárják egymást (diszjunktak) 
+( AB=∅ ). 
+(D) Teljes eseményrendszer: Az Ai események ~t alkotnak, ha páronként diszjunktak 
+∀ ≠
+(
+
+, szimmetrikus differencia: A4B=(A\B)+(B\A). 
+
+= ∅ ) és összegük a biztos esemény (
+
+, kivonás (differencia):  A \ B AB=
+
+2Ω⊆ : 
+
+j :  A A
+
+= Ω
+
+= Ω
+
+\ A
+
+}i
+
+). 
+
+A
+
+i
+
+i
+
+j
+
+∑
+
+∀
+i
+
+i
+
+(A) F ún. σ-algebrát alkot: azaz eleme a biztos esemény (
+mőveletekre (vagyis bármely elemének a negáltja és bármely elemeinek az összege is eleme). 
+(D) P valószínőség: P: F → [0,1] úgy, hogy a biztos esemény valószínősége 1 (P(Ω)=1), és 
+páronként diszjunkt események esetén P az összeadásra homomorf (mővelettartó), azaz ezek 
+összegének valószínősége a valószínőségük összegével egyenlı, tehát: 
+
+FΩ ∈ ), és zárt az összegzés és a negálás 
+
+A F, 
+
+∈ ∀ ≠
+
+i
+
+i
+
+j : A A
+
+i
+
+j
+
+(T) P tulajdonságai: 
+
+A
+
+∑
+
+= ∅  → 
+(
+P A 1 P A
+
+
+
+
+= −
+
+P
+)
+
+∀
+i
+
+i
+
+(
+P A
+
+i
+
+)
+
+ 
+
+(T) Poincare-tétel: 
+
+P
+
+
+
+
+
+n
+
+∑
+
+=
+i 1
+
+A
+
+i
+
+=
+
+
+
+
+
+(T) Boole-egyenlıtlenség(ek): 
+
+P
+
+∀
+i
+
+, 
+
+=
+
+∑
+)
+
+
+
+
+(
+
+
+(
+)
+−
+1
+
+
+n
+∑
+
+A
+
+i
+
+=
+i 1
+
+
+
+
+
+n
+
+∑
+
+=
+i 1
+
+
+
+
+)
+
+
+
+
+A B 
+
+⊆ →
+
+ P A P B
+
+≤
+
+(
+
+(
+
++
+i 1
+
+∑
+
+≤ < < < ≤
+1 j
+1
+
+...
+
+j
+2
+
+j
+i
+
+P
+
+n
+
+≤
+
+n
+
+∑
+
+=
+i 1
+
+(
+P A
+
+i
+
+)
+
+, ill. 
+
+i
+
+∏
+
+=
+k 1
+
+
+
+
+P
+
+A
+
+jk
+
+n
+
+∏
+
+=
+i 1
+
+)
+
+
+
+
+, 
+
+(
+P A \ B
+
+)
+
+=
+
+(
+P A P AB
+
+−
+
+)
+
+(
+
+)
+
+. 
+
+ (szeml.: „szita”-módszer). 
+
+
+
+
+
+
+
+A
+
+i
+
+
+
+
+∞
+∑
+
+=
+i 1
+
+
+
+
+
+∏
+
+
+
+=
+i 1
+
+∞
+
+A
+
+i
+
+B
+i
+
+
+
+
+
+
+
+
+≥ −
+
+1
+
+(
+P A
+
+i
+
+)
+
+. 
+
+n
+
+∑
+
+=
+i 1
+
+=
+
+lim P A
+→∞
+n
+
+(
+
+n
+
+)
+
+, 
+
+=
+
+lim P B
+→∞
+n
+
+(
+
+n
+
+)
+
+. 
+
+(T) Folytonossági tétel(ek): 
+
+∀ ∈
+
+i
+
++
+
+Z
+
+ 
+
+∀ ∈
+
+i
+
++
+
+Z
+
+:  A F és A
+
+∈
+
+i
+
+⊆
+
+A
+
+i
+
++
+i 1
+
+ → 
+
+P
+
+:  B F és B
+i
+
+∈
+
+i
+
+⊇
+
+B
+
++
+i 1
+
+ → 
+
+P
+
+(D) Kolmogorov-féle valószínőségi mezı: A fenti tulajdonságoknak megfelelı (
+K véletlen kísérlethez tartozó ~nek nevezzük. 
+Megjegyzés: Innentıl a (
+ne kelljen mindig kiírni). 
+
+, F,PΩ
+
+)
+
+ hármas mindig Kolmogorov-féle valószínőségi mezıt jelöl (hogy 
+
+, F,PΩ
+
+)
+
+ hármast a 
+
+I.2. KLASSZIKUS VALÓSZÍNŐSÉG 
+
+Ω = ω ω
+2
+
+,
+
+1
+
+{
+
+,...,
+
+ω
+n
+
+}
+
+ és #
+
+Ω =
+
+n véges,  
+
+∀
+
+i: P
+
+(
+
+ω = =
+
+p
+
+)
+
+i
+
+Ω
+, F=2  
+
+1
+n
+
+→ ∈
+
+ A F esetén P A
+
+(
+
+)
+
+=
+
+# A
+Ω
+#
+
+ 
+
+Szemléletesen: véges sok elemi esemény van, ezek valószínősége megegyezik, és minden esemény 
+megfigyelhetı. 
+Leggyakoribb esetei: kockadobás, pénzfeldobás, kártyahúzás, lottóhúzás, … 
+FELADATOK MEGOLDÁSA: 
+A feladatokban szövegesen definiált események valószínőségét kell kiszámolni. Ehhez meg kell 
+határoznunk az elemi események számát (Ω számosságát), majd az A eseményhalmaz számosságát. 
+Ez utóbbit kombinatorikai módszerek használatával könnyíthetjük meg (ismételjük át ezzel 
+kapcsolatos ismereteinket). Figyeljünk arra, hogy esetszétválasztásnál semmit ne hagyjunk ki, és 
+semmit ne számoljunk kétszer. Néha pl. a komplementer esemény számosságának meghatározása 
+lényegesen egyszerőbb; ezt, és az ehhez hasonló trükköket „célszerő” észrevenni. 
+
+ 
+
+- 1 - 
+
+I.3. GEOMETRIAI VALÓSZÍNŐSÉG 
+Ω egy véges területő síkbeli alakzat. (Vezessük be az m() területfüggvényt, amely egy alakzathoz 
+egy véges értéket rendel, amennyiben az mérhetı területő!) F elemei az Ω mérhetı területő részei. 
+
+A F esetén P A
+
+∈
+
+(
+
+)
+
+=
+
+, vagyis A és Ω területének aránya. 
+
+m A
+Ω
+m
+
+(
+(
+
+)
+)
+
+Leggyakoribb esetei: Két folytonos értékő paraméterrel leírható véletlen kísérletek. Pl.: két 
+tetszılegesen kiválasztott 0 és 1 közé esı valós szám, … 
+FELADATOK MEGOLDÁSA: 
+A szöveges specifikáció alapján készítsünk rajzot Ω-ról és a keresett A eseménynek megfelelı 
+alakzatról. Egy bonyolult alakzat területének a kiszámításához (egyszerő alakzat területét ránézésre 
+megállapítjuk) vegyünk fel egy koordinátarendszert, amelyben határozzuk meg az alakzatok 
+határvonalait leíró függvényeket és ezek segítségével integrálással kapjuk meg a keresett területet 
+(integrálni tudni kell). Összetett alakzatokat daraboljuk szét egyszerőbbekre, és ezekre egyenként 
+alkalmazzuk a fenti módszert. Ha meghatároztuk A és Ω területét, akkor már csak a képletet kell 
+használni. A komplementeres trükk néha itt is bejöhet. 
+
+I.4. FELTÉTELES VALÓSZÍNŐSÉG 
+(D) Feltételes valószínőség: 
+)
+
+P A P A | B
+B
+
+=
+
+(
+
+)
+
+(
+
+)
+
+=
+
+(
+P AB
+)
+(
+P B
+
+(
+A,B F és P B
+
+∈
+
+)
+
+>  estén az A eseménynek a B-re vonatkoztatott ~e: 
+
+0
+
+. Szemléletesen: ha tudjuk hogy B bekövetkezett, akkor az A esemény 
+
+i
+
+∀ ≠
+{
+}
+1,...,n
+I 2∀ ∈
+
+bekövetkezésének a valószínősége 
+
+)
+BP A . 
+
+(
+
+(T) A feltételes valószínőség tulajdonságai: Csak szemléletesen: a PB feltételes valószínőség 
+pontosan úgy viselkedik, mint a P valószínőség azzal az enyhítéssel, hogy minden Ω helyébe B 
+írható (de nem kötelezı). Vagyis minden P-re vonatkozó formula átírható PB-re. 
+)
+
+(D) Függetlenség:  A, B F∈  esetén az A és B események függetlenek ↔ ha 
+
+(
+(
+P A P B
+
+(
+P AB
+
+=
+
+)
+
+)
+
+. 
+
+(T) A függetlenség tulajdonságai: 
+1.) Ha A és B események függetlenek →  A,B is függetlenek (rekurzíve:  A,B és A,B  is). 
+2.) Ha 
+(D) Az 
+
+∀ ∈  esetén A és B függetlenek. 
+∈  események páronként függetlenek, ha 
+
+) {
+}
+0,1∈
+F
+
+j esetén A  és A
+
+(
+P A
+A
+
+ →  B F
+
+{
+}
+∈
+i 1,...,n
+
+i
+
+ függetlenek. 
+
+j
+
+(D) Az 
+
+A
+
+∏
+
+(
+P A
+
+)i
+
+i
+
+∀ ∈
+I
+(T) Ha 
+
+A
+
+∈  események teljesen függetlenek, ha 
+
+F
+
+}
+{
+∈
+i 1,...,n
+
+∏ , vagyis közülük tetszılegesen kiválasztott események függetlenek. 
+= 
+P
+
+
+
+
+
+
+A
+
+ esetén 
+
+i
+
+∀ ∈
+i
+I
+∈  események teljesen függetlenek → 
+
+F
+
+{
+}
+∈
+i 1,...,n
+
+{
+}
+1,...,n
+I 2∀ ∈
+
+ esetén a 
+
+B ∈
+{
+
+}
+i 1,...,n
+
+ események 
+
+is teljesen függetlenek, ahol: 
+
+B
+i
+
+
+= 
+
+
+A ,  ha i
+A ,  ha i
+
+i
+
+i
+
+∈
+∉
+
+I
+I
+
+ 
+
+Szemléletesen: közülük tetszılegesen kiválasztott eseményeket az ellentettjükre kicserélve 
+(megnegálva) az események továbbra is teljesen függetlenek maradnak. 
+
+A FELTÉTELES VALÓSZÍNŐSÉGGEL KAPCSOLATOS FONTOS TÉTELEK: 
+(
+P A
+
+(T) Teljes valószínőség tétel: Ha 
+)
+
+iA
+(
+P B | A P A
+
+esemény → 
+
+(
+P B
+
+)
+
+(
+
+= ∑
+
+i
+
+i
+
+)
+
+F∈  teljes eseményrendszer, 
+. 
+
+∀
+i
+
+)i
+
+0>  és  B F∈  tetszıleges 
+
+Szemléletesen a teljes valószínőség tétele azt állítja, hogy egy B esemény valószínőségét úgy is 
+megállapíthatjuk, hogy a biztos eseményt feldaraboljuk (legfeljebb megszámlálhatóan végtelen 
+darabra), és a B eseménynek ezen darabokra számított feltételes valószínőségeit összeadjuk. 
+
+ 
+
+- 2 - 
+
+(T) Bayes-tétel: Ha 
+
+(
+P A | B
+
+i
+
+)
+
+)
+(
+P B | A P A
+i
+(
+(
+P B | A P A
+
+)
+
+i
+
+k
+
+)
+
+k
+
+. 
+
+= ∑
+
+∀
+k
+
+iA
+)
+
+F∈  teljes eseményrendszer, 
+(
+
+(
+P A
+
+)i
+
+0>  és  B F∈ , 
+
+(
+P B
+
+)
+
+0>  → 
+
+A Bayes-tétel tulajdonképpen a teljes valószínőség tételnek egy kicsit átalakított alakja. A feladattól 
+függ, hogy a kettı közül melyiket csélszerő használni, vagyis hogy melyik képletben szereplı 
+valószínőségek értékét egyszerőbb kiszámolni az adott feladatban. 
+
+(T) Szorzási szabály: Ha 
+
+A
+
+}
+{
+∈
+i 1,...,n
+
+∈  eseményekre teljesül, hogy 
+
+F
+
+P
+
+
+
+
+
+n
+
+∏
+
+=
+i 1
+
+A
+
+i
+
+
+
+
+
+>
+
+0
+
+ → 
+
+P
+
+
+
+
+
+n
+
+∏
+
+=
+i 1
+
+A
+
+i
+
+
+
+
+
+=
+
+(
+P A
+1
+
+)
+
+n
+
+∏
+
+=
+i 2
+
+P A |
+i
+
+
+
+
+
+−
+i 1
+
+
+∏ . 
+
+
+
+A
+
+=
+j 1
+
+j
+
+Csak akkor célszerő használni, ha a feladat szövegezése miatt a fenti feltételes valószínőségeket 
+nagyon könnyő kiszámolni. 
+
+A FELTÉTELES VALÓSZÍNŐSÉGGEL KAPCSOLATOS FELADATOK MEGOLDÁSA: 
+
+A feladatok általában olyanok, hogy meg van adva néhány esemény, néhány valószínőség, 
+
+esetleg az események egymáshoz való viszonya (függetlenek, egymást kizárják, A maga után vonja 
+B-t), és ezekbıl kell mindenféle egyéb valószínőségeket kiszámolni. 
+
+Kezdjük azzal, hogy az események egymáshoz való viszonyaiból (feltéve ha volt ilyen megadva) 
+
+egyenleteket írunk fel: 
+
+A és B függetlenek → 
+
+A és B kizárják egymást → 
+
+A maga után vonja B-t → 
+
+(
+P AB
+
+ 
+
+)
+
+)
+(
+(
+=
+P A P B
+(
+)
+P AB
+(
+≤
+P A P B és P AB
+
+)
+0=  
+)
+(
+
+)
+
+(
+
+)
+
+=
+
+(
+P A
+
+)
+
+ 
+
+Ezután nézzük meg, hogy a keresett valószínőséget milyen képlettel tudjuk felírni. Pl.: 
+
+(
+P A B
+
++
+
+)
+
+=
+
+(
+P A P B P AB
+
++
+
+−
+
+)
+
+(
+
+)
+
+(
+
+)
+
+ vagy 
+
+(
+P A | B
+
+)
+
+=
+
+. Ehhez nagy segítség lehet, ha az 
+
+)
+
+(
+P AB
+)
+(
+P B
+
+események viszonyát kis halmazos ábrával szemléltetjük magunknak. Így ezeket a képleteket sem 
+nagyon kell megjegyezni (nem mintha olyan nehezek lennének), mert a rajzról tisztán leolvashatók. 
+De azért nagy könnyebbség, ha észrevesszük, hogy hol lehet a fenti tételek valamelyikét használni. 
+
+Végül a már ismert valószínőségek értékét írjuk be, a még nem ismerteket pedig a fenti 
+
+Nézzünk egy példát: Legyenek A, B, C teljesen független események, 
+
+módszerrel próbáljuk továbbontani (2-3 lépésnél többre általában nincs szükség). 
+)
+(
+(
+P A P B=
+(
+=  és 
+P A | A C
+
+Keressük a következıket: 
+
+(
+P B | A4B ?= , 
+
+(
+P A | B C
+
+= , 
+
++
+
++
+
+)
+
+)
+
+)
+
+?
+
+?
+
+1
+2
+
+= , 
+
+)
+(
+P ABC
+
+2
+3
+
+(
+)
+P C = . 
+)
+?=  
+
+= , 
+
+1
+3
+
+)
+
+)
+
+)
+
+=
+
+(
+P BC
+
+Megoldás: 
+)
+(
+)
+(
+(
+=
+P AB
+P A P B
+A, B, C teljesen függetlenek → 
+)
+(
+)
+(
+)
+)
+(
+=
+P ABC
+P A P B P C
+(
+(
+)
++
+P AB P AC P ABC
+)
+)
+(
++
+P B P C P BC
+(
+)
+)
+−
+P B \ A
+(
+(
+P AB AB
+
+(
+(
+=  és 
+P B P C
+(
+)
++
+P AB AC
+)
+(
++
+P B C
+)
+(
+)
+
+(
+P A | B C
+
+(
+P B | A4B
+
+)
+(
+)
+−
+−
+
+=
+
+=
+
+=
+
++
+
++
+
+=
+
+=
+
+)
+
+)
+
+(
+
+(
+
+)
+
+1
+4
+
+(
+(
+P B P AB
+)
++
+
+(
+−
+
+)
+
+(
+P AC
+= . 
+)
+
+1
+6
+
+1
+4
+1
+2
+
+=
+
+1
+3
+2
+3
+
++ −
++ −
+)
+(
+
+1
+6
+1
+3
+
+)
+
+)
+(
+P A
+(
+)
+
+(
+P A P B 2P AB
+)
+−
+
++ −
+
+=
+
+=
+
+1
+2
+2
+3
+
+1
+3
+
+1
+2
+
+3
+5
+
+(
+P A P C P AC
+
++
+
+(
+
+)
+
+)
+
+)
+
+)
+
+=
+
+(
+P B A4B
+)
+(
+P A4B
+(
++
+P A A C
+)
+(
++
+P A C
+
+(
+
+=
+
+(
+P A | A C
+
++
+
+)
+
+ 
+
+)
+
+=
+
+(
+(
+P A P C
+
+)
+
+)
+
+= , 
+
+1
+3
+
+=
+
+=
+
+. 
+
+5
+12
+5
+6
+
+=
+
+1
+2
+
+. 
+
+1
+1
+2
+4
++ −
+
+−
+1
+2
+
+1
+2
+
+1
+2
+
+=
+
+1
+4
+1
+2
+
+=
+
+1
+2
+
+. 
+
+(
+P ABC 1 P ABC
+
+= −
+
+)
+
+(
+
+)
+
+= . 
+
+5
+6
+
+- 3 - 
+
+II. VALÓSZÍNŐSÉGI VÁLTOZÓK 
+
+t
+
+(
+
+R
+
+{
+ω
+
+:  A= : X
+
+}
+)
+ω < ∈
+t
+
+II.1. VALÓSZÍNŐSÉGI VÁLTOZÓ ELOSZLÁSFÜGGVÉNYE 
+(D) Valószínőségi változó: Az  X : Ω → R  fv-t valószínőségi változónak nevezzük, ha 
+∀ ∈
+hez tartozó nívóeseménynek nevezzük.) 
+Megjegyzés: A valószínőségi változókat azért vezetjük be, hogy a kezdetben bevezetett módszert 
+egy olyannal váltsuk fel, amely bonyolultabb feladatoknál sokkal kényelmesebben kezelhetı (mint 
+azt késıbb látni fogjuk). Innentıl a valószínőségi változók helyett a v.v. rövidítést használom. 
+(D) Eloszlásfüggvény: Az X v.v. eloszlásfüggvénye 
+
+, azaz minden ilyen A megfigyelhetı esemény. (Az A eseményt a t-
+
+, ahol 
+
+]
+  0,1→ℝ
+
+XF :  
+
+F
+
+[
+
+ 
+
+, azaz FX értéke t-ben a t-hez tartozó nívóesemény valószínősége. 
+
+(
+
+=
+
+)
+
+}
+t
+
+(
+P A
+
+{
+= ω
+
+:  X
+
+( )
+)
+ω <
+XF t
+(T) FX tulajdonságai: 
+(
+F v
+u
+1.) FX monoton nı (
+X
+2.) FX minden pontjában balról folytonos (
+
+(
+v :  F u
+
+∀ <
+
+≤
+
+)
+
+X
+
+3.) Határértéke a -∞ ben 0, a +∞ ben 1 (
+
+). 
+
+)
+∀ ∈
+
+u
+
+ℝ
+( )
+lim F t
+→−∞
+t
+
+X
+
+( )
+:   lim F t
+
+)
+(
+=
+F u
+X
+→ −
+t
+u 0
+( )
+= ). 
+1
+0 és  lim F t
+
+=
+
+X
+
+X
+
+). 
+
+t
+
+→+∞
+
+(T) Kolmogorov: Minden a fenti tulajdonságokat teljesítı FX függvényhez létezik értelmes 
+véletlen kísérlet, és ezek egyértelmően meghatározzák egymást. 
+(T) Tetszıleges x<y estén: 
+)
+−
+1.) 
+)
+−
++
++
+
+(
+P x X y
+(
+P x X y
+(
+P x X y
+(
+P x X y
+
+)
+(
+F x
+. 
+X
+(
++
+F x 0
+X
+(
+)
+−
+F x
+X
+)
+(
+−
+F x 0
+X
+
+(
+F y
+X
+(
+F y
+X
+(
+F y 0
+X
+(
+F y 0
+X
+
+)
+)
+. 
++
+
+<
+<
+≤
+≤
+
+=
+=
+=
+=
+
+≤
+<
+≤
+<
+
+)
+)
+)
+)
+
+2.) 
+
+3.) 
+
+4.) 
+
+. 
+
+. 
+
+)
+
+(D) Diszkrét v.v.: Az X v.v. diszkrét, ha értékkészlete legfeljebb megszámlálhatóan végtelen 
+E
+számosságú ( X
+
+). Innentıl a diszkrét v.v. helyett a d.v.v. rövidítést használom. 
+
+, ahol #E
+
+≤ ℵ
+0
+
+⊂
+
+R
+
+(D) Az X d.v.v. eloszlása: 
+
+(
+az xi értékhez tartozó elemi események halmaza. Természetesen: 
+
+(
+P X x
+
+{
+}
+∈
+i 1,...,n
+
+:  X
+
+)
+ω =
+0 p
+
+=
+
+=
+
+=
+
+≤
+
+)
+
+i
+
+x
+
+{
+= ω
+
+(
+P A
+
+i
+
+)
+}
+≤
+1 és 
+
+, ahol az A esemény 
+
+X
+p
+
+i
+
+=∑
+
+p
+
+i
+
+∀
+i
+
+1
+
+. 
+
+(T) Az X d.v.v. eloszlásfüggvénye: 
+
+( )
+F t
+X
+
+= ∑ . 
+
+p
+
+i
+
+∀ <
+
+x
+
+t
+
+i
+
+(D) Folytonos v.v.: Az X v.v. folytonos, ha értékkészlete kontinuum számosságú, és FX 
+eloszlásfüggvénye abszolút folytonos, azaz folytonos és legfeljebb véges sok pont kivételével 
+differenciálható. Innentıl a folytonos v.v. helyett az f.v.v. rövidítést használom. 
+
+(D) Az X f.v.v. sőrőségfüggvénye: Az X f.v.v. FX eloszlásfv-e az abszolút folytonossági 
+
+tulajdonsága miatt felírható 
+
+(
+F x
+X
+
+)
+
+x
+
+= ∫
+
+−∞
+
+f
+
+X
+
+( )
+t dt
+
+ alakban, ahol fX az X f.v.v. sőrőségfv-e. 
+
+(T) A sőrőségfv tulajdonságai: 
+
+Xf
+
+( )
+t
+
+0≥  és 
+
+Xf
+
+( )
+t dt 1
+
+=
+
+. 
+
++∞
+
+∫
+
+−∞
+
+II.2. VALÓSZÍNŐSÉGI VÁLTOZÓK TRANSZFORMÁCIÓI 
+Diszkrét-diszkrét transzformáció: Legyen X, Y d.v.v., 
+
+g :  E
+
+X
+
+E→  és 
+
+Y
+
+Y g X=
+
+(
+
+)
+
+. Ekkor: 
+
+(
+P Y y
+
+=
+
+)
+
+=
+
+∑
+(
+x : g x
+
+i
+
+i
+
+∀
+
+(
+P X x
+
+=
+
+i
+
+)
+
+. 
+
+)
+
+=
+
+y
+
+Szemléletesen: az X-hez tartozó véletlen kísérlet eseményterét egyértelmően (nem feltétlenül egy-
+egyértelmően) leképezem egy új, az Y-hoz tartozó véletlen kísérlet eseményterére. 
+
+ 
+
+- 4 - 
+
+=
+
+=
+
+(
+( )
+)
+(
+<
+P g X t
+YF t
+( )
+XF t
+értékét az 
+(
+2
+− <
+P X 1 t
+
+( )
+F t
+Y
+
+)
+(
+)
+<
+P X t
+)
+(
+P X
+
+(
+−
+Az alábbi két tétel a fentiek speciális esete: 
+(T) Ha 
+
+)
+< + =
+t 1
+
+=
+
+=
+
+P
+
+2
+
+ eloszlásfv felhasználásával. Mondjuk a fenti példában: 
+(
+
++ <
+t 1 X
+
++
+t 1
+
++
+t 1
+
+F
+X
+
+F
+X
+
+)
+
+(
+
+)
+
+<
+
+=
+
+−
+
+−
+
++
+t 1
+
+)
+
+. 
+
+Folytonos-diszkrét transzformáció (diszkretizáció): Legyen X f.v.v. és 
+
+n
+
+=ℝ ∪
+
+=
+i 0
+
+[
+
+u , u +
+i
+i 1
+
+)
+
+, ahol 
+
+u
+
+0
+
+= −∞
+
+ és u +
+n 1
+
+= +∞ . Ekkor 
+
+[
+Y y :  X u
+
+∈
+
+=
+
+k
+
+, u−
+k 1
+
+k
+
+)
+
+ d.v.v. és 
+
+(
+P Y y
+
+=
+
+k
+
+)
+
+u
+
+k
+
+= ∫
+
+u
+
+−
+k 1
+
+f
+
+X
+
+( )
+t dt
+
+. 
+
+Szemléletesen: A valós számok halmazát legfeljebb megszámlálhatóan végtelen számosságú 
+intervallumra partícionálom (vagyis a partíciók diszjunktak és lefedik a teljes halmazt) és az egyes 
+intervallumokhoz egy véletlen kísérlet elemi eseményeit rendelem, ahol ezen elemi események 
+valószínősége a hozzájuk tartozó intervallumba esés valószínőségével egyenlı. 
+Tipp: Nem nagyon kell! 
+Folytonos-folytonos transzformáció: Legyen X f.v.v. és  T : →ℝ ℝ diffható és invertálható és 
+Y T X=
+. Ekkor: Y f.v.v. és 
+Tipp: Ezt nagyon kell tudni! 
+Az ezzel kapcsolatos feladatok általában olyanok, hogy: adott egy  XF  eloszlásfv-ő X f.v.v. (ha nem 
+az eloszlásfv van megadva, hanem mondjuk a sőrőségfv, akkor abból kiszámíthatjuk az eloszlásfvt) 
+és 
+
+− . Keressük az  YF  eloszlásfv-t. 
+
+, tehát pl.: 
+
+Y X 1
+
+Y g X=
+
+(
+f T
+X
+
+( )
+t
+
+( )
+t
+
+( )
+t
+
+T
+
+=
+
+=
+
+)
+
+d
+dt
+
+. 
+
+(
+
+)
+
+(
+
+)
+
+−
+1
+
+f
+
+Y
+
+2
+
+−
+
+1
+
+A megoldás menete: keressük az 
+
+( )
+YF t
+
+=
+
+(
+<
+P Y t
+
+)
+
+ eloszlásfv-t. Y helyére beírjuk 
+
+(
+g X -et: 
+
+)
+
+ és a zárójelen belüli kifejezést átrendezzük X-re, majd leolvassuk a kifejezés 
+
+(
+
+<
+
+∈
+
+(
+0 F y
+
+)F y  egy szigorúan monoton növekvı eloszlásfv azon az 
+(
+ f.v.v. és 
+)
+< , akkor az 
+1
+
+)
+X U 0,1
+intervallumon, ahol 
+Vagyis a tétel az állítja, hogy ha a [0,1] intervallumon egyenletes eloszlású v.v-t behelyettesítünk 
+egy egyértelmően invertálható eloszlásfv inverzének képletébe, akkor éppen egy ilyen eloszlású 
+valószínőségi változót kapunk eredményül. 
+(T) Ha az X v.v. 
+
+XF t  eloszlásfv-e szigorúan monoton növekvı azon az intervallumon, ahol 
+
+ v.v. eloszlásfv-e éppen 
+
+(
+)F y  lesz. 
+
+Y F X−=
+
+(
+
+)
+
+1
+
+X
+
+=
+
+<
+
+Y F X
+
+( )
+0 F t
+Vagyis ha egy a feltételenek megfelelı eloszlásfv-el rendelkezı valószínőségi változót 
+behelyettesítünk a saját eloszlásfüggvényébe, akkor éppen a [0,1] intervallumon egyenletes 
+eloszlást kapjuk eredményül. 
+
+ v.v-ra teljesül, hogy: 
+
+)
+Y U 0,1
+
+∈
+
+. 
+
+(
+
+)
+
+(
+
+X
+
+( )
+< , akkor az 
+
+1
+
+A fenti tételek elméleti jelentısége az, hogy segítségükkel bármely ismert eloszlásfüggvényő v.v. 
+szimulálható (pl. számítógép segítségével). A feladatokban idıt nyerhetünk vele, ha nem kell 
+végigvezetnünk a számítást, mert ésszrevesszük, hogy a fenti tételek valamelyike alkalmazható. 
+
+II.3. VÁRHATÓ ÉRTÉK 
+(D) Várható érték (0-körüli elsı momentum): Az X v.v. várható értékét  { }
+=
+Az X d.v.v-nak létezik a várható értéke, ha 
+
+x P X x
+
+. Ekkor  { }
+E X
+
+< ∞
+
+=
+
+(
+
+)
+
+i
+
+i
+
+∑
+
+∀
+x
+
+E X -el jelöljük. 
+=
+
+x P X x
+
+(
+
+i
+
+)
+
+i
+
+. 
+
+∑
+
+∀
+x
+
+i
+
+Az X f.v.v-nak létezik a várható értéke, ha 
+
++∞
+
+∫
+
+−∞
+
+i
+
+Xx f
+
+(
+
+)
+x dx
+
+< ∞
+
+. Ekkor  { }
+E X
+
++∞
+
+= ∫
+
+−∞
+
+xf
+
+X
+
+(
+
+)
+x dx
+
+. 
+
+Szemléletesen: az egyes x értékekhez tartozó valószínőséget a 0-tól való elıjeles távolság elsı 
+hatványával (azaz x-el) súlyozzuk. Ezért nevezzük a várható értéket a 0-körüli elsı momentumnak. 
+A várható érték fogalma erıs párhuzamba állítható a tömegközéppont fizikai fogalmával. 
+
+ 
+
+- 5 - 
+
+(T) Legyen X v.v.,  g :   →ℝ ℝ  és 
+)
+
+1.) diszkrét esetben: ha 
+
+(
+(
+g x P X x
+
+)
+Y g X=
+(
+)
+
+=
+
+i
+
+i
+
+. Ekkor ha Y v.v. és: 
+∑
+
+{ }
+∃
+E Y
+
+ → 
+
+< ∞
+
+=
+
+∀
+x
+
+i
+
+(
+g x P X x
+
+=
+
+)
+
+(
+
+i
+
+)
+
+i
+
+. 
+
+2.) folytonos esetben: ha 
+
+)
+(
+g x f
+
+X
+
+(
+
+)
+x dx
+
+< ∞
+
+ → 
+
+{ }
+∃
+E Y
+
+=
+
+)
+(
+g x f
+
+X
+
+(
+
+)
+x dx
+
+< ∞
+
+. 
+
++∞
+
+∫
+
+−∞
+
+∑
+
+∀
+x
+
+i
++∞
+
+∫
+
+−∞
+
+E Y aE X b
+
++ . Szemléletesen: az  {}E
+
+ várhatóérték-képzés lineáris operátor. 
+
+{ }
+ operátor d.v.v-k esetén az összeadásra homomorf (mővelettartó), azaz: ha X,Y d.v.v. 
+
+(K) Ha az X v.v-nak létezik a várható értéke, akkor az Y=aX+b v.v-nak is létezik a várható értéke, 
+és  { }
+=
+(T) Az  {}E
+}
+és létezik a várható értékük, akkor:  {
+=
+CX
+(D) Centralizált: Az X v.v. centralizáltja az 
+0-ba toljuk”. Triviális következmény, hogy a centralizált v.v. várható értéke mindig 0 ( {
+E X
+{ }
+E X
+δ
+
+{ }
+{ }
++
+E X Y E X E Y
+{ }
+−
+=
+X E X
+
+(T) Markov-egyenlıtlenség: Ha  X 0≥  v.v. és 
+
+ v.v., szemléletesen: „X középpontját a 
+
+{ }
+∃
+E X 0
+
+)
+≥ δ ≤
+
+0 :  P X
+
+≥  → 
+
+0= ). 
+
+∀δ >
+
+}C
+
++
+
+. 
+
+. 
+
+(
+
+II.4. SZÓRÁSNÉGYZET 
+
+Y X=
+
+(D) n-edik momentum: Az X v.v. ~án az 
+(D) Szórásnégyzet (a várható érték körüli második momentum): 
+(
+{ }
+X E X−
+ v.v-nak létezik a várható 
+Az X v.v-nak létezik a szórásnégyzete (varianciája), ha az 
+{
+(
+{ }
+{ }
+2 X E X E X
+
+ v.v. várható értékét értjük. 
+
+értéke. X szórásnégyzetét 
+
+-el jelöljük. Tehát: 
+
+)2
+−
+
+{ }
+2 Xσ
+
+}2
+
+σ
+
+µ
+
+=
+
+)
+
+. 
+
+. 
+
+n
+
+{
+{ }
+n X E X
+
+=
+
+}n
+
+Vagyis az X v.v. szórásnégyzete az X centralizáltjának a második momentuma. 
+Szemléletesen: az egyes x értékekhez tartozó valószínőséget a várható értéktıl való elıjeles 
+-el) súlyozzuk. Ezért nevezzük a szórásnégyzetet a 
+távolság második hatványával (azaz 
+várható érték körüli második momentumnak. A szórásnégyzet fogalma erıs párhuzamba állítható a 
+tehetetlenségi nyomaték fizikai fogalmával, ami épp a tömegközéppont körüli második momentum. 
+(T) A szórásnégyzet tulajdonságai: 
+∈
+1.) Ha X v.v. és 
+ℝ
+
+{ }
+x E X−
+
+= σ
+
+∃σ
+
+)2
+
+:  
+
+σ
+
+(
+
+. 
+
+a
+
+2
+
+2
+
+2
+
+{
+}
+aX b
+
++
+
+{ }
+X
+
+{ }
+2 X 0 
+
+σ
+
+= ↔
+
+2.) 
+(D) Szórás: Az X v.v. szórása a szórásnégyzetének pozitív négyzetgyöke:  { }
+σ
+X
+{
+(
+−
+
+= , vagyis csak a konstans v.v. szórásnégyzete 0. 
+
+{ }
+2 X E X a
+
+(T) Steiner-tétel: 
+
+{ }
+E X a
+
+∀ ∈
+
+ v. 
+
+)2
+
+:  
+
+σ
+
+= + σ
+}
+
+ℝ
+
+=
+
+−
+
+1
+
+)
+
+a
+
+2
+
+2
+
+−
+
+2
+
+. 
+
+{ }
+X
+{
+E X a
+
+−
+
+2
+
+}
+
+. 
+
+ → 
+
+{ }
+2 X
+(
+=
+
+∀
+{ }
+ P X E X
+
+a, b
+)
+
+σ
+
+0=  esetén: 
+
+Speciálisan  a
+Megjegyzés: ez a tétel egy az egyben megfelel a fizikából tanult Steiner-tételnek. 
+(K) Ha X v.v. és 
+tetszıleges érték körüli második momentuma akkor minimális, ha ez az érték épp a várható ertéke. 
+
+ (általában ezzel számoljuk a szórásnégyzetet). 
+
+, vagyis minden v.v-ra igaz, hogy egy 
+
+{ }
+2 X
+
+, akkor
+
+{ }
+X
+
+∀ ∈
+
+X a
+
+≤ µ
+
+∃σ
+
+:  
+
+{
+
+}
+
+σ
+
+ℝ
+
+−
+
+−
+
+a
+
+2
+
+2
+
+(D) Standardizált: Az X v.v. standardizáltja az 
+
+X
+
+S
+
+=
+
+C
+
+X
+{ }
+σ
+X
+
+=
+
+{ }
+X E X
+{ }
+X
+
+−
+σ
+
+ v.v., szemléletesen: „X 
+
+középpontját a 0-ba toljuk és egységnyi szórásúra zsugorítjuk”. Triviális következmény, hogy a 
+standardizált v.v. várható értéke mindig 0 ( {
+}
+= ). 
+1
+E X
+{ }
+X
+2
+ε
+
+(T) Csebisev-egyenlıtlenség: Ha  X  v.v. és 
+
+0= ) és a szórásnégyzete mindig 1 (
+
+{ }
+0 :  P X E X
+
+σ
+)
+≥ ε ≤
+
+}S
+{ }
+2 X
+
+< ∞  → 
+
+{
+SX
+
+∀ε >
+
+∃σ
+
+σ
+
+(
+
+−
+
+. 
+
+2
+
+2
+
+ 
+
+- 6 - 
+
+2
+
+−
+
+}
+{
+µ
+X a
+{
+{ }
+X E X
+
+= σ
+}
+
+=
+
+2
+
+2
+
+(
+{ }
++
+X
+{ }2
+E X
+
+II.5. NEVEZETES VALÓSZÍNŐSÉGI VÁLTOZÓK 
+1.) Konstans d.v.v. 
+
+∀ω∈ Ω
+
+:  X
+
+(
+
+)
+ω = →
+
+c 
+
+ P X c
+
+=
+
+(
+
+)
+
+=
+
+1; F t
+
+X
+
+( ) {
+
+=
+
+0,  t
+1,  t
+
+≤
+>
+
+c
+c
+
+; E X c;
+
+=
+
+{ }
+
+2
+
+σ
+
+{ }
+X 0
+
+=
+
+. 
+
+2.) Indikátor d.v.v. (
+=
+Legyen  A F∈  és 
+A
+A
+
+ω∈
+ω∉  → 
+
+AX I∈ ) 
+(
+p P A 0
+)
+(
+P X 1
+
+) {1,  
+
+ω =
+
+0,  
+
+X
+
+=
+
+)
+
+(
+
+> . Ekkor az 
+(
+
+=
+
+p; P X 0
+
+AX I∈  az A-hoz tartozó indikátor v.v., ha: 
+)
+
+{ }
+X p 1 p
+
+1 p; E X p;
+
+{ }
+
+= −
+
+σ
+
+=
+
+=
+
+=
+
+−
+
+)
+
+(
+
+2
+
+. 
+
+Az 
+
+3.) Egyenletes eloszlású d.v.v. 
+)i
+{ }
+= ω =
+
+1
+n
+egyenletes eloszlású d.v.v., amelyre: 
+
+{
+Ω = ω
+
+(
+P A
+
+{
+}
+∈
+i 1,...,n
+
+ és 
+
+}
+
+ véletlen kísérlethez tartozó 
+
+)iX
+
+(
+
+ω =  d.v.v. n paraméterő 
+
+i
+
+(
+=
+P X i
+
+)
+
+=
+
+1
+n
+
+; F
+X
+
+=
+
+≤
+0,  t 1
+
+
+< ≤ +
+,  k
+t
+k
+
+n
+>
+1,  t
+n
+
+
+{ }
+k 1; E X
+
+=
+
+n 1
+
++
+2
+
+;
+
+2
+
+σ
+
+{ }
+X
+
+=
+
+1
+2n
+
+n
+2
+
+  
+∑  
+i
+
+2
+
+=
+i 1
+
+4.) Egyenletes eloszlású f.v.v. (
+Az X f.v.v. az [a,b] intervallumon egyenletes eloszlású, ha eloszlásfüggvénye: 
+
+X U a, b
+
+) 
+
+∈
+
+(
+
+[
+
+]
+
+)
+
+(
+F x
+X
+
+)
+
+=
+
+0,  x
+
+−
+x a
+
+−
+b a
+1,  x
+
+
+≤
+,  a
+>
+
+a
+< ≤
+b
+
+x
+
+b
+
+. Ekkor: 
+
+f
+
+(
+
+x
+
+)
+
+=
+
+X
+
+1
+−
+b a
+0,  x
+
+,  x
+∉
+
+
+
+
+
+)
+
+(
+∈
+(
+a, b
+
+a, b
+)
+
+{ }
+; E X
+
+=
+
+a b
+
++
+2
+
+;
+
+2
+
+σ
+
+{ }
+X
+
+=
+
+)2
+
+(
+
+−
+b a
+12
+
+ 
+
+5.) Binomiális eloszlású d.v.v. (
+
+∀ ∈
+
+k
+
+{
+1,..., n :  p
+
+k
+
+(
+P X k
+
+=
+
+(T) 
+
+max P X k
+∀
+k
+
+=
+
+{
+
+=
+
+*
+
+k
+
+=
+
+
+
+
+}
+(
+
+=
+}
+)
+
+)
+)
+
+(
+(
+
+∈
+
+=
+
+(
+
+X B n, p
+)
+n
+k
+)
+n 1 p
+
+k
+p 1 p
+
+−
+
++
+
+)
+(
+
+∈
+
+(
+
+, ahol 
+
+≥
+n 1 és p
+{ }
+
+=
+
+; E X np;
+
+−
+n k
+
+)
+) 
+0,1
+{ }
+X np 1 p
+
+σ
+
+=
+
+−
+
+(
+
+2
+
+)
+
+. 
+
+
+ , vagyis X értéke legnagyobb valószínőséggel 
+
+*k . 
+
+Tipikus esete(i): Legyen egy véletlen kísérletben  A F∈  egy pozitív valószínőségő esemény 
+p P A=
+(
+bekövetkezésének számát a kísérletsorozatban! 
+
+). Hajtsuk végre a kísérletet n-szer egymástól függetlenül, és jelölje X az A esemény 
+
+(
+
+)
+
+6.) Poisson-eloszlású d.v.v. (
+k
+λ
+k!
+. Ekkor 
+
+(
+=
+P X k
+(
+B n, p
+
+(T) Legyen 
+
+=
+)
+
+∀ ∈
+
+n,pX
+
+:  p
+
+∈
+
+ℕ
+
+=
+
+k
+
+)
+
+k
+
+X Po∈
+
+(
+
+)
+λ , ahol 
+
+0λ > ) 
+
+{ }
+−λ
+e ; E X
+
+= λ σ
+
+;
+
+2
+
+{ }
+X
+
+lim X
+→∞ →
+, p
+→λ
+np
+
+0
+
+n
+
+n,p
+
+= ∈
+
+X Po
+
+= λ
+(
+
+. 
+)
+λ , vagyis a Poisson-eloszlás az n,p 
+
+paraméterő binomiális eloszlás határesete, ha n tart végtelenbe, p tart 0-hoz, de úgy, hogy közben a 
+szorzatuk λ. 
+Tipikus esete(i): Az elızı tétel alapján olyan n szeres kísérletsorozatok, ahol az n nagyon nagy, 
+ellenben a megfigyelt esemény valószínősége nagyon kicsi. Pl.: öngyilkosságok száma. 
+
+k
+
++
+
+(
+
+)
+
+k
+
+ℤ
+
+−
+k 1
+
+=
+
+=
+
+) 
+
+:  p
+
+∀ ∈
+
+( )
+X G p∈
+
+(
+= −
+1 p
+
+(
+P X k
+
+7.) Geometriai eloszlású d.v.v. (
+
+p
+, ahol 
+1
+p
+(
+(T) A geometriai eloszlás örökifjú tulajdonsága: 
+Szemléletesen azt jelenti, hogy az idı múlásával az esemény bekövetkezésének esélyei nem 
+változnak, tehát ha már egy órája dobálom a kockát, attól annak az esélye, hogy mostanatól éppen 
+harmadikra dobok fejet, nem változik. 
+
+−
+1 p
+2
+p
+:  P X m k | X m P X k
+
+{ }
+p; E X
+
+)
+0,1∈
+{ }
+X
+
+m, k
+
+∀
+
+∈
+
+σ
+
+=
+
++
+
+>
+
+=
+
+=
+
+=
+
+=
+
+ℤ
+
+. 
+
+)
+
+)
+
+(
+
+)
+
+;
+
++
+
+2
+
+. 
+
+ 
+
+- 7 - 
+
+Tipikus esete(i): Egy kísérletet addig hajtsunk végre, amíg a p valószínőségő A esemény be nem 
+következik. X jelölje, hogy az A esemény hányadik kísérlet során következett be elıször. Pl.: addig 
+dobjunk a kockával, amíg 6-ost nem dobunk. 
+)
+>
+
+8.) Exponenciális eloszlású f.v.v. (
+
+X E∈ λ , ahol 
+
+0λ > ) 
+
+>
+
+0
+
+0
+
+2
+
+{ }
+; E X
+
+=
+
+σ
+
+{ }
+X
+
+=
+
+;
+
+f
+
+X
+
+(
+
+x
+
+(
+F x
+X
+
+) {
+
+=
+
+−
+1 e
+0,  x
+
+−λ
+x
+,  x
+≤
+0
+
+)
+
+)
+
+(
+
+=
+
+≥
+
+>
+
+x, t
+
+< +
+
+<  ↔ 
+
+0 :  P X x t | X x
+
+(T) Az exponenciális eloszlás örökifjú tulajdonsága: Az X f.v.v-ra teljesül, hogy 
+∀
+Vagyis a tétel azt állítja, hogy az exponenciális eloszlású az egyetlen f.v.v., amely örökifjú 
+tulajdonságú, azaz annak a valószínősége 0-ban, hogy X legfeljebb t-ig él ugyanannyi, mint annak a 
+valószínősége x-ben, hogy X legfeljebb x+t-ig él. 
+Szemléletesen: a túlélési kondíciók az idı múlásával nem változnak. 
+Tipikus esete(i): Berendezések élettartalmának vizsgálata, ahol λ a berendezés meghibásodási 
+valószínősége. 
+
+)
+∈ λ . 
+
+0 :  X E
+
+∃λ >
+
+(
+
+(
+x
+,  x
+≤
+0
+
+e
+
+=
+
+−λ
+λ
+0,  x
+
+) {
+(
+P X t
+
+1
+λ
+
+;
+
+1
+2
+λ
+
+. 
+
+9.) Hipergeometriai eloszlású d.v.v. (
+
+X Hg N, F, n
+
+∈
+
+(
+
+)
+
+, ahol 
+
+}
+F N és n min F, N F
+
+{
+
+<
+
+≤
+
+−
+
+) 
+
+∀ ∈
+
+k
+
+ℕ
+
+:  p
+
+=
+
+(
+P X k
+
+=
+
+)
+
+=
+
+k
+
+; E X n
+
+{ }
+
+=
+
+F
+N
+
+;
+
+2
+
+σ
+
+{ }
+X n
+
+=
+
+F
+N
+
+
+−
+1
+
+
+−
+F N n
+−
+N N 1
+
+
+
+
+
+. 
+
+(
+
+)
+
+)(
+(
+
+−
+F N F
+−
+n k
+k
+N
+n
+
+)
+
+(T) Ha  N
+
+,  F→ ∞ → ∞ , akkor 
+
+Hg N, F, n
+
+(
+
+)
+
+∼
+
+B n,
+
+
+
+
+
+F
+N
+
+
+
+
+
+. 
+
+Tipikus esete(i): Egy dobozban van N db golyó: ebbıl F db fehér és N-F db piros. Visszatevés 
+nélkül kihúzunk n db golyót. Mennyi ezek között a fehér? Ilyen egyébként a lottóhúzás is: egy k- 
+ értéke adja. 
+találatos szelvény kitöltésének a valószínőségét egy 
+
+X Hg 90,5,5
+
+ v.v. 
+
+∈
+
+(
+P X k=
+
+)
+
+(
+
+)
+
+10.) Normális eloszlású f.v.v. (
+)
+−µ
+x
+2
+σ
+2
+
+−
+
+(
+
+2
+
+f
+
+X
+
+(
+
+x
+
+)
+
+= ϕ
+
+µ σ
+
+,
+
+(
+
+x
+
+)
+
+=
+
+e
+
+1
+2
+
+π
+
+σ
+
+X N ,
+
+∈ µ σ , ahol 
+
+µ σ ∈
+
+,
+
+ℝ
+
+ és 
+
+(
+
+)
+
+(
+; F x
+
+X
+
+)
+
+= Φ
+
+µ σ
+
+,
+
+(
+
+x
+
+)
+
+=
+
+1
+2
+
+σ
+
+e
+
+π ∫
+
+−∞
+
+σ >
+(
+
+−
+
+x
+
+0
+
+) 
+)
+−µ
+t
+2
+σ
+2
+
+2
+
+{ }
+dt; E X
+
+= µ σ
+
+;
+
+2
+
+{ }
+X
+
+2
+
+= σ
+
+ 
+
+Ha 
+
+)
+X N 0,1
+
+∈
+
+(
+
+, akkor standard normális eloszlású v.v-ról beszélünk, és: 
+
+X
+
+f
+
+)
+
+(
+
+)
+
+(
+
+x
+
+x
+
+=
+
+= ϕ
+
+π ∫
+−∞
+ϕ
+(T) A φ(x) Gauss-függvény tulajdonságai: páros (
+
+(
+; F x
+
+= Φ
+
+=
+
+π
+
+x
+
+)
+
+)
+
+(
+
+e
+
+X
+
+1
+2
+
+−
+
+2
+
+x
+2
+
+1
+2
+
+x
+
+−
+
+2
+
+t
+2
+
+{ }
+dt; E X
+
+=
+
+0;
+
+2
+
+σ
+
+{ }
+X 1
+
+=
+
+. 
+
+e
+
+(
+
+x
+
+)
+
+(
+= ϕ −
+
+x
+
+)
+
+), inflexiós helyei  a +1 és a -1, 
+
+maximuma ( )
+0
+
+ϕ
+
+=
+
+(T) 
+
+Φ
+
+µ σ
+
+,
+
+(
+
+x
+
+)
+
+= Φ
+
+x
+
+
+
+
+
+1
+π
+2
+− µ
+σ
+
+, határértéke a végtelenben 
+
+(
+lim x
+→∞
+x
+
+ϕ
+
+)
+
+=
+
+(
+lim x
+→−∞
+x
+
+ϕ
+
+)
+
+=  és 
+
+0
+
+′ϕ
+
+(
+
+x
+
+)
+
+= − ϕ
+
+x
+
+(
+
+x
+
+)
+
+. 
+
+;
+
+
+
+
+
+Φ
+
+(
+
+x
+
+)
+
+= Φ
+
+µ σ
+
+,
+
+(
+
+σ + µ
+
+x
+
+)
+
+;
+
+ϕ
+
+µ σ
+
+,
+
+(
+
+x
+
+)
+
+= ϕ
+
+1
+σ
+
+
+
+
+
+x
+
+− µ
+σ
+
+;
+
+
+
+
+
+ϕ
+
+(
+
+x
+
+)
+
+= σϕ
+
+µ σ
+
+,
+
+(
+
+σ + µ
+
+x
+
+)
+
+ 
+
+Tipikus esete(i): Akkor használjuk, ha a feladatban megadják, hogy normális eloszlásról van szó. 
+
+ 
+
+- 8 - 
+
+DISZKRÉT VALÓSZÍNŐSÉGI VÁLTOZÓK: 
+
+Név 
+
+Jelölés 
+
+Eloszlás 
+
+Konstans 
+
+ 
+
+Indikátor 
+
+AX I∈  
+
+Egyenletes 
+
+ 
+
+=
+
+)
+(
+P X c
+)
+(
+P X 1
+)
+(
+P X 0
+
+=
+=
+
+=  
+1
+
+p
+
+=
+= −
+
+1 p
+
+ 
+
+(
+=
+P X i
+
+)
+
+=
+
+1
+n
+
+,
+
+i
+
+∈
+
+{
+1,..., n
+
+}
+
+ 
+
+n 1
+
++
+2
+
+ 
+
+(
+
+)
+X B n, p
+(
+∈
+n 1 és p
+
+∈
+≥
+
+ 
+
+)
+0,1
+
+)
+
+=
+
+=
+
+(
+P X k
+∈
+
+k
+
+{
+0,1,..., n
+
+(
+n
+k
+}
+
+)
+
+k
+p 1 p
+
+−
+
+(
+
+−
+n k
+
+)
+
+,
+
+ 
+
+Binomiális 
+
+Poisson 
+
+Geometriai 
+
+Hipergemetriai 
+
+∈
+X Po
+λ >
+0
+
+(
+
+λ
+
+)
+
+ 
+
+( )
+X G p
+)
+p
+0,1
+
+∈
+(
+∈
+
+ 
+
+(
+=
+P X k
+∈ ℕ
+k
+(
+=
+P X k
++
+∈ ℤ
+k
+
+)
+
+)
+
+(
+X Hg N, F, n
+F N és
+{
+}
+n min F, N F
+
+∈
+<
+≤
+
+−
+
+(
+P X k
+
+=
+
+)
+
+ 
+
+k
+
+∈ ℕ
+
+)
+
+=
+
+k
+
+λ
+k!
+
+−λ
+e ,
+
+ 
+
+−
+
+)k 1
+
+p,
+
+ 
+
+(
+= −
+1 p
+(
+
+=
+
+)(
+(
+
+−
+F N F
+−
+n k
+k
+N
+n
+
+)
+
+Várható érték 
+
+{ }
+E X  
+
+c  
+
+p 
+
+np 
+
+λ  
+
+1
+p
+
+ 
+
+Szórásnégyzet 
+
+{ }
+2 Xσ
+
+ 
+
+0 
+
+(
+p 1 p−
+
+)
+
+ 
+
+ 
+
+np 1 p−
+
+(
+
+)
+
+ 
+
+λ  
+
+−
+1 p
+2
+p
+
+ 
+
+)
+
+,
+
+ 
+
+n
+
+F
+N
+
+ 
+
+n
+
+F
+N
+
+
+−
+1
+
+
+F
+N
+
+
+
+
+
+ 
+
+FOLYTONOS VALÓSZÍNŐSÉGI VÁLTOZÓK: 
+
+Név 
+
+Jelölés 
+
+Eloszlásfv.  XF  
+
+Sőrőségfv.  Xf
+
+ 
+
+{ }
+E X  
+
+{ }
+2 Xσ
+
+ 
+
+Egyenletes 
+
+(
+
+X U a, b
+a
+
+∈
+<
+b
+
+)
+
+ 
+
+0, x
+x a
+b a
+1, x
+
+−
+−
+
+≤
+
+a
+
+,
+
+a
+
+< <
+
+x
+
+b
+
+ 
+
+≥
+
+b
+
+1
+−
+
+b a
+0, x
+
+, x
+
+∈
+
+a, b
+
+(
+)
+
+∉
+
+(
+
+a, b
+
+)
+
+ 
+
+a b
+
++
+2
+
+ 
+
+)2
+
+(
+
+−
+b a
+12
+
+ 
+
+Exponenciális 
+
+(
+∈ λ
+
+X E
+λ >
+0
+
+)
+
+ 
+
+−λ−
+1 e
+0, x
+
+x
+
+, x
+≤
+0
+
+>
+
+0
+
+ 
+
+−λλ
+xe
+0, x
+
+, x
+≤
+0
+
+>
+
+0
+
+ 
+
+Normális 
+
+Std. normális 
+
+ 
+
+(
+
+∈ µ σ
+
+X N ,
+σ >
+
+0
+
+)
+
+ 
+
+Φ
+
+µ σ
+
+,
+
+(
+
+x
+
+)
+
+x
+
+= ϕ∫
+
+−∞
+
+µ σ
+
+,
+
+( )
+t dt
+
+ 
+
+µ σϕ
+
+,
+
+(
+
+x
+
+)
+
+=
+
+−
+
+(
+
+)2
+−µ
+x
+2
+σ
+2
+
+ 
+
+1
+2
+
+π
+
+e
+
+σ
+
+)
+X N 0,1
+
+∈
+
+(
+
+ 
+
+Φ
+
+(
+
+x
+
+)
+
+x
+
+= ϕ∫
+
+−∞
+
+( )
+t dt
+
+ 
+
+ϕ
+
+(
+
+x
+
+)
+
+=
+
+−
+
+2x
+2
+
+e
+
+ 
+
+1
+2
+
+π
+
+ 
+
+- 9 - 
+
+1
+λ
+
+ 
+
+µ  
+
+0 
+
+1
+2
+λ
+
+ 
+
+2σ  
+
+1 
+
+III. VALÓSZÍNŐSÉGI VEKTORVÁLTOZÓK 
+
+III.1. VALÓSZÍNŐGSÉGI VÁLTOZÓK EGYÜTTES ELOSZLÁSA 
+
+t
+
+)
+
+(
+
+∀ =
+
+t ,..., t
+1
+
+(D) Valószínőségi vektorváltozó: Az 
+)
+ω <
+ha 
+(Az A eseményt a t vektorhoz tartozó nívóeseménynek nevezzük.) Megjegyzés: A valószínőségi 
+vektorváltozókat azért vezetjük be, hogy a v.v-k közötti összefüggéseket kényelmesen tudjuk 
+kezelni. Innentıl a valószínőségi vektorváltozók helyett a v.v.v. rövidítést használom. 
+
+RΩ → fv egy p-dimenziós valószívőségi vektorváltozó, 
+}
+∀ ∈
+i
+
+, azaz minden ilyen A megfigyelhetı esemény. 
+
+X :  
+t ,  
+i
+
+:  A=
+
+{
+ω
+
+: X
+
+∈
+
+F
+
+R
+
+(
+
+p
+
+p
+
+i
+
+p
+
+(T) X v.v.v. ↔ ha  ∀ komponense v.v. 
+(D) Együttes eloszlás és eloszlásfv: Az 
+
+X , X ,..., X  v.v-k együttes eloszlásfüggvénye, vagy más 
+
+1
+
+2
+
+p
+
+néven az 
+
+( )
+F t
+X
+
+=
+
+=
+
+)
+X X , X ,..., X
+(
+)
+ω <
+t ,  
+P A
+i
+
+(
+{
+= ω
+
+:  X
+
+(
+
+1
+
+2
+
+p
+
+i
+
+ v.v.v. eloszlásfüggvénye 
+
+XF :  
+
+p
+
+]
+  0,1→ℝ
+
+[
+
+ 
+
+ skalár-vektor fv., ahol 
+
+∀ , azaz FX értéke t-ben a t-hez tartozó nívóesemény 
+
+}
+i
+
+)
+
+valószínősége. Megjegyzés: Az eloszlás és az eloszlásfv elméletileg egy kicsit mást jelent, de 
+gyakorlatilag ugyanaz, hiszen kölcsönösen egyértelmően meghatározzák egymást. 
+
+(T) FX tulajdonságai: 
+∀ ≤
+1.) FX  ∀ változójában monoton nı (
+u
+2.) FX  ∀ változójában balról folytonos (
+
+(
+v :  F u
+
+X
+
+∀ ∈
+
+u
+
+p
+
+ℝ
+
+≤
+
+(
+F v
+X
+
+)
+)
+, ahol  u
+( )
+(
+F u
+:   lim F t
+X
+
+=
+
+X
+
+v≤  jelentése: 
+)
+
+). 
+
+t
+
+→ −
+u 0
+
+∀
+
+i :  u
+
+≤
+
+v
+
+i
+
+). 
+
+i
+
+3.) Ha X-nek legalább egyik komponensével a -∞-be tartunk, akkor  XF  értéke 0 lesz. 
+4.) Ha X-nek minden komponensével a +∞-be tartunk, akkor  XF  értéke 1 lesz. 
+{
+}p
+ε ∈
+5.) Legyen 
+0,1
+
+ p-dimenziós tégla és 
+
+T :   a,b
+
+a , b
+1
+1
+
+a , b
+p
+
+a , b
+2
+
+=
+
+×
+
+[
+
+[
+
+[
+
+)
+
+)
+
+)
+
+p
+
+2
+
+ p-
+
+
+× × 
+...
+
+dimenziós bináris vektor. Ekkor: 
+
+(
+P x T
+
+∈ =
+
+)
+
+(
+
+−
+
+∑
+
+∀ε
+
+p
+
+∑
+
+=
+i 1
+
+ε
+
+i
+
+(
+F a
+X
+
+ε +
+
+(
+b 1
+
+)
+− ε ≥
+
+)
+
+0
+
+, vagyis a téglalap 
+
+csúcsaihoz tartozó eloszlásértékek megfelelıen elıjelezett összege soha nem negatív. (Ez azért 
+van így, mert ez az elıjeles összeg éppen annak a valószínősége, hogy a v.v.v. értéke a 
+téglatesten belülre esik, ami nem lehet negatív, hiszen egy esemény valószínősége.) 
+
+(D) Vetületi- vagy peremeloszlásfv: Ha 
+
+ egy p-dimenziós v.v.v. és  Y X⊂  egy X-
+
+nek tetszıleges  k
+
+p<  komponensébıl álló v.v.v. (
+
+Y X ,..., X
+
+)
+
+i
+
+k
+
+), akkor Y komponenseinek 
+
+együttes eloszlásfüggvényét az X egy k-dimenziós vetületi eloszlásfüggvényének nevezzük. 
+
+(T) 
+(
+
+F
+Y
+
+( )
+XF t  meghatározza az összes vetületi eloszlásfüggvényét (Fordítva általában nem igaz!): 
+∀ ∈
+X Y :  t
+, vagyis az összes olyan komponenssel tartunk a végtelenbe, 
+
+( )
+lim F t
+
+=
+
+)
+
+X
+
+i
+
+i
+
+∀ ∉ →∞
+
+X Y: t
+
+i
+
+i
+
+amelyik nincs benne az Y-ban. 
+
+(D) Az X v.v.v. komponensei páronként függetlenek, ha 
+vagyis a bármely két komponens menti 1-dimenziós peremeloszlásfüggvények szorzata megegyezik 
+a két komponens menti 2-dimenziós peremeloszlásfüggvénnyel. 
+(D) Az X v.v.v. komponensei teljesen függetlenek, ha 
+
+= ∏
+∈
+i: X Y
+p<  komponens menti 1-dimenziós peremeloszlásfüggvények szorzata 
+
+vagyis a bármely  k
+megegyezik a k komponens menti k-dimenziós peremeloszlásfüggvénnyel. 
+
+Y X :  F
+Y
+
+X Y :  t
+
+∀ ∈
+
+∀ ⊂
+
+j:  F
+
+t , t
+i
+
+F
+X
+
+F
+X
+
+X ,X
+
+, 
+
+, 
+
+∀ ≠
+
+=
+
+(
+
+)
+
+(
+
+)
+
+t
+
+i
+
+t
+
+∀
+
+j
+
+j
+
+i
+
+i
+
+i
+
+i
+
+j
+
+i
+
+j
+
+i
+
+i
+
+(
+
+)
+
+(
+
+)
+t F
+i
+X
+
+(
+
+)
+
+ 
+
+- 10 - 
+
+)
+)
+1
+
+(
+
+1
+
+=
+
+X X ,..., X
+(
+
+=
+
+p
+
+)
+
+i
+1
+
+(D) Diszkrét v.v.v.: X diszkrét v.v.v. (röviden: d.v.v.v.), ha  ∀ komponense d.v.v. 
+
+(D) Ha X p-dimenziós d.v.v.v. komponenseinek értékkészlete: 
+
+XE
+
+{ }i
+x=
+
+, akkor 
+
+r
+i
+
+=
+
+(
+
+i ,...,i
+1
+
+p
+
+)
+
+=
+
+igaz, hogy: 
+
+=
+
+(
+P X x
+0 r
+i
+
+i
+
+)
+1
+
+≤ ≤  és 
+
+=∑ . 
+1
+
+r
+i
+
+∀
+
+i
+
+ jelöli az X d.v.v.v. 
+
+ix  értékvektorához tartozó valószínőséget. Triviálisan 
+
+( )
+∃
+(D) Folytonos v.v.v.: X folytonos v.v.v. (röviden: f.v.v.v.), ha 
+Xf
+t
+( )
+t  fv., amelyre: 
+Xf
+∞
+
+(D) Az X f.v.v.v. sőrőségfv-e: az a Riemann-integrálható 
+
+x
+
+ sőrőségfüggvénye. 
+
+(
+F x
+X
+
+)
+
+( )
+t dt
+
+f
+
+X
+
+= ∫
+
+−∞
+
+. Triviálisan igaz, hogy 
+
+∀
+
+t :  f
+
+X
+
+( )
+t
+
+≥  és 
+
+0
+
+Xf
+
+∫
+
+−∞
+
+( )
+t dt 1
+
+=
+
+. 
+
+Xf
+
+(D) Az X f.v.v.v. peremsőrőségfv-e: az X peremeloszlásához tartozó sőrőségfv-t úgy kapjuk 
+( )
+t  sőrőségfv-t a peremeloszlás által nem tartalmazott komponensek szerint 
+meg, hogy az 
+−∞
+ ig
+Az általános képlet csúnya és áttekinthetetlen, nem írom le csak a kétváltozós esetet: 
+Legyen egy 2-dimenziós f.v.v.v. sőrőségfv-e: 
+
+u, v . Ekkor az X komponenshez tartozó 
+
++ ∞  kiintegráljuk. 
+
+ tıl 
+
+X,Yf
+
+(
+
+)
+
+peremsőrőségfv-e: 
+
+f
+
+(
+
+u
+
+)
+
+X
+
+∞
+
+= ∫
+
+−∞
+
+f
+
+X,Y
+
+(
+
+u, v dv
+
+)
+
+. 
+
+i
+
+j:  f
+
+(T) Az X f.v.v.v. komponensei páronként függetlenek ↔ ha 
+∀ ≠
+(T) Az X f.v.v.v. komponensei teljesen függetlenek ↔ ha 
+∀ ⊂
+
+Y X :  f
+
+X Y : t
+
+∀ ∈
+
+t , t
+i
+
+X ,X
+
+=
+
+(
+
+)
+
+(
+
+)
+
+. 
+
+. 
+
+(
+
+)
+
+f
+
+f
+
+f
+
+t
+
+t
+
+t
+
+X
+
+X
+
+j
+
+i
+
+j
+
+j
+
+i
+
+j
+
+i
+
+(
+
+Y
+
+i
+
+(
+
+)
+
+i
+
+X
+
+i
+
+)
+
+i
+
+= ∏
+
+∀
+
+i: X Y
+
+∈
+
+i
+
+III.2. NEVEZETES EGYÜTTES ELOSZLÁSOK 
+
+(
+
+∈
+
+X Pol n, p , p ,..., p
+
+1.) Polinomiális eloszlású d.v.v.v. (
+
+A ,..., A  teljes eseményrendszert egy K véletlen kísérletben úgy, hogy 
+
+=∑
+=
+i 1
+(
+)
+P A
+Alkosson 
+legyen. Hajtsuk végre egymástól függetlenül n-szer a K kísérletet, és jelölje Xi az Ai esemény 
+bekövetkezésének számát ebben a kísérletsorozatban. Ekkor az X v.v.v. polinomiális eloszlású: az 
+{
+}
+0,1,..., n
+Xi komponensek értékkészlete az n-tıl nem nagyobb természetes számok halmaza (
+
+, ahol  n, r
+
+0>  és 
+
++∈ ℤ , 
+
+>  
+0
+
+ip
+
+∈
+
+) 
+
+=
+
+p
+
+p
+
+1
+
+)
+
+iX
+
+1
+
+2
+
+r
+
+r
+
+i
+
+i
+
+i
+
+i
+
+r
+
+) 
+
+és az Xi értékek között szoros összefüggés van: összegük n (
+
+=∑
+X n
+
+i
+
+). 
+
+r
+
+=
+i 1
+
+Továbbá: 
+
+P
+
+(
+
+∀
+
+i :  X k
+
+=
+
+i
+
+)
+
+i
+
+= ∏ , ahol 
+n!
+
+=∑
+
+k
+
+i
+
+n
+
+. 
+
+r
+
+=
+i 1
+
+ik
+
+p
+i
+k !
+i
+
+r
+
+=
+i 1
+
+Megjegyzés: A binomiális eloszlás a polinomiális eloszlás speciális esete, ahol r=2, a két esemény 
+pedig A és ellentettje. Továbbá: 
+, vagyis a polinomiális eloszlású v.v.v. komponensei 
+i
+egyenként binomiális eloszlásúak. 
+Tipikus esete(i): Hétszer dobtunk a kockával, mennyi a valószínősége, hogy a dobott számok 
+között van legalább 3 hatos … 
+
+X B n, p
+
+∈
+
+(
+
+)
+
+i
+
+{ }i
+2.) Polihipergeometriai eloszlású d.v.v.v. (
+n min F
+Egy dobozban van Fi db ci színő golyó. Ebbıl (visszatevés nélkül) kihúzunk n db-ot. Jelölje Xi a 
+kíhúzott ci színő golyók számát. Ekkor az X v.v.v. polihipergeometriai eloszlású, az Xi 
+{
+0,1,..., n
+komponensek értékkészlete az n-tıl nem nagyobb természetes számok halmaza (
+
+X PHg n, F , F ,..., F
+r
+
++∈ ℤ ; 
+
+, ahol 
+
+in, F
+
+∈
+
+∈
+
+}
+
+≤
+
+∀
+i
+
+iX
+
+(
+
+)
+
+1
+
+2
+
+) 
+
+) és  
+
+ 
+
+- 11 - 
+
+az Xi értékek között szoros összefüggés van: összegük n (
+
+Továbbá: 
+
+P
+
+(
+
+∀
+
+i :  X k
+
+=
+
+i
+
+)
+
+i
+
+=
+
+r
+
+=
+i 1
+
+∏
+(
+
+
+
+
+
+, ahol 
+
+i
+
+F
+
+
+i
+k
+
+N
+n
+
+)
+
+r
+
+=∑
+
+k
+
+i
+
+=
+i 1
+
+n
+
+. 
+
+=∑
+X n
+
+i
+
+).  
+
+r
+
+=
+i 1
+
+Megjegyzés: A polinomiális és a polihipergeometriai eloszlások bár nagyon hasonlítanak, lényeges 
+különbség, hogy az elsınél az n kísérletet egymástól függetlenül hajtottuk végre, mig itt minden 
+kísérlet befolyásolja az utána következıket, hiszen visszatevés nélkül húzunk. 
+Tipikus esete(i): Mennyi a valószínősége, hogy a 32 lapos kártyapakliból húzott 10 lap között pl. 
+pontosan két 10-es és két ász van. 
+
+3.) D tartományon egyenletes eloszlású f.v.v.v. (
+
+Legyen X p-dimenziós f.v.v.v. és 
+
+térfogata véges. Ha 
+
+f
+
+(
+
+x
+
+)
+
+X
+
+
+= 
+
+
+1
+(
+
+∈
+m D
+0,  ha x D
+
+∉
+
+)
+
+ 
+
+p
+
+D ⊆ ℝ , ahol 
+,  ha x D
+
+(
+
+)
+
+) 
+
+X U D∈
+)m D < ∞ , vagyis a tartomány p-dimenziós 
+(
+
+4.) k-dimenziós normális eloszlású f.v.v.v. (
+
+X N
+
+∈
+
+µ Σ , ahol 
+
+,
+
+µ ∈ ℝ ; 
+
+k
+
+Σ ∈ ℝ  poz. szemidef.) 
+
+k k×
+
+Általánosan: 
+
+f
+
+( )
+t
+
+=
+
+X
+
+1
+
+(
+
+2
+
+π
+
+k
+2
+
+)
+
+det
+
+(
+
+Σ
+
+)
+
+(
+
+−
+x t
+
+−
+1
+
+T
+)
+
+Σ
+
+(
+
+−
+x t
+
+)
+
+−
+
+1
+2
+
+e
+
+1
+
+2
+
+π
+
+k
+2
+
+)
+
+det
+
+(
+
+Σ
+
+)
+
+−
+
+1
+2
+
+e
+
+∞
+
+∫
+
+−∞
+
+(
+
+x
+
+−τ Σ
+
+T
+)
+
+−
+
+1
+
+(
+
+x
+
+−τ
+
+)
+
+τ
+d
+
+. 
+
+k
+
+(
+
+)
+( )
+; F t
+
+X
+
+=
+
+(
+ρσ σ
+1
+2
+σ
+)
+
+2
+
+2
+
+− ρ
+
+2
+
+(
+
+2
+
+−µ
+1
+2
+σ
+1
+
+
+
+
+)(
+−µ
+v
+u
+1
+σ σ
+1 2
+
+, ahol 
+
+σ σ > . 
+1
+
+0
+
+,
+
+2
+
+−µ
+
+2
+
+)
+
+(
+
+v
+
++
+
+2
+
+)
+
+−µ
+2
+2
+σ
+
+2
+
+
+
+
+
+
+dvdu
+
+, 
+
+Speciálisan 2-dimenziós esetre: 
+
+µ = 
+
+µ
+
+1
+µ
+
+
+2
+
+; 
+
+
+Σ = 
+
+
+Eloszlásfv-e: 
+
+F
+X,Y
+
+(
+
+x, y
+
+)
+
+=
+
+1
+
+2
+
+πσ σ
+
+1
+
+2
+
+1
+
+x
+
+y
+
+−
+
+− ρ ∫ ∫
+
+−∞ −∞
+
+2
+
+e
+
+2
+σ
+1
+ρσ σ
+2
+
+(
+1
+
+)
+
+−ρ 
+
+(
+2 1
+
+1
+
+2
+
+u
+
+tehát a sőrőségfv-e: 
+
+f
+
+(
+
+u, v
+
+)
+
+=
+
+X,Y
+
+továbbá megmutatható, hogy: 
+
+2
+
+1
+
+1
+
+πσ σ
+2
+(
+∈ µ σ  és 
+
+2
+X N ,
+1
+
+− ρ
+)
+
+1
+
+Y N
+
+)
+∈ µ σ . 
+
+(
+
+,
+
+2
+
+2
+
+1
+
+−
+
+
+1
+
+)
+
+−ρ 
+
+2
+
+(
+2 1
+
+(
+
+u
+
+2
+
+)
+
+−µ
+1
+2
+σ
+1
+
+− ρ
+
+2
+
+(
+
+u
+
+)(
+−µ
+v
+1
+σ σ
+1 2
+
+−µ
+
+2
+
+)
+
+(
+
+v
+
++
+
+2
+
+)
+
+−µ
+2
+2
+σ
+
+2
+
+
+
+
+
+
+, 
+
+e
+
+Tipikus feladat: 
+
+ és µ
+
+Ha a sőrőségfv 
+
+f
+
+(
+
+X,Y
+
+u, v
+
+)
+
+=
+
+Σ  kiszámítása adott sőrőségfv alapján. 
+)
+
+(
+C u m v m
+
+(
+B u m
+1
+
+D v m
+
+)(
+
+−
+
+−
+
++
+
+−
+
+−
+
++
+
+−
+
+)
+
+)
+
+(
+
+)
+
+(
+
+2
+
+2
+
+1
+
+2
+
+2
+
+1
+2
+
+1
+π
+2 A
+
+e
+
+ alakban adott (vagy ilyen alakra 
+
+hozható), akkor: 
+
+µ =
+1
+
+m ;
+1
+
+µ =
+
+2
+
+m ;
+2
+
+ρ =
+
+2
+
+2
+
+A C
+2
++
+
+4 A C
+
+;
+
+2
+
+σ =
+
+1
+
+1
+− ρ
+
+2
+
+(
+1
+
+;
+
+)
+
+B
+
+σ =
+
+2
+
+1
+− ρ
+
+2
+
+(
+1
+
+. 
+
+)
+
+D
+
+Másrészt az is igaz, hogy az A, B, C, D paraméterek közül bármely három meghatározza a 
+negyediket. Tehát lehet olyan feladat (és szokott is lenni), hogy mondjuk A értéke nem ismert, B, C 
+és D meg vannak adva, és ezekbıl kell kiszámolni akármit. Ilyenkor az együtthatók egyeztetésével 
+a következı egyenletek írhatók fel: (
+1
+Az elsı két egyenlet szorzatának négyzetgyökét összeegyeztethetjük a 3. egyenlettel kapjuk, hogy: 
+
+− ρ σ σ =
+
+− ρ σ =
+
+− ρ σ =
+
+− ρ
+2
+C
+
+1
+D
+
+1
+B
+
+(
+1
+
+(
+1
+
+2
+1
+
+)
+
+)
+
+)
+
+. 
+
+,
+
+,
+
+2
+
+2
+
+2
+
+2
+
+1
+
+2
+
+2
+
+1
+BD
+
+=
+
+− ρ
+2
+C
+
+→ ρ = −
+
+C
+
+2 BD
+
+→ − ρ = −
+
+1
+
+2
+
+(
+1
+
+)
+
+2
+
+C
+4BD
+
+. Ezt visszaírva az eredeti egyenletekbe 
+
+megkapjuk 
+
+ρ σ
+,
+1
+
+és
+
+σ  értékét, ezekbıl pedig 
+
+2
+
+A
+
+= σ σ
+
+1
+
+2
+
+1
+
+2
+
+− ρ . 
+
+ 
+
+- 12 - 
+
+III.3. VALÓSZÍNŐSÉGI VEKTORVÁLTOZÓK TRANSZFORMÁCIÓI 
+
+(T) Legyen X olyan p-dimenziós f.v.v.v., hogy 
+
+Xf
+
+(
+
+)
+x  sőrőségfv-e eltőnik a 
+
+D ⊆ ℝ  tartományon 
+
+p
+
+kívül. Legyen továbbá 
+
+u :  D H→ ⊆ ℝ  bijektív és differenciálható transzformáció. Ekkor az 
+)
+
+ f.v.v.v. sőrőségfv-ét az alábbi módon számíthatjuk: 
+
+(
+
+)
+
+(
+
+=
+
+)
+
+(
+
+)
+
+)
+
+y
+
+u
+
+y
+
+−
+1
+
+f
+
+f
+
+Y
+
+X
+
+, ha 
+
+Y u X=
+
+(
+
+)
+
+(
+
+)p
+
+y H∈ ; 0 különben, ahol 
+
+(
+J y  az u leképezés Jacobi-mátrixa: 
+
+)
+
+(
+J y
+
+j
+= 
+
+a,b
+
+
+ , ahol 
+
+j
+a,b
+
+(
+)
+
+(
+det J y
+−∂
+1
+u
+a
+∂
+y
+X,Yf
+
+=
+
+(
+
+b
+
+. 
+
+)
+x, y  
+
+(T) Két f.v.v. összegének (különbségének) eloszlása: Legyen X és Y f.v.v. és jelölje 
+
+ezek együttes sőrőségfüggvényét. Ekkor a  Z X Y
+
+=
+
+±
+
+ f.v.v. sőrőségfv-e: 
+
+f
+
+(
+
+x
+
+)
+
+Z
+
+∞
+
+= ∫
+
+−∞
+
+f
+
+X,Y
+
+(
+
+t, x t dt
+
+∓
+
+)
+
+. 
+
+Ha  X és Y függetlenek is, akkor: 
+
+= ∫
+−∞
+Pl.: Normális eloszlások konvolúciója: Ha 
+
+x
+
+f
+
+Z
+
+(
+
+)
+
+∞
+
+f
+
+X
+
+( )
+t f
+
+Y
+
+(
+
+x t dt
+
+∓
+
+)
+
+, ami a két sőrőségfv konvolúciója. 
+
+X N ,
+1
+
+∈ µ σ  és 
+
+1
+
+(
+
+)
+
+Y N
+
+∈ µ σ , akkor: 
+
+,
+
+(
+
+2
+
+)
+
+2
+
+X Y N
+
++ ∈ µ + µ
+
+1
+
+(
+
+,
+
+2
+
+σ + σ
+
+2
+1
+
+2
+
+2
+
+)
+
+, vagyis a várható értékek és a szórásnégyzetek összeadódnak. 
+
+(T) Két d.v.v. összegének eloszlása: Ha  X és Y  nemnegatív egészértékő d.v.v., akkor a 
+
+Z X Y
+
+=
+
++
+
+ szintén nemnegatív egészértékő d.v.v. eloszlása: 
+
+(
+P Z k
+
+=
+
+)
+
+=
+
+k
+
+∑
+
+α=
+
+0
+
+(
+P X
+
+= α
+
+, Y k
+
+= − α
+
+)
+
+, 
+
+k∀ ∈ ℕ  esetén. Ha  X és Y függetlenek is, akkor: 
+
+(
+P Z k
+
+=
+
+)
+
+=
+
+k
+
+∑
+
+α=
+
+0
+
+(
+P X
+
+= α
+
+)
+
+(
+P Y k
+
+= − α
+
+)
+
+. 
+
+Pl.: Poisson-eloszlások konvolúciója: Ha X és Y egymástól függetlenek és Poisson-eloszlásúak, 
+azaz 
+
+∈
+
+)
+
+(
+
+λ
+
+∈
+
+X Po
+
+,  Y Po
+
+)
+µ , akkor: 
+(T) Legyen X p-dimenziós d.v.v.v. és 
+Y g X=
+→
+
+ d.v.v., ekkor: ha 
+
+{ }
+∃
+E Y  
+
++ ∈
+X Y Po
+p
+g :   →ℝ
+{ }
+=
+ E Y
+
+(
+
+(
+
+)
+
+(T) Legyen X p-dimenziós f.v.v.v. és 
+
+g :   →ℝ
+
+p
+
+(
+)
+λ + µ . 
+ℝ  tetszıleges p-változós valós fv. Legyen továbbá 
+∑
+
+(
+g x P X x
+
+∀
+ℝ  tetszıleges p-változós valós fv. Legyen továbbá 
+∞
+
+=
+
+. 
+
+)
+
+(
+
+)
+
+x
+
+Y g X=
+
+(
+
+)
+
+ f.v.v., ekkor: ha 
+
+{ }
+∃
+E Y  
+
+→
+
+{ }
+ E Y
+
+)
+(
+g x f
+
+X
+
+(
+
+)
+x dx
+
+= ∫
+
+−∞
+
+. 
+
+{
+E X
+
+}
+
+i
+
+. 
+
+
+
+
+
+∑
+
+X
+
+i
+
+=
+
+∑
+
+
+
+
+
+(K) Tetszıleges X v.v.v. komponenseire teljesül: 
+
+E
+
+∀
+i
+{ } { }
+{
+}
+∃
+=
+(K) Ha X, Y független v.v-k és létezik a várható értékük, akkor 
+E XY E X E Y
+. 
+{ }
+{
+}
+2
+∃σ
+(T) Ha X, Y korrelálatlan v.v-k és létezik a szórásnégyzetük, akkor 
+X
+X Y
+Megjegyzés: A fenti példák és ez utóbbi tételek használata gyakran megkönnyíti az életünket a 
+feladatmegoldások során, tehát érdemes észben tartani ıket! 
+
+= σ
+
++ σ
+
+±
+
+∀
+i
+
+2
+
+2
+
+{ }
+Y
+
+. 
+
+A V.V.V-K TRANSZFORMÁCIÓIVAL KAPCSOLATOS FELADATOK MEGOLDÁSA: 
+
+Abból indulunk ki, hogy 
+
+Alapfeladat, sima egyváltozós: 
+= ∈
+XY
+( )
+−=
+F t
+t 5
+Y
+3
+
+természetesen.) Tehát: 
+
+1
+
+1
+
+(
+
+5,∈
+
+1
+8
+
+1
+
+)
+
+. Innen: 
+
+1
+
+−
+
+−
+t 5
+3
+
+=
+
+azaz: 
+
+1
+t
+
+ 
+
+∈
+
+X U 5,8
+)
+
+(
+)
+(
+U 5,8
+, tehát 
+(
+=
+<
+=
+P Y t
+(
+P X
+
+)
+)
+
+−
+8 t
+3
+
+=
+
+<
+
+=
+
+1
+t
+
+, keressük az X eloszlásfv-ét és sőrőségfv-ét. 
+
+( )
+F t
+Y
+(
+<
+
+1
+X
+
+P
+
+−=
+t 5
+3
+)
+=
+t
+
+, ha 
+(
+P X
+
+F
+X
+
+( )
+
+1
+t
+
+, vagyis 
+
+. (Elıtte 0, utána 1 
+(
+
+, ahol
+
+t
+
+5,8∈
+
+)
+
+ 
+
+(
+)
+5,8∈
+t
+)
+>
+= −
+1 P X
+8
+( )
+F t
+X
+
+=
+
+=
+
+(
+
+1
+t
+
+1
+t
+
+−
+3
+
+)
+<
+1
+t
+−
+8t 1
+3t
+
+,
+
+t
+
+∈
+
+(
+
+,
+
+1
+8
+
+1
+5
+
+)
+
+. 
+
+- 13 - 
+
+Ezt deriválva kapjuk a sőrőségfv-t: 
+
+= +
+
+8
+3
+
+,
+
+1
+2
+t
+
+t
+
+∈
+
+(
+
+,
+
+1
+8
+
+1
+5
+
+)
+
+. 
+
+f
+
+( )
+t
+)
+X, Y U 0,1
+
+∈
+
+(
+
+X
+
+Konvolúciós: Legyenek 
+Valószínőgési változók összegét konvolúcióval számolunk, ehhez általános esetben kell az együttes 
+sőrőségfüggvény, de mivel a két változó független, ezért 
+
+ egymástól függetlenek és  Z X Y
+
+. Kérdés: 
+
+, vagyis: 
+
+u, v
+
+Zf
+
+=
+
+v
+
+. 
+
+f
+
+f
+
+=
+
++
+
+(
+
+)
+u f
+
+Y
+
+(
+
+X
+
+)
+
+)
+
+(
+
+X,Y
+
+( )
+t
+
+f
+
+Z
+
+( )
+t
+
+=
+
+∞
+
+∫
+
+−∞
+
+f
+
+X,Y
+
+(
+
+τ − τ
+, t
+
+)
+
+d
+
+τ =
+
+∞
+
+∫
+
+−∞
+
+f
+
+X
+
+( )
+τ
+
+f
+
+Y
+
+(
+
+t
+
+− τ
+
+)
+
+d
+
+τ
+
+. Nyilván 
+
+f
+
+( )
+t
+
+=
+
+f
+
+Y
+
+( )
+t
+
+X
+
+=
+
+1, t
+
+∈
+
+(
+
+)
+0,1
+
+, különben 0. 
+
+Ezért az integrálást tartományonként kell elvégezni: 
+(
+(
+1, 2 : f
+
+0,1 : f
+
+,0 : f
+
+= , 
+
+( )
+t
+
+( )
+t
+
+−∞
+
+τ =
+
+1d
+
+∈
+
+∈
+
+=
+
+0
+
+, 
+
+)
+
+)
+
+(
+
+)
+
+t
+
+t
+
+t
+
+t
+
+t
+
+Z
+
+Z
+
+∫
+
+0
+
+( )
+t
+
+=
+
+Z
+
+2
+
+∫
+
+t
+
+1d
+
+τ = −
+2 t
+
+,  (
+t 2,
+
+∞
+
+)
+
+: f
+
+Z
+
+( )
+t
+
+= . 
+
+0
+
+Az integrálási határokat az dönti el, hogy az 
+
+X,Yf
+
+(
+
+, tτ − τ  szorzat mikor 1, vagyis:  0
+
+)
+
+< τ − τ < . 
+
+,1
+
+1
+
+)
+
+(
+
+u, v
+
+X,Yf
+
+Várható értékes:  
+∈
+= +
+1.) 
+Tudjuk, hogy mindenkor:  {
+(ugyebár a másik változó szerinti integrálással): 
+
+u v, u, v
+
+{ }
+
+(
+
+}
+. Kérdés:  {
+E X Y+
+{ }
+}
++
+E X Y E X E Y
+. Ezért kiszámoljuk a peremsőrőségfv-eket 
+
+)
+0,1
++
+
+=
+
+. 
+
+f
+
+X
+
+(
+
+u
+
+)
+
+=
+
+∞
+
+∫
+
+−∞
+
+f
+
+X,Y
+
+(
+
+u, v dv
+
+)
+
+=
+
+1
+
+∫
+
+0
+
+u vdv
+
++
+
+=
+
+1
+
+[ ]
+u v
+
+0
+
++
+
+1
+2
+
+2
+
+v
+
+
+
+
+1
+
+
+
+0
+
+= +
+
+u
+
+1
+2
+
+, hasonlóan 
+
+f
+
+(
+
+v
+
+)
+
+Y
+
+v= + . 
+
+1
+2
+
+Innen:  { }
+E X
+
+=
+
+∞
+
+∫
+
+−∞
+
+tf
+
+X
+
+( )
+t dt
+
+=
+
+1
+
+∫
+
+0
+
+2
+
+t
+
++
+
+1
+2
+
+tdt
+
+=
+
+1
+3
+
+3
+
+t
+
+
+
+
+1
+
+
+
+0
+
++
+
+1
+4
+
+2
+
+t
+
+
+
+
+1
+
+
+
+0
+
+=
+
+7
+12
+
+, hasonolóan  { }
+E Y
+
+=
+
+7
+12
+
+. 
+
++
+
+}
+
+Tehát:  {
+(
+
+{ }
+E X Y E X E Y
+)
+(
+0,1
+
+6u v, u, v
+
+{ }
+
+u, v
+
+X,Yf
+
+2.) 
+
+∈
+
+=
+
+=
+
++
+
+)
+
+2
+
++
+
+7
+7
+=
+= . 
+12 12
+. Kérdés:  { }2
+
+7
+6
+E
+
+Y
+X
+
+. 
+
+Csak a transzformációs képletre kell emlékezni. Legyen: 
+
+g
+
+(
+
+α β =
+
+,
+
+)
+
+β
+2
+α
+
+, ekkor 
+
+Z
+
+=
+
+=
+
+(
+g X, Y
+
+)
+
+. 
+
+Y
+2
+X
+
+Ezért:  { }
+E Z
+
+=
+
+∞ ∞
+
+∫ ∫
+
+−∞ −∞
+
+)
+(
+g u, v f
+
+X,Y
+
+(
+
+u, v dudv
+
+)
+
+=
+
+1 1
+
+∫∫
+
+0 0
+
+v
+2
+u
+
+2
+
+6u vdudv
+
+=
+
+1
+
+∫
+
+0
+
+2
+
+6v dv
+
+=
+
+2
+
+. 
+
+III.4. KOVARIANCIA 
+
+(D) Kovariancia: Az X,Y v.v-k kovarianciája 
+
+Vagyis a kovariancia a centralizált v.v-k szorzatának a várható értéke: 
+
+)
+
+(
+
+=
+
+{
+(
+
+}
+)
+{ }
+cov X, Y E X E X Y E Y
+{
+=
+
+{ }
+cov X, Y E X Y
+
+}
+. Megjegyzés: általában ezzel számolunk kovarianciát. 
+
+)
+(
+(
+
+−
+
+−
+
+. 
+
+)
+
+C
+
+C
+
+, ha létezik. 
+
+cov X, Y 0= . Visszafelé általában nem igaz! 
+
+)
+
+)
+
+(
+
+−
+
+=
+
+}
+
+{
+
+(T) 
+
+{ } { }
+cov X, Y E XY E X E Y
+(
+
+(T) Ha X,Y függetlenek, akkor 
+(T) A kovariancia tulajdonságai: 
+1.) 
+
+cov X, Y cov Y, X
+
+=
+
+)
+
+2.) 
+
+cov X, X
+
+2
+
+= σ
+
+, hiszen: 
+
+)
+)
+
+(
+(
+(
+
+(
+{ }
+X
+)
+
+, vagyis a kovariancia kommutatív. 
+{
+
+{
+(
+cov X, X E X
+)
+)
+
+cov Y, Z
+
+)
+2C
+
+)
+(
+
+= µ
+
++ β
+
+}
+
+=
+
+(
+
+(
+
+2
+
+X
+
+C
+
+}
+
+2
+
+= σ
+
+{ }
+X
+
+. 
+
+= α
+
+α + β
+
+cov X Y, Z
+
+3.) 
+Megjegyzés: Ezek a tulajdonságok (fıleg 2. és 3.) gyakran felhasználhatók a feladatokban. 
+(T) 
+
+{ }
+Y 2cov X, Y
+
+{
+}
+X Y
+
+cov X, Z
+
+{ }
+X
+
+= σ
+
++ σ
+
+σ
+
+±
+
+. 
+
+2
+
+2
+
+2
+
+±
+
+(
+)
+cov X, Y
+
+(
+
+)
+. 
+{ } { }
+X
+Y
+
+σ
+
+(T) Schwarz-egyenlıtlenség: 
+Megjegyzés: Analógia figyelhetı meg a kovariancia és a síkbeli vektorok skaláris szorzása között: 
+
+. 
+
+≤ σ
+
+ 
+
+- 14 - 
+
+)
+
+(
+cov X, Y
+{ }
+X
+≤ σ
+
+σ
+)
+
+2
+
+cov X, Y
+
+(
+
+{ } { }
+X
+Y
+
+σ
+
+x, y
+
+x, x
+
+=
+
+x
+
+2
+
+ 
+
+x, y
+
+≤
+
+x y
+
+De ez csupán egy érdekesség, nem kell tudni! 
+
+III.5. KORRELÁCIÓS EGYÜTTHATÓ 
+(D) Korrelációs együttható: Az X,Y v.v-k korrelációs együtthatóján a standardizáltjuk 
+
+kovarianciáját értjük: 
+
+R X, Y cov X , Y
+
+=
+
+S
+
+(
+
+)
+
+(
+
+S
+
+)
+
+=
+
+)
+(
+cov X, Y
+{ } { }
+σ
+Y
+X
+
+σ
+
+. 
+
+A Schwarz-egyenlıtlenség triviális következménye, hogy 
+
+R X, Y
+
+(
+
+)
+
+1≤ . 
+
+(D) Ha X,Y v.v-kra 
+
+R X, Y 0= , akkor azt mondjuk, hogy X és Y korrelálatlanok. 
+
+(T) 
+
+R X, Y
+
+(
+
+)
+
+1=  ↔ 
+
+= , vagyis a két v.v. között lineáris kapcsolat áll fenn. 
+
+)
+
+(
+(
++
+P Y aX b
+(
+
+=
+
+)
+
+1
+)
+
+Továbbá ekkor teljesül, hogy: 
+(D) Várhatóérték-vektor: Az X p-dimenziós v.v.v. ~a az  { }
+E X
+
+( )
+R X, Y sgn a
+
+=
+
+. 
+
+(D) Kovarianciamátrix: Az X p-dimenziós v.v.v. ~a a 
+
+cov X , X
+
+{
+{
+E X ,..., E X
+
+)T
+}
+1
+
+  p×p-s mátrix. 
+
+}
+
+)
+
+p
+
+j
+
+ vektor. 
+
+(T)  Σ  szimmetrikus és pozitív szemidefinit, azaz 
+(
+
+Pl.: 2-dimenziós normális eloszlás: Ha 
+
+X N
+
+∈
+
+2
+
+a
+
+∀ ∈
+)
+
+,
+
+µ Σ , ahol 
+
+σ σ > , akkor 
+1
+
+0
+
+,
+
+2
+
+R X , X = ρ . Továbbá teljesül, hogy 
+
+(
+
+1
+
+)
+
+2
+
+µ = 
+
+2
+σ
+1
+ρσ σ
+1
+X , X  függetlenek ↔ 
+
+
+Σ = 
+
+
+ρσ σ
+1
+2
+σ
+2
+0ρ = . 
+
+, 
+
+2
+
+2
+
+1
+
+2
+
+2
+
+
+
+
+
+ és 
+
+
+Σ = 
+:  a
+ℝ
+
+p
+
+T
+
+(
+
+i
+
+=
+(
+Σ ≥
+a
+µ
+
+1
+µ
+
+
+0
+
+. 
+
+FELADATOK KOVARIANCIÁRA ÉS KORRELÁCIÓS EGYÜTTHATÓRA: 
+Ezek a feladatok általában a kovariancia tulajdonságaira vonatkozó képletekre alapoznak! Pl.: 
+Feladat: Legyenek 
+)
+
+cov X, Y 0= ), 
+(
+
+ függetlenek (vagyis 
+
+)
+X, Y U 0,1
+
+cov U, Vα , ha 
+
+(
+)0,1
+
+(
+X 1
+
++=
+X Y
+2
+
+α ∈
+
+∈
+
+Y
+
+U
+
+? 
+
+, 
+
+(
+
+(
+
+)
+
+. Mivel egyenlı 
+
+)
+α = α + − α
+V
+Megoldás: A kovariancia tulajdonságai alapján: 
+(
+cov
+cov U, V
+α
+)
+(
+
+(
+α + − α
+, X 1
+(
++
+
+(
+cov Y, X
+
+(
+)
+cov X, X
+
+)
+cov X, Y
+
+=
+cov
+)
+
+)
+Y
+(
+
+= α
+
+X Y
+
++
+
++
+
+=
+
+)
+
++
+2
+
+−α
+1
+2
+
+α
+2
+
+α
+2
+
+−α
+1
+2
+
+X Y
+
+)
+
++
+
+(
++
+1
+2
+)
+cov Y, Y
+
+, X
+(
+
+− α
+
+)
+= σ
+
+α
+2
+
+2
+
+X Y
+
+(
+{ }
+X
+
++
+2
++
+
+, Y
+
+−α
+1
+2
+
+)
+σ
+
+=
+{ }
+Y
+
+2
+
+ 
+
+cov
+
+III.6. REGRESSZIÓ 
+(D) D.v.v-k feltételes eloszlása: Legyenek X és Y d.v.v-k. Ekkor az 
+
+i
+
+k
+
+k
+
+k
+
+)
+
+)
+
+=
+
+=
+
+=
+
+=
+
+X
+
+i
+=
+
+(
+P X x | Y y
+
+ eloszlást az X-nek az 
+
+(
+=
+=
+P X x , Y y
+(
+)
+P Y y
+k
+feltételes eloszlásának nevezzük. Ezen 
+kX  eloszlások halmazát az X-nek az Y-ra vett feltételes 
+eloszlásának nevezzük. 
+Vagyis az  X | Y  feltételes eloszlás tulajdonképpen nem is eloszlás, hanem eloszlások halmaza. Azt 
+mutatja meg, hogy az egyes 
+eseményrendszert alkotnak) X milyen eloszlást mutat. Tehát az Y v.v. ismeretében határozzuk meg 
+az X eloszlását. 
+
+ események bekövetkezése esetén (amelyek mellesleg teljes 
+
+ eseményre vett 
+
+Y y=
+
+Y y=
+
+k
+
+k
+
+ 
+
+- 15 - 
+
+(D) D.v.v-k feltételes várható értéke (regressziója): Legyenek X és Y d.v.v-k. Ekkor az X-nek az 
+Y-ra vett feltételes várható értékén (regresszióján) az 
+
+(
+E X | Y  valószínőségi változót értjük, 
+
+)
+
+amelynek eloszlása: 
+
+(
+P E X | Y i
+
+)
+= =
+
+(
+
+)
+
+∑
+{
+k: i E X
+
+∀ =
+
+}k
+
+(
+P Y y
+
+=
+
+k
+
+)
+
+. 
+
+Tehát míg a feltételes eloszlás eloszlások halmaza, addig a regresszió egy eloszlás, vagyis v.v., 
+amely szemléletesen azt méri, hogy egy Y v.v. eloszlásának ismeretében hogyan következtethetünk 
+az X v.v. várható értékére, vagyis Y alapján hogyan tudjuk megbecsülni X-et. Természetesen minél 
+szorosabb az összefüggés X és Y között, annál jobb ez a becslés. Gyakorlati alkalmazása pl. amikor 
+egy nehezen, vagy egyáltalán nem mérhetı v.v-t szeretnénk „mérni” (ez az X), és ezt úgy érjük el, 
+hogy egy másik, vele szoros kapcsolatban lévı, és könnyen mérhetı v.v alapján (ez az Y) próbálunk 
+következtetni. Ezt használják pl. az idıjárás elırejelzésben is, ahol a elkövetkezı napok idıjárását 
+szeretnék megbecsülni (ez az X, ami ugyebár nem mérhetı), és ehhez az elmúlt napok idıjárását 
+veszik figyelembe (ez Y, amit viszont állandóan mérnek), hiszen ezek között azért vannak 
+összefüggések. Minél szorosabbak ezek az összefüggések, annál pontosabbak az elırejelzések. 
+Megjegyzés: Fontos, hogy az 
+
+(
+E X | Y  egy jelölés, ami egy valószínőségi változót jelöl. 
+(
+
+(D) F.v.v-k feltételes eloszlásfv-e: Legyen az X és Y f.v.v-k együttes eloszlásfv-e 
+Ekkor az X-nek az Y-ra vonatkozó feltételes eloszlásfv-e: 
+
+)
+u, v . 
+
+X,YF
+
+)
+
+F
+X|Y
+
+(
+
+u | v
+
+)
+
+=
+
+(
+P X u | Y v
+
+<
+
+=
+
+∂
+∂
+v
+
+)
+
+=
+
+F
+X,Y
+f
+
+Y
+
+(
+
+)
+
+(
+u, v
+)
+v
+
+, vagyis az együttes eloszlásfv. v szerinti parciális 
+
+deriváltjának és a Y menti peremsőrőségfv-nek a hányadosa. 
+(D) F.v.v-k feltételes sőrőségfv-e: Legyen az X és Y f.v.v-k együttes eloszlásfv-e 
+
+X,YF
+
+(
+
+)
+u, v , 
+
+együttes sőrőségfv-e 
+
+X,Yf
+
+(
+
+u, v . Ekkor az X-nek az Y-ra vett feltételes sőrőségfüggvénye: 
+
+)
+
+f
+
+)
+
+(
+
+X|Y
+
+u | v
+
+(
+u, v
+(
+)
+v
+peremsőrőségfv-nek a hányadosa. 
+
+∂
+∂
+u
+
+X,Y
+f
+
+F
+X|Y
+
+u | v
+
+=
+
+=
+
+(
+
+)
+
+f
+
+Y
+
+)
+
+, vagyis az együttes sőrőségfv-nek és az Y menti 
+
+(K) A definíció triviális következménye, hogy: 
+
+f
+
+(
+
+v | u
+
+)
+
+=
+
+f
+
+X|Y
+
+(
+
+u | v
+
+)
+
+Y|X
+
+f
+f
+
+Y
+
+X
+
+(
+(
+
+v
+u
+
+)
+)
+
+. 
+
+(
+E X | Y r Y=
+∞
+
+)
+
+(
+
+)
+
+u, v du
+
+)
+
+∫
+
+−∞
+
+uf
+
+X,Y
+
+f
+
+Y
+
+(
+(
+
+(D) F.v.v-k regressziója: Legyen az X és Y f.v.v-k. Ekkor X-nek az Y-ra vett feltételes várható 
+értékén (regresszióján) az 
+
+ v.v-t értjük, ahol: 
+
+(
+r y
+
+)
+
+=
+
+∞
+
+∫
+
+−∞
+
+uf
+
+X|Y
+
+(
+
+u | v du
+
+)
+
+=
+
+ az ún. regressziós görbe. 
+
+v
+
+)
+
+A diszkrét esetre írt magyarázat természetesen a folytonos esetre is vonatkozik. Itt elsısorban az 
+okozhat problémát, hogy elég hasonló jelölések tömkelegét használjuk, amelyek azonban merıen 
+mást jelentenek, de gyakorlatilag (vagyis feladatok szintjén) csak az együttes és a peremsőrőségfv-
+ekkel való számolgatás az egész, ezért azokat ehhez jól kell tudni! 
+(T) A regresszió tulajdonságai: 
+1.) 
+
+. Szemléletesen ez azt jelenti, hogy egy v.v. (X) várható értéke nem 
+
+{
+E E X | Y
+
+(
+
+}
+)
+
+{ }
+E X=
+
+változik, ha azt (X-et) egy másik v.v-ra vett regressziójával (
+
+(
+E X | Y -al) „közelítjük”. 
+
+)
+
+{ }
+(
+E X | Y E X=
+
+)
+
+2.) Ha X, Y függetlenek, akkor 
+akkor X-et úgy tudjuk közelíteni, hogy Y-tól függetlenül mindig  { }
+E X -nek vesszük az értékét. 
+Azaz ha semmilyen plussz információ nem áll rendelkezésünkre, akkor a várható érték a legjobb 
+közelítés. 
+3.) A regresszió lineáris mővelet: 
+
+ konstans v.v. Vagyis ha Y-nak nincs köze X-hez, 
+
+X | Y
+
++ α
+
++ α
+
+. 
+
+(
+E X | Y
+
+2
+
+)
+
+(
+E X | Y
+
+1
+
+)
+
+(
+E X
+1
+
+α
+1
+
+= α
+1
+
+)
+
+2
+
+2
+
+2
+
+ 
+
+- 16 - 
+
+4.) 
+
+5.) 
+
+)
+
+(
+
+(
+)
+E g Y X | Y g Y E X | Y
+{
+(
+E X E X | Y
+
+(
+{
+(
+
+=
+)
+
+(
+}
+
+−
+
+≤
+
+−
+
+)
+
+)
+
+(
+
+2
+
+)
+. 
+(
+
+E X f Y
+
+2
+
+)
+
+)
+
+}
+
+, vagyis az 
+
+(
+E X | Y  regresszió a lehetı „legjobb” 
+
+)
+
+közelítése X-nek (a négyzetes eltérése minimális). 
+(D) Lineáris regresszió: A lehetı „legjobb” (legkisebb négyzetes eltéréső) lineáris közelítés, 
+vagyis: ha X és Y v.v-k, akkor az 
+ v.v. az X-nek az Y-ra vett lineáris regressziója, ha: 
+
+*
+
+{
+(
+
+2
+
+)
+
+}
+
+{
+(
+
+E X a Y b *
+
+−
+
+−
+
+*
+
+≤
+
+E X aY b
+
+−
+
+−
+
+∀
+
+a, b
+
+∈ R  esetén. 
+
+*
+a Y b+
+}
+
+)
+
+,
+
+2
+
+Megjegyzés: Bár a lineáris regresszió nem feltétlenül a lehetı legjobb közelítést adja, de a 
+regresszióval ellentétben a lineáris regresszió statisztikailag mérhetı. 
+(T) Az X-nek az Y-ra vett lineáris regressziója az 
+ v.v, ahol: 
+
+*
+
+*
+
+a
+
+=
+
+)
+
+(
+cov X, Y
+{ }
+Y
+
+σ
+
+2
+
+=
+
+R X, Y
+
+(
+
+ és 
+
+*
+b
+
+=
+
+) { }
+σ
+X
+{ }
+σ
+Y
+
+*
+a Y b+
+{ }
+{ }
+E X a E Y
+
+−
+
+*
+
+. 
+
+,
+σ
+1
+σ
+
+2
+
+A lineáris regresszió számításához tulajdonképpen csak ezekra a képletekre van szükség! 
+Pl.: 2 dimenziós normális eloszlás regressziója: A jól ismert 
+
+µ µ ρ σ σ  paraméterő 2 
+1
+
+,
+
+,
+
+,
+
+2
+
+1
+
+2
+
+dimenziós normális eloszlás regressziója: 
+
+(
+E X | Y
+
+)
+
+= ρ
+
+σ
+1
+σ
+
+2
+
+Y
+
++ µ − ρ
+
+1
+
+µ
+
+2
+
+, ami lineáris, hiszen: 
+
+*
+
+a
+
+= ρ
+
+σ
+1
+σ
+
+2
+
+ és 
+
+b
+
+*
+
+= µ − ρ
+
+1
+
+σ
+1
+σ
+
+2
+
+µ
+
+2
+
+megjegyezni! 
+
+. Ez feladatokban elıfordulhat, ezért esetleg célszerő lehet 
+
+FELADATOK REGRESSZIÓRA: 
+A regresszióval kapcsolatos feladatokat alapvetıen két csoportra lehet osztani: az egyikben a 
+feltételes eloszlást és/vagy a regressziót kell kiszámolni más adatok alapján, míg a másikban a 
+feltételes eloszlás alapján kell kiszámolni más adatokat. Ez utóbbinak különös ismertetıjele, hogy a 
+feladat szövegébıl „ki lehet hámozni”, vagyis fel lehet írni a feltételes eloszlást. Nézzünk elıször 
+erre egy példát: 
+
+(
+
+Feladat: A 0 és 2 között az egyenletes eloszlás törvénye szerint kiválasztunk egy X számot. Ezután 
+a 0 és X között szintén az egyenletes eloszlás törvénye szerint kiválasztunk egy Y számot. Mennyi a 
+Y|Xf
+Megoldás: Tudjuk, hogy: 
+vonatkoztatott feltételes eloszlása a szövegbıl „kihámozható”: 
+
+(
+P Y 1>  valószínőség? 
+v | u  feltételes sőrőségfv? Mennyi a 
+(
+∈
+0, 2
+
+. Másrészt érezhetjük, hogy az Y-nak az X-re 
+
+=
+
+u
+
+(
+
+)
+
+)
+
+)
+
+)
+
+1
+2
+
+f
+
+t
+
+,
+
+X
+
+=
+
+v
+u
+
+0
+
+< < < . Innen a feltételes sőrőségfv: 
+
+u
+
+2
+
+v
+
+, v
+
+< <
+
+u
+
+2
+
+, amibıl az együttes sőrőségfv kiszámolható: 
+
+F
+Y|X
+
+f
+
+f
+
+Y|X
+
+X,Y
+
+(
+
+(
+
+(
+
+v | u
+
+)
+
+=
+
+v | u
+
+)
+
+=
+
+=
+
+<
+
+(
+P Y v | X u
+∂
+∂
+v
+
+F
+Y|X
+
+v | u
+
+=
+
+(
+
+)
+
+)
+1
+u
+
+u, v
+
+)
+
+=
+
+f
+
+Y|X
+
+(
+
+)
+v | u f
+
+X
+
+(
+
+u
+
+)
+
+=
+
+1
+2u
+1
+u
+
+, 0
+
+< < < . Nyilvánvaló, hogy: 
+
+v
+
+u
+
+2
+
+)
+(
+P Y 1
+
+>
+
+=
+
+2 u
+
+∫ ∫
+
+1 1
+
+1
+2u
+
+dvdu
+
+=
+
+1
+2
+
+2
+
+∫
+
+1
+
+1
+
+−
+
+du
+
+=
+
+(
+
+1
+
+1
+2
+
+−
+
+
+
+
+(
+ln u
+
+)
+
+2
+
+
+
+1
+
+)
+
+=
+
+1
+2
+
+(
+( )
+1 ln 2
+
+−
+
+)
+
+≈
+
+0.153
+
+ 
+
+Némi magyarázat az integrálási határokra: ugye u mehet 1-tıl 2-ig, hiszen ha 1-tıl kisebb, akkor X 
+1-tıl kisebb, akkor Y nem lehetne 1-tıl nagyobb, ugyanakkor v 1-tıl mehet u-ig, hiszen Y-nak 1-
+nél nagyobbnak kell lennie, viszont nem lehet nagyobb X-nél, hiszen 
+
+Y U 0, X
+
+∈
+
+. 
+
+(
+
+)
+
+Nézzünk most egy példát a másik típusú feladatra: 
+
+ 
+
+- 17 - 
+
+(
+Feladat: Legyen X, Y együttes sőrőségfv-e 
+Megoldás: Elıször felírjuk az Y-nak az X-re vett feltételes sőrőségfv-ét: 
+
+u v, u, v
+
+= +
+
+X,Yf
+
+u, v
+
+∈
+
+(
+
+)
+
+)
+0,1
+
+. Mennyi az 
+
+(
+E Y | X ? 
+
+)
+
+f
+
+Y|X
+
+(
+
+v | u
+
+)
+
+=
+
+f
+
+X,Y
+f
+
+X
+
+)
+
+(
+u, v
+(
+)
+u
+
+=
+
++
+u v
++
+u 0.5
+
+. Tudjuk, hogy 
+
+=
+
+u v
+
++
+
+1
+
+0
+
++∫
+u vdv
+
+(
+E Y | X
+
+)
+
+=
+
+∞
+
+∫
+
+−∞
+
+vf
+
+Y|X
+
+(
+
+v | X dv
+
+)
+
+=
+
+1
+
+∫
+
+0
+
+v
+
+X v
+X
+1
+2
+
++
++
+
+dv
+
+=
+
+1
++
+
+X
+
+1
+2
+
+1
+
+∫
+
+0
+
+Xv v dv
+
++
+
+2
+
+=
+
+1
+3
+
++
+X
+1
+2
++
+X
+1
+2
+
+ 
+
+Feladat: Legyen X, Y együttes sőrőségfv-e 
+
+X,Yf
+
+(
+
+u, v
+
+)
+
+=
+
+1, u
+
+∈
+
+(
+
+0,1 és 0 v 2 2u
+
+< < −
+
+)
+
+. Mennyi az 
+
+)
+
+(
+E Y | X ? 
+Megoldás: Most is elıször felírjuk az Y-nak az X-re vett feltételes sőrőségfv-ét: 
+
+f
+
+Y|X
+
+(
+
+v | u
+
+)
+
+=
+
+f
+
+X,Y
+f
+
+X
+
+)
+
+(
+u, v
+(
+)
+u
+
+=
+
+1
+−
+
+2 2u
+
+, u
+
+∈
+
+(
+
+0,1 és 0
+
+)
+
+< < −
+
+2 2u
+
+v
+
+. Innen: 
+
+1
+−
+2 2u
+
+=
+
+1dv
+
+∫
+
+0
+
+(
+E Y | X
+
+)
+
+=
+
+∞
+
+∫
+
+−∞
+
+vf
+
+Y|X
+
+(
+
+v | X dv
+
+)
+
+=
+
+−
+2 2X
+
+∫
+
+0
+
+v
+
+1
+−
+
+2 2X
+
+dv
+
+=
+
+2
+
+v
+2 2X 2
+
+1
+−
+
+
+
+
+
+−
+2 2X
+
+=
+
+0
+
+
+
+
+
+2
+
+(
+)
+2 2X
+(
+2 2 2X
+
+−
+−
+
+= −
+
+1 X
+
+. 
+
+)
+
+IV. VALÓSZÍNŐSÉGI TÖRVÉNYEK 
+
+Ezt a témakört a jegyzet tömören, mégis érthetıen elmagyarázza és szemlélteti, éppen ezért itt a 
+
+teljesség igénye nélkül csak egy „rövid” összefoglalót készítek a definíciókról és tételekrıl, 
+amolyan vizsga elıtti gyors ismétlés jelleggel, a részletes magyarázat és a szemléltetés, valamint a 
+példafeladatok megoldással együtt a jegyzetben megtalálhatóak. Másrészt ebbıl a témakörbıl a 
+karakterisztikus fv-t kivéve nem nagyon szokott feladat elıfordulni (esetleg a nagy számok 
+törvényéhez, de az is csak ritkán). Ugyanakkor állítólag a szóbelin elıszeretettel kérdeznek 
+elméletet nagyrészt ebbıla témakörbıl, így aztán aki szóbelizni „szeretne”, az feltétlenül készüljön 
+fel ezekbıl. (Állítólag megéri szóbelizni, ha az ember nagyjából tisztában van az anyaggal.) 
+
+IV.1. VALÓSZÍNŐGSÉGI VÁLTOZÓK SOROZATAINAK KONVERGENCIÁJA 
+
+Az alábbi definíciókban 
+
+X : X , X ,..., X ,...  és X v.v-k. 
+
+i
+
+1
+
+2
+
+n
+
+(D) Xn 1 valószínőséggel konvergál X-hez, ha 
+
+ω
+
+: lim X
+n
+
+→∞
+
+n
+
+(
+
+)
+ω =
+
+X
+
+(
+
+(D) Xn Lr normában konvergál X-hez, ha 
+
+lim E X X
+→∞
+n
+(D) Xn sztochasztikusan konvergál X-hez, ha 
+
+n
+
+−
+
+0 : lim P
+
+n
+
+→∞
+
+}r
+
+= . Jele: 
+0
+(
+{
+ω
+
+: X
+
+(
+
+n
+
+P
+
+(
+{
+{
+∀ε >
+
+1v
+X→ . 
+
+nX
+
+)
+
+1
+
+}
+)
+ω = . Jele: 
+nX
+)
+ω −
+
+rL
+X→ . 
+
+X
+
+(
+
+)
+ω > ε = . Jele: 
+
+0
+
+}
+
+)
+
+st
+X→ . 
+
+nX
+(D) Xn eloszlásban konvergál X-hez, ha 
+
+lim F
+nX
+→∞
+n
+
+( )
+t
+
+=
+
+( )
+F t
+X
+
+ minden olyan  t ∈ R , ahol 
+
+( )
+XF t  
+
+folytonos, vagyis 
+
+nXF
+
+( )
+t
+
+ pontonként konvergál 
+
+XF t -hez. Jele: 
+
+( )
+
+nX
+
+e
+X→ . 
+
+st
+
+e
+⇒ → ⇒ →
+
+X X
+
+X
+
+n
+
+n
+
+(T) 
+
+
+1L
+→ 
+X
+
+→ 
+X
+
+1v
+
+X
+
+n
+
+X
+
+n
+
+ 
+
+X
+
+ 
+
+- 18 - 
+
+IV.2. NAGY SZÁMOK TÖRVÉNYEI 
+
+(T) Bernoulli-féle gyenge alak: Egy K véletlen kísérletben legyen  A F∈  egy 
+valószínőségő esemény. Hajtsuk végre K-t egy véletlen kísérletsorozatban, és legyen Xi az A-nak az 
+i-edik kísérletben való bekövetkezésének indikátor valószínősége: 
+
+X I∈ . Ekkor az 
+
+(
+P A p=  pozitív 
+
+)
+
+i
+
+A
+
+(
+
+r A
+n
+
+)
+
+= ∑  relatív gyakoriságra teljesül, hogy: 
+
+X
+
+i
+
+n
+
+1
+n =
+i 1
+
+(
+
+nr A
+
+)
+
+st
+P A→
+
+(
+
+)
+
+. 
+
+Megjegyzés: A Borel-féle erıs alak azt állítja, hogy a fenti feltételekkel 
+(T) Csebisev-féle gyenge alak: Legyenek az 
+X , X ,..., X ,...  v.v-k páronként függetlenek és 
+1
+{
+µ =
+E X
+azonos eloszlásúak úgy, hogy létezzék 
+n
+1
+n =
+i 1
+
+= ∑  v.v-sorozatra teljesül, hogy: 
+
+2
+ közös várható értékük és 
+
+véges szórásnégyzetük. Ekkor a 
+
+nZ →µ . 
+
+nr A
+
+= σ
+
+}i
+
+X
+
+X
+
+{
+
+}
+
+Z
+
+d
+
+st
+
+n
+
+n
+
+2
+
+2
+
+i
+
+i
+
+ közös és 
+
+(
+
+1v
+P A→
+
+(
+
+)
+
+)
+
+ is teljesül. 
+
+(T) Kolmogorov-féle erıs alak: Legyenek az 
+
+X , X ,..., X ,...  v.v-k teljesen függetlenek, létezzék 
+
+1
+
+2
+
+n
+
+µ =
+
+{
+E X
+
+}i
+
+ közös várható értékük és szórásnégyzetükre teljesüljön a 
+
+a 
+
+Z
+
+n
+
+= ∑  v.v-sorozatra igaz, hogy: 
+
+X
+
+i
+
+n
+
+1
+n =
+i 1
+
+1v
+
+nZ →µ . 
+
+∞
+
+∑
+
+=
+i 1
+
+2
+
+σ
+
+}
+
+i
+
+{
+X
+2
+i
+
+< ∞
+
+ feltétel. Ekkor 
+
+IV.3. KARAKTERISZTIKUS FÜGGVÉNY 
+
+(D) A  Z X iY
+
+=
+
++
+
+ komplex értékő v.v. várható értéke az  { }
+E Z
+
+=
+
+{ }
+{ }
+E X iE Y
+
++
+
+ komplex szám. 
+
+ karakterisztikus fv-e az X sőrőségfv-ének Fourier-
+
+{
+E cos Xt
+
+(
+
+}
+)
+
++
+
+iE sin Xt
+
+(
+
+{
+
+}
+)
+
+∞
+
+= ∫
+
+−∞
+
+f
+
+X
+
+(
+
+)
+x e dx
+
+itx
+
+. 
+
+(D) Karakterisztikus fv.: Az X v.v. 
+{
+E e
+
+transzformáltja, vagyis: 
+
+( )
+t
+
+ϕ
+
+=
+
+X
+
+( )
+X tϕ
+}
+
+=
+
+iXt
+
+(T) A karakterisztikus fv. tulajdonságai: 
+1.) 
+
+≤  és 
+
+= . 
+
+ϕ
+
+1
+
+1
+
+( )
+X 0
+
+ egyenletesen folytonos  R -en. 
+
+( )
+ϕ
+X t
+( )
+X tϕ
+( )
+X tϕ
+(
+
+ϕ
+
+X
+
+n
+
+2.) 
+
+3.) 
+n
+
+∑∑
+
+ pozitív szemidefinit függvény, vagyis 
+
+∀ ∀
+
+n,
+
+t ,..., t
+1
+
+∈ R  és 
+
+∀
+
+z ,..., z
+1
+
+n
+
+n
+
+∈ C  esetén 
+
+t
+
+k
+
+−
+
+)
+t z z
+l
+
+k
+
+l
+
+≥
+
+0
+
+. 
+
+=
+=
+k 1 l 1
+ϕ − = ϕ
+4.) 
+
+t
+
+)
+
+(
+X
+X ,..., X  teljesen függetlenek, akkor: 
+5.) Ha 
+
+( )
+t
+
+ 
+
+X
+
+1
+
+n
+
+6.) Ha X elsı n momentuma létezik, akkor 
+
+ϕ
+
+X
+
+( )
+t
+
+=
+
+µ
+
+k
+
+k
+
+)
+
+(
+it
+k!
+
++
+
+(
+o t
+
+n
+
+)
+
+ ahol 
+
+µ =
+
+k
+
+{
+E X
+
+n
+
+∑
+
+=
+k 0
+
+ϕ
+
+∀
+k
+
+∑
+( )
+X tϕ
+ϕ
+}
+
+=
+
+k
+
+( )
+t
+
+=
+
+k
+
+∏
+
+∀
+k
+
+ϕ
+
+X
+
+k
+
+( )
+t
+
+. 
+
+X
+
+ n-szer differenciálható és 
+
+(k)
+X
+
+( )
+0
+
+k
+
+i
+
+. 
+
+7.) Minden eloszlást egyértelmően meghatároz a karakterisztikus fv-e. Ha X f.v.v., akkor 
+
+∞
+
+1
+π ∫
+2
+
+−∞
+
+f
+
+X
+
+(
+
+x
+
+)
+
+=
+
+ 
+
+ϕ
+
+X
+
+( )
+t e
+
+−
+
+itx
+
+dx
+
+. 
+
+- 19 - 
+
+NÉHÁNY ELOSZLÁS KARAKTERISZTIKUS FÜGGVÉNYE: 
+
+1.) Geometriai eloszlás: Ha 
+
+( )
+X G p∈
+
+ → 
+
+ϕ
+
+X
+
+( )
+t
+
+=
+
+1
+
+2.) Egyenletes eloszlás: Ha 
+
+X U a, b
+
+∈
+
+(
+
+)
+
+ → 
+
+ϕ
+
+X
+
+( )
+t
+
+=
+
+it
+
+pe
+(
+)
+− −
+1 p e
+ita
+itb
+−
+e
+e
+(
+−
+it b a
+
+)
+
+. 
+
+it
+
+.  a
+
+3.) Exponenciális eloszlás: Ha 
+
+X E∈ λ  → 
+
+(
+
+)
+
+ϕ
+
+( )
+X t
+
+=
+
+λ
+λ −
+
+it
+
+. 
+
+b= −  esetén 
+
+ϕ
+
+( )
+t
+
+=
+
+X
+
+sin bt
+
+(
+bt
+
+)
+
+. 
+
+4.) Standard normális eloszlás: Ha 
+
+)
+X N 0,1
+
+∈
+
+(
+
+ → 
+
+ϕ
+
+5.) Normális eloszlás: Ha 
+
+X N ,
+
+∈ µ σ  → 
+
+(
+
+)
+
+ϕ
+
+( )
+X t
+
+=
+
+e
+
+IV.4. CENTRÁLIS HATÁRELOSZLÁS TÉTELEK 
+
+(T) Helly-tétel: 
+
+X
+
+e
+→ ⇔
+
+X
+
+n
+
+ϕ
+
+lim
+→∞
+n
+
+X
+
+n
+
+( )
+t
+
+= ϕ
+
+X
+
+( )
+t
+
+. 
+
+( )
+X t
+2 2t
+σ
+2
+
+µ −
+i
+t
+
+2t
+−
+2
+
+. 
+
+=
+
+e
+
+. 
+
+(T) Centrális határeloszlás tétel: Legyenek 
+eloszlásúak és létezzék a szórásuk. Használjuk továbbá az alábbi jelöléseket: 
+
+X , X ,..., X ,...  v.v-k teljesen függetlenek, azonos 
+
+, 
+
+1
+
+2
+
+n
+
+{
+E X
+
+µ =
+n
+
+}i
+)
+
+= ∑ . Ekkor Zn standardizáltja 
+
+X
+
+i
+
+S
+Z
+n
+
+=
+
+Z
+
+n
+
+− µ
+d
+
+n
+
+=
+
+1
+
+∑
+d n =
+i 1
+
+(
+
+X
+
+i
+
+− µ
+
+ és 
+
+d
+
+{
+X= σ
+
+}i
+
+ és 
+
+Z
+
+n
+
+teljesül, hogy: 
+
+S
+nZ
+
+n
+
+1
+n =
+i 1
+(
+
+e
+→
+
+)
+N 0,1
+
+, tehát 
+
+(
+S
+lim P Z
+n
+→∞
+n
+
+<
+
+t
+
+)
+
+( )
+= Φ . 
+t
+
+(T) Moivre-Laplace-tétel: A centrális határeloszlás tétel speciális esete, amikor 
+
+X I∈ , 
+
+A
+
+i
+
+(
+P A p= . Ekkor 
+
+)
+
+nZ
+
+n
+
+=
+
+∈∑
+
+X B n, p
+
+(
+
+i
+
+n
+
+=
+i 1
+
+)
+
+ és 
+
+S
+lim Z
+n
+→∞
+n
+
+=
+
+lim
+→∞
+n
+
+1
+(
+
+np 1 p
+
+−
+
+)
+
+n
+
+∑
+
+=
+i 1
+
+(
+
+X
+
+i
+
+− µ =
+
+)
+
+)
+N 0,1
+
+(
+
+, vagyis 
+
+ha egy végtelen kísérletsorozat során megfigyeljük az A eseményt, akkor a fenti Zn v.v. 
+standardizáltja a standard normális eloszláshoz fog tartani. 
+(K) Ha 
+
+, ahol n nagyon nagy, akkor az X v.v. standardizáltja jó közelítéssel a standard 
+
+X B n, p
+
+∈
+
+(
+
+)
+
+normális eloszlás lesz, vagyis: 
+
+SX
+
+≈
+
+)
+N 0,1
+
+(
+
+. 
+
+JELMAGYARÁZAT 
+(A)  axióma 
+(D)  definíció 
+(T)  tétel 
+(K) következmény 
+
+MEGJEGYZÉSEK 
+Készítette: Gáthy Lajos II. évf. mő.inf. hallgató 
+Készült: a Ketskeméty-féle elıadásokon elhangzottak és a jegyzet alapján (egy-két helyen a saját 
+észrevételeimet is tartalmazza). A példafeladatok legnagyobb igyekezetem szerint ZH- és 
+vizsgacentrikusak. 
+
+Az esetleges hibákért elnézést kérek! 
+Az észrevételeket, javaslatokat és hibajelzéseket szívesen várom az alone@sch.bme.hu címre. 
+
+Verzió: 2007. november 13. 
+A legfrissebb verziót keresd a weben: http://www.hszk.bme.hu/~gl551/ 
+
+ 
+
+- 20 - 
+
+
