@@ -1,0 +1,77 @@
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+13
+
+3. Diszkrét valószínűségi változók
+
+Az előző két előadásban szereplő deﬁníciók (eseményalgebra, feltételes valószínűség) ugyan alapfogal-
+mai a témának, de nem elégségesek, hogy természetes módon le tudjunk írjunk bizonyos problémákat.
+Például hogyan tudnánk megfogalmazni az eddigi eszközökkel olyan egyszerű állításokat, hogy két
+kockadobás eredménye független? Vagy hogy egy kockadobás átlagos eredménye 3,5, egy 0 és 1 közt
+2? Ezekhez arra van szükségünk, hogy ne
+egyenletesen kiválasztott véletlen szám átlagos értéke pedig 1
+csak eseményekről, hanem véletlen mennyiségekről (ún. valószínűségi változókról) is beszélni tudjunk.
+3.1. Valószínűségi változó
+3.1.1. Deﬁníció.
+
+Legyen X : Ω → R függvény. Adott x ∈ R valós számra jelölje
+
+o
+
+{X < x} def= {ω ∈ Ω | X(ω) < x},
+
+vagyis azon kimenetelek halmazát, amikor X kisebb, mint x. Ezeket a halma-
+zokat az X nívóhalmazainak hívják. Az X függvényt valószínűségi változó-
+nak nevezzük, ha minden x ∈ R-re
+azaz röviden X nívóhalmazai események.
+3.1.2. Példa. Az eddigi példáinkban is szerepeltek már valószínűségi változók, csak nem neveztük
+őket a nevükön. Néhány példa valószínűségi változóra:
+
+{X < x} ∈ F,
+
+(1) Egy kockadobás eredménye. A valószínűségi változó deﬁníciójában szereplő „{X < x} ∈ F
+minden valós x-re” feltétel ebben az esetben ekvivalens azzal, hogy minden k-ra azon kimene-
+telek halmaza, amelyek esetén k-t dobtunk, egy esemény.
+(2) Kockadobás eredményének négyzete. Lehetséges értékei 1, 4, 9, 16, 25 és 36, mindegyik lehető-
+6 eséllyel veszi fel. Formálisan felírva választhatjuk az eseményteret Ω = {1, 2, 3, 4, 5, 6}-
+séget 1
+nak, F és P ahogy korábban, a valószínűségi változó pedig Y (ω) = ω2.
+(3) Egy urnában 2 fehér és 3 piros golyó van. Visszatevés nélkül addig húzunk, amíg fehéret nem
+húztunk. A fehér kihúzásáig húzott piros golyók száma egy valószínűségi változó.
+
+(4) Valószínűségi változót eseményből is kaphatunk. Legyen
+
+(1 ha ω ∈ A,
+
+0
+
+egyébként.
+
+1A(ω) =
+
+Ezt hívjuk az A eseményhez tartozó indikátor valószínűségi változónak.
+
+Megjegyzés. Az {X < x} ∈ F feltétel helyett használhattuk volna az {X ≤ x} ∈ F feltételt is (ahogy
+néhány más jegyzet teszi is), ahol értelemszerűen {X ≤ x} def= {ω ∈ Ω | X(ω) ≤ x}. Ez a módosítás
+nem változtatna a fenti deﬁníció értelmén, azaz ekvivalens deﬁníciót kapnánk. Hasonlóan deﬁniálhatók
+az {X = x}, {X > x}, de akár az {a < X < b} halmazok is, amik azon kimenetelek halmazai, amikre
+teljesül a zárójeles állítás. Belátható, hogy ezek szintén események.
+3.2. Várható érték véges esetben
+
+Egy véletlen mennyiség esetében az egyik legtermészetesebb kérdés, hogy "Jó-jó, véletlen, de úgy
+átlagban mennyi?". Ezt a véletlenszerű esetek közti "átlagos" értéket fogja meg a várható érték fogalma.
+Egy X valószínűségi változó egyszerű, ha csak véges sok értéket vehet fel. Egy
+3.2.1. Deﬁníció.
+egyszerű valószínűségi változó várható értéke:
+
+o
+
+E(X) def= X
+
+k∈Ran(X)
+
+k · P(X = k),
+
+ahol Ran(X) az X véges értékkészlete, és P(X = k) jelöli az {X = k} esemény valószínűségét.
+
+
