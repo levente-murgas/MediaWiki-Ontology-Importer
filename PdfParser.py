@@ -3,8 +3,8 @@ from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
 from pdfminer.pdfpage import PDFPage
 from io import StringIO
-from quntoken import tokenize
-from hunspell import Hunspell
+#from quntoken import tokenize
+#from hunspell import Hunspell
 import string
 import os
 import requests
@@ -46,22 +46,21 @@ def read_file_to_str(filename):
     data = file.read().replace('\n', '')
     return data
 
-# URL_1 = "https://cgit.freedesktop.org/libreoffice/dictionaries/tree/hu_HU/hu_HU.dic"
-# response = requests.get(URL_1)
-# open("hu_HU.dic", "wb").write(response.content)
+URL_1 = "https://cgit.freedesktop.org/libreoffice/dictionaries/tree/hu_HU/hu_HU.dic"
+response = requests.get(URL_1)
+open("hu_HU.dic", "wb").write(response.content)
 
-# URL_2 = "https://cgit.freedesktop.org/libreoffice/dictionaries/tree/hu_HU/hu_HU.aff"
-# response = requests.get(URL_2)
-# open("hu_HU.aff", "wb").write(response.content)
+URL_2 = "https://cgit.freedesktop.org/libreoffice/dictionaries/tree/hu_HU/hu_HU.aff"
+response = requests.get(URL_2)
+open("hu_HU.aff", "wb").write(response.content)
 
 
-stemmer = Hunspell('hu_HU', system_encoding='UTF-8').stem
+stemmer = Hunspell('hu_HU', hunspell_data_dir=r'C:\Users\Murgi\Documents\GitHub\temalab\dictionary')
 
-# filename = extract_pdf_to_txt(path,save_to)
 
-text_str = read_file_to_str('test.txt')
+# # filename = extract_pdf_to_txt(path,save_to)
 
-for tok in tokenize(iter(text_str)):
-    print(tok, end='')
+# text_str = read_file_to_str('test.txt')
 
-# TODO: restart PC so PATH file updates, fix encoding issue.
+# for tok in tokenize(iter(text_str)):
+#     print(tok, end='')
