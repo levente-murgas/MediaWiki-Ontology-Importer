@@ -3,7 +3,8 @@ from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
 from pdfminer.pdfpage import PDFPage
 from io import StringIO
-from quntoken import tokenize
+import nltk as nltk
+from nltk.tokenize import word_tokenize
 from hunspell import Hunspell
 import string
 import os
@@ -42,9 +43,8 @@ def extract_pdf_to_txt(path,save_to):
     return filename
 
 def read_file_to_str(filename):
-    file = open(filename,"r", encoding="utf-8")
-    data = file.read().replace('\n', '')
-    return data
+    with open(filename,"r", encoding="utf-8") as f:
+        return f.read().replace('\n', '')
 
 # URL_1 = "https://cgit.freedesktop.org/libreoffice/dictionaries/tree/hu_HU/hu_HU.dic"
 # response = requests.get(URL_1)
@@ -55,13 +55,17 @@ def read_file_to_str(filename):
 # open("hu_HU.aff", "wb").write(response.content)
 
 
-stemmer = Hunspell('hu_HU', system_encoding='UTF-8').stem
-
-# filename = extract_pdf_to_txt(path,save_to)
+stemmer = Hunspell('hu_HU', system_encoding='UTF-8')
 
 text_str = read_file_to_str('test.txt')
 
-for tok in tokenize(iter(text_str)):
-    print(tok, end='')
+stemmed_words = []
+punctuations = list(string.punctuation)
 
-# TODO: restart PC so PATH file updates, fix encoding issue.
+h = Hunspell('hu_HU', system_encoding='UTF-8', hunspell_data_dir=r'C:\Users\murga\OneDrive\Documents\GitHub\temalab\dicts')
+word_list = word_tokenize(text_str)
+for word in word_list:
+    stem = h.stem(word)
+    print(stem)
+    if stem not in punctuations:
+        stemmed_words.append(stem)
