@@ -46,18 +46,19 @@ def read_file_to_str(filename):
     with open(filename,"r", encoding="utf-8") as f:
         return f.read().replace('\n', '')
 
-# URL_1 = "https://cgit.freedesktop.org/libreoffice/dictionaries/tree/hu_HU/hu_HU.dic"
-# response = requests.get(URL_1)
-# open("hu_HU.dic", "wb").write(response.content)
+URL_1 = "https://cgit.freedesktop.org/libreoffice/dictionaries/tree/hu_HU/hu_HU.dic"
+response = requests.get(URL_1)
+open("hu_HU.dic", "wb").write(response.content)
 
-# URL_2 = "https://cgit.freedesktop.org/libreoffice/dictionaries/tree/hu_HU/hu_HU.aff"
-# response = requests.get(URL_2)
-# open("hu_HU.aff", "wb").write(response.content)
+URL_2 = "https://cgit.freedesktop.org/libreoffice/dictionaries/tree/hu_HU/hu_HU.aff"
+response = requests.get(URL_2)
+open("hu_HU.aff", "wb").write(response.content)
 
 
-stemmer = Hunspell('hu_HU', system_encoding='UTF-8')
+stemmer = Hunspell('hu_HU', hunspell_data_dir=r'C:\Users\Murgi\Documents\GitHub\temalab\dictionary')
 
-text_str = read_file_to_str('test.txt')
+
+# # filename = extract_pdf_to_txt(path,save_to)
 
 stemmed_words = []
 punctuations = list(string.punctuation)
