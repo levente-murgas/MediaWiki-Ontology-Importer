@@ -1,4 +1,4 @@
-import nltk
-from nltk.corpus import stopwords
-nltk.download('stopwords')
-print(stopwords.fileids())
+# import nltk
+# from nltk.corpus import stopwords
+# nltk.download('stopwords')
+# print(stopwords.fileids())

@@ -40,4 +40,3 @@ xn 1 valószínűséggel konvergál x-hez, ha ω
 xn lr normában konvergál x-hez, ha lim e x x→∞n(d) xn sztochasztikusan konvergál x-hez, ha n−0
 xn eloszlásban konvergál x-hez, ha lim fnx→∞n( )t=( )f tx minden olyan  t ∈ r , ahol ( )xf t  folytonos, vagyis nxf( )t pontonként konvergál xf t -hez. jele
 a  z x iy=+ komplex értékű valószínűségi változó  várható értéke az  { }e z={ }{ }e x ie y+ komplex szám.  karakterisztikus függvénye az x sűrűségfüggvény-ének fourier-{e cos xt(})+ie sin xt({})∞= ∫−∞fx()x e dxitx. (d) karakterisztikus függvény.
-

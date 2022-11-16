@@ -1,56 +1,24 @@
-import string
-from nltk.tokenize import word_tokenize
-import nltk
-from nltk.corpus import stopwords
-
 file = open('test.txt', encoding='utf8')
 read = file.read()
 file.seek(0)
+#read lines into a list
+lines = file.readlines()
 
-# count number
-# of lines in text 
-line = 1
-for word in read:
-    if word == '\n':
-        line += 1
-print("Number of lines in file is: ", line)
+vocab_file = open('filtered_vocab.txt', encoding='utf-8')
+keywords = vocab_file.read().splitlines()
 
-# create a list to
-# store each line as
-# an element of list
-array = []
-for i in range(line):
-    array.append(file.readline())
-
-# get rid of punctuations in text
-punctuations = list(string.punctuation)
-for element in read:
-    if element in punctuations:
-        read = read.replace(element, " ")
-read=read.lower()
-
-stop_words = set(stopwords.words('hungarian'))
-word_tokens = word_tokenize(read)
-print(word_tokens)
-print()
-filtered_words = []
-  
-for w in word_tokens:
-    if w not in stop_words:
-        filtered_words.append(w)
-print(filtered_words)
-print()
-
-dict = {}
-for i in range(line):
-    check = array[i].lower()
-    for item in filtered_words:
-        if item in check:
-            if item not in dict:
-                dict[item] = [1]
-            if item in dict:
-                dict[item].append(i+1)
-                num_of_appearances = len(dict[item]) - 1
-                dict[item].insert(0,num_of_appearances + 1)
-
-print(dict)
+dictionary = {}
+for i in range(len(lines)):
+    check = lines[i].lower()
+    if check.isspace():
+         pass
+    else:
+        for item in keywords:
+            if check.find(item) != -1:
+                if item not in dictionary:
+                    dictionary[item] = [1,i+1]
+                else:
+                    dictionary[item].append(i+1)
+                    dictionary[item][0] +=  1
+                    
+print(dictionary)
