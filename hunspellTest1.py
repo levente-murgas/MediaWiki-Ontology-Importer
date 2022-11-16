@@ -1,7 +1,7 @@
 from hunspell import Hunspell
+import os
 
-h = Hunspell('hu_HU', hunspell_data_dir=r'C:\Users\murga\OneDrive\Documents\GitHub\temalab\dicts')
+h = Hunspell('hu_HU',system_encoding='UTF-8')
 
-h2 = Hunspell()
-stem = h2.stem('savers')
+stem = h.stem('anyád')
 print(stem)
