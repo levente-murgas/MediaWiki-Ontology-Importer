@@ -1,44 +1,43 @@
-Teljes eseményrendszer
-P valószínűség
-Kolmogorov-féle valószínűségi mező
-Feltételes valószínűség
-Függetlenség
-Az ∀ ∈  esetén A és B függetlenek. ∈  események páronként függetlenek, ha ) {}0,1∈Fj esetén A  és A(P AA →  B F{}∈i 1,...,ni függetlenek. j
-Az A∏(P A)ii∀ ∈I(T) Ha A∈  események teljesen függetlenek, ha F}{∈i 1,...,n∏ , vagyis közülük tetszılegesen kiválasztott események függetlenek. = PA esetén i∀ ∈iI∈  események teljesen függetlenek → F{}∈i 1,...,n{}1,...,nI 2∀ ∈ esetén a B ∈{}i 1,...,n események is teljesen függetlenek, ahol
-Valószínűségi változó
-Eloszlásfüggvény
-Diszkrét v.v.
-Az X d.v.v. eloszlása
-Folytonos v.v.
-Az X f.v.v. sűrűségfüggvénye
-Várható érték (0-körüli elsı momentum)
-Centralizált
+teljes eseményrendszer
+p valószínűség
+kolmogorov-féle valószínűségi mező
+feltételes valószínűség
+függetlenség
+az ∀ ∈  esetén a és b függetlenek. ∈  események páronként függetlenek, ha ) {}0,1∈fj esetén a  és a(p aa →  b f{}∈i 1,...,ni függetlenek. j(d) az a∏(p a)ii∀ ∈i(t) ha a∈  események teljesen függetlenek, ha f}{∈i 1,...,n∏ , vagyis közülük tetszőlegesen kiválasztott események függetlenek. = pa esetén i∀ ∈ii∈  események teljesen függetlenek → f{}∈i 1,...,n{}1,...,ni 2∀ ∈ esetén a b ∈{}i 1,...,n események is teljesen függetlenek, ahol
+valószínűségi változó
+eloszlásfüggvény
+diszkrét valószínűségi változó
+az x diszkrét valószínűségi változó eloszlása
+folytonos valószínűségi változó 
+az x folytonos valószínűségi változó sűrűségfüggvénye
+várható érték
+centralizált
 n-edik momentum
-Szórásnégyzet (a várható érték körüli második momentum)
-Szórás
-Standardizált
-Valószínűségi vektorváltozó
-Együttes eloszlás és eloszlásfv
-Vetületi- vagy peremeloszlásfv
-Az X v.v.v. komponensei páronként függetlenek, ha vagyis a bármely két komponens menti 1-dimenziós peremeloszlásfüggvények szorzata megegyezik a két komponens menti 2-dimenziós peremeloszlásfüggvénnyel. (D) Az X v.v.v. komponensei teljesen függetlenek, ha = ∏∈i
-Diszkrét v.v.v.
-Ha X p-dimenziós d.v.v.v. komponenseinek értékkészlete
-Folytonos v.v.v.
-Az X f.v.v.v. sűrűségfv-e
-Az X f.v.v.v. peremsűrűségfv-e
-Kovariancia
-Korrelációs együttható
-Ha X,Y v.v-kra R X, Y 0= , akkor azt mondjuk, hogy X és Y korrelálatlanok. (T) R X, Y()1=  ↔ = , vagyis a két v.v. között lineáris kapcsolat áll fenn. )((+P Y aX b(=)1)Továbbá ekkor teljesül, hogy
-Várhatóérték-vektor
-Kovarianciamátrix
-D.v.v-k feltételes eloszlása
-D.v.v-k feltételes várható értéke (regressziója)
-F.v.v-k feltételes eloszlásfv-e
-F.v.v-k feltételes sűrűségfv-e
-F.v.v-k regressziója
-Lineáris regresszió
-Xn 1 valószínűséggel konvergál X-hez, ha ω
-Xn Lr normában konvergál X-hez, ha lim E X X→∞n(D) Xn sztochasztikusan konvergál X-hez, ha n−0
-Xn eloszlásban konvergál X-hez, ha lim FnX→∞n( )t=( )F tX minden olyan  t ∈ R , ahol ( )XF t  folytonos, vagyis nXF( )t pontonként konvergál XF t -hez. Jele
-A  Z X iY=+ komplex értékű v.v. várható értéke az  { }E Z={ }{ }E X iE Y+ komplex szám.  karakterisztikus fv-e az X sűrűségfv-ének Fourier-{E cos Xt(})+iE sin Xt({})∞= ∫−∞fX()x e dxitx. (D) Karakterisztikus fv.
-definíció (T)  tétel (K) következmény MEGJEGYZÉSEK Készítette
+szórásnégyzet
+szórás
+standardizált
+valószínűségi vektorváltozó
+együttes eloszlás és eloszlásfüggvény
+vetületi- vagy peremeloszlásfüggvény
+az x valószínűségi vektorváltozó  komponensei páronként függetlenek, ha vagyis a bármely két komponens menti 1-dimenziós peremeloszlásfüggvények szorzata megegyezik a két komponens menti 2-dimenziós peremeloszlásfüggvénnyel. (d) az x valószínűségi vektorváltozó  komponensei teljesen függetlenek, ha = ∏∈i
+diszkrét valószínűségi vektorváltozó 
+ha x p-dimenziós diszkrét valószínűségi vektorváltozó  komponenseinek értékkészlete
+folytonos valószínűségi vektorváltozó 
+az x folytonos valószínűségi vektorváltozó sűrűségfüggvénye
+az x folytonos valószínűségi vektorváltozó peremsűrűségfüggvénye
+kovariancia
+korrelációs együttható
+ha x,y valószínűségi változókra r x, y 0= , akkor azt mondjuk, hogy x és y korrelálatlanok. (t) r x, y()1=  ↔ = , vagyis a két valószínűségi változó  között lineáris kapcsolat áll fenn. )((+p y ax b(=)1)továbbá ekkor teljesül, hogy
+várhatóérték-vektor
+kovarianciamátrix
+diszkrét valószínűségi változók feltételes eloszlása
+diszkrét valószínűségi változók feltételes várható értéke
+folytonos valószínűségi változók feltételes eloszlásfüggvénye
+folytonos valószínűségi változók feltételes sűrűségfüggvénye
+folytonos valószínűségi változók regressziója
+lineáris regresszió
+xn 1 valószínűséggel konvergál x-hez, ha ω
+xn lr normában konvergál x-hez, ha lim e x x→∞n(d) xn sztochasztikusan konvergál x-hez, ha n−0
+xn eloszlásban konvergál x-hez, ha lim fnx→∞n( )t=( )f tx minden olyan  t ∈ r , ahol ( )xf t  folytonos, vagyis nxf( )t pontonként konvergál xf t -hez. jele
+a  z x iy=+ komplex értékű valószínűségi változó  várható értéke az  { }e z={ }{ }e x ie y+ komplex szám.  karakterisztikus függvénye az x sűrűségfüggvény-ének fourier-{e cos xt(})+ie sin xt({})∞= ∫−∞fx()x e dxitx. (d) karakterisztikus függvény.
+

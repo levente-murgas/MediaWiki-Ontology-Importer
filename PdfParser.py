@@ -41,7 +41,7 @@ def extract_pdf_to_txt(path,save_to):
 
 def read_file_to_str(filename):
     with open(filename,"r", encoding="utf-8") as f:
-        return f.read().replace('\n', '')
+        return f.read().replace('\n', '').lower()
 
 # URL_1 = "https://cgit.freedesktop.org/libreoffice/dictionaries/tree/hu_HU/hu_HU.dic"
 # response = requests.get(URL_1)
@@ -65,6 +65,6 @@ h = Hunspell('hu_HU',system_encoding='UTF-8').stem
 word_list = word_tokenize(text_str)
 for word in word_list:
     stem = h(word)
-    print(stem)
     if stem not in punctuations:
         stemmed_words.append(stem)
+print(stemmed_words)
