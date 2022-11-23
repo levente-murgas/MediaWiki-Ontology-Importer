@@ -1,0 +1,524 @@
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+34
+
+7. Folytonos együttes eloszlás és konvolúció
+
+A valószínűségi változó fogalmának bevezetésekor először a diszkrét esetet vizsgáltuk meg, majd
+ezután következtek a folytonos valószínűségi változók. Az együttes eloszlás esetében hasonló utat járunk
+be: korábban megnéztük, hogy lehet leírni két diszkrét valószínűségi változó együttes viselkedését,
+függetlenségét; most ugyanezt tesszük folytonos valószínűségi változókkal.
+
+A fejezet végén még egy módszerrel bővítjük eszköztárunkat, amivel meghatározhatjuk két független
+valószínűségi változó összegének eloszlását. Ezt az eloszlást hívják az eredeti két eloszlás konvolúció-
+jának. Első hangzásra talán nem érződik a feladat komplikáltsága, hiszen összeadni nem lehet olyan
+nehéz. A harmadik alfejezetben először kiderül, hogy ez miért mégis, majd hogy miért mégsem olyan
+nehéz.
+7.1. Valószínűségi vektorváltozók
+
+Sokszor találkozhatunk olyan esettel, ahol több valószínűségi változóról kell egyszerre beszélnünk.
+Vagy azért, mert a két véletlen mennyiség viszonyát vizsgáljuk (pl. véletlen program futásideje és
+memóriahasználata), vagy azért mert a változónk nem írható le egy paraméterrel (pl. egy drón helyzete
+a térben). Mindkét esetben természetes ötlet vektorként kezelni a valószínűségi változóinkat.
+7.1.1. Deﬁníció. Legyenek X1, . . . , Xn valószínűségi változók valamilyen n pozitív egész esetén. Ek-
+def= (X1, . . . , Xn) : Ω → Rn függvényt valószínűségi vektorváltozónak hívjuk. Az X
+kor az X
+(együttes) eloszlásfüggvénye az
+FX : Rn → [0, 1]
+
+FX(x1, . . . , xn) = P(X1 < x1, . . . , Xn < xn)
+
+vektorváltozós, skalárértékű függvény.
+7.1.2. Példa. Két ismerősünkkel, Aladárral és Bélával beszélgetünk külön-külön valamilyen csevegő-
+programmal. Ha épp meccs van, akkor Aladár dupla annyi idő alatt reagál (hiszen nézi a meccset),
+míg Béla feleannyi idő alatt (mondjuk mert arról panaszkodik, hogy a saját gondolatát sem hallja a
+szomszédból áthallatszó üvöltés miatt). Tegyük fel, hogy alapesetben, azaz ha nincs meccs, egymástól
+függetlenül, exponenciális eloszlás szerint válaszolnak, λ = 6 paraméterrel.28 Annak az esélye, hogy
+meccs van 1
+Jelölje X Aladár válaszidejét, Y pedig Béláét, továbbá legyen M az az esemény, hogy meccs van.
+(Itt most X skalár valószínűségi változó, nem vektor, mint korábban.) Legyen Z az alábbi valószínűségi
+változó:
+
+5. Mi a válaszadásuk együttes eloszlása?
+
+(2 ha meccs van,
+
+1
+
+egyébként.
+
+Z =
+
+A feltételek szerint létezik U és V , amire
+
+X = U · Z és Y = V /Z,
+
+ahol U, V ∼ Exp(6) függetlenek egymástól és M-től.
+
+Ha x, y > 0, akkor a teljes valószínűség tétele miatt
+
+Itt felhasználhatjuk, hogy M, illetve M meghatározza Z értékét, továbbá U és V függetlenek, emiatt
+
+F(X,Y )(x, y) = P(X < x, Y < y) = P(U · Z < x, V /Z < y) =
+
+= P(U · Z < x, V /Z < y | M)P(M) + P(U · Z < x, V /Z < y | M)P(M).
+2 )P(V < 2y)1
+5 = P(U <
+5+
+5 + (1 − e−6x)(1 − e−6y)4
+5 .
+
+5 + P(U < x, V < y)4
+2 )(1 − e−6·2y)1
+
+= P(U · 2 < x, V /2 < y)1
+P(U < x)P(V < y)4
+
+5 = (1 − e−6 x
+
+x
+
+Ha pedig x ≤ 0 vagy y ≤ 0, akkor F(X,Y )(x, y) = 0.
+
+28Hogy reális-e feltenni az exponenciális eloszlást, az a körülményektől is függ. Lásd például [article] Estimating
+
+response time in Twitter
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+35
+
+Folytonos esetben – az egyváltozós esethez hasonlóan – deﬁniáljuk egy valószínűségi vektorváltozó
+
+együttes sűrűségfüggvényét is.
+7.1.3. Deﬁníció. Legyen X = (X1, . . . , Xn) valószínűségi vektorváltozó. Egy fX : Rn → [0,∞)
+függvény az X (együttes) sűrűségfüggvénye, ha fX-nek létezik az improprius Riemann-integrálja
+Rn-en, és
+
+fX(z1, . . . , zn)dz1 . . . dzn = FX(x1, . . . , xn)
+
+tetszőleges x1, . . . , xn ∈ R esetén. X-et folytonosnak hívjuk, ha létezik együttes sűrűségfüggvénye.
+7.1.4. Állítás. Legyen X = (X1, . . . , Xn) valószínűségi vektorváltozó. Ha X folytonos, akkor az alábbi
+függvény az X sűrűségfüggvénye:
+
+Z xn
+
+−∞
+
+···
+
+Z x1
+
+−∞
+
+(
+
+fX(x1, . . . , xn) =
+
+∂x1 . . . ∂xn FX(x1, . . . , xn) ha ez létezik,
+0
+
+egyébként.
+
+(A deriválások tetszőleges sorrendben elvégezhetők.)
+Megjegyzés. Az egyváltozós állítással ellentétben az állításnak feltétele, nem pedig következménye, hogy
+a sűrűségfüggvény létezzen (azaz X folytonos legyen). Például, ha X1 = X2, ahol X1 egyenletes elosz-
+lású a [0, 1] intervallumon, akkor F(X1,X2) folytonos, és néhány egyenes kivételével 2-szer folytonosan
+diﬀerenciálható, mégis ∂x1 ∂x2 F(X1,X2)(x1, x2) = 0, ami nyilván nem lehet sűrűségfüggvény. Vagyis az
+(X1, X2) vektorváltozónak X1 = X2 esetén nincs együttes sűrűségfüggvénye.
+
+Az egyváltozós esethez hasonlóan a többváltozós sűrűségfüggvények is karakterizálhatók.
+
+o
+
+7.1.5. Állítás.
+
+Legyen f : Rn → [0,∞). Ekkor
+
+Z ∞
+
+Z ∞
+
+···
+
+−∞
+
+−∞
+
+f(x1, . . . , xn)dx1 . . . dxn = 1.
+
+pontosan akkor teljesül, ha létezik X = (X1, . . . , Xn) valószínűségi vektorváltozó, aminek f sűrűség-
+függvénye.29
+
+Hogy nézett ki az együttes eloszlás diszkrét esetben? Ott nem együttes sűrűségfüggvényről beszél-
+tünk, simán csak a P(X = x, Y = y) értékekből álló táblázatról, mint együttes eloszlásról. Az előző
+állítás megfelelője, hogy a táblázatban szereplő számok összege 1.
+Mire jó az együttes sűrűségfüggvény? Amikor Z egyváltozós, akkor többek közt a P(a < Z < b)
+
+alakú valószínűségeket lehetett kiszámolni vele. Ez a szerepe többváltozós esetben is megmarad:
+7.1.6. Állítás. Legyen H ⊆ Rn Jordan-mérhető halmaz és X = (X1, . . . , Xn) valószínűségi vektorvál-
+tozó. Ekkor
+
+7.1.7. Példa. A fenti példára visszatérve, mi az esélye, hogy Aladár előbb ír vissza, mint Béla. Az
+első állítás szerint x illetve y szerinti deriválással kaphatjuk a sűrűségfüggvényt, ha az létezik:
+
+H
+
+fX(x)dx.
+
+P(X ∈ H) =
+
+Z
+(3e−3x · 12e−12y 1
+5 + 6e−6x · 6e−6y 4
+Z y
+Z ∞
+
+(cid:16)3e−3x · 12e−12y
+
+0
+
+5
+
+0
+
+0
+
+f(X,Y )(x, y) =
+
+Z
+
+P(X < Y ) =
+
+f(X,Y )(x, y)dxdy =
+
+{x<y}
+
+ha x, y > 0,
+egyébként.
+
+1
+5 + 6e−6x · 6e−6y
+
+4
+5
+
+(cid:17)dxdy,
+
+Integrálással leellenőrizhető, hogy ez valóban (X, Y ) sűrűségfüggvénye, ettől most eltekintünk. Innen
+a keresett valószínűség:
+
+29Az együttes eloszlásfüggvények is karakterizálhatók, de a leírásuk komplikáltabb szerkezetű, mint az egyváltozós
+
+esetben.
+
+Z ∞
+
+Z ∞
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+36
+
+amiről némi számolás után kiderül, hogy 0,44 (nem csak kerekítve).
+
+Hiányzó fogalom még a marginális eloszlás.
+
+7.1.8. Deﬁníció. Ha X = (X1, . . . , Xn) valószínűségi vektorváltozó, akkor az Xi valószínűségi változó
+eloszlását az X i-edik marginális eloszlásának (vagy peremeloszlásának) hívjuk.
+7.1.9. Állítás. Ha X = (X1, . . . , Xn) folytonos valószínűségi vektorváltozó, akkor Xi is folytonos,
+sűrűségfüggvénye:
+
+fXi
+
+Z ∞
+5 e−12y(cid:2) − e−3x(cid:3)∞
+−∞
+= 12
+
+0
+
+Z ∞
+(cid:16)3e−3x · 12e−12y
+5 e−6y(cid:2) − e−6x(cid:3)∞
++ 24
+
+0
+
+···
+
+(xi) =
+
+fX(x1, . . . , xn)dx1 . . . dxi−1dxi+1 . . . dxn
+Vagyis az együttes sűrűségfüggvény xi-től eltérő változói szerinti integrálja.
+7.1.10. Példa. A fenti példában (X, Y ) együttes eloszlának marginálisa például az Y eloszlása, azaz
+
+(∀xi ∈ R).
+
+−∞
+
+−∞
+
+fY (y) =
+
+f(X,Y )(x, y)dx =
+
+1
+4
+5 + 6e−6x · 6e−6y
+5
+5 e−12y + 24
+= 12
+5 e−6y,
+ha y > 0, és 0 egyébként. Y eloszlása egy úgynevezett kevert exponenciális eloszlás.
+Megjegyzés. Valószínűségi vektorváltozókról és azok együttes eloszlásfüggvényéről akkor is van értelme
+beszélni, ha a X1, . . . , Xn diszkrét. A sűrűségfüggvény esetében nem ez a helyzet. Sőt, ha X1 és X2
+külön-külön folytonos, akkor sem feltétlenül van együttes sűrűségfüggvényük. Lásd az előző megjegy-
+zésben szereplő példát.
+7.2. Vektorváltozók függetlensége
+
+0
+
+(cid:17)dx =
+
+Valószínűségi változók viszonyának szempontjából speciális eset, amikor a változók függetlenek. Két
+valószínűségi változó függetlenségét a hatodik fejezetben már deﬁniáltuk. Bár ott elsősorban diszkrét
+eloszlásokról volt szó, a deﬁníció nem feltétlenül diszkrét változókra is értelmes. Ezt általánosítja a
+következő deﬁníció.
+7.2.1. Deﬁníció.
+
+Az X1, . . . , Xn valószínűségi változók (együttesen) függetlenek, ha az
+
+o
+
+események függetlenek minden x1, . . . , xn ∈ R esetén.
+
+{X1 < x1}, . . . ,{Xn < xn}
+
+A továbbiakban az „együttesen” kitételt hanyagoljuk. Ha nem együttes függetlenségről beszélünk
+
+(hanem mondjuk páronkénti függetlenségről), azt külön jelezzük.
+Hogy lehet n valószínűségi változó együttes függetlenségét ellenőrizni? Diszkrét esetben ehhez az
+egyes {Xi = xi} események valószínűségét vizsgáltuk. Amikor az P(Xi = xi) valószínűségek szorzata
+minden paraméterválasztásra megegyzett az események metszetének valószínűségével, az bizonyította
+a változók függetlenségét. Folytonos esetben ez nem járható út. Helyette a következőt mondhatjuk:
+7.2.2. Állítás. Az X1, . . . , Xn valószínűségi változók pontosan akkor függetlenek, ha
+
+F(X1,...,Xn)(x1, . . . , xn) = FX1(x1) · . . . · FXn
+
+(xn)
+
+minden x1, . . . , xn ∈ R esetén.
+
+A fenti állítás, bár hasznos folytonos valószínűségi változókra, de nem csak rájuk érvényes. Ugyanúgy,
+ahogy az eloszlásfüggvény sem csak folytonos valószínűségi változókra deﬁniált, a fenti tétel is teljesül
+tetszőleges X1, . . . , Xn valószínűségi változók esetén.
+A folytonos esetre visszatérve: vannak feladatok, amikor az eloszlásfüggvény nem áll rögtön rendel-
+kezésünkre, viszont az együttes sűrűségfüggvény igen. Ilyenkor a következő állítást tudjuk használni.
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+37
+
+7.2.3. Állítás. Legyenek X1, . . . , Xn folytonos valószínűségi változók. Ezek pontosan akkor függetlenek,
+ha (X1, . . . , Xn) folytonos valószínűségi vektorváltozó, és
+
+f(X1,...,Xn)(x1, . . . , xn) = fX1(x1) · . . . · fXn
+
+(xn)
+
+minden x1, . . . , xn ∈ R esetén.
+
+Röviden, független valószínűségi változók együttes sűrűségfüggvénye szorzattá bomlik. Speciálisan,
+
+ilyen esetben létezik az együttes sűrűségfüggvény.
+7.2.4. Példa. A korábbi példa feltételei mellett igaz-e, hogy Aladár válaszideje független Béláétól?
+Ezt az előző állítás segítségével ellenőrizhetjük. Legyen x, y > 0. A korábbiak szerint
+5 e−12y + 24
+
+f(X,Y )(x, y) = 3e−3x · 12e−12y
+
+1
+5 + 6e−6x · 6e−6y
+
+fY (y) = 12
+
+5 e−6y,
+
+4
+5
+
+és
+
+illetve az fY -hoz hasonlóan kiszámolható, hogy
+fX(x) = 3
+
+Tehát X és Y nem függetlenek, hiszen
+
+fX(x) · fY (y) =(cid:16)3
+
+5 e−6x.
+
+5 e−3x + 24
+5 e−6x(cid:17)(cid:16)12
+
+5 e−3x + 24
+
+5 e−6y(cid:17)
+
+5 e−12y + 24
+
+nem ugyanaz, mint
+
+f(X,Y )(x, y) = 3e−3x · 12e−12y
+
+1
+5 + 6e−6x · 6e−6y
+
+4
+5 ,
+
+csak speciális x, y esetén, pedig a függetlenséghez az fX(x)·fY (y) = f(X,Y )(x, y) egyenlőségnek minden
+x, y esetén teljesülnie kellene.
+7.3. Konvolúció
+
+Amióta bevezettük a várható érték fogalmát, a legsűrűbben használt tulajdonsága, hogy additív,
+azaz E(X + Y ) = EX + EY . Ez teljesült akkor is, ha X és Y függetlenek, de akkor is, ha nem. Ez
+alapján azt is gondolhatnánk, hogy akkor az X + Y valószínűségi változó eloszlásának meghatározása
+is magától értetődő feladat. Ha mást nem, legalább akkor, ha X és Y függetlenek. Nézzünk néhány
+példát, hogy ez mennyire nincs így.
+7.3.1. Példa.
+
+(1) Legyen X ∼ B(n; p) binomiális eloszlású. Tudjuk, hogy ekkor X független indikátor valószínű-
+ségi változók összege, azaz olyan valószínűségi változóké, amik csak 1 vagy 0 értéket vehetnek
+fel. Látható, hogy hiába a lehető legegyszerűbb a kiindulási változók eloszlása, amik még füg-
+getlenek is, X eloszlása náluk lényegesen összetettebb.30
+(2) Legyenek X és Y független, Geo(p) eloszlású valószínűségi változók, és Z = X +Y (ami például
+egy központba beérkező második telefonhívásig eltelt másodpercek számát jelöli). Ekkor X +Y
+nem geometriai, hanem úgynevezett negatív binomiális eloszlású, r = 2 rend-paraméterrel.
+(3) Legyenek U és V független, egyenletes eloszlású valószínűségi változók a [0, 1] intervallumon. Mi
+U + V eloszlása? Elsőre talán rámondanánk, hogy egyenletes a [0, 2] intervallumon. Ez viszont
+nem igaz, mégpedig ugyanazon okból nem, amiért két kockadobás összege sokkal gyakrabban
+lesz 7, mint 12. Az eredmény neve Irwin–Hall-eloszlás, n = 2 paraméterrel.
+
+7.3.2. Deﬁníció. Legyenek X és Y független valószínűségi változók. Ekkor X + Y eloszlását az X és
+Y eloszlásai konvolúciójának hívjuk.
+
+30Aki úgy gondolná, hogy a binomiális eloszlás nem túl összetett, az megpróbálhatja meggyőzni magát az előző
+
+fejezetben szereplő de Moivre–Laplace-tétel segítségével.
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+38
+
+7.3.3. Állítás. Legyenek X és Y független, diszkrét valószínűségi változók, amik értékei nemnegatív
+egész számok. Ekkor
+
+minden k ∈ N esetén.
+Bizonyítás. A bizonyításhoz csak a valószínűség additivitását kell felhasználjuk:
+
+i=0
+
+P(X + Y = k) =
+
+kX
+P(X + Y = k) = P(cid:16) [
+P(cid:16){X = i} ∩ {Y = k − i}(cid:17) =
+
+i+j=k
+
+P(X = i)P(Y = k − i)
+
+{X = i} ∩ {Y = j}(cid:17) =
+kX
+
+P(X = i)P(Y = k − i).
+
+i=0
+
+kX
+
+=
+
+i=0
+
+(cid:3)
+7.3.4. Példa. Legyenek X és Y független valószínűségi változók, amire X ∼ Pois(λ) és Y ∼ Pois(µ).
+Mi X + Y eloszlása? A fenti állítás szerint
+
+kX
+
+P(X + Y = k) =
+
+= e−(λ+µ)
+
+λi
+
+P(X = i)P(Y = k − i) =
+k! · i! · (k − i)! λiµk−i = e−(λ+µ) 1
+
+i! e−λ µk−i
+k!(λ + µ)k,
+
+k!
+
+i=0
+
+(k − i)! e−µ =
+
+kX
+kX
+
+i=0
+
+i=0
+
+felhasználva a binomiális tételt. Vegyük észre, hogy az eredmény Pois(λ + µ) eloszlású.
+
+A konvolúció kiszámolása folytonos esetben valamivel komolyabb feladat. Itt a fentebb összegzett
+i és k − i párok kontinuum sokan vannak, így a szummát integrál, a valószínűségi változó eloszlását
+pedig a sűrűségfüggvény helyettesíti.
+7.3.5. Állítás.
+
+Legyenek X és Y független, folytonos valószínűségi változók. Ekkor a
+
+o
+
+Z ∞
+
+−∞
+
+Z ∞
+
+−∞
+
+z 7→
+
+fX(x)fY (z − x)dx
+
+függvény az X + Y sűrűségfüggvénye.
+7.3.6. Példa. Legyenek X és Y független, Exp(λ) eloszlású valószínűségi változók. Az előző állítás
+szerint
+
+fX+Y (z) =
+
+fX(x)fY (z − x)dx =
+
+=
+
+λe−λxλe−λ(z−x)dx = λ2e−λz
+
+1dx = λ2e−λzz
+
+Z z
+
+0
+
+Z z
+
+0
+
+minden z > 0 esetén. Az így kapott eloszlás neve gamma-eloszlás.
+
+

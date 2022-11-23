@@ -1,0 +1,599 @@
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+18
+
+4. Folytonos valószínűségi változók
+
+Eddig olyan valószínűségi változókról beszéltünk, amik értékei egy véges, vagy megszámlálhatóan
+végtelen halmazt alkotnak, tipikusan az egész számok valamely részhalmazát. Vannak viszont olyan
+véletlen mennyiségek, amiket célszerű úgy modellezni, hogy bármilyen valós értéket felvehessenek. Ilyen
+sok ﬁzikai mennyiség, vagy valamely történés bekövetkezéséig eltelt idő. Most ezekről lesz szó.
+4.1. Eloszlásfüggvény
+
+A feladatokban már előfordult, hogy választottunk egy számot „egyenletesen véletlenszerűen” egy
+intervallumból, esetleg egy pontot egy kétdimenziós alakzatból. Ezek éppen olyan véletlen mennyisé-
+gek – a múlt heti szóhasználattal valószínűségi változók –, amik nem diszkrétek, azaz nem csak egy
+megszámlálhatóan végtelen halmazból vesznek fel értékeket.
+
+Ez miért probléma? Amikor X egy diszkrét valószínűségi változó, akkor őt le tudjuk írni az eloszlása
+
+segítségével, vagyis a
+0 és 1 közti számokból álló sorozattal, ahol k1, k2, . . . az X lehetséges értékei. Legyen most X egy
+egyenletesen véletlen szám a [0, 1] intervallumból. Ez alatt azt értjük, hogy X olyan valószínűségi
+változó, amire P(X ≤ t) = t ha t ∈ [0, 1], például P(X ≤ 1
+2. Ekkor P(X = k) = 0 bármilyen k
+esetén, vagyis a fenti (diszkrét értelemben vett) eloszlás lényegében semmit nem mond a valószínűségi
+változóról.
+
+P(X = k1), P(X = k2), . . .
+
+Erre mondhatnánk, hogy „Oké, de a változót akkor is leírja, hogy a [0, 1]-ből veszi fel az értékeit,
+
+így elég, ha ezzel a tulajdonsággal hivatkozunk rá.” A következő példa mutatja, hogy miért nem.
+4.1.1. Példa. Legyen X egy egyenletesen véletlen szám a [0, 1] intervallumból, és nézzük az Y = X2
+valószínűségi változót. Ekkor Y értékei szintén a [0, 1] intervallumból valók, de Y mégsem ugyanúgy
+működik, mint X. Hiszen egyrészt P(X ≤ 1
+
+2) = 1
+
+P(cid:16)
+
+Y ≤ 1
+2
+
+(cid:17) = P(cid:16)
+
+2, másrészt
+
+(cid:17) = P(cid:16)
+
+2) = 1
+X2 ≤ 1
+2
+
+X ≤ 1√2
+
+(cid:17) = 1√2 .
+
+Vagyis Y nagyobb eséllyel vesz fel kisebb értékeket, az „eloszlása jobban koncentrálódik a 0 körül, mint
+X eloszlása”. Mindjárt tisztázzuk, hogy ez mit is jelent.
+
+Általánosan, az X eloszlását az ún. eloszlásfüggvénye segítségével írhatjuk le.
+
+o
+
+4.1.2. Deﬁníció.
+
+Legyen X valószínűségi változó. Ekkor az
+
+FX : R → [0, 1]
+függvényt az X eloszlásfüggvényének hívjuk.
+
+FX(x) = P(X < x)
+
+nűségi változó), ezért van értelme beszélni a P(X < x) valószínűségről.
+
+Vegyük észre, hogy {X < x} eleme F-nek, azaz esemény (mivel X valószí-
+A fenti példában szereplő X és Y eloszlásfüggvényei:
+
+FX(x) = P(X < x) =
+
+0 ha x ≤ 0,
+
+x ha x ∈ (0, 1],
+1 ha x > 1,
+
+FY (x) = P(Y < x) = P(X2 < x) = P(X <
+
+√
+
+x) =
+
+0
+
+√
+1
+
+ha x ≤ 0,
+
+x ha x ∈ (0, 1],
+
+ha x > 1.
+
+Nézzük, mit tud általánosan egy eloszlásfüggvény. Egyrészt világos, hogy
+
+FX(b) − FX(a) = P(X < b) − P(X < a) = P(a ≤ X < b)
+
+tetszőleges a < b valós számokra, P additivitása miatt. Az eloszlásfüggvények karakterizálhatók is.
+
+19
+Egy F : R → [0, 1] függvény akkor és csak akkor eloszlásfüggvénye valamilyen valószí-
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+o
+
+4.1.3. Állítás.
+nűségi változónak, ha
+
+(1) F (nem feltétlenül szigorúan) monoton növő,
+(2) F balról folytonos, azaz minden x-re az F baloldali határértéke x-ben F(x),
+(3) limx7→−∞ F(x) = 0 és limx7→∞ F(x) = 1.
+A balról folytonosság közel sem jelent folytonosságot. Például
+diszkrét valószínűségi változók eloszlásfüggvénye sosem folytonos.
+Igen, eloszlásfüggvény diszkrét esetben is mindig van, és ez is balról
+folytonos, de jobbról nem. Például egy kockadobás, mint valószínűségi
+változó, eloszlásfüggvényét lásd jobbra.
+Bizonyítás. Legyen X valószínűségi változó, és x < y. Belátjuk, hogy
+FX-re igaz a fenti három feltétel. Valóban, FX monoton növő, hiszen
+{X < x} ⊆ {X < y}, ezért
+
+FX(x) = P(X < x) ≤ P(X < y) = FX(y),
+felhasználva a valószínűségi mezőről szóló 1.3 alfejezet következményét.
+Nézzük a második tulajdonságot. Az FX balról folytonossága ekvivalensen azt jelenti (átviteli elv),
+hogy bármely monoton növő (xn)n∈N sorozatra, amire xn 6= x és xn → x, teljesülnie kell, hogy
+limn→∞ FX(xn) = FX(x). Megmutatjuk, hogy ez valóban teljesül. Egyrészt
+
+lim
+n→∞ FX(xn) = lim
+n→∞
+
+P(X < xn) = P(X < x0) + lim
+n→∞
+
+{X < x0} ∪Sn
+
+felhasználva a valószínűség additivitását, illetve hogy {X < xn} = {X < x0} ∪ {x0 ≤ X < xn} =
+
+k=1{xk−1 ≤ X < xk}. A második tag a következőképp alakítható át:
+
+P(cid:16) n[
+
+{xk−1 ≤ X < xk}(cid:17)
+
+,
+
+k=1
+
+P(cid:16) n[
+
+{xk−1 ≤ X < xk}(cid:17) = lim
+
+n→∞
+
+nX
+
+k=1
+
+lim
+n→∞
+
+k=1
+
+P(xk−1 ≤ X < xk) = P(x0 ≤ X < x),
+
+felhasználva a valószínűség σ-additivitását, illetve hogy ∪∞
+k=1{xk−1 ≤ X < xk} = {x0 ≤ X < x}. Ezt
+visszahelyettesítve az előző egyenletbe azt kapjuk, hogy limn→∞ FX(xn) = P(X < x0) + P(x0 ≤ X <
+x) = P(X < x) = FX(x).16 Hasonló okból teljesül a harmadik feltétel is.17
+Visszafelé, legyen adott F, ehhez keresünk egy megfelelő X valószínűségi változót, amire F = FX.
+Legyen U egy egyenletesen véletlen szám a [0, 1] intervallumból.18 Deﬁniáljuk az X-et, mint
+
+Ekkor az X és az inﬁmum deﬁníciója miatt
+
+X = inf{y ∈ R | U < F(y)}.
+
+P(X < x) = P(cid:0) inf{y ∈ R | U < F(y)} < x(cid:1) =
+= P(van y ∈ R, amire y < x és U < F(y)(cid:1).
+P(X < x) = P(cid:0)U < F(x)(cid:1) = F(x),
+
+Belátható, hogy ilyen y pontosan akkor létezik, ha U < F(x). Valóban, ha van ilyen y, akkor U <
+F(y) ≤ F(x), mivel F monoton növő. Megfordítva, ha U < F(x), akkor F balról folytonossága miatt
+van x-hez elég közel egy y, amire U < F(y) szintén teljesül. Következésképp:
+
+hiszen 0 ≤ F(x) ≤ 1, és a példában láttuk, hogy P(U < z) = z bármilyen 0 < z < 1 szám esetén. Ezzel
+(cid:3)
+az állítást beláttuk.
+
+16Ezzel az érveléssel kaphatjuk, hogy az FX jobboldali határértéke x-ben P(X ≤ x).
+17A hasonló ok neve a valószínűség folytonossági tulajdonsága.
+18Azt illenék bebizonyítani, hogy ilyen egyenletesen véletlen szám, mint valószínűségi változó, valóban létezik. Ennek
+
+a precíz leírása támaszkodik a Lebesgue-mérték fogalmára, így ettől most eltekintünk.
+
+o
+
+4.2. Sűrűségfüggvény
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+20
+
+Most a valószínűségi változók másik fontos hozzárendelt függvényét vizsgáljuk: a sűrűségfüggvényét.
+Ennek többek közt az az oka, hogy az eloszlásfüggvény graﬁkonjáról nem feltétlenül könnyű leolvasni a
+valószínűségi változó tulajdonságait. Szó volt már például az X és X2 változókról, ahol X egyenletesen
+véletlenszerű [0, 1]-en. Meg tudjuk-e mondani az eloszlásfüggvény ábrája alapján, melyik szám 0,01
+sugarú környezetében lesz a legnagyobb eséllyel X2? Vagy hogy hányszor akkora eséllyel lesz az X2
+értéke az 1
+Az első kérdésre hamar rávághatjuk, hogy 0-nál (egész pontosan 0,01-nél), hiszen ott nő a legme-
+redekebben az eloszlásfüggvény, más szavakkal az ottani x-ek járulnak hozzá leginkább az FX2(x) =
+P(X2 < x) valószínűség növekedéséhez. A második kérdés valamivel trükkösebb, a válasz √3, amihez
+az eloszlásfüggvény érintőinek meredekségeit kell összehasonlítsuk, lásd lejjebb. Vegyük észre, hogy
+mindkét esetben a meredekségeket kell vizsgáljuk.
+
+4 kis környezetében, mint 3
+
+4 kis környezetében?
+
+Ha valakinek rossz előérzete lenne az „érintő meredeksége” szókapcsolat hallatán, megnyugtatnám,
+deriválni fogunk. Hiszen az első példa is éppen azt mutatja, hogy az eloszlásfüggvény meredekségeinek
+függvénye, azaz deriváltfüggvénye lenne hasznunkra. Már amennyiben létezne, csakhogy 0-ban és 1-ben
+FX2 nem deriválható. Ezt a problémát megkerülendő, a deriválás egyik általánosítását fogjuk használni,
+ami a „jó-lesz-az-úgy” ﬁlozóﬁát követve egyszerűen nem foglalkozik azzal, hogy a függvény egy-egy
+pontban nem deriválható (ha a függvény legalább folytonos). Ez nem fogja elrontani a számításainkat.
+valós fX : R → R függvény, amire az R ∞
+Egy X valószínűségi változót folytonosnak nevezünk, ha létezik olyan nemnegatív,
+−∞ fX(z)dz improprius Riemann-integrál véges19, és minden
+Z x
+
+4.2.1. Deﬁníció.
+x ∈ R esetén
+
+fX(z)dz = FX(x),
+
+−∞
+
+ahol az integrál improprius Riemann-integrál. Az fX függvényt az X sűrűségfüggvényének hívjuk.
+A deﬁníció nem túl konstruktív: a feltételként adott integrálokból nehéz kiszámolni fX-et. Sőt,
+valójában azt sem biztosítja, hogy a sűrűségfüggvény egyértelmű legyen, hiszen ha f sűrűségfüggvénye
+X-nek, akkor az is sűrűségfüggvény, ha f-et megváltoztatjuk egy ponton (hiszen az integrálok nem
+változnak). Hogyan lehet akkor kiszámolni valamit, ami nem is egyértelmű?
+
+4.2.2. Állítás. Ha FX folytonos és végessok pont kivételével mindenhol deriválható, akkor X folytonos
+valószínűségi változó, és az
+
+(
+
+f(x) =
+
+(x)
+
+F 0
+0
+
+X
+
+ha FX deriválható x-ben,
+egyébként
+
+(x ∈ R)
+
+0
+
+(1 ha 0 < x < 1,
+(cid:1)/fX2(cid:0) 3
+
+egyébként,
+
+4
+
+4
+
+függvény sűrűségfüggvénye X-nek.
+4.2.3. Példa. Az állítás szerint a fenti [0, 1]-en egyenletes eloszlású X esetében
+ha 0 < x < 1,
+egyébként
+
+( 1
+
+fX2(x) =
+
+fX(x) =
+
+és
+
+2
+0
+
+√
+
+x
+
+(x ∈ R)
+
+függvények sűrűségfüggvényei X-nek és X2-nek. Szemléletesen a sűrűségfüggvény értékei annak az
+esélyét jelölik, hogy az X változó a x érték kis környezetébe esik20. Így az alfejezet elején feltett
+
+második kérdés válasza fX2(cid:0) 1
+
+(cid:1) = 1
+
+(cid:14) 1√
+
+1
+
+= √3.
+
+3
+
+19Általánosabban Lebesgue-integrálható sűrűségfüggvényről is beszélhetnénk. Most nem fogunk.
+20Feltéve, hogy a sűrűségfüggvény épp folytonos. Ha egy-egy pontban megszüntethető szakadása van fX2-nek, akkor
+
+a pontbeli értékének nincs jelentéstartalma.
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+21
+
+Megjegyzés. Mi most nem fogunk ilyen esetekkel foglalkozni, de egy valószínűségi változó lehet olyan,
+ami nem diszkrét, de nem is folytonos (például egy indikátor változó és egy folytonos szorzata). Sőt az
+sem igaz, hogy ha FX folytonos, abból következne, hogy X is folytonos (bár a megfordítottja teljesül:
+egy folytonos változó eloszlásfüggvénye folytonos). Az ilyen kényelmetlen eseteket most tegyük félre.
+
+A sűrűségfüggvény praktikus haszna jóval nagyobb annál, mint
+hogy a fenti kis környezetekről információval szolgál. Nézzük tehát
+a tulajdonságait.
+4.2.4. Állítás. Legyen X folytonos valószínűségi változó. Ekkor min-
+den a < b valós szám esetén
+
+P(a < X < b) =
+
+fX(x)dx.
+
+Z b
+
+a
+
+Bizonyítás. A valószínűség additivitása miatt
+
+P(a < X < b) = P(X < b) − P(X < a) − P(X = a) =
+
+Z b
+
+fX(x)dx,
+ahol felhasználtuk, hogy az integrálás additív az integrálási intervallumban.
+
+fX(x)dx − 0 =
+
+fX(x)dx −
+
+−∞
+
+−∞
+
+=
+
+Az eloszlásfüggvényhez hasonlóan a sűrűségfüggvények is karakterizálhatók.
+
+Z b
+
+a
+
+(cid:3)
+
+Z a
+
+Z ∞
+
+−∞
+
+(0
+
+o
+
+o
+
+4.2.5. Állítás.
+valószínűségi változó, aminek az f sűrűségfüggvénye, ha f Riemann-integrálható és
+
+Egy nemnegatív f : R → R függvényhez akkor és csak akkor létezik X folytonos
+
+f(x)dx = 1.
+
+Az világos, hogy ha X folytonos valószínűségi változó, akkor fX-re teljesül az egyenlet. A visszafelé
+
+irányt nem bizonyítjuk.
+Feladat. Jelölje egy alkatrész élettartamát Z (órákban számolva). Ha Z eloszlásfüggvénye
+
+FZ(x) =
+
+1 − 100
+
+x
+
+ha x ≤ 100,
+ha x > 100,
+
+akkor mi a valószínűsége, hogy az alkatrész nem romlik el az első 150 órában?
+4.3. Várható érték, folytonos eset
+
+Előző előadáson deﬁniáltuk nemnegatív valószínűségi változók várható értékét:
+
+E(X) def=
+
+sup
+Z≤X
+
+Z egyszerű,
+
+E(Z),
+
+ahol
+
+E(Z) = X
+
+k∈Ran(X)
+
+k · P(Z = k).
+
+Vegyük észre, hogy az első deﬁníció nem csak diszkrét esetre értelmes, folytonos valószínűségi változókra
+is ad valamit, csak nehezen látszik, hogy mit. Zavaró viszont benne a nemnegativitási feltétel. Ahhoz,
+hogy megszabaduljunk ettől a feltételtől, felhasználjuk, hogy a várható érték a fenti deﬁnícióval is
+additív, ahogy egyszerű valószínűségi változókra ezt már beláttuk.
+4.3.1. Állítás.
+
+Legyenek X és Y nemnegatív valószínűségi változók. Ekkor E(X + Y ) = E(X) + E(Y ).
+Ezen azonosság segítségével deﬁniálható nem feltétlenül nemnegatív (és nem is feltétlenül egyszerű)
+
+valószínűségi változókra is a várható érték.
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+22
+
+4.3.2. Deﬁníció. Legyen X tetszőleges valószínűségi változó. Jelölje X+ = max(X, 0) az X pozitív
+részét, és X− = max(−X, 0) az X negatív részét. Ekkor X+ és X− nemnegatív valószínűségi
+változók, továbbá X = X+ − X−. Ha E(X+) < ∞ vagy E(X−) < ∞, akkor legyen
+
+ami vagy egy valós szám, vagy +∞, vagy −∞. Ha E(X+) = E(X−) = ∞, akkor a várható értéket
+nem értelmezzük.
+
+E(X) def= E(X+) − E(X−),
+
+Bár ezek a deﬁníciók értelmesek folytonos valószínűségi változókra is, nem konstruktívak, konkrét
+
+valószínűségi változó várható értékét nehéz így meghatározni. A következő állítás ezt hidalja át.
+4.3.3. Állítás. Legyen X folytonos valószínűségi változó, amire
+
+Ekkor
+(2)
+
+Az állítás feltételére azért van szükség, hogy kizárjuk azt az esetet, amikor E(X) nem deﬁniált.
+
+4.3.4. Deﬁníció. Egy X valószínűségi változó egyenletes eloszlású az (a, b) intervallumon, ha sű-
+rűségfüggvénye
+
+Z ∞
+
+−∞
+
+|t| · fX(t)dt < ∞.
+
+E(X) =
+
+t · fX(t)dt.
+
+Z ∞
+
+−∞
+
+( 1
+
+b−a
+0
+
+fX(x) =
+
+ha a < x < b,
+egyébként.
+
+Jelölése: X ∼ U(a; b).
+
+Ez valóban sűrűségfüggvény, hiszen
+
+b − a
+Egy egyenletes eloszlású valószínűségi változó várható értéke
+
+−∞
+
+f(x)dx =
+
+E(X) =
+
+x · fX(x)dx =
+
+ib
+
+a
+
+Z b
+Z b
+
+a
+
+1
+b − a
+
+x
+b − a
+
+a
+
+dx =h x
+dx =h
+
+= 1.
+
+= b − a
+b − a
+ib
+
+x2
+
+2(b − a)
+
+a
+
+= b2 − a2
+2(b − a) = a + b
+2 ,
+
+Z ∞
+Z ∞
+
+−∞
+
+ami intuitívan is világos: átlagosan az intervallum közepét kapjuk értékül.
+
+Vegyük észre, mennyire hasonlítanak a diszkrét esetre vonatkozó (1) egyenlet és a folytonos esetre
+vonatkozó (2) egyenlet. Ez azért van, mert mindkettő a várható érték általános fogalmának a realizá-
+ciója. Ez a lenti állításban is megnyilvánul, ahol párhuzamosan tárgyalhatjuk a két esetet.
+4.3.5. Állítás (Transzformált várható értéke).
+Tegyük fel, hogy E(g(X)) létezik. Ha X diszkrét, akkor
+
+Legyen X valószínűségi változó, és g : R → R függvény.
+
+o
+
+ahol Ran(X) = {k1, k2, . . .}. Ha pedig X folytonos, akkor
+
+E(g(X)) =
+
+g(kj) · P(X = kj),
+
+E(g(X)) =
+
+g(x) · fX(x)dx.
+
+4.3.6. Példa. Legyen X olyan valószínűségi változó, aminek fX : R → R sűrűségfüggvényére teljesül,
+hogy f(x) = 2e−2x ha x ∈ [0,∞), és 0 egyébként. (Ellenőrizzük le, hogy ez valóban sűrűségfüggvény.)
+Ekkor
+
+E(eX) =
+
+ex · fX(x)dx =
+
+ex2e−2xdx = 2
+
+e−xdx = 2.
+
+Z ∞
+
+−∞
+
+Z ∞
+
+0
+
+∞X
+Z ∞
+
+j=1
+
+−∞
+
+Z ∞
+
+0
+
+

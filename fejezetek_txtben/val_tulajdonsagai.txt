@@ -1,0 +1,553 @@
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+8
+
+2. A Valószínűség tulajdonságai
+
+A továbbiakban mindig feltesszük, hogy adott egy (Ω,F, P) valószínűségi mező. Ebben a fejezetben
+
+a függetlenség és a feltételes valószínűség fogalmait vesszük sorra.
+2.1. Függetlenség
+
+Korábban már foglalkoztunk azzal az esettel, amikor két esemény uniójának
+valószínűsége összeadódik (azaz P(A ∪ B) = P(A) + P(B)). Ehhez arra volt
+szükség, hogy az események kizáróak legyenek. A feladatokban viszont van
+olyan eset is, amikor a valószínűségek bizonyos feltételek teljesülése esetén
+szorzódnak.
+2.1.1. Deﬁníció.
+
+Az A és B eseményeket függetleneknek nevezzük, ha
+
+o
+
+P(A ∩ B) = P(A) · P(B).
+
+Valójában a függetlenség a kizáró eseményektől nagyban eltérő fogalom.
+
+Azt a helyzetet próbálja formalizálni, amikor a két esemény bekövetkezése nem befolyásolja egymást.
+3 eséllyel következik be (azaz átlagosan három próbálkozásból egy-
+2.1.2. Példa. Ha A esemény 1
+szer teljesül), B esemény pedig 1
+4 valószínűséggel, és nem tételezünk fel köztük kapcsolatot, akkor a
+bekövetkezésük esélyét, hétköznapi tapasztalatainkra alapozva, 1
+Vegyük észre, hogy a függetlenség a valószínűségek szintjén van megfogalmazva, így olyan események
+is lehetnek függetlenek (a fenti deﬁníció értelmében), amikről úgy érezzük „hatásuk van egymásra”.
+Például két kockadobás esetén az {első dobás 1-es} és a {két dobás megegyezik} események függetlenek.
+2.1.3. Állítás. Ha A és B függetlenek, akkor A és B is függetlenek.
+Bizonyítás. Használjuk fel a korábban belátott P(A) = P(A ∩ B) + P(A ∩ B) azonosságot. Ebből az A
+és B függetlenségével következik, hogy
+
+P(A ∩ B) = P(A) − P(A ∩ B) = P(A) − P(A)P(B) = P(A)(cid:0)1 − P(B)(cid:1) = P(A)P(B),
+
+12-nek vesszük.
+
+4 = 1
+
+3 · 1
+
+(cid:3)
+
+ami éppen a belátandó egyenlőség.
+
+Deﬁniáljuk több esemény függetlenségét is.
+
+2.1.4. Deﬁníció. Az A1, . . . , An események (együttesen) függetlenek, ha minden I ⊆ [n] esetén
+
+P(cid:16)\
+
+i∈I
+
+Ai
+
+(cid:17) =Y
+
+i∈I
+
+P(Ai).
+
+Más szavakkal az események közül valahány metszetének valószínűsége a valószínűségek szorzata.
+
+A deﬁníció túlbonyolítottnak tűnhet, de később kiderül, hogy ez a jó fogalom. Felmerülhetne, hogy
+miért nem csak az összes n eseményre követeljük meg, hogy P(A1 ∩ ··· ∩ An) = P(A1) · ··· · P(An)?
+Hiszen ha az összes esemény független, akkor közülük k is az, nem? Hát nem teljesen.8 Oké, akkor
+legyenek páronként függetlenek, abból már biztosan következik az együttes függetlenség? Sajnos ez
+sem nyert. A következő példa mutatja, mennyire alattomos fogalom az együttes függetlenség.
+2.1.5. Példa. Dobjunk fel két szabályos érmét. Legyen A1 = {első érme fej}, A2 = {második érme fej},
+A3 = {dobott fejek száma páros}. Ekkor Ai független Aj-től akármilyen i 6= j-re, viszont {A1, A2, A3}
+nem együttesen független, hiszen
+= 1
+8 ,
+
+P(A1 ∩ A2 ∩ A3) = P(mindkét érme fej) = 1
+4 .
+
+P(A1)P(A2)P(A3) = 1
+23
+
+A példának van lineáris algebrai analógja is: az (1, 0), (0, 1), (1, 1) vektorok közül bármely pár lineárisan
+független, de együtt már nem azok.
+
+míg
+
+8Ha néhány esemény együttesen független, abból valóban következik közülük néhány együttes függetlensége, de ehhez
+
+a fenti együttes függetlenség deﬁnícióra van szükség.
+
+o
+
+o
+
+o
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+9
+
+2.2. Feltételes Valószínűség
+
+Hogyan lehet „mérni”, egy esemény mennyire függ egy másiktól?
+
+Legyenek A, B ∈ F események. Tegyük fel, hogy P(A) > 0. Ekkor a B esemény
+
+2.2.1. Deﬁníció.
+A-ra vett feltételes valószínűsége
+
+Kiolvasva: „B valószínűsége, feltéve A”.
+
+P(B | A) def= P(B ∩ A)
+P(A)
+
+.
+
+Vegyük észre, hogy A és B pontosan akkor függetlenek, ha P(B | A) = P(B). Más szavakkal, B
+független A-tól, ha B valószínűsége nem függ attól, hogy A bekövekezett-e. Valójában a függetlenséget
+deﬁniálhatnánk a P(B | A) = P(B) egyenlettel is, azokban az esetekben, mikor P(A) > 0.9
+2.2.2. Példa. Nézzünk néhány példát kockadobással. Legyen A = {párosat dobunk}. Ekkor P(6-ost dobunk |
+A) = 1
+
+3 és P(párosat dobunk | A) = 1.
+Természetesen a feltételes valószínűség nem csak az események összefüggésének mérésére szolgál.
+Több problémánál is felmerülhet, hogy feltételes információink vannak, például „ha alaposan felké-
+szülten érkezem vizsgázni, akkor 1 − ε eséllyel átmegyek”.10
+
+3, P(1-est dobunk | A) = 0, P(3-nál nagyobbat dobunk | A) = 2
+
+Nézzük, milyen tulajdonságai vannak a feltételes valószínűségnek.
+
+2.2.3. Állítás. Legyen A ∈ F rögzített esemény, amire P(A) > 0. Ekkor az A-ra vett feltételes
+valószínűség, vagyis az alábbi F → [0, 1] függvény:
+
+B 7→ P(B | A),
+
+szintén valószínűségi mérték.
+
+Nagyszerű, de mire megyünk ezzel az állítással? Például arra, hogy az összes korábban P-re elhang-
+
+zott állításba behelyettesíthetjük P( ) helyére P( | A)-t, az állítás akkor is érvényben marad.
+Bizonyítás. Egyrészt világos, hogy P(Ω | A) = P(Ω∩A)
+páronként kizáró rendszere. Felhasználva, hogy P valószínűségi mérték:
+
+P(A) = 1. Másrészt legyen B1, B2, . . . események egy
+
+P(cid:16) ∞[
+
+i=1
+(Bi ∩ A)
+
+(cid:12)(cid:12)(cid:12) A
+(cid:17) = P
+(cid:19).P(A) =
+
+Bi
+
+(cid:17) ∩ A
+
+(cid:19).P(A) =
+(cid:18)(cid:16) ∞[
+∞X
+∞X
+P(Bi ∩ A)(cid:14)P(A) =
+
+i=1
+
+Bi
+
+(cid:18) ∞[
+
+= P
+
+i=1
+
+P(Bi | A),
+
+i=1
+
+i=1
+
+nX
+
+ami épp a bizonyítandó állítás.
+
+(cid:3)
+A feltételes valószínűség segítségével lehet kimondani az esetszétválasztás valószínűségi megfelelőjét:
+Legyenek A1, . . . , An ∈ F páronként kizáró események,
+
+2.2.4. Állítás (Teljes valószínűség tétele).
+amikre ∪n
+
+i=1Ai = Ω és P(Ai) > 0 minden i-re. Ekkor
+
+P(B) =
+
+P(B | Ai)P(Ai).
+
+i=1
+
+Egy A1, . . . , An ∈ F páronként kizáró eseményekből álló sorozatot teljes esemény-
+
+2.2.5. Deﬁníció.
+rendszernek hívunk, ha ∪n
+Állítás bizonyítása. A feltételes valószínűség deﬁnícióját visszahelyettesítve egyszerűsíthetünk P(Ai)-
+i=1(B∩Ai) = B∩Ω = B,
+(cid:3)
+így P additivitásából már következik az állítás.
+
+vel, így kapjuk, hogy a jobb oldalPn
+
+i=1 P(B∩Ai). Mivel a feltételek szerint ∪n
+
+i=1Ai = Ω.
+
+9Lásd még [youtube] MIT OpenCourseWare - Conditional Probability.
+10A feltételes valószínűség az első előadáson szerepelt Bertrand doboz paradoxonhoz is kapcsolódik.
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+10
+
+2.2.6. Példa (Monty Hall-paradoxon). Adott három ajtó, az egyik
+mögött egy autó, a másik kettő mögött egy-egy kecske áll. A felad-
+vány, hogy először választanunk kell egy ajtót, majd a játékvezető
+kinyitja valamelyik másik ajtót, ami mögött kecske van. Ezután
+lehetőségünk van változtatni a választásunkon. Kérdés: megéri-e,
+feltéve hogy az autó választását preferáljuk a kecskékkel szemben?
+A meglepő válasz a „mindegy” helyett az, hogy igen. Ugyanis ha
+nem változtatunk a döntésünkön, akkor a nyerési esélyünk nyilván
+3. Míg ha változtatunk, akkor
+1
+
+P(végül autó) = P(végül autó | elsőre kecske)P(elsőre kecske)
+
++ P(végül autó | elsőre autó)P(elsőre autó) = 1 · 2
+
+3 + 0 · 1
+
+3 = 2
+3 ,
+
+hiszen ha elsőre kecskét választunk, akkor a játékvezető csak a másik kecskés ajtót nyithatja ki.
+
+Előfordul olyan is, amikor egy problémánál több, egymásra épülő feltétel esetén fennálló valószínű-
+
+ségekkel kell dolgozni.
+2.2.7. Példa. Három húzást végzünk visszatevés nélkül egy megkevert 52 lapos franciakártya-pakliból.
+Mekkora a valószínűsége annak, hogy elsőre királyt, másodikra dámát, harmadikra pedig bubit húzunk?
+Ugyan az első húzás eredménye befolyásolja a második húzás valószínűségeit (egy király kihúzása
+csökkenti az újbóli király húzásának esélyét), mégis a helyes eredményt a következő számolás adja.
+
+Jelölje K1, hogy elsőre királyt húzunk, D2 azt, hogy másodszorra dámát, míg B3 azt, hogy harmad-
+
+szorra bubit. Ekkor a keresett esemény valószínűsége:
+
+Ezt a módszert általánosítja a következő állítás.
+2.2.8. Állítás (Szorzási szabály). Legyenek A1, . . . , An ∈ F események, amikre P(Ai) > 0 (∀i). Ekkor
+
+P(K1)P(D2 | K1)P(B3 | D2 ∩ K1) = 4
+P(cid:16)
+
+(cid:17) = P(A1) · nY
+
+P(cid:16) n\
+
+Ai
+
+Ai
+
+51 · 4
+52 · 4
+50 ≈ 0,0005.
+(cid:12)(cid:12)(cid:12) i−1\
+(cid:17)
+
+Ak
+
+.
+
+i=1
+
+i=2
+
+k=1
+
+A bizonyításhoz elég kibontani a feltételes valószínűség deﬁnícióját és egyszerűsíteni a szorzatot.
+
+2.3. Karger algoritmusa (kiegészítő anyag)
+
+A szorzási szabály és a függetlenség alkalmazásaként nézzünk egy véletlen algoritmust. Legyen
+G = (V, E) egy irányítatlan (multi)gráf, akár többszörös élekkel együtt, de hurokélek nélkül. Keressük
+a gráf egy minimális elemszámú vágását, azaz egy V = A ∪ B felbontást, ahol A, B diszjunktak, és a
+lehető legkevesebb él fut A és B közt.
+A feladat visszavezethető az irányított gráfok maximális folyam keresésére,
+aminek megoldását megkereshetjük a Ford-Fulkerson-algoritmus segítségével.
+Vegyük észre a lényeges különbséget a két kérdés közt: a maximális folyam-
+keresésénél s és t rögzített, míg a mostani problémában nem.
+nített megoldása is, ez a Karger-algoritmus.
+
+A fenti úgynevezett globális minimális vágás problémának van egy véletle-
+
+Az input: egy összefüggő, irányítatlan gráf (a tárolás módjával most nem
+foglalkozunk), az output az élek egy részhalmaza. Az algoritmusban két lé-
+pést iterálunk felváltva: előbb választunk egyenletesen véletlenszerűen egy élet,
+majd összehúzzuk/azonosítjuk az él két végpontját, a hurokéleket elhagyjuk, a többi élet megtartjuk.
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+11
+
+Ezt addig csináljuk, amíg 2 pontja nem marad a gráfnak. Az eredmény meghatároz egy vágást:
+az eredeti gráf csúcsai közül az egyik pontra összehúzott csúcsok lesznek az A halmaz, a másikra
+összehúzottak a B.
+Ha az algoritmust egyszer lefuttatjuk, akkor kapunk egy véletlenszerű vágást, de közel sem biztos
+hogy ez minimális. Futtassuk tehát sokszor, és nézzük meg, melyik eredmény volt a legjobb (vagyis az
+utolsó lépésben a két pont közt a legkevesebb élet tartalmazó). A következő állítás azt mondja, hogy
+ez már észszerűen sok próbálkozás után is nagy eséllyel optimális megoldást ad.
+2.3.1. Állítás. A Karger-algoritmus egyszeri futtatása esetén legalább 2
+vágást kapunk.
+
+n2 eséllyel globális minimális
+
+Bár a 2
+
+n2 nagyon kis valószínűségnek tűnik, de ha n2
+a sikertelenség esélye a függetlenség miatt már csak
+
+2 ln n alkalommal futtatjuk az algoritmust, akkor
+
+(cid:19) n2
+(cid:18)
+2 ln n ≤ 1
+1 − 2
+(cid:17)m monoton növő és 1
+n2
+eln n
+-hez tart. Tehát jó eséllyel globális minimális
+
+= 1
+
+n
+
+felhasználva, hogy az m 7→(cid:16)1− 1
+
+m
+
+vágást kapunk.
+Bizonyítás. Legyen F egy globális minimális vágás által elvágott élek halmaza. Az algoritmus pontosan
+akkor találja meg F-et, ha egyetlen élét sem húzza össze. Legyen |E| = m, |F| = k és jelölje Ai azt az
+eseményt, hogy az i-edik lépésben nem F-beli élet húzunk össze. Ekkor a szorzási szabály miatt
+
+e
+
+P(siker) = P(cid:16) n−2\
+
+(cid:17) =
+
+n−2Y
+
+P(cid:16)
+
+(cid:12)(cid:12)(cid:12) i−1\
+
+(cid:17)
+
+ahol P(cid:16)
+
+(cid:12)(cid:12)(cid:12) ∩i−1
+
+Ai
+
+j=1Aj
+
+(cid:17) annak a valószínűsége, hogy az i-edik lépésben nem F-beli élet választunk, feltéve,
+
+j=1
+
+i=1
+
+i=1
+
+Aj
+
+Ai
+
+Ai
+
+hogy az első i − 1 lépésben sem választottunk ki egyetlen F-beli élet. Ezt a valószínűséget szeretnénk
+alulról becsülni, amihez szükségünk van a gráf csúcs- és élszámára.
+Az i-edik lépés előtt n − (i − 1) csúcsa van a gráfnak. Mivel az F minimális vágás elemszáma k,
+emiatt minden csúcs foka legalább k, még az összehúzások után is. Hiszen ha valamely (egyesített)
+csúcs foka kisebb lenne, akkor a csúcsból kiinduló élek megfelelői az eredeti gráfban egy k-nál kisebb
+elemszámú vágást adnának. Emiatt az i-edik lépés előtt a gráfnak legalább k(n−(i−1))
+éle van. Tehát
+
+2
+
+Ezt behelyettesítve kapjuk, hogy
+
+k(n−(i−1))
+
+k
+
+2
+
+Ai
+
+Aj
+
+j=1
+
+(cid:12)(cid:12)(cid:12) i−1\
+P(cid:16)
+P(siker) ≥(cid:16)1 − 2
+
+(cid:17) ≥ 1 −
+(cid:17)(cid:16)1 − 2
+
+(cid:17)
+= (n − 2) · (n − 3) · . . . · (3 − 2)
+
+n − 1
+
+n
+
+n · (n − 1) · . . . · 3
+
+. . .
+
+= 1 −
+
+2
+
+n − i + 1
+
+(cid:17) =
+
+2
+
+(cid:16)1 −
+n − (n − 3)
+n(n − 1) ≥ 2
+2
+n2 ,
+
+=
+
+(cid:3)
+ami épp a belátandó állítás.
+Megjegyzés. A véletlen algoritmusok két osztályba sorolhatók az alapján, az algoritmus milyen tulaj-
+donsága véletlen: a futásideje vagy a megoldásának helyessége. Ha egy algoritmus biztosan a helyes
+eredményre jut (avagy jelzi, hogy a feladatnak nincs megoldása), de a futásidő nemcsak a bemenetnek,
+hanem a véletlennek is függvénye, az algoritmust Las Vegas algoritmusnak hívjuk. Míg ha a futásidő
+csak a bemenettől függ, azaz randomizált választásoktól független, viszont csak bizonyos valószínűség-
+gel kapunk helyes eredményt, akkor egy Monte Carlo algoritmussal állunk szemben.
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+12
+
+2.4. Bayes-tétel
+
+A feltételes valószínűséget érintő jelenségek közül kiemelendő a Bayes-tétel és a paradoxon, amit
+
+felold. (A paradoxon más néven is ismert, pl. fals pozitív paradoxon, avagy base rate fallacy).
+
+Bayes-paradoxon
+
+Röntgenvizsgálat során 0,95 annak a valószínűsége, hogy tbc-s beteg betegségét felfedezik. An-
+nak valószínűsége, hogy egy egészséges embert betegnek találnak 0,001. A tbc-ben szenvedők
+aránya a lakosságon belül 0,0001. Mennyi annak a valószínűsége, hogy az ember egészséges, ha
+átvilágításkor betegnek találták?
+A megoldás azon alapul, hogy összefüggést írunk fel a P(A | B) és a P(B | A) feltételes valószínűségek
+
+között, ahol A = {az alany egészséges}, és B = {pozitív a teszt}.11
+2.4.1. Állítás. (Egyszerű Bayes-tétel) Legyenek A, B ∈ F események, amikre P(A) > 0 és P(B) > 0
+teljesül. Ekkor
+
+P(A | B) = P(B | A)P(A)
+
+.
+
+P(B)
+
+A bizonyítás a deﬁníciók behelyettesítésével rögtön következik. Sokszor a tételt a teljes valószínűség
+
+tételével kombinálva alkalmazzák:
+2.4.2. Állítás.
+minden i-re, és A1, . . . , An teljes eseményrendszer. Ekkor
+
+o
+
+(Bayes-tétel) Legyenek B, A1, A2, . . . , An ∈ F események, amikre P(B) > 0, P(Ai) > 0
+
+P(A1 | B) =
+
+Pn
+P(B | A1)P(A1)
+i=1 P(B | Ai)P(Ai) .
+
+Bizonyítás. Írjuk fel az egyszerű Bayes-tételt A1-re és B-re, majd bontsuk ki a nevezőt a teljes való-
+színűség tételével:
+
+P(A1 | B) = P(B | A1)P(A1)
+
+=
+
+P(B)
+
+Pn
+P(B | A1)P(A1)
+i=1 P(B | Ai)P(Ai) ,
+
+(cid:3)
+ami épp a belátandó állítás.
+2.4.3. Példa. Térjünk vissza a fenti példára. Legyen A1 = {az alany egészséges}, A2 = A1 és B =
+{pozitív a teszt}. Ekkor
+
+P(A1 | B) =
+
+P(B | A1)P(A1)
+
+P(B | A1)P(A1) + P(B | A2)P(A2) =
+
+0,001 · 0,9999
+
+0,001 · 0,9999 + 0,95 · 0,0001 ≈ 0,9132
+
+ami nem fest túl jó képet a bizonyos szempontból 95% biztonságúnak tekintett tesztről. Az ered-
+mény csak látszólagos ellentmondás, ami abból fakad, hogy a vizsgált populációban lényegesen több
+egészséges ember van, így több „lehetőségünk” van fals pozitív eredményt kapni, mint fals negatív
+eredményt.
+Megjegyzés. Bár a Bayes-tétel egy ártatlan állításnak tűnhet a feltételes valószínűségekről, valójá-
+ban messzemenő következményei vannak. A valószínűségszámítás elsődleges alkalmazási területén, a
+statisztikában a Bayes-féle modellek külön megközelítést képviselnek; amik közvetve a Bayes-tétel to-
+vábbgondolásából alakultak ki, Laplace bábáskodása mellett. A tétel történetével egy könyvet is meg
+lehetne tölteni, olyannyira, hogy meg is töltöttek:
+
+S. B. McGrayne, The Theory That Would Not Die: How Bayes’ Rule Cracked the Enigma
+Code, Hunted Down Russian Submarines, and Emerged Triumphant from Two Centuries of
+Controversy, Yale University Press.
+
+A könyvről összefoglaló: www.lesswrong.com/posts/RTt59BtFLqQbsSiqd/a-history-of-bayes-theorem
+
+11Lásd még [youtube] Crash Course Statistics #24.
+
+

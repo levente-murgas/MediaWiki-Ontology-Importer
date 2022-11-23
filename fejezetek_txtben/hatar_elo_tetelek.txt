@@ -1,0 +1,807 @@
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+9. Határeloszlás-tételek
+
+44
+
+A korábbi fejezetek során már többször előkerült az ún. határeloszlások témaköre: megnéztük, hogy
+a Poisson-eloszlás valószínűségeit közelítik a binomiális eloszlás valószínűségei, megfelelő paraméterezés
+esetén, illetve a normális eloszlásnál szó esett a de Moivre–Laplace-tételről.38 De egyáltalán mit jelent
+az, hogy eloszlások „tartanak” egy másik eloszláshoz? És csak speciális alakú eloszlások esetén lehet
+határeloszlást bizonyítani? A mostani előadásban erről is szó lesz.
+
+Először olyan egyenlőtlenségeket nézünk, amelyekkel egy valószínűségi változó eloszlásának „szélei-
+nek” valószínűségei becsülhetők. Ezek az egyenlőtlenségek hasznos segédeszközök határeloszlás-tételek
+bizonyításában is. Ezután a valószínűségszámítás két alaptételéről fogunk beszélni: a nagy számok
+törvényéről, és a centrális határeloszlás-tételről.
+9.1. Csebisev-egyenlőtlenség
+
+Egy valószínűségi változó eloszlása nem feltétlenül ismert egy probléma esetében, különösen igaz ez
+a gyakorlatra. Igény viszont lenne rá, hogy ilyenkor is meg tudjuk becsülni (például felülről), mekkora
+valószínűséggel lesz az X értéke szélsőséges.
+9.1.1. Állítás (Markov-egyenlőtlenség). Legyen X nemnegatív értékű valószínűségi változó. Ekkor
+minden a > 0 esetén
+
+P(X ≥ a) ≤ E(X)
+
+.
+
+a
+
+Bizonyítás. Deﬁniáljuk a következő valószínűségi változót: legyen Y = a ha X ≥ a, és 0 egyébként. Más
+szavakkal, Y = a1{X≥a}. Mivel X nemnegatív, így Y ≤ X a teljes eseménytéren. Emiatt E(Y ) ≤ E(X)
+is teljesül, a várható érték monotonitásából adódóan. Tehát
+
+E(X) ≥ E(Y ) = 0 · P(Y = 0) + a · P(Y = a) = a · P(X ≥ a).
+
+Az egyenlőtlenség átrendezéséből következik az állítás.
+
+(cid:3)
+A Markov-egyenlőtlenség önmagában nem feltétlenül erős becslés. Például, ha a < E(X), akkor
+annyit állít, hogy egy valószínűség kisebb, mint egy 1-nél nagyobb szám, ami azért nem egy mély tény.
+Tipikus alkalmazása ehelyett, amikor a jóval nagyobb E(X)-nél. Ekkor intuitívan azt állítja, hogy
+annak a valószínűsége, hogy az X változó a-nál szélsőségesebb értéket vesz fel, legalább olyan ütemben
+csökken, mint az x 7→ c
+
+függvény, ahol c = E(X).
+
+A Markov-egyenlőtlenség helyett gyakrabban alkalmazzák az alábbi következményét:
+
+x
+
+9.1.2. Következmény (Csebisev-egyenlőtlenség39). Legyen X valószínűségi változó, amire D2(X)
+véges. Ekkor minden a > 0 esetén
+
+P(cid:0)|X − E(X)| ≥ a(cid:1) ≤ D2(X)
+
+.
+
+Bizonyítás. A bal oldal átrendezése után alkalmazzuk a Markov-egyenlőtlenséget az X helyett az
+
+(cid:0)X − E(X)(cid:1)2 valószínűségi változóra (és a helyett a2-re):
+P(cid:0)|X − E(X)| ≥ a(cid:1) = P(cid:16)(cid:0)X − E(X)(cid:1)2 ≥ a2(cid:17) ≤
+felhasználva, hogy(cid:0)X − E(X)(cid:1)2 mindig nemnegatív. Ez épp a bizonyítandó állítás.
+
+E(cid:16)(cid:0)X − E(X)(cid:1)2(cid:17)
+
+a2
+
+a2
+
+(cid:3)
+Vegyük észre, hogy míg a Markov-egyenlőtlenség csak nemnegatív valószínűségi változókra érvényes,
+
+= D2(X)
+a2
+
+.
+
+addig a Csebisev-egyenlőtlenség tetszőleges valós esetben is igaz.
+
+38Szemfüles olvasó felfedezheti, hogy a geometriai eloszlásról is megemlítettük, hogy a pontok sűrítése esetén az
+
+exponenciális eloszláshoz tart.
+
+39Angol szakirodalomban: Chebyshev’s inequality
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+45
+
+9.1.3. Példa. Egy adott adatbázis átlagosan 50 lekérést fogad egy időegység alatt. A lekérések szá-
+mának szórása a tapasztalatok szerint 5.40 Adjunk alsó becslést annak a valószínűségére, hogy 40-nél
+több, de 60-nál kevesebb lesz a lekérések száma egy időegység alatt.
+
+Jelölje X az egy időegység alatti lekérések számát. Ekkor a Csebisev-egyenlőtlenség szerint
+= 3
+4 .
+
+P(40 < X < 60) = P(|X − 50| < 10) = 1 − P(|X − 50| ≥ 10) ≥ 1 − D2(X)
+a2
+
+= 1 − 52
+102
+
+Vegyük észre, hogy ez a korlát nem igényelt semmilyen feltételt az eloszlásra, a várható értékének és
+szórásának ismeretén felül.
+
+A Markov-egyenlőtlenség további, erősebb becslések alapjául is szolgálhat, amennyiben a négyzetre
+
+emelés helyett egyéb függvényt alkalmazunk, illetve X-re erősebb feltételeket teszünk.
+9.1.4. Következmény (Paraméteres Csernov-egyenlőtlenség41). Legyen X valószínűségi változó. Ek-
+kor minden a, t > 0 esetén
+
+P(X ≥ a) ≤ E(etX)
+
+.
+
+eta
+
+Bizonyítás. Tetszőleges t > 0 esetén az x 7→ etx függvény monoton növő. Így a Markov-egyenlőtlenség
+miatt
+
+P(cid:0)X ≥ a(cid:1) = P(cid:0)etX ≥ eta(cid:1) ≤ E(etX)
+
+,
+
+(cid:3)
+felhasználva, hogy etX és eta mindig pozitív.
+9.1.5. Példa. Legyen X ∼ Pois(5). Adjunk felső becslést P(X ≥ 10)-re. Ekkor a Csernov-egyenlőtlenség
+szerint
+
+P(X ≥ 10) ≤ E(etX)
+e10t
+
+= e−10t
+
+etk
+
+5k
+k! e−5 = e−10t
+
+(5et)k
+
+k!
+
+e−5 = e−10t+5et−5.
+
+eta
+
+∞X
+
+k=0
+
+∞X
+
+k=0
+
+Ez a felső becslés bármilyen pozitív t választása esetén igaz, így akkor is, ha a kitevő a lehető legkisebb.
+Deriválással megkapható, hogy a függvény minimuma t = ln(2) helyen van, értéke: e5/1024 ≈ 0,1449.
+Vegyük észre, hogy ezzel szemben a Markov-egyenlőtlenség csak E(X)/10 = 1
+2 értékkel becsülne felül-
+ről.
+
+A fejezet további részében a fenti ötleteket alkalmazva jutunk el a téma két legfontosabb tételéhez.
+
+9.2. Nagy számok törvénye
+
+A köznyelvben a nagy számok törvényét sokszor abban az értelemben használjuk, hogy ha valamit
+nagyon sokszor próbálgatunk, akkor előbb-utóbb sikerülni fog. Ez az állítás (illetve a precíz megfo-
+galmazása) speciális esete annak, amit a valószínűségszámításban nagy számok törvényének hívunk.
+Valójában a „törvény” ennél általánosabb, ugyanis nem csak valószínűségekről beszél, hanem várható
+értékről is.
+
+Fogalmazzuk meg először a fenti köznyelvi igazságot precízen. Legyenek A1, . . . , An együttesen füg-
+getlen események, amelyek valószínűsége egységesen p, ahol 0 < p < 1. Ezek az események felelnek
+meg annak, hogy n-szer próbálgatjuk ugyanazt a kísérletet. Az állítás olyasmi, hogy elég nagy n esetén
+biztosan sikerül valamelyik, még akkor is, ha p nagyon kicsi. Precízen megfogalmazva,
+
+lim
+n→∞
+
+P(A1 ∪ ··· ∪ An) → 1.
+
+Vegyük észre, hogy valójában a valószínűség fogalmának bevezetésénél már ennél többet is elfogadtunk:
+azt az intuitív igazságot, hogy független kísérletek esetén a sikerek aránya épp a siker valószínűségéhez
+
+40Hogy hogyan lehet a tapasztalat alapján, például ismételt kísérletekkel információt szerezni az eloszlás szórásáról,
+
+az a statisztika témakörébe eső nem nyilvánvaló kérdés, amire most nem térünk ki.
+
+41Angol szakirodalomban: Chernoﬀ bound
+
+lim
+n→∞
+• Nagy számok erős törvénye:
+
+(cid:12)(cid:12)(cid:12) ≥ ε
+P(cid:16)(cid:12)(cid:12)(cid:12)Xn − µ
+(cid:17) = 0.
+P(cid:16) lim
+(cid:17) = 1,
+n→∞ Xn = µ
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+46
+
+közelít (és emiatt elég sok kísérlet esetén nem is lesz nulla). Ez szintén a nagy számok törvényének
+speciális esete.
+
+Hogy az utóbbit formulával is felírhassuk, vezessük be a következő jelölést: legyen Xi = 1 ha Ai
+átlagot. Ekkor a „korábban elfogadott
+
+). Jelölje Xn az X1+...+Xn
+
+teljesül, egyébként 0 (azaz Xi = 1Ai
+intuitív igazság” azt állítja, hogy ha n → ∞, akkor
+
+n
+
+Xn → p.
+
+A probléma az, hogy ez az állítás nem precíz: milyen értelemben tud valószínűségi változók egy sorozata
+konvergálni? Ahogy az a következő tételből kiderül, többféleképp.
+9.2.1. Tétel. Legyen X1, X2, . . . , Xn, . . . független, azonos eloszlású valószínűségi változók egy soro-
+zata. Tegyük fel, hogy EXn = µ és D(Xn) = σ minden n-re, ahol µ, σ ∈ R rögzített. Jelölje Xn az
+X1+...+Xn
+
+átlagot.42
+
+n
+
+• Nagy számok gyenge törvénye: Tetszőleges ε > 0 esetén
+
+ahol a határérték úgy értendő, mint az ω 7→ Xn(ω) függvények pontonkénti határértéke.
+
+Ahogy az a tételből is kiderül, a nagy számok törvénye nem egyetlen tétel, hanem egy ún. tételkör,
+adott témájú állítások egy halmaza, különböző feltételekkel.
+Az állítás annyiban általánosabb az előtte szereplő diszkussziónál, hogy Xi nem feltétlenül {0, 1}-
+értékű, hanem bármilyen egyéb eloszlású is lehet. Ha Xi {0, 1}-értékű, akkor a gyenge törvény neve:
+Bernoulli-féle nagy számok gyenge törvénye.
+Nagy számok gyenge törvényének bizonyítása. A várható érték linearitása miatt az Xn átlag várható
+értéke is µ. Így alkalmazhatjuk a Csebisev-egyenlőtlenséget az állításban szereplő valószínűségre:
+
+P(cid:0)(cid:12)(cid:12)Xn − µ(cid:12)(cid:12) ≥ ε(cid:1) = P(cid:16)(cid:12)(cid:12)Xn − E(Xn)(cid:12)(cid:12) ≥ ε
+(cid:18) X1 + ··· + Xn
+
+(cid:19)
+
+(cid:17) ≤ D2(Xn)
+
+.
+
+ε2
+
+(cid:0)D2(X1) + ··· + D2(Xn)(cid:17) = n
+
+n2 σ2,
+
+= 1
+n2
+
+Mivel X1, . . . , Xn függetlenek, így a D2 tulajdonságai szerint:
+
+D2(Xn) = D2
+
+n
+
+ahol a jobb oldal 0-hoz tart n → ∞ esetén. Ebből az állítás már következik.
+
+(cid:3)
+Mitől gyenge törvény az első, és erős a második? És egyáltalán, mi a különbség a kettő közt? Egyrészt,
+az erős törvényből következik a gyenge (ezt nem bizonyítjuk). Másrészt, a két állítás abban különbözik,
+hogy milyen értelemben nézzük az Xn konvergenciáját. A gyenge törvényben szereplő konvergencia
+neve sztochasztikus konvergencia, míg az erős törvényben 1-valószínűségű konvergenciáról beszélünk.
+Rendben, de mit jelent az, hogy „más a konvergencia”? Van itt valami kézzelfogható eltérés, vagy ez
+csak valami elméleti-technikai kötözködés? És egyébként is, ha igaz az erős törvény, minek egyáltalán
+beszélni a gyengéről? Ezek jogos kérdések, haladjunk sorban.
+
+A valószínűségszámítást néha azért nehéz összevetni a valósággal, mert míg a valószínűségek az
+összes kimenetelről beszélnek egyszerre, addig a valóságban mi (egyszerre) csak egyetlen kimenetelt
+látunk, egy ω esetén felvett értéket tapasztalunk. A gyenge törvény (és általában a sztochasztikus
+konvergencia), csak arról beszél, hogy azon ω-k, ahol az átlagtól való eltérés lényeges (azaz ε-nál
+nagyobb), egyre kevesebben vannak (sőt, részarányuk nullához tart). De ettől még megtörténhetne,
+hogy akármilyen ω-t is választunk, egyre-másra felbukkan egy olyan lépés, ahol Xn nagyon eltér µ-től.
+
+42A tételek a szórás végessége nélkül is teljesülnek, de a bizonyításuk komplikáltabb.
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+47
+
+Az erős törvény éppen azt mondja, hogy ez lehetetlen. Vagyis 1 valószínűséggel olyanok az ω-k, hogy
+egy idő után már nem megyünk µ-től ε-nál távolabb.
+Ennek fényében még jogosabb a kérdés: minek beszélünk egyáltalán az „elavult” gyenge törvény-
+ről? Azért, mert gyengébb feltételek esetén megeshet, hogy a gyenge tétel teljesül, de az erős már
+nem. Részletesebben: mind a függetlenség, mind az azonos eloszlásúság nagyon erős feltételek, amik
+a gyakorlatban sem mindig teljesülnek. (Például, ha elég ideig méregetjük a napi középhőmérsékle-
+teket, azok nem lesznek függetlenek, továbbá előbb-utóbb nyár után tél lesz, legalábbis reméljük.)
+Szerencsére ezeket a feltételeket gyengítve is bizonyíthatók nagy számok törvényei. Viszont van olyan
+feltétel-gyengítés, ahol a gyenge törvény még igaz, de az erős már nem.
+
+9.3. Centrális határeloszlás-tétel
+
+A nagy számok törvénye csak arról beszél, hogy mihez
+konvergálunk (a várható értékhez, ugyebár), de arról nem,
+hogy ezt milyen gyorsan tesszük. Más szavakkal, arról nem
+mond semmit, hogy hogy a várható értéktől való eltérés mi-
+lyen ütemben csökken, n növekedésének függvényében.
+Ahhoz, hogy ezt megválaszoljuk, szükségünk van az el-
+oszlásbeli konvergencia fogalmára, ugyanis az átlagtól való
+(egyre kisebb) eltérés már nem egy konkrét szám, hanem egy
+(egyre koncentráltabb) eloszlás a várható érték körül.
+az Xn
+9.3.1. Deﬁníció.
+eloszlásfüggvényét, és hasonlóan FZ a Z eloszlásfüggvényét. Az (Xn)n∈N sorozat eloszlásban kon-
+vergál egy Z valószínűségi változóhoz, ha
+
+Legyen X1, X2, . . . , Xn, . . . valószínűségi változók egy sorozata, jelölje FXn
+
+(x) → FZ(x)
+
+FXn
+
+(n → ∞)
+d→ Z.
+
+minden olyan x ∈ R esetén, ahol FZ folytonos.43 Jelölése: Xn
+9.3.2. Tétel (Centrális határeloszlás-tétel).
+valószínűségi változók egy sorozata. Tegyük fel, hogy 0 < D2X1 < ∞. Legyen Z ∼ N(0; 1). Ekkor
+
+Legyen X1, X2, . . . , Xn, . . .
+
+független, azonos eloszlású
+
+X1 + ··· + Xn − nE(X1)
+
+√
+
+nD(X1)
+
+d→ Z
+
+(n → ∞).
+
+o
+
+o
+
+Az eloszlásbeli konvergencia deﬁnícióját kibontva ez azt jelenti, hogy a bal oldal eloszlásfüggvénye
+tart Z eloszlásfüggvényéhez, azaz Φ-hez, a Φ minden folytonossági pontjában. Mivel Φ mindenhol
+folytonos, így a tétel következtetése a következő:
+
+(cid:18) X1 + ··· + Xn − nE(X1)
+
+√
+
+nD(X1)
+
+P
+
+(cid:19)
+
+< a
+
+→ Φ(a)
+
+minden a ∈ R esetén, ha n → ∞.
+Az utóbbi alakból már jobban látható, hogy a centrális határeloszlás-tétel a de Moivre–Laplace-tétel
+általánosítása. Valóban, hiszen itt olyan független, azonos eloszlású valószínűségi változókról beszélünk,
+amik véges szórásúak, míg a de Moivre–Laplace-tétel csak független indikátor valószínűségi változók
+összegéről (azaz egy binomiális eloszlású valószínűségi változóról) állít konvergenciát. De az állítás
+mindkét esetben az, hogy az eloszlásfüggvény Φ-vel közelíthető. Hogy ez a közelítés mennyire jó, arról
+külön tételek rendelkeznek.44
+
+43Bebizonyítható, hogy az
+
+eloszlásbeli konvergencia fenti deﬁníciójával
+limn→∞ Ef(Xn) = Ef(X) minden f : R → R folytonos, korlátos függvény esetén.
+44Lásd Berry-Esseen tétel, [Terence Tao] Central limit theorem, Theorem 23
+
+ekvivalens a következő feltétel:
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+48
+
+Megjegyzés. A tételben szereplő szumma más formában is írható:
+
+X1 + ··· + Xn − nE(X1)
+
+√
+
+nD(X1)
+
+= Xn − E(Xn)
+
+,
+
+D(Xn)
+
+ami átrendezéssel és a szórás tulajdonságainak felhasználásával kapható. Más szavakkal, a tételben az
+Xn standardizáltjáról van szó.
+9.3.3. Példa. Egy pincészetben munkanapokon átlagosan 100 liter bort mérnek ki, 20 szórással.
+Tegyük fel, hogy az egyes napok mérései függetlenek és azonos eloszlásúak. Az évből hátralévő 50
+munkanap alatt 4750 liter bort kellene eladniuk ahhoz, hogy felülmúlják a tavalyi teljesítményt. Mi
+annak a valószínűsége, hogy ez sikerül?
+
+Jelölje az egyes napok eredményeit X1, X2, . . . , X50. A feltételek szerint E(X1) = 100 és D(X1) = 20.
+
+A centrális határeloszlás-tétel szerint a megfelelően standardizált összeg közelítőleg normális, azaz
+
+P(cid:16) 50X
+
+Xi ≥ 4750(cid:17) = 1 − P
+
+(cid:18)P50
+
+i=1
+
+i=1 Xi − 50 · 100
+√50 · 20
+
+4750 − 5000
+√50 · 20
+
+<
+
+≈ 1 − Φ
+
+= 1 − Φ(−1,7678) = Φ(1,7678) ≈ 0,9615.
+
+(cid:19)
+
+(cid:18)4750 − 5000
+√50 · 20
+
+(cid:19)
+
+Tehát a siker valószínűsége nagyjából 96%.
+
+A tétel bizonyításához az első alfejezetből meríthetünk ötletet, egész pontosan a Csernov-egyenlőtlenségben
+
+megjelenő mennyiségből: az E(etX) várható értékből.
+9.3.4. Deﬁníció. Az X valószínűségi változó momentumgeneráló függvénye:45
+
+MX(t) def= E(etX),
+
+azon t helyeken értelmezve, ahol E(etX) véges.
+
+A momentumgeneráló függvényt az alábbi hasznos tulajdonságai teszik alkalmassá, hogy felhasz-
+
+náljuk a centrális határeloszlás-tétel bebizonyításában.
+9.3.5. Állítás. Legyenek Y, Z illetve X1, X2, . . . valószínűségi változók. Tegyük fel, hogy MY (t) és
+MZ(t) minden t ∈ R esetén értelmezett.
+
+(t) = MZ(t) minden t ∈ R esetén, akkor Xn
+
+(1) Ha MY (t) = MZ(t) minden t ∈ R esetén, akkor Y és Z azonos eloszlásúak.
+(2) Ha limn→∞ MXn
+A bizonyításban feltesszük, hogy a momentumgeneráló függvények mindenhol értelmezettek. Az ál-
+lítás enélkül is teljesülne, de az általános esetet itt nem bizonyítjuk. Továbbá a bizonyításban megjelenő
+lemmát szintén érvelés nélkül elfogadjuk.
+Centrális határeloszlás-tétel bizonyításvázlata. A számolást egyszerűsítendő, csak azt az esetet vizsgál-
+juk, amikor E(X1) =0 és D(X1) = 1. Ez valóban elegendő, ugyanis ha tudjuk a tételt a valószínűségi
+változók Xi−E(X1)
+standardizáltjaira (amikre már teljesül, hogy a várható értékük 0, szórásuk 1), akkor
+D(X1)
+ebből a tétel az alábbi átrendezéssel következik:
+
+d→ Z.
+
+X1 + ··· + Xn − nE(X1)
+
+√
+
+nD(X1)
+
+Tehát azt kell belátnunk, hogy √
+szerint ehhez elég belátni, hogy
+(5)
+
+Pn
+i=1 Xi − E(X1)
+
+Pn
+
+n · Xn
+
+Xi−E(X1)
+
+n
+
+i=1
+
+= √
+
+nD(X1)
+
+= √
+d→ Z. A momentumgeneráló függvényre vonatkozó állítás
+n→∞ MPn
+
+(t) = MZ(t)
+
+D(X1)
+n
+
+lim
+
+n
+
+.
+
+i=1 Xi
+√
+
+n
+
+45A momentumgeneráló függvény a Laplace-transzformálttal rokon fogalom. A másik sűrűn előkerülő fogalom a
+témában a karakterisztikus függvény, ami pedig a Fourier-transzformáció valószínűségszámításbeli megfelelője. Fourier-
+transzformációról nagyszerű magyarázó videó: [youtube - 3blue1brown, Fourier Transform]
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+49
+
+minden t ∈ R esetén.
+
+Számoljuk ki először az (5) egyenlet jobb oldalát:
+2 dz = 1√2π
+e− z2
+
+MZ(t) = E(etZ) =
+
+1√2π
+
+etz
+
+−∞
+
+Z ∞
+
+Z ∞
+
+−∞
+
+e− (z−t)2
+
+2 + t2
+
+2 dz = e
+
+t2
+2 .
+
+Más szavakkal, a standard normális eloszlás momentumgeneráló függvénye t 7→ e t2
+2 .
+
+Az (5) egyenlet bal oldalának vizsgálata előtt számoljuk ki az X1 momentumgeneráló függvényét is:
+
+2 · E(cid:16) ∞X
+
+k=3
+
+(cid:17) = 1 + t2
+
+2
+
+(cid:0)1 + r(t)(cid:1),
+
+(cid:18) ∞X
+
+k=0
+
+(cid:19)
+
+1
+k! tkX k
+1
+
+Tehát limn→∞ MPn
+
+Erre alkalmazhatjuk az exponenciális függvényt (ami folytonos, így felcserélhető a határértékképzéssel).
+(cid:3)
+
+2 = MZ(t) minden t ∈ R esetén.
+
+(t) = e t2
+
+n
+
+i=1 Xi
+√
+
+n
+
+et
+
+=
+
+2
+k! tk−2X k
+
+1
+
+= 1 + tEX1 + t2
+
+1) + t2
+
+(7)
+
+=
+
+i=1
+
+= E
+
+E
+
+t√
+n
+
+Xi
+
+e
+
+i=1 Xi
+√
+
+n
+
+t√
+n
+
+Xi
+
+e
+
+i=1 Xi
+√
+
+n
+
+(t) = E
+
+MPn
+
+(cid:18)
+nY
+
+Pn
+(cid:18)
+
+(6) MX1(t) = E
+ahol r(t) jelöli az utolsó szumma várható értékét. Egyáltalán nem nyilvánvaló, de belátható a következő:
+9.3.6. Lemma. limt→0 r(t) = 0.
+
+2 E(X2
+
+(cid:19)
+(cid:17) = MX1
+
+A lemma miatt az (5) egyenlet bal oldaláról a következő mondható:
+
+ahol felhasználtuk a következő két tulajdonságot: Egyrészt az e
+másrészt MXi
+csak Xi eloszlásától függ, ami minden i esetén ugyanaz, mint X1 eloszlása.
+
+n
+Xi valószínűségi változók függetlenek,
+
+(cid:18) nY
+(cid:19)
+(cid:19)
+(cid:16) t√
+nY
+(cid:17)-nel, hiszen a momentumgeneráló függvény
+(cid:17) minden i esetén megegyezik MX1
+(cid:16) t√
+(cid:17) (6) egyenlet szerinti értékét:
+(cid:16) t√
+(cid:16) t√
+(cid:17)2
+(cid:18)
+(cid:17) = n ln
+
+ln MPn
+(cid:17)-et rn. A lemma szerint rn → 0, ha n → ∞. Ezért az egyenletet a következőképp
+(cid:16) t√
+ln MPn
+
+(cid:16)1 + r
+(cid:16) t√
+(cid:1)(cid:19)
+
+Helyettesítsük be az (7) egyenlet logaritmusába az MX1
+
+Jelölje r
+folytathatjuk:
+
+(cid:0)1 + rn
+
+(cid:0)1 + rn
+
+(t) = n ln MX1
+
+(cid:17)(cid:17)(cid:19)
+
+(cid:16) t√
+
+(cid:16) t√
+
+(t) = n ln
+
+(cid:16) t√
+
+(cid:1)(cid:19)
+
+(cid:17)n
+
+i=1 Xi
+√
+
+n
+
+(cid:18)
+
+(cid:18)
+
+MXi
+
+,
+
+n
+
+ln
+
+=
+
+1 +
+
+=
+
+i=1
+
+.
+
+n
+
+t√
+n
+
+n
+
+i=1
+
+n
+
+n
+
+2
+
+1 + t2
+2n
+(1 + rn)
+
+t2
+2n
+
+· t2
+2 · (1 + rn).
+
+n
+
+i=1 Xi
+√
+(1+ rn) → 0, ha n → ∞ (rögzített t esetén). Emiatt a hármas szorzat első tényezője
+
+n
+
+n
+
+n
+
+1 + t2
+2n
+
+A lemma miatt t2
+2n
+1-hez tart, felhasználva, hogy ln(1+y)
+
+y → 1, ha y → 0. Összességében:
+ln MPn
+
+(t) = 1 · t2
+
+2 · (1 + 0) = t2
+2 .
+
+i=1 Xi
+√
+
+lim
+n→∞
+
+

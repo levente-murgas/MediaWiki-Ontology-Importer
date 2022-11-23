@@ -1,0 +1,572 @@
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+5. Nevezetes eloszlások
+
+23
+
+A most következő előadásban először a geometriai valószínűségek illetve folytonos valószínűségi
+változók egy paradoxonjáról lesz szó, majd különböző eloszlásokkal foglalkozunk, vegyesen diszkrét és
+folytonos kontextusban, ezzel is alkalmazva az előző két előadáson tanultakat.
+
+5.1. Bertrand-paradoxon
+
+Folytonos valószínűségi változókat (illetve eloszlásukat) többféleképp megadhatunk. Történhet ez a
+sűrűségfüggvényük vagy az eloszlásfüggvényük segítségével, de van, hogy ennél közvetettebb informá-
+ciónk van csak a változóról. Bertrand paradoxonja21 rávilágít, hogy mennyire nem nyilvánvaló feladat
+az utóbbi esetben meghatározni a valószínűségi változó eloszlását.
+
+Válasszuk ki egy kör egy húrját véletlenszerűen. Mi a valószínűsége, hogy a húr hosszabb, mint
+a körbe írható szabályos háromszög egy oldala?
+
+Bertrand-paradoxon
+
+A paradoxon ellentmondása, hogy a feladatra adható olyan megoldás, amiből az 1
+
+dik, de olyan is, amiből 1
+
+2 vagy 1
+
+4. Hogyan történhet ez? Lássuk először a megoldásokat:
+
+3 válasz adó-
+
+(1) Válasszunk egyenletesen véletlenszerűen és egymástól függetlenül egy P
+és egy Q pontot a körvonalról, és legyen a húr az őket összekötő szakasz.
+Sorsoljuk ki először a P pontot, majd rajzoljunk a körbe egy olyan
+szabályos háromszöget, aminek csúcsa ez a P. Világos, hogy pontosan
+akkor kapunk a háromszög oldalánál hosszabb húrt, ha Q a háromszög
+másik két csúcsa közé esik. Így a keresett valószínűség 1
+3.
+(2) Válasszuk ki egyenletesen véletlenszerűen egy sugarát a körnek, majd
+rajta egyenletesen véletlenszerűen (a sugár választástól függetlenül) egy
+P pontot. A húr legyen az, amelyik a sugárra merőleges, és a sugarat P
+pontban metszi. Sorsoljuk ki először a sugarat, majd rajzoljunk a körbe
+egy olyan szabályos háromszöget, aminek egyik oldala merőlegesen met-
+szi a sugarat, jelölje a metszéspontot S. Látható, hogy pontosan akkor
+kapunk a háromszög oldalánál hosszabb húrt, ha a P pont közelebb van
+a kör középpontjához, mint S. Mivel S felezi a sugarat, így a keresett
+valószínűség 1
+2.
+(3) Válasszunk ki egyenletesen véletlenszerűen egy P pontot a körlapon.
+Legyen a húr az, aminek éppen P a felezőpontja. Ilyen húr mindig csak
+egy van (hacsak P nem a középpont, de mivel ez nulla valószínűségű
+lehetőség, így ezzel az esettel nem kell foglalkoznunk). Vegyünk egy
+szabályos háromszöget a körben, és nézzük ennek a beírható körét. A
+húr pontosan akkor lesz hosszabb a háromszög oldalánál, ha P a kisebb
+.
+körbe esik. Az előző esetben láttuk, hogy ha a nagy kör sugara r, akkor
+(cid:1)2
+2. A keresett valószínűség pedig a két kör területének
+a kis kör sugara r
+π
+
+aránya, azaz(cid:0) r
+
+r2π = 1
+4.
+
+2
+
+A paradoxon feloldása, hogy a „véletlen húr” fogalma nem pontosan deﬁniált. Függően attól, hogy
+melyik módszert alkalmazzuk a húr generálására, más-más eloszlást kapunk, ezért különböznek a
+valószínűségek.
+
+21Ez ugyanaz a Joseph Bertrand, mint az első előadásban szereplő doboz paradoxon szerzője.
+
+24
+Feladat. Jelölje X1, X2 és X3 a húr hosszát az egyes módszerek esetén, feltéve, hogy a kör sugara 1
+egység. Mutassuk meg, hogy a valószínűségi változók sűrűségfüggvényei:
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+b) fX2(x) =
+
+x
+
+2√4 − x2 ,
+
+c) fX3(x) = x
+2 ,
+
+a) fX1(x) = 2
+ha x ∈ [0, 2] és 0 egyébként.
+5.2. Örökifjú tulajdonság
+
+π
+
+1√4 − x2 ,
+
+A példákban többször előforduló, nevezetes eloszlások a (diszkrét) geometriai eloszlás, illetve a
+(folytonos) exponenciális eloszlás. A két eloszlás közeli rokonságban van, ezért egyszerre tárgyaljuk
+őket.
+5.2.1. Deﬁníció. Egy X valószínűségi változó geometriai eloszlású p paraméterrel (ahol p ∈ (0, 1)),
+ha
+
+P(X = k) = (1 − p)k−1p
+
+minden k pozitív egész esetén. Jelölés: X ∼ Geo(p).
+5.2.2. Példa. Cérnát próbálunk befűzni egy tűbe. Tegyük fel, hogy minden egyes próbálkozásnál 0,1
+valószínűséggel járunk sikerrel, a korábbi próbálkozásoktól függetlenül. Ekkor a szükséges próbálkozá-
+sok száma 0,1 paraméterű geometriai eloszlást követ.
+
+Geometriai eloszlású valószínűségi változó várható értéke:22
+
+∞X
+
+= p
+
+kX
+
+k=1
+
+i=1
+
+(1 − p)k−1 = p
+
+∞X
+∞X
+
+k=1
+
+∞X
+∞X
+
+∞X
+
+k=1
+(1 − p)k−1 = p
+
+i=1
+
+k=i
+
+i=1
+
+E(X) =
+
+k · P(X = k) =
+
+k · (1 − p)k−1p =
+
+5.2.3. Deﬁníció. Egy Z valószínűségi változó exponenciális eloszlású λ paraméterrel (λ > 0 valós),
+ha
+
+∞X
+(1 − p)i−1
+(1 − p)j = 1
+1 − (1 − p) =
+(1 − e−λx ha x > 0,
+
+j=0
+
+p
+
+.
+
+0
+
+egyébként.
+
+(
+
+Z ∞
+
+fZ(x) =
+Jelölése: Z ∼ Exp(λ).
+
+λe−λx ha x > 0,
+0
+egyébként,
+
+azaz
+
+FZ(x) =
+
+Ez valóban sűrűségfüggvény, hiszen egyrészt nemnegatív, másrészt
+
+0
+Egy exponenciális eloszlású valószínűségi változó várható értéke:
+
+−∞
+
+0
+
+f(x)dx =
+
+= 0 + e−0 = 1.
+
+Z ∞
+λe−λxdx =h − e−λxi∞
+Z ∞
+Z ∞
+
+Z ∞
+Z ∞
+
+−∞
+0
+(−e−λx)dx = 0 +
+
+xfX(x)dx =
+
+E(Z) =
+
+=h
+
+x(−e−λx)i∞
+
+−
+
+0
+
+0
+
+λxe−λxdx =
+e−λxdx = 0 − 1
+−λ
+
+0
+
+= 1
+
+.
+
+λ
+
+Az eloszlás főleg olyan szituációkban kerül elő, amikor sűrű, egymás utáni kísérletek valamelyikének
+sikerességét várjuk. A λ arányparaméter (angolul: rate) jelentése, hogy egység idő alatt átlagosan hány
+ilyen „siker” történik.
+
+Egy eloszlás nem csak attól lesz nevezetes, hogy sok alkalmazás esetében felbukkan, hanem attól
+is, hogy speciális tulajdonságokkal bír. A fenti két eloszlás esetében ilyen tulajdonság az örökifjúság
+(angolul: memorylessness) is.
+
+k=1 k · (1 − p)k−1 sor értéke hatványsor deriválása segítségével is kiszámolható.
+
+22AP∞
+
+o
+
+25
+Nevezzünk egy X valószínűségi változót örökifjúnak a G ⊆ R halmazon, ha tet-
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+5.2.4. Deﬁníció.
+szőleges s, t ∈ G esetén
+(3)
+illetve P(X ∈ G) = 1, azaz X értéke 1 valószínűséggel a G halmazba esik.
+
+P(X > t + s | X > s) = P(X > t),
+
+Ha X-re, mint egy történés bekövetkezésének időpontjára gondolunk, a fenti egyenlet azt jelenti,
+hogy ha s-ig nem következett be a történés, akkor ugyanakkora eséllyel kell még legalább t időt várnunk,
+mint ha most kezdenénk el várni. Vagyis az idő nem változtatott semmit a történés bekövetkezési
+hajlandóságán.
+Kérdés: Van-e egyáltalán ilyen valószínűségi változó, és ha igen, mi lehet az eloszlása?
+5.2.5. Állítás. Legyen X nemkonstans örökifjú valószínűségi változó a G halmazon.
+
+(1) Ha G = {1, 2, 3, . . .} , akkor X eloszlása geometriai.
+(2) Ha G = [0,∞), akkor X eloszlása exponenciális.
+
+Vagyis ez a két eloszlás egymás analógja. Azt fejezik ki, hogy meddig kell várni egy történésre, aminél
+az eltelt idő nem változtat a bekövetkezés esélyén. A különbség a két eset közt, hogy az első esetben
+az idő diszkrét, míg a másodikban folytonos módon van modellezve.
+Bizonyítás. Bontsuk ki a feltételes valószínűség deﬁnícióját. Azt kapjuk, hogy a (3) egyenlet ekvivalens
+a következővel:
+
+P(X > t + s) = P(X > t)P(X > s)
+
+(∀s, t ∈ G).
+
+Legyen először G = {1, 2, 3, . . .}, és jelölje p a P(X = 1) valószínűséget. Ekkor s = 1 esetén az előző
+egyenlet segítségével tetszőleges t pozitív egészre azt kapjuk, hogy
+
+ami épp a geometriai eloszlás deﬁníciója. Probléma csak azzal lehet, ha p ∈ {0, 1}. Ha p = 0, akkor
+P(X = t) = 0 minden t ∈ {1, 2, . . .} esetén, amely egyenletek így nem határozzák meg X eloszlását.
+Viszont az örökifjúság deﬁníciójában feltettük, hogy X értéke 1 valószínűséggel G-be esik, ami ellent-
+mondás. Hasonlóan, ha p = 1, akkor X a konstans 1 valószínűségi változó, de feltettük, hogy X nem
+konstans, ez ellentmondás. Következésképp X valóban geometriai eloszlású.
+Legyen most G a nemnegatív valós számok halmaza, és jelöljük g(t)-vel az ln P(X > t) mennyisé-
+get23. Ez a logaritmus értelmes (azaz P(X > t) 6= 0), hacsak X nem konstans 0, amit viszont kizártunk.
+Ekkor a (3) egyenlet logaritmusát véve kapjuk, hogy
+
+g(t + s) = ln P(X > t + s) = ln P(X > t) + ln P(X > s) = g(t) + g(s),
+
+vagyis g egy additív függvény a nemnegatív valós számokon. Szerencsére azt is tudjuk, hogy g monoton
+csökkenő, hiszen az eloszlásfüggvény t 7→ FX(t) = P(X < t) monoton növő, így t 7→ P(X > t) monoton
+csökkenő. De akkor a logaritmusa is monoton csökkenő kell legyen.
+5.2.6. Lemma. Ha g : [0,∞) → R monoton csökkenő függvény, amire g(t + s) = g(t) + g(s) teljesül
+tetszőleges s, t ∈ [0,∞) esetén, akkor g(t) = −λt, ahol λ = −g(1) ≥ 0.24
+
+23Itt ln jelöli a természetes alapú logaritmust.
+24A monotonitás nélkül nem igaz az állítás, valami szépségi feltételre szükség van (folytonos, vagy korlátos, Lebesgue-
+
+mérhető, ...). Bővebben lásd: Cauchy függvényegyenlete.
+
+Ebből viszont már adódik a változó diszkrét eloszlása:
+
+P(X > t + 1) = P(X > t)P(X > 1) = P(X > t) · (1 − p) =
+
+= P(X > t − 1) · (1 − p)2 = ··· = (1 − p)t+1.
+
+P(X = t) = P(X > t − 1) − P(X > t) = (1 − p)t−1 − (1 − p)t =
+
+=(cid:0)1 − (1 − p)(cid:1)(1 − p)t−1 = p(1 − p)t−1,
+
+26
+A lemmát nem bizonyítjuk. A lemma miatt ln P(X > t) = g(t) = −λt, ahol λ = − ln P(X > 1).
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+Emiatt
+
+P(X ≤ t) = 1 − P(X > t) = 1 − e−λt,
+
+ahol λ 6= 0, különben P(X > t) = 1 minden t-re teljesülne, ami lehetetlen. Nekünk P(X ≤ t) helyett az
+eloszlásfüggvényre, azaz P(X < t)-re lenne szükségünk. Vegyük észre, hogy t 7→ P(X ≤ t) folytonos,
+ezért P(X < t) = lims%t P(X ≤ s) = P(X ≤ t) = 1 − e−λt, ami épp az exponenciális eloszlás
+(cid:3)
+eloszlásfüggvénye.
+
+A geometriai és az exponenciális eloszlás közti kapcsolat abban is megnyilvánul, hogy a geometriai
+
+eloszlás kifejezhető az exponenciálisból.25
+5.2.7. Állítás. Ha az X valószínűségi változó exponenciális eloszlású λ paraméterrel, akkor dXe geo-
+metriai eloszlású 1 − e−λ paraméterrel.
+
+Bizonyítás. Világos, hogy P(cid:0)dXe = 0(cid:1) = P(−1 < X ≤ 0) = 0. Továbbá tetszőleges k pozitív egész
+
+P(cid:0)dXe = k(cid:1) = P(k − 1 < X ≤ k) = FX(k) − FX(k − 1) =
+
+esetén
+
+= (1 − e−λk) − (1 − e−λ(k−1)) = e−λ(k−1) − e−λk = e−λ(k−1)(1 − e−λ),
+
+ami a p = 1−e−λ jelöléssel éppen (1−p)k−1p, vagyis dXe geometriai eloszlású 1−e−λ paraméterrel. (cid:3)
+5.3. Poisson-eloszlás
+
+A Poisson-eloszlás egy alkalmazásokban sűrűn előkerülő diszkrét eloszlás. Intuitívan, olyankor buk-
+kan fel, ha rengeteg nagyon kis valószínűségű, egymástól független eseményből vizsgáljuk, hogy hány
+következik be26. Ilyen például egy telefonközpontba beérkező hívások száma, vagy az egy adott órában
+születő gyerekek száma.
+5.3.1. Deﬁníció. Az X valószínűségi változó Poisson-eloszlású λ paraméterrel (λ > 0), ha
+
+minden nemnegatív egész k-ra. Jelölése: X ∼ Pois(λ).
+
+P(X = k) = λk
+
+k! e−λ
+
+Ez tényleg egy lehetséges valószínűségi eloszlás, azaz a valószínűségek összege 1, hiszen
+
+A Poisson-eloszlású valószínűségi változó paramétere szemléletes jelentésű, ugyanis
+
+P(X = k) =
+
+∞X
+
+k=0
+
+∞X
+∞X
+
+k=0
+
+k
+
+k=0
+
+λk
+
+k! e−λ = eλ−λ = 1.
+∞X
+
+λk−1
+(k − 1)! e−λ = λ
+
+m=0
+
+∞X
+
+k=1
+
+λ
+
+λm
+
+m! e−λ = λ,
+
+E(X) =
+
+λk
+
+k! e−λ =
+
+vagyis a paraméter épp a változó várható értéke (vegyük észre, hogy ez nem teljesül sem a geometriai,
+sem az exponenciális eloszlásra).
+
+25Megfordítva, az exponenciális eloszlás ún. határeloszlása a geometriainak, ha besűrítjük a geometriai lehetséges
+
+bekövetkezési időpontjait az 1
+
+n többszöröseivé, n → ∞ és np → λ.
+
+26A hasonlóság az exponenciális eloszlás hasonló leírásával nem véletlen, lásd még Poisson-folyamat, avagy [4], 8.4.
+
+fejezet.
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+27
+
+5.3.2. Példa. Egy kaszkadőr egy évben átlagosan 2-szer sérül meg. Mi a valószínűsége, hogy idén 4-
+szer? Mivel egy kaszkadőrnek rengetegszer van alkalma megsérülni, amiket tekinthetünk függetlennek,
+így a Poisson-eloszlás jó közelítése a sérülések számának, amit jelöljünk Y -nal. A feltétel szerint λ = 2,
+így
+
+P(Y = 4) = 24
+
+4! e−2 = 2
+
+3 e−2 ≈ 0,0902
+
+az eredmény.
+
+(cid:19)
+
+(cid:18)n
+
+tetszőleges k ∈ {0, 1, 2, . . .} esetén.
+
+Azt, hogy rengeteg kis valószínűségű eseménynél a bekövetkezések száma Poisson-eloszlást közelít,
+be is bizonyíthatjuk. Ha n eseményről van szó, amik mind p valószínűségűek és egymástól függetlenek,
+akkor a bekövetkezések X száma B(n; p) binomiális eloszlású. A bekövetkezések átlagos száma, ahogy
+korábban már láttuk, n· p, jelölje most ezt λ. A következő állítás épp azt mutatja, hogy nagy n esetén
+B(n; p) eloszlása körülbelül Pois(λ).
+5.3.3. Állítás. Legyen n pozitív egész, λ ∈ (0,∞), és jelölje pn = λ
+(1 − pn)n−k = λk
+k! e−λ
+(cid:16) λ
+(cid:17)k(cid:16)1 − λ
+(cid:17)n−k =
+(cid:17)n ·(cid:16)1 − λ
+(cid:17)−k
+(cid:17)−k → 1.
+(cid:16)1 − λ
+
+(1 − pn)n−k =
+(n − k)!nk · λk
+(cid:17)n → e−λ
+(cid:16)1 − λ
+
+(cid:19)
+Bizonyítás. Fix k és n esetén(cid:18)n
+
+k! nem fog változni, ha n tart végtelenhez, míg
+
+k!(n − k)!
+
+k! ·(cid:16)1 − λ
+
+n-et. Ekkor
+
+Ebből λk
+
+lim
+n→∞
+
+n!
+
+n!
+
+pk
+n
+
+=
+
+pk
+n
+
+és
+
+n
+
+n
+
+n
+
+.
+
+n
+
+k
+
+k
+
+n
+
+n
+
+Így már csak az első tényezővel kell megküzdeni. Az pedig a következőképp egyszerűsíthető:
+
+n!
+
+(n − k)!nk
+
+= n(n − 1) . . . (n − k + 1)
+
+n · n · ... · n
+
+,
+
+n
+
+ami egy k tényezőjű szorzat, ahol az egyes n−i
+alakú tagok egyenként mind 1-hez tartanak. Mivel csak
+(cid:3)
+n tart végtelenhez, de k rögzített, így a szorzat határértéke szintén 1.
+5.3.4. Példa. Egy magyarérettségiben kétszer akkora eséllyel van összesen 3 elírás, mint 1 elírás (a
+példa nem reprezentatív). Tegyük fel, hogy a hibák egymástól függetlenül, azonos eséllyel következnek
+be. Mekkora a valószínűsége, hogy egyáltalán nincs elírás a dolgozatban?
+
+Jelölje X egy dolgozatban a hibák számát. Mivel csak korlátos mennyiségű hiba szerepelhet, így a
+feltételeinkből (függetlenség, azonos esélyek) az következne, hogy X binomiális eloszlású. Ugyanakkor
+mind a hibák maximális számát, mind egy hiba bekövetkezésének valószínűségét nehéz meghatározni
+(főképp a rendelkezésre álló információból).
+
+Felhasználhatjuk viszont a fenti állítást, ami szerint X eloszlását Poisson-eloszlással közelíthetjük,
+
+azaz
+
+A feltétel szerint
+
+2 = P(X = 3)
+
+P(X = k) = λk
+k! e−λ
+P(X = 1) = λ3
+3! e−λ
+3 ≈ 0,0313.
+
+√
+
+(k ∈ N).
+(cid:30) λ
+1! e−λ = λ2
+6 ,
+
+vagyis λ = 2√3. Ez azt jelenti, hogy átlagosan 2√3 hiba bukkan fel az irományban. Innen a megoldás
+világos: P(X = 0) = (2
+
+3 = e−2
+
+e−2
+
+√
+
+√
+3)0
+0!
+
+

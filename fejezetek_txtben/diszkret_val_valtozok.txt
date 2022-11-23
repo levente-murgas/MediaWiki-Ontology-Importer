@@ -1,0 +1,549 @@
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+13
+
+3. Diszkrét valószínűségi változók
+
+Az előző két előadásban szereplő deﬁníciók (eseményalgebra, feltételes valószínűség) ugyan alapfogal-
+mai a témának, de nem elégségesek, hogy természetes módon le tudjunk írjunk bizonyos problémákat.
+Például hogyan tudnánk megfogalmazni az eddigi eszközökkel olyan egyszerű állításokat, hogy két
+kockadobás eredménye független? Vagy hogy egy kockadobás átlagos eredménye 3,5, egy 0 és 1 közt
+2? Ezekhez arra van szükségünk, hogy ne
+egyenletesen kiválasztott véletlen szám átlagos értéke pedig 1
+csak eseményekről, hanem véletlen mennyiségekről (ún. valószínűségi változókról) is beszélni tudjunk.
+3.1. Valószínűségi változó
+3.1.1. Deﬁníció.
+
+Legyen X : Ω → R függvény. Adott x ∈ R valós számra jelölje
+
+o
+
+{X < x} def= {ω ∈ Ω | X(ω) < x},
+
+vagyis azon kimenetelek halmazát, amikor X kisebb, mint x. Ezeket a halma-
+zokat az X nívóhalmazainak hívják. Az X függvényt valószínűségi változó-
+nak nevezzük, ha minden x ∈ R-re
+azaz röviden X nívóhalmazai események.
+3.1.2. Példa. Az eddigi példáinkban is szerepeltek már valószínűségi változók, csak nem neveztük
+őket a nevükön. Néhány példa valószínűségi változóra:
+
+{X < x} ∈ F,
+
+(1) Egy kockadobás eredménye. A valószínűségi változó deﬁníciójában szereplő „{X < x} ∈ F
+minden valós x-re” feltétel ebben az esetben ekvivalens azzal, hogy minden k-ra azon kimene-
+telek halmaza, amelyek esetén k-t dobtunk, egy esemény.
+(2) Kockadobás eredményének négyzete. Lehetséges értékei 1, 4, 9, 16, 25 és 36, mindegyik lehető-
+6 eséllyel veszi fel. Formálisan felírva választhatjuk az eseményteret Ω = {1, 2, 3, 4, 5, 6}-
+séget 1
+nak, F és P ahogy korábban, a valószínűségi változó pedig Y (ω) = ω2.
+(3) Egy urnában 2 fehér és 3 piros golyó van. Visszatevés nélkül addig húzunk, amíg fehéret nem
+húztunk. A fehér kihúzásáig húzott piros golyók száma egy valószínűségi változó.
+
+(4) Valószínűségi változót eseményből is kaphatunk. Legyen
+
+(1 ha ω ∈ A,
+
+0
+
+egyébként.
+
+1A(ω) =
+
+Ezt hívjuk az A eseményhez tartozó indikátor valószínűségi változónak.
+
+Megjegyzés. Az {X < x} ∈ F feltétel helyett használhattuk volna az {X ≤ x} ∈ F feltételt is (ahogy
+néhány más jegyzet teszi is), ahol értelemszerűen {X ≤ x} def= {ω ∈ Ω | X(ω) ≤ x}. Ez a módosítás
+nem változtatna a fenti deﬁníció értelmén, azaz ekvivalens deﬁníciót kapnánk. Hasonlóan deﬁniálhatók
+az {X = x}, {X > x}, de akár az {a < X < b} halmazok is, amik azon kimenetelek halmazai, amikre
+teljesül a zárójeles állítás. Belátható, hogy ezek szintén események.
+3.2. Várható érték véges esetben
+
+Egy véletlen mennyiség esetében az egyik legtermészetesebb kérdés, hogy "Jó-jó, véletlen, de úgy
+átlagban mennyi?". Ezt a véletlenszerű esetek közti "átlagos" értéket fogja meg a várható érték fogalma.
+Egy X valószínűségi változó egyszerű, ha csak véges sok értéket vehet fel. Egy
+3.2.1. Deﬁníció.
+egyszerű valószínűségi változó várható értéke:
+
+o
+
+E(X) def= X
+
+k∈Ran(X)
+
+k · P(X = k),
+
+ahol Ran(X) az X véges értékkészlete, és P(X = k) jelöli az {X = k} esemény valószínűségét.
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+14
+
+Mit is jelent ez? Miért lesz ez a fura szumma "átlagos érték"? A képlet azt mondja, hogy a véletlen
+X értékeinek vegyük a súlyozott közepét, ahol a súlyok az egyes értékek valószínűségei. Az elnevezés
+némileg szerencsétlen: az érték, amit kapunk nem feltétlenül "várható". Pl. ha csukott szemmel felve-
+szünk egy papucsot, akkor vagy 2 vagy 0 lábunkon lesz a megfelelő papucsfél, mégis a helyesen felvett
+papucsok számának várható értéke 1 (azonos esélyeket feltételezve).
+
+Fontos, hogy a képletben szerepel a k szorzó, anélkül ugyanisP
+
+k∈Ran(X) P(X = k) = 1 bármilyen
+
+egyszerű X változó esetén.
+3.2.2. Példa. Számoljuk ki a fenti példákban szereplő valószínűségi változók várható értékeit:
+
+ezért
+
+(1) A kockadobás esetén Ran(X) = {1, 2, 3, 4, 5, 6}, illetve P(X = k) = 1
+6 = 3,5.
+
+k · P(X = k) =
+
+6 = 21
+
+E(X) =
+
+6X
+
+6X
+
+k · 1
+
+k=1
+
+k=1
+
+6 minden k ∈ Ran(X)-re,
+
+(2) A kockadobás négyzetére hasonlóan
+
+E(Y ) = X
+
+k∈{1,4,9,16,25,36}
+
+k · P(Y = k) = (1 + 4 + 9 + 16 + 25 + 36) · 1
+
+6 = 91
+
+6 ≈ 15,1667.
+
+(3) Jelölje Z a fehér golyó kihúzásáig húzott piros golyók számát:
+
+k · P(Z = k) szorzási szabály
+2
+3 + 3 · 3
+5
+(4) Indikátor valószínűségi változó várható értéke:
+
+k=0
+
+2
+4
+
+2
+4
+
+=
+
+1
+3
+
+2
+2 = 0 + 3 + 4 + 3
+
+10
+
+= 1.
+
+3X
+E(Z) =
+2
+4 + 2 · 3
+5
+
+= 0 · 2
+5 + 1 · 3
+5
+E(1A) = X
+
+k∈{0,1}
+
+k · P(1A = k) = 0 · P(1A = 0) + 1 · P(1A = 1) = P(A).
+
+Ilyen értelemben a várható érték kiterjesztése a valószínűségeknek az indikátor változókról az
+(egyelőre csak egyszerű) valószínűségi változókra.
+
+A várható érték egyik sűrűn használt tulajdonsága, hogy lineáris. Ez alatt egyrészt azt értjük, hogy
+
+Valószínűségi változókra – ahogy valós értékű függvényekre – deﬁniálhatók a szokásos műveletek:
+ha X és Y valószínűségi változó, akkor X + Y az a függvény, amire (X + Y )(ω) = X(ω) + Y (ω).
+Belátható, hogy az összeg is valószínűségi változó.12 Hasonlóan deﬁniálhatjuk valószínűségi változók
+különbségét, szorzatát, illetve ha a nevező sehol sem nulla, akkor hányadosát.
+bármilyen c ∈ R esetén E(cX) = c · E(X) (ez még egyszerűen látszik). Másrészt, hogy E additív:
+3.2.3. Állítás. Legyenek X és Y egyszerű valószínűségi változók. Ekkor E(X + Y ) = EX + EY .
+Bizonyítás. Jelöle a Ran(X + Y ) halmazt M, Ran(X)-et K és Ran(Y )-t L. Ekkor a deﬁníciókat
+kibontva
+
+m∈M
+
+E(X + Y ) = X
+= X
+X
+
+m · P(X + Y = m) = X
+(k + l) · P(X = k, Y = l) = X
+racionális számok sűrűn helyezkednek el, és így {X + Y < x} =S
+
+k∈K, l∈L
+k+l=m
+
+m∈M
+
+m∈M
+
+k∈K
+
+m · P(cid:16) [
+X
+
+l∈L
+
+{X = k, Y = l}(cid:17) =
+
+k∈K, l∈L
+k+l=m
+(k + l) · P(X = k, Y = l)
+
+12Nem egyszerű valószínűségi változók esetén a bizonyítás nem magától értetődő. Érdemes használni hozzá, hogy a
+
+r∈Q({X < r} ∩ {Y < x − r}).
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+= X
+
+k∈K
+
+k · P(cid:16)[
+= X
+
+{X = k, Y = l}(cid:17) +X
+k · P(X = k) +X
+
+l∈L
+
+l∈L
+
+k∈K
+
+l · P(Y = l) = EX + EY,
+
+l · P(cid:16) [
+
+{X = k, Y = l}(cid:17)
+
+15
+
+k∈K
+ami épp a bizonyítandó állítás.
+
+(cid:3)
+Az additivitás hasznos eszköz olyankor is, amikor alapból nincs szó valószínűségi változók összegéről.
+
+l∈L
+
+Ekkor a fenti indikátor valószínűségi változós példa miatt:
+
+3.2.4. Példa. Bizonyítsuk be a 3 halmazra vonatkozó Poincaré-formulát, azaz hogy
+P(Ai ∩ Aj) + P(A1 ∩ A2 ∩ A3).
+
+P(A1 ∪ A2 ∪ A3) =
+
+i=1
+
+3X
+P(Ai) − X
+(cid:1) = 1 − E(cid:16)1∩iAi
+P(Ai) − X
+
+1≤i<j≤3
+
+(cid:17) = 1 − E(cid:16)Y
+
+P(∪iAi) = 1 − P(cid:0) ∩i Ai
+1 − 1A1 − 1A2 − 1A3 + 1A1∩A2 + 1A2∩A3 + 1A1∩A3 − 1A1∩A2∩A3
+3X
+
+(cid:17) = 1 − E(cid:16)Y
+
+= 1 − E
+
+(1 − 1Ai
+(cid:19)
+
+(cid:18)
+
+1Ai
+
+P(Ai ∩ Aj) + P(A1 ∩ A2 ∩ A3),
+
+=
+
+i
+
+i
+
+)(cid:17) =
+
+i=1
+ami épp a bizonyítandó állítás.
+
+1≤i<j≤3
+
+minden k ∈ S esetén. Ha S = {1, 2, . . . , n}, akkor X várható értéke E(X) = 1+2+···+n
+
+= n+1
+2 .
+
+n
+
+(cid:18)n
+(cid:19)
+
+k
+
+Vegyük észre, hogy a számolás első sorában nem használtuk, hogy 3 halmazról beszélünk. Valójá-
+ban ugyanez az érvelés tetszőleges véges sok halmazra elmondható, és így bebizonyítható a Poincaré-
+formula.
+
+Láttuk, hogy az egyes valószínűségi változók várható értékének meghatározásához elég volt a P(X =
+k) értékeket ismernünk. Ezen valószínűségek összességét hívjuk az egyszerű valószínűségi változó el-
+oszlásának. Nézzünk néhány nevezetes eloszlást:
+3.2.5. Deﬁníció. Egy X valószínűségi változó binomiális eloszlású, n ∈ N és p ∈ [0, 1] paraméte-
+rekkel, ha
+
+P(X = k) =
+
+pk(1 − p)n−k
+
+k ∈ {0, 1, 2, . . . , n}.
+
+Jelölése: X ∼ B(n; p).
+3.2.6. Példa. Dobjunk fel egy olyan pénzérmét n-szer, ami p valószínűséggel mutat fejet egy dobás
+után. Ekkor a fej dobások száma egy binomiális eloszlású valószínűségi változó.
+
+Általánosan, ha független kísérleteket végzünk, amiknek azonos a sikervalószínűségük, akkor n kí-
+sérletből a sikerek száma binomiális eloszlású n és p paraméterekkel. Formálisan ez a következőképp
+írható fel: legyenek A1, . . . , An együttesen független események. Tegyük fel, hogy P(Ai) = p minden
+i-re. Ekkor
+vagyis a B(n; p) eloszlású valószínűségi változóra mindig nézhetünk úgy, mint n darab együttesen
+független esemény indikátorainak összegére.
+
+1A1 + ··· + 1An ∼ B(n; p),
+
+Ennek a megﬁgyelésnek a hasznossága rögtön látható, ugyanis ha X ∼ B(n; p), akkor
+
+E(X) = E(1A1 + ··· + 1An
+
+) = P(A1) + ··· + P(An) = n · p
+
+a várható érték additivitása okán.
+3.2.7. Deﬁníció. Egy X valószínűségi változó egyenletes eloszlású egy n elemű S ⊆ R halmazon,
+ha
+
+P(X = k) = 1
+
+n
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+16
+
+3.3. Randomized Quicksort algoritmus (kiegészítő anyag)
+
+alkalmazhatóságát demonstrálandó.
+
+Az előző előadáson szó volt a Karger-algoritmusról. Nézzünk egy hasonló példát, a várható érték
+Input: egy x1, . . . , xn különböző elemekből álló tömb (n ≥ 1). Output: ugyanezen elemek tömbje
+sorba rendezve. Az algoritmus a következő: Ha a lista egy elemű, visszatérési érték a lista. Egyébként
+választunk egy p elemet (neve: pivot elem), a többieket pedig szétválogatjuk két tömbre: p-nél kisebbek
+és p-nél nagyobbak (ez n − 1 összehasonlítást jelent). Alkalmazzuk rekurzívan a quicksort algoritmust
+a kapott két tömbre, majd adjuk vissza az ebből összekonkatenált eredményt: p-nél kisebbek rendezve,
+aztán p, végül p-nél nagyobbak rendezve.
+Ez egy Las Vegas algoritmus13, vagyis egyesélyes az eredmény (biztosan jó eredményt kapunk),
+csak az nem világos, meddig tart eljutni odáig. Legrosszabb esetben mindenkit mindenkivel össze kell
+
+(cid:1) összehasonlítást végzünk: például ha már eleve sorba van rendezve a tömb, és
+
+hasonlítanunk, így(cid:0)n
+
+mindig a legelső elemet választjuk pivot elemnek.
+
+2
+
+Rendben, van amikor lassú, de mégis meddig tart átlagosan? Ez attól is függ, hogyan választjuk
+a p pivot elemeket. Tegyük fel, hogy a p választása egyenletesen véletlenül történik, és a különböző
+quicksort hívásokban egymástól függetlenül.
+
+3.3.1. Állítás. Jelölje Xn a quicksort algoritmusban elvégzett összehasonlítások (véletlen) számát, ha
+a bemenet hossza n. Ekkor E(Xn) ≤ 2n ln n.
+Bizonyítás. Legyen y1, . . . , yn az algoritmus kimenete (vagyis a rendezett tömb). Legyen Xi,j az a
+valószínűségi változó, ami pontosan akkor 1, ha valamikor az eljárás során össze kellett hasonlítanunk
+az yi és az yj számokat, egyébként 0. Mivel minden összehasonlítást legfeljebb egyszer végzünk el, így
+
+Vegyük észre, hogy az Xi,j-k nem függetlenek. De ettől még teljesül, hogy
+
+Xi,j.
+
+Xn =X
+(cid:18)X
+(cid:19)
+
+i<j
+
+Xi,j
+
+i<j
+
+i<j
+
+=X
+
+EXi,j.
+
+EXn = E
+
+Tehát elég meghatároznunk az EXi,j = P(Xi,j = 1) mennyiségeket.
+Nézzük az yi, yi+1, . . . , yj−1, yj számokat. Az algoritmus deﬁníciója miatt előbb-utóbb mindegyikük
+lesz pivot elem, de hogy milyen sorrendben, az véletlenszerű. Az Xi,j = 1 feltétel (azaz hogy yi-t és
+yj-t össze kellett hasonlítanunk valamikor) pontosan akkor teljesül, ha ezen számok közül a legelőször
+vagy yi-t vagy yj-t választjuk pivot elemnek. Ha nem ez történne, yi és yj külön résztömbben folytatná
+karrierjét, és így sosem kerülne összehasonlításra.
+Mivel a pivot elemeink egymástól függetlenül egyenletesen választódnak ki, annak az esélye, hogy
+
+legelőször yi-t vagy yj-t választunk, éppen
+
+EXn =X
+
+EXi,j = X
+
+j−i+1. Tehát
+2
+2
+
+i<j
+
+1≤i<j≤n
+
+nX
+
+k=2
+
+j − i + 1 =
+nX
+
+2
+k
+
+k=2
+
+=
+
+(n − k + 1) 2
+nX
+
+k
+
+1
+k
+
+.
+
+k=1
+
+= −2(n − 1) + (n + 1)
+
+= −4n + (2n + 2)
+
+Belátható, hogyPn
+
+k=1
+
+13Lásd a Karger-algoritmus utáni megjegyzést.
+
+1
+
+k ≤ ln n + 1, így EXn ≤ −4n + (2n + 2)(ln n + 1) ≤ 2n ln n.
+
+(cid:3)
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+17
+
+3.4. Várható érték végtelen diszkrét esetben
+
+Dobáljunk fel egy pénzérmét addig, amíg fejet nem kapunk. Legyen p annak a valószínűsége, hogy
+Vegyük észre, hogy X nem egyszerű valószínűségi változó, hiszen k akármilyen pozitív egész értéket
+
+az érme a fej oldalát mutatja. Jelölje a dobások számát X. Mi X várható értéke?
+felvehet. Szerencsére várható értéket nem csak egyszerű valószínűségi változókra számolhatunk.
+3.4.1. Deﬁníció. Legyen X egy kizárólag nemnegatív értékeket felvevő valószínűségi változó. Deﬁni-
+áljuk ekkor a várható értékét:
+
+E(X) def=
+
+E(Z),
+
+sup
+Z≤X
+
+Z egyszerű,
+
+ami vagy egy nemnegatív valós szám vagy +∞. Vagyis az X-nél (minden ω ∈ Ω ponton) nem nagyobb
+valószínűségi változók várható értékeinek a „lehető legnagyobb értéke”, a szuprémuma.
+
+Hát ez nem tűnik túl egyszerűen számolhatónak. A kiszámolásban a következő állítás segít úgyne-
+
+vezett diszkrét valószínűségi változók esetében.
+3.4.2. Állítás. Legyen X olyan nemnegatív valószínűségi változó14, aminek értékkészlete Ran(X) =
+{k1, k2, . . .} megszámlálhatóan végtelen. Ekkor
+(1)
+E(X) =
+
+kj · P(X = kj).
+
+∞X
+
+j=1
+
+A kezdeti példára visszatérve: ezzel az állítással már kiszámolható X várható értéke. Határozzuk meg
+a P(X = k) mennyiséget. Annak a valószínűsége, hogy éppen k dobásra lesz szükségünk: (1 − p)k−1p,
+hiszen k − 1-szer kell írást dobnunk, majd egyszer fejet. Ezt már behelyettesíthetjük a szummába, és
+– ahogy azt látni fogjuk az 5. előadásban, – az eredmény 1
+3.4.3. Deﬁníció. Egy valószínűségi változó diszkrét, ha értékkészlete megszámlálható (nem feltétle-
+nül végtelen).
+
+.
+
+p
+
+Kitérő. A végtelen halmazok sem mind ugyanakkorák, azaz nincs bármelyik kettő közt kölcsönösen
+egyértelmű megfeleltetés. Emiatt megkülönböztetünk megszámlálhatóan végtelen és megszámlálhatat-
+lanul végtelen halmazokat.
+
+Megszámlálhatóan végtelen az, aminek fel tudjuk sorolni az elemeit egy (természetes számokkal
+indexelt) sorozatként. Ilyen például Z, az egész számok halmaza (ami többek közt felsorolható a követ-
+kezőképp: 0, 1,−1, 2,−2, 3,−3 . . . ), de a racionális számok is15. A megszámlálhatóan végtelen halmazok
+mind ugyanakkorák, vagyis bármely kettő közt van kölcsönösen egyértelmű megfeleltetés.
+Megszámlálhatatlanul végtelen az a halmaz, ami végtelen, de nem megszámlálhatóan végtelen. Ilyen
+például R, a valós számok halmaza, de a [0, 1] intervallumon értelmezett Riemann-integrálható függ-
+vények halmaza is. A megszámlálhatatlanul végtelen halmazok nem mind ugyanakkorák, például az
+előző két példa halmaz sem.
+
+14Nem feltétlenül nemnegatív valószínűségi változó esetén a várható érték ugyanezzel a formulával deﬁniálható,
+
+amennyiben a sor abszolút konvergens.
+
+15lásd BSZ1 jegyzet: cs.bme.hu/bsz1/jegyzet/bsz1_jegyzet.pdf
+
+

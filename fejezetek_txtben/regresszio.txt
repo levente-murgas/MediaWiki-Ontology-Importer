@@ -1,0 +1,755 @@
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+10. Lineáris regresszió
+
+50
+
+Valószínűségi változók kovarianciáját eddig csak diszkrét esetben vizsgáltuk, annak ellenére, hogy
+ugyanaz a deﬁníció alkalmas folytonos valószínűségi változók kovarianciájának deﬁniálására is. Amiért
+ezt a témát mégis eddig halogattuk, az az együttes sűrűségfüggvény fogalmának hiánya volt, amely
+fogalom lehetővé teszi a kovariancia kiszámolását folytonos esetben is.
+
+A kovariancia és szórás fogalmak alkalmazásaként a lineáris regressziót is itt tárgyaljuk. Lineáris
+regresszió alatt elsősorban egy statisztikai modellt értünk, ami a változók közötti lineáris kapcsolatra
+alapozva vezet le összefüggéseket a változók viselkedésére. A modellt használják prediktív, illetve ma-
+gyarázó célzattal is. Az előbbi alkalmazás a becsléselmélet, míg utóbbi a hipotézisvizsgálat témaköréhez
+sorolható, amik a statisztika részterületei.
+
+Ugyanakkor a lineáris regressziónak van egy tisztán valószínűségszámítási vonatkozása is, amihez
+nincs szükség a statisztika alapfogalmaira, mint a minta vagy a becslés. Ez annak a kérdésnek a kör-
+nyékre, hogy hogyan lehet adott X és Y valószínűségi változók esetén olyan α, β számokat választani,
+hogy βX + α a lehető legközelebb legyen Y -hoz.
+10.1. Szórás és kovariancia folytonos esetben
+
+Legyen X folytonos valószínűségi változó, és jelölje fX a sűrűségfüggvényét. Hogy tudjuk meghatá-
+rozni X szórását?
+Korábban vizsgáltuk már az X várható értékét, sőt g(X) transzformált várható értékét is, ahol
+g : R → R tetszőleges folytonos függvény. Emiatt az X szórásnégyzetét is ki tudjuk számolni (ahogy
+azt a normális eloszlás esetében már számoltuk is):
+
+D2(X) def= E(cid:16)(cid:0)X − E(X)(cid:1)2(cid:17) = E(X2) − E(X)2 =
+
+Ebből pedig X szórása D(X) =pD2(X).
+
+Z ∞
+
+−∞
+
+x2fX(x)dx −(cid:16)Z ∞
+
+.∞
+
+(cid:17)2
+
+.
+
+xfX(x)dx
+
+A szórásnégyzet (illetve szórás) jelentése ilyen esetben is átlagtól való négyzetes eltérés (és annak
+
+gyöke). Szemléletesen azt méri, mennyire „terül szét” a sűrűségfüggvény a várható érték körül.46
+10.1.1. Példa. Legyen Z ∼ Exp(λ) valamilyen λ pozitív valósra. Ekkor két parciális integrálással
+adódik, hogy
+
+E(Z2) =
+
+Z ∞
+z2λe−λzdz =h − e−λzz2i∞
+(cid:20)
+Z ∞
+2(cid:16) − 1
+(cid:17)
+(cid:16) − 1
+λ2 −(cid:16) 1
+
+D2(Z) = E(Z2) − E(Z)2 = 2
+
+(cid:21)∞
+
+e−λz
+
+0
+2z
+
+−
+
+=
+
+λ
+
+λ
+
+0
+
+0
+
+0
+
+λ
+
+0
+
+Z ∞
+−
+(cid:17)
+e−λzdz = 2
+(cid:17)2 = 1
+
+λ
+
+λ2
+
+Z ∞
+
+0
+
+=⇒
+
+0
+
+Z ∞
+e−λzdz = 2
+λ2 .
+D(Z) = 1
+
+.
+
+λ
+
+−e−λz2zdz =
+
+2ze−λzdz =
+
+Tehát
+
+Ezen gondolatmeneten továbbhaladva észrevehetjük, hogy folytonos valószínűségi változók kovari-
+anciája is értelmes a kovariancia eredeti deﬁníciójával, feltéve, hogy az ott szereplő várható értékek
+léteznek. Sőt, az alábbi állítás is érvényben marad:
+
+cov(X, Y ) def= E(cid:0)(X − EX)(Y − EY )(cid:1) = E(XY ) − E(X)E(Y ).
+
+Konkrét esetben számolási nehézséget tipikusan az E(XY ) tag jelent, hiszen az XY valószínűségi
+változó eloszlása az (X, Y ) valószínűségi vektorváltozó együttes eloszlásától függ, nem csak X és Y
+peremeloszlásaitól. A következő állítás segítségével XY eloszlásának kiszámolása nélkül is meghatá-
+rozható E(XY ).
+
+46A sűrűségfüggvény alakjáról számos további származtatott mennyiség nyilatkozik, mint a valószínűségi változó
+
+átlagos abszolút eltérése, a csúcsossága (más néven lapultsága), vagy a ferdesége.
+
+E(XY ) =
+
+xy · fX,Y (x, y)dxdy,
+
+feltéve, hogy a várható érték létezik (ugyebár a g : (x, y) 7→ x · y függvény nem nemnegatív).
+10.1.3. Példa. Jelölje X az éves összes csapadékmennyiséget (1000 mm-ben számolva), Y pedig az
+évben eladott esernyők számát (1000 db-ban számolva). Tegyük fel, hogy az együttes sűrűségfüggvé-
+nyük:
+
+( 1
+5(4 − 2x2 + xy − y2) ha 0 < x < 1 és 0 < y < 2,
+0
+
+egyébként.
+
+fX,Y (x, y) =
+
+Számoljuk ki X és Y kovarianciáját. Az előző állítás szerint
+
+0
+
+−∞
+
+−∞
+
+Z ∞
+
+Z ∞
+Z 2
+Z 1
+xy · 1
+5(4 − 2x2 + xy − y2)dxdy =
+xy · fX,Y (x, y)dxdy =
+Z 2
+2 x2y3i1
+h2x2y − 1
+3 x3y2 − 1
+2 x4y + 1
+(4xy − 2x3y + x2y2 − xy3)dxdy = 1
+Z 2
+9 − 2(cid:17) = 17
+(cid:16)3
+8 y4i2
+h3
+(cid:16)3 + 8
+5
+9 y3 − 1
+4 y2 + 1
+2 y + 1
+= 1
+5
+Z ∞
+Z ∞
+
+2 y3(cid:17)dy = 1
+3 y2 − 1
+Z ∞
+Z ∞
+
+Z ∞
+
+45 .
+
+5
+
+0
+
+0
+
+0
+
+0
+
+x=0
+
+A kovarianciához szükségünk van még a várható értékekre. Annyi csak a probléma, hogy ehhez az fX
+sűrűségfüggvény még nem áll rendelkezésünkre. Szerencsére azt tudjuk, hogy a peremeloszlás sűrűség-
+függvénye hogyan számolható az együttes sűrűségfüggvényből:
+
+Z 2
+Z 1
+= 1
+5
+
+0
+
+0
+
+E(XY ) =
+
+= 1
+5
+
+dy =
+
+E(X) =
+
+x · fX(x)dx =
+
+x ·
+
+fX,Y (x, y)dydx =
+
+x · fX,Y (x, y)dydx.
+
+−∞
+
+−∞
+
+−∞
+
+−∞
+
+−∞
+
+Ezen a ponton észre is vehetjük, hogy E(X) igazából a g(x, y) = x függvény szerinti transzformált
+várható értéke, így hamarabb eljutunk ugyanehhez a formulához. Némi integrálással kapjuk, hogy
+
+Z 2
+Z 1
+5(4 − 2x2 + xy − y2)dxdy = 7
+x · 1
+Z 2
+Z 1
+15
+5(4 − 2x2 + xy − y2)dxdy = 4
+y · 1
+5
+
+0
+
+0
+
+0
+
+0
+
+E(X) =
+
+E(Y ) =
+
+cov(X, Y ) = E(XY ) − E(X)E(Y ) = 17
+
+45 − 7
+
+15 · 4
+
+5 = 1
+
+225 ≈ 0,0044.
+
+51
+10.1.2. Állítás. Legyen X = (X1, . . . , Xn) folytonos valószínűségi vektorváltozó, és legyen g : Rn → R
+olyan függvény, amire E(g(X1, . . . , Xn)) létezik. Ekkor
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+E(g(X1, . . . , Xn)) =
+
+···
+
+g(x1, . . . , xn) · fX(x1, . . . xn)dx1 . . . dxn.
+
+Ha g folytonos és nemnegatív, akkor E(g(X1, . . . , Xn)) létezik, beleértve, hogy értéke esetleg +∞.
+
+Az állításnak speciális esete, hogy ha (X, Y ) folytonos valószínűségi vektorváltozó, akkor
+
+Z ∞
+
+Z ∞
+
+−∞
+
+−∞
+
+Z ∞
+
+Z ∞
+
+−∞
+
+−∞
+
+A kovariancia illetve szórás korábban tárgyalt tulajdonságai szintén teljesülnek, függetlenül attól,
+
+hogy folytonos esetről beszélünk-e vagy sem.
+10.1.4. Lemma. Legyen (X, Y, Z) valószínűségi vektorváltozó. Ekkor teljesülnek az alábbiak, feltéve,
+hogy a bennük szereplő mennyiségek értelmezettek:
+
+(1) Ha c ∈ R, akkor D(X + c) = D(X) és D(cX) = |c|D(X).
+(2) D2(X + Y ) = D2(X) + D2(Y ) + 2cov(X, Y ).
+(3) D2(X) = 0 pontosan akkor teljesül, ha P(X = c) = 1 valamilyen c ∈ R-re.
+(4) Ha X és Y függetlenek, akkor cov(X, Y ) = 0, speciálisan D2(X + Y ) = D2(X) + D2(Y ).
+(5) (bilineáris) Ha b, c ∈ R akkor cov(X, bY + cZ) = b · cov(X, Y ) + c · cov(X, Z).
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+52
+
+Megjegyzés. A lemma 4. pontja általánosabban alkalmazható, ha felhasználjuk az alábbi lemmát.
+10.1.5. Lemma. Ha X és Y független valószínűségi változók, g és h folytonos, valós függvények, akkor
+g(X) és h(Y ) is függetlenek.
+
+A lemma nem nyilvánvaló, de itt nem bizonyítjuk.
+Valószínűségi vektorváltozó esetén a szórásnégyzeteket és kovarianciákat mátrixba rendezve szokás
+kezelni. Ennek a motivációja nem a kompakt leírhatóság, hanem az, hogy a valószínűségi vektorválto-
+zókkal való számolásokban természetes módon előkerül a kovarianciamátrix vektorokkal vett szorzata,
+a mátrix determinánsa, illetve nyoma is, lásd például a többváltozós normális eloszlást a 12. előadáson.
+Az X = (X1, . . . , Xn) valószínűségi vektorváltozó kovarianciamátrixa az alábbi
+10.1.6. Deﬁníció.
+n × n-es valós mátrix:
+
+o
+
+
+
+cov(X) =
+
+...
+
+cov(X1, X1)
+cov(X2, X1)
+
+cov(X1, X2)
+cov(X2, X2)
+
+cov(X1, Xn)
+
+...
+
+. . .
+
+...
+
+cov(Xn, X1)
+
+. . .
+
+cov(Xn, Xn)
+
+ ,
+
+azaz cov(X)i,j = cov(Xi, Xj) minden 1 ≤ i, j ≤ n esetén.
+
+De hol van ebben szórásnégyzet? Mivel D2(X1) = cov(X1, X1), így a mátrix főátlójában lévő elemek
+
+a vektorváltozó koordinátáinak szórásnégyzetei.
+10.1.7. Állítás. Legyen X = (X1, . . . , Xn) valószínűségi vektorváltozó. Ekkor
+
+(1) cov(X) szimmetrikus, azaz cov(Xi, Xj) = cov(Xj, Xi) minden 1 ≤ i, j ≤ n esetén.
+
+(2) cov(X) pozitív szemideﬁnit mátrix, azazPn
+Pn
+Rn esetén, és pontosan akkor 0, haPn
+j=1 aicov(Xi, Xj)aj ≥ 0 minden (a1, . . . , an) ∈
+gozzuk. A pozitív szemideﬁnitség belátását kezdjük az extrém esettel: tegyük fel, hogy Pn
+1-valószínűséggel konstans valószínűségi változó, azaz P(cid:0)Pn
+i=1 aiXi = c(cid:1) = 1 valamilyen c ∈ R esetén.
+(cid:17) =
+nX
+
+Bizonyítás. A kovariancia szimmetrikussága a deﬁníciója szimmetrikusságából adódik, ezt nem ra-
+i=1 aiXi
+Az előző lemma 3-as pontja szerint ez ekvivalens azzal, hogy a valószínűségi változó szórásnégyzete 0.
+Továbbá, a lemma 5-ös pontja miatt
+
+i=1 aiXi 1-valószínűséggel konstans.
+
+(cid:17) = cov(cid:16) nX
+
+D2(cid:16) nX
+
+nX
+
+(8)
+
+i=1
+
+aicov(Xi, Xj)aj.
+
+aiXi,
+
+ajXj
+
+aiXi
+
+i=1
+
+i=1
+
+i=1
+
+j=1
+
+Tehát ha a valószínűségi változó 1-valószínűséggel konstans, akkor a jobb oldalon lévő összeg is 0.
+Az érvelés fordított irányba ugyanígy elmondható, így az állítás „pontosan akkor” része teljesül. Az
+egyenlőtlenség belátásához már csak azt kell észrevennünk, hogy a szórásnégyzet nemnegatív, ezért a
+(cid:3)
+(8) egyenlet jobb oldala is mindig nemnegatív.
+10.1.8. Példa. Írjuk fel az előző példában szereplő (X, Y ) valószínűségi vektorváltozó kovarianciamát-
+rixát. Ehhez szükségünk van D2(X)-re és D2(Y )-ra is. A korábbiakkal analóg átalakításokkal, illetve
+polinomok integrálásával kapjuk, hogy
+
+nX
+
+j=1
+
+Z ∞
+
+Z ∞
+
+x2fX(x, y)dxdy −(cid:16)Z ∞
+
+Z ∞
+
+−∞
+
+−∞
+
+xfX(x, y)dxdy
+
+D2(X) = E(X2) − E(X)2 =
+
+Z 2
+
+Z 1
+
+0
+
+0
+
+=
+
+x2 · 1
+
+−∞
+
+−∞
+
+5(4 − 2x2 + xy − y2)dxdy −(cid:16)Z 2
+  7
+
+0
+
+Z 1
+
+0
+
+x · 1
+5(4 − 2x2 + xy − y2)dxdy
+!
+
+És hasonlóan D2(Y ) = 58
+
+225. Tehát ha Z jelöli az (X, Y ) valószínűségi vektorváltozót, akkor
+
+(cid:17)2 =
+(cid:17)2 = 7
+
+90 .
+
+cov(Z) =
+
+90
+1
+225
+
+1
+225
+58
+225
+
+.
+
+o
+
+o
+
+10.2. Lineáris regresszió
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+53
+
+Tegyük fel, hogy egy esernyőket áruló bolt tulajdonosai vagyunk, és kapunk egy hosszútávú elő-
+rejelzést a jövő évi csapadékmennyiségről. Jobb híján ezen előrejelzés alapján próbáljuk megtippelni,
+mekkora készletet rendeljünk, azaz körülbelül hány esernyőt fogunk eladni. Hogyan kellene tippeljünk,
+ha a korábbi évek alapján van némi elképzelésünk a csapadékmennyiség és az eladott esernyők száma
+közti összefüggésről? Ilyen becslésre az egyik lehetséges módszerünk a lineáris regresszió.
+
+Jelölje X az éves csapadékmennyiséget, Y pedig az eladott esernyők számát, ahogy a második
+példában. Tegyük fel, hogy (X, Y ) együttes sűrűségfüggvénye a példában szereplő fX,Y . A lineáris
+regresszió alapötlete, hogy próbáljuk meg Y -t az X-nek egy lineáris függvényével, azaz β · X + α
+alakban, a lehető legjobban közelíteni.
+Vegyük észre, hogy a „legjobb közelítés” nem egy jóldeﬁniált fogalom: azt még meg kéne mondanunk,
+mi alapján tekintünk egy közelítést jónak vagy rossznak. Erre többféle megközelítés is bevethető,47 de
+a legalapvetőbb, az ún. legkisebb négyzetek módszere.
+10.2.1. Deﬁníció.
+regresszióján azt a βX + α valószínűségi változót értjük, ahol α, β ∈ R, és az
+(9)
+mennyiség minimális.
+
+Legyenek X és Y valószínűségi változók. Ekkor Y -nak az X-re vett lineáris
+
+E(cid:16)(cid:0)Y − (βX + α)(cid:1)2(cid:17)
+
+Ennek az optimalizálási problémának a megoldása lényegében mindig létezik és egyértelmű:
+
+Legyenek X és Y olyan valószínűségi változók, amire D2(X), D2(Y ) és cov(X, Y )
+10.2.2. Állítás.
+véges, továbbá D2(X) 6= 0. Ekkor a (9) egyenletben szereplő várható érték pontosan akkor minimális,
+ha
+
+β = cov(X, Y )
+D2(X)
+
+és
+
+α = E(Y ) − cov(X, Y )
+
+D2(X) E(X).
+
+10.2.3. Deﬁníció. Az Y valószínűségi változó X-re vett regressziós egyenese az
+
+egyenes a síkon, ahol β és α értéke a fenti állításban szerepel.
+
+{(x, y) ∈ R2 | y = βx + α}
+
+Vizuálisabban, az (X, Y ) valószínűségi vektorváltozó lehetséges értékeinek a síkján az eloszlást „leg-
+jobban közelítő” egyenes a regressziós egyenes. A lineáris regresszió akkor lesz jól használható modell,
+ha az (X, Y ) együttes eloszlása ezen egyenes környékén koncentrálódik.
+Megjegyzés. A β-ra és az α-ra vonatkozó egyenleteket nem feltétlenül egyszerű sem megjegyezni, sem
+megindokolni. Egy heurisztika (de nem bizonyítás) a helyes α és β megtalálására, hogy olyannak
+válasszuk őket, amire Y -nak és βX + α-nak ugyanaz a várható értéke és az X-el vett kovarianciája.
+Emiatt
+
+cov(X, Y ) = cov(X, βX + α) = βD2(X) + 0,
+
+E(Y ) = E(βX + α) = βE(X) + α
+
+és
+amely egyenletekből adódik is β és α értéke.
+korrelációja:
+
+Egy hasonló, kompaktabb megközelítés a korreláció fogalmán keresztül vezet. Idézzük fel, X és Y
+
+corr(X, Y ) def= cov(X, Y )
+D(X)D(Y )
+
+47A lineáris regresszió alternatív változatai, amelyek máshogy deﬁniálják a „legjobb közelítés” fogalmát: súlyozott
+
+lineáris regresszió, ridge regresszió, avagy az ‘1 regresszió.
+
+54
+egy −1 és 1 közti valós szám, ami X és Y lineáris összefüggését méri. Azt állítjuk, hogy ha βX + α az
+Y lineáris regressziója X-re, akkor teljesül, hogy
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+(βX + α) − E(Y )
+
+D(Y )
+
+= X − E(X)
+D(X)
+
+· corr(X, Y ).
+
+Más szavakkal, ha Y standardizáltjába az első Y helyére a βX + α regressziót helyettesítjük, akkor az
+eredmény X standardizáltjának korreláció-szorosa. Ez az azonosság egyszerű átrendezéssel belátható.
+Bizonyítás. A következő függvényt kellene minimalizálnunk:
+
+h(α, β) = E(cid:16)(cid:0)Y − (βX + α)(cid:1)2(cid:17) = E(cid:16)
+
+Y 2 + β2X2 + α2 − 2βXY − 2αY + 2αβX
+
+(cid:17) =
+
+= E(Y 2) + β2E(X2) + α2 − 2βE(XY ) − 2αE(Y ) + 2αβE(X).
+
+Az eredeti formából látszik, hogy h nemnegatív (hiszen valószínűségi változó négyzetének várható
+értéke), továbbá az átalakított formából világos, hogy α-ban és β-ban h másodfokú polinom. Egy ilyen
+polinomnak csak ott lehet globális minimuma, ahol mind az α-ban, mind a β-ban vett parciális derivált
+eltűnik.
+Bár egy (α0, β0) pontban a parciális deriváltak eltűnése nem elégséges feltétele annak, hogy ez
+a pont a h függvény globális minimuma legyen, jelen esetben a nemnegativitás miatt mégis ez a
+helyzet. Valóban, indirekt tegyük fel, hogy az (α0, β0) pontban eltűnik mindkét parciális derivált, de
+h(α1, β1) < h(α0, β0). Nézzük a függvényt a két pontot összekötő egyenesen, vagyis tekintsük az f(t) =
+h(tα0+(1−t)α1, tβ0+(1−t)β1) egyváltozós függvényt. Mivel ezt h-ból lineáris behelyettesítéssel kaptuk,
+így polinom kell legyen t-ben, ami legfeljebb másodfokú. Sőt, a 0-ban vett deriváltját is ki tudjuk fejezni
+h parciális deriváltjaival az (α0, β0) pontban, ezért f0(0) = 0, hiszen a parciális deriváltak eltűnnek.
+Összefoglalva, f egy olyan legfeljebb másodfokú polinom, amire f0(0) = 0, és f mindenhol nemnegatív
+(ebből már látjuk, hogy f vagy egy felfelé álló parabola, vagy konstans), de mégis h(α1, β1) = f(1) <
+f(0) = h(α0, β0). Ez ellentmondás, ilyen polinom nincs.
+
+Visszatérve a globális minimum pontos értékére, h parciális deriváltjai a következők:
+
+β szerint: 2βE(X2) − 2E(XY ) + 2αE(X)
+
+és
+
+α szerint: 2α − 2E(Y ) + 2βE(X).
+
+Vagyis a parciális deriváltak közös nullhelyeit megadó egyenletek:
+
+αE(X) + βE(X2) = E(XY )
+
+és
+
+α + βE(X) = E(Y ).
+
+= cov(X, Y )
+D2(X)
+
+Ez egy 2 × 2-es lineáris egyenletrendszer α-ban és β-ban. Megoldása:
+β = E(XY ) − E(X)E(Y )
+E(X2) − E(X)2
+(cid:3)
+amik éppen a kívánt egyenletek.
+10.2.4. Példa. Mit kapunk a felvezető példa esetében, ahol X a csapadékmennyiség, Y az eladott
+esernyők száma? A már kiszámolt kovarianciamátrix koordinátáiból rögtön felírhatók az Y -nak az X-re
+vett lineáris regressziójának együtthatói:
+
+α = E(Y ) − βE(X) = E(Y ) − cov(X, Y )
+
+D2(X) E(X),
+
+és
+
+β = cov(X, Y )
+
+D2(X) = 1/225
+
+7/90 = 2
+35 ,
+
+α = E(Y ) − cov(X, Y )
+
+D2(X) E(X) = 4
+
+5 − 2
+35
+
+15 = 58
+7
+75 .
+
+Tehát ha X-re kapunk egy előrejelzést, akkor ezen együtthatókkal közelíthetjük Y -t. Némi értelmezést
+hozzáadva: az eső mennyiségének emelkedése csak kismértékben fogja növelni a már alapból magas
+készletszükségletet.
+
+Mivel a lineáris regresszió csak közelítés, így fontos információ lehet, hogy mekkora hibával találja
+
+el Y értékét. (Hiba alatt itt átlagos négyzetes hibát, vagyis szórásnégyzetet értünk.)
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+55
+
+10.2.5. Állítás. Legyen az Y valószínűségi változó X-re vett lineáris regressziója βX + α. Ekkor az
+eltérés szórásnégyzete:
+
+D2(cid:16)
+
+Y − (βX + α)(cid:17) = D2(Y ) − cov(X, Y )2
+
+.
+
+D2(X)
+
+Bizonyítás. A szórásnégyzet fentebb felsorolt tulajdonságai és β = cov(X,Y )
+
+D2(X) miatt:
+
+Y − (βX + α)(cid:17) = D2(Y − βX) = D2(Y ) + β2D2(X) − 2cov(Y, βX) =
+D2(X) cov(Y, X) = D2(Y ) − cov(X, Y )2
+D2(X)
+
+D2(cid:16)
+(cid:0)D2(X)(cid:1)2 D2(X) − 2cov(X, Y )
+= D2(Y ) + cov(X, Y )2
+D2(cid:16)
+
+Y − (βX + α)(cid:17) = D2(Y ) ·(cid:0)1 − corr(X, Y )2(cid:1).
+
+Éppen ez volt az állítás.
+Megjegyzés. Másképpen felírva:
+
+.
+
+(cid:3)
+
+Speciálisan, minél nagyobb a korreláció X és Y közt, annál kisebb rész járul hozzá a hiba szórásnégy-
+zetéhez D2(Y )-ból. Továbbá, ez az átfogalmazás azt is mutatja, hogy a fenti állításból következik a 6.5
+alfejezet állítása.
+10.2.6. Példa. Az előző példa esetében
+
+D2(cid:16)
+
+Y − (βX + α)(cid:17) = 58
+
+225 − (1/225)2
+
+(7/90)2 ≈ 0,2545.
+
+Vagyis az eladások jócskán eltérhetnek a lineáris regresszió által becsült értéktől.
+
+Hasznos észben tartani, hogy statisztikai témakörben nem ugyanezt értik lineáris regresszió alatt.
+A különbség, hogy ott nem feltételezik, hogy a valószínűségi változók eloszlása ismert, de általában
+azt sem, hogy (az esetlegesen ebből levezethető) kovariancia és szórásnégyzet értékeit ismernénk. Így a
+statisztikai értelemben vett lineáris regresszióba beleértik azt is, hogy a β és α értékek maguk is becsült
+mennyiségek, egy véges nagyságú minta alapján. Ez lényegesen eltérő egyenleteket és értelmezést jelent,
+de ettől még a lineáris regresszió ötlete ugyanaz marad: keressünk közelítőleg lineáris összefüggést a
+vizsgált változók között.
+
+

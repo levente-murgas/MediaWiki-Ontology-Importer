@@ -1,0 +1,471 @@
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+1. Alapfogalmak
+
+3
+
+A valószínűségszámítás praktikusságát talán nem kell bizonygatni egyetlen olvasónak sem4: a legtöbb
+kísérleti tudomány támaszkodik rá valamilyen formában. Az mégis kérdés, hogy az egyszeri halandónak
+miért nem elég a „kedvező-per-összes” józan ésszel is kitalálható magasságaiban maradni?
+
+Az egyik ok, hogy néha a naiv megközelítés helytelen vagy ellentmondásos eredményt ad. Ezt jól
+
+demonstrálja a számos valószínűségi paradoxon az irodalomban5, íme az egyik:
+
+Bertrand-féle doboz paradoxon
+
+Adott három egyforma doboz. Az elsőben két arany érme van, a másodikban két ezüst érme, a
+harmadikban pedig egy arany és egy ezüst. A dobozok tartalmát nem ismerve, (egyenletesen)
+véletlenszerűen választva kihúzunk egy dobozból egy érmét. Feltéve, hogy a kihúzott érme arany,
+mi a valószínűsége, hogy a dobozban lévő másik érme is arany?
+
+Első nekifutásra az 1
+
+2 reális tippnek tűnhet, hiszen két esetben húzhattunk arany
+érmét: ha az első vagy második dobozból húztunk. Ezek közül pedig csak az egyik
+3, amit
+esetben lesz a másik érme ezüst. Ugyanakkor a paradoxon helyes megoldása 2
+kísérlettel is igazolhatunk. Ennek magyarázata, hogy eredetileg 6-féle kimenetele lehet
+a húzásunknak az alapján, melyik érmét húzzuk (az érméket különbözőnek véve). Ebből
+a 6 esetből 3-ban húzunk arany érmét, ez tehát az összes eseteink száma. Ebből a 3
+esetből 2-ben a dobozban lévő másik érme szintén arany, így a keresett valószínűség 2
+3.
+
+A példából okulva érdemes deﬁniálnunk a vizsgált fogalmainkat.
+
+1.1. Eseménytér
+
+A valószínűség fogalmát a Kolmogorov-axiómák6 segítségével formalizálhatjuk.
+
+Kolmogorov a huszadik század nagy hatású matematikusa, aki a fentihez hasonló félreérthetőségek
+feloldásaként dolgozta ki azt a keretrendszert, aminek a kiindulópontját ma Kolmogorov-axiómáknak
+nevezünk. Maguk az axiómák a valószínűségi mező deﬁníciójában szereplő feltételek (ld 1.3 alfejezet).
+1.1.1. Deﬁníció. Legyen Ω egy tetszőleges halmaz. A következő elnevezéseket fogjuk használni:
+
+• Eseménytér: Ω,
+• Kimenetel: az eseménytér egy eleme, ω ∈ Ω,
+• Események: az eseménytér „kitüntetett” A ⊆ Ω részhalmazai,
+• Valószínűség: egy eseményhez hozzárendelt P(A)-val jelölt, 0 és 1 közti valós szám.
+
+A fenti paradoxon esetében például 6 kimenetel van, így az eseménytér 6 elemű halmaz. Annak az
+
+A eseménynek pedig, hogy „elsőre arany érmét húzunk” a P(A) valószínűsége 1
+2.
+De mi az, hogy az események „kitüntetett” részhalmazok? Honnan fogjuk tudni, egy kérdés ese-
+tében mit akarunk eseménynek nevezni, és mit nem? Röviden, azokat a részhalmazokat választjuk
+eseménynek, amikhez valószínűségeket szeretnénk hozzárendelni. Sok elemi feladat esetében ez nem
+igazi probléma: minden részhalmazt eseménynek választhatunk, mert feltesszük, hogy mindegyik rész-
+halmaznak van értelme beszélni a valószínűségéről (még ha nem is ismerjük a pontos értékét).
+1.1.2. Példa. Egy kockadobás leírásánál az eseménytér így deﬁniálható: Ω def= {1, 2, 3, 4, 5, 6}. Az Ω
+elemeit, vagyis a kimeneteleket megfeleltethetjük annak, hogy mikor milyen számot dobunk. Legyen Ω
+összes részhalmaza esemény. Például {2, 4, 6} egy esemény. Az eseményeket sokszor logikai állításokkal
+határozzuk meg, így a {2, 4, 6} eseményt röviden írhatjuk úgy is, hogy {párosat dobunk}.
+
+4Ha valakinek mégis kellene: robotics.stanford.edu/users/sahami/papers-dir/SIGCSE11-Probability.pdf
+5lásd még: [youtube] PBS Inﬁnite Series - Making Probability Mathematical
+6Az axióma – hangzásával ellentétben – nem egy lassú lefolyású megbetegedés, hanem az alapállítás másik neve.
+Olyan kijelentéseket, alapvetéseket nevezünk így, amik globális feltevések az elméletünkben: nem bizonyítjuk, viszont
+bárhol használhatjuk őket. Kolmogorov eredeti axiómáit lásd Foundations of the Theory of Probability.
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+4
+
+Felmerülhet a kérdés: „Miért nem választjuk simán mindig az összes részhalmazt eseménynek, ’oszt
+csókolom?”. Azért, mert vannak olyan helyzetek, amikor szerepe van annak, mi esemény, és mi nem.
+Ilyen esetekre példa:
+
+(1) Geometriai valószínűségek esetén területekkel (vagy azzal analóg fogalommal) deﬁniál-
+juk a valószínűségeket. Azonban ha minden részhalmazra szeretnénk értelmes területfogalmat
+deﬁniálni, az nem fog sikerülni, ellentmondásokba futunk7. A megoldás, hogy nem minden
+részhalmaz esemény, így nem kell minden részhalmazra értelmeznünk annak területét.
+
+(2) Megﬁgyelhetőségen is alapulhat, mit nevezünk eseménynek. Például ha a fenti paradoxont
+szeretnénk modellezni: Ω továbbra is deﬁniálható 6 eleműnek aszerint, hogy mit húzunk. Jelölje
+Ω elemeit a1, a2, b1, b2, c1, c2 (vegyük észre, hogy Ω elemei nem kell, hogy számok legyenek).
+Ezen húzások közül a1, a2, c1 jelöl arany érméket, a többi ezüstöt, a1, a2 az első láda tartalmát,
+b1, b2 a másodikat és így tovább. A húzás ismeretében {a1, a2, c1} illetve {b1, b2, c2} részhalma-
+zok megﬁgyelhetők, míg például {c1, c2} nem, hiszen nem tudjuk, hogy a harmadik dobozból
+húztunk-e. Néhány problémánál érdemes pontosan azon részhalmazokat eseménynek nevezni,
+amik megﬁgyelhetők. Ilyen probléma például a feltételes várható érték számolása is.
+
+(3) Folyamatok, vagyis időben változó véletlen mennyiségek esetében az idő múlásával változhat,
+hogy mit tudunk megﬁgyelni és emiatt mit tartunk eseménynek. Lásd még Markov-láncok,
+martingálok.
+
+Nézzük, milyen műveleteket végezhetünk eseményekkel.
+1.1.3. Állítás. Mivel az események halmazok, így értelmezve van események uniója (A∪B), metszete
+(A ∩ B) és Ω-ra vett komplementere (A).
+
+Két esemény különbsége az előbbiekkel leírható: A\B = A∩B. Két esemény kizáró, ha A∩B = ∅.
+Az Ω-ra használatos még a biztos esemény elnevezés. Hasonlóan, az üreshalmaz (jele: ∅) neve a
+továbbiakban lehetetlen esemény.
+1.1.4. Példa. A kockadobálós példánál maradva, a {párosat dobunk} esemény komplementere a
+{páratlant dobunk}, a {párosat dobunk} és a {3-nál nagyobbat dobunk} események metszete a {4, 6},
+míg uniója a {2, 4, 5, 6}.
+
+Végiggondolható, hogy ha az események kijelentésekkel vannak megfogalmazva (pl. {párosat do-
+bunk}), akkor az uniójuk megfelel a kijelentések szintjén a „vagy” műveletnek, metszetük az „és”-nek,
+egy esemény komplementere pedig a logikai tagadásnak.
+A halmazoknál megszokott tulajdonságok itt sem vesztik érvényüket: A∪ B = B ∪ A, A∩ Ω = A és
+
+a többi. Névvel is bíró, megjegyzendő azonosság az alábbi:
+1.1.5. Állítás.
+
+(de Morgan-azonosságok) Két halmazra:
+
+o
+
+illetve végtelen sok halmazra:
+
+A ∪ B = A ∩ B
+
+∞[
+
+∞\
+
+Ai
+
+Ai =
+
+és
+
+és
+
+i=1
+Az első állításpár Venn-diagramon könnyen ellenőrizhető.
+
+i=1
+
+i=1
+
+A ∩ B = A ∪ B,
+
+∞\
+
+Ai =
+
+∞[
+
+i=1
+
+Ai.
+
+Feladat. Legyenek A, B és C események. Írjuk fel a következő eseményeket a fenti műveletek segítsé-
+gével: a) legalább egy esemény teljesül, b) A és B teljesül, de C nem, c) minden esemény teljesül, d)
+egyik esemény sem teljesül, e) pontosan egy esemény teljesül.
+
+7lásd en.wikipedia.org/wiki/Vitali_set
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+5
+
+1.2. Eseményalgebra
+
+Szeretnénk beszélni az összes eseményt tartalmazó halmazról is: ezt a halmazt eseményalgebrának
+hívjuk. Az eseményalgebra már nem Ω részhalmaza, hanem Ω részhalmazainak halmaza, vagyis egy
+F ⊆ P(Ω) részhalmaz. Itt P(Ω) az Ω ún. hatványhalmazát jelöli, azaz P(Ω) elemei épp Ω részhalmazai.
+1.2.1. Példa. Legyen Ω = {1, 2, 3, 4, 5, 6} és F elemei pontosan az {1, 2, 3}, a {4, 5, 6} halmaz, a
+lehetetlen esemény ∅ és a biztos esemény Ω. Ekkor nem minden kimenetelekből álló részhalmaz esemény.
+Mégis előfordulhat olyan feladat, ahol ez az F modellezi jól a problémát (vö. fenti 2. megjegyzés).
+
+Felmerülhet kérdésként, hogy két esemény uniója (ill. metszete, különbsége) szintén esemény-e. A
+válasz: igen. Egész pontosan azt fogjuk megkövetelni az F eseményalgebrától, hogy úgynevezett σ-
+algebra (ejtsd: szigma-algebra) legyen, vagyis teljesítse a következőket.
+1.2.2. Deﬁníció.
+F-et σ-algebrának nevezzük az Ω alaphalmazon, ha az alábbi három feltétel mindegyike teljesül:
+
+Legyen Ω tetszőleges halmaz, F pedig az Ω részhalmazainak egy halmaza. Ekkor
+
+o
+
+(1) Ω ∈ F,
+(2) ha A ∈ F, akkor A ∈ F,
+
+(3) ha A1, A2, ..., Ai, ... ∈ F, akkorS∞
+
+i=1 Ai ∈ F.
+
+megszámlálható unióra.
+
+Röviden, F pontosan akkor σ-algebra, ha eleme a teljes tér, zárt a komplementer-képzésre és a
+A deﬁníció valószínűségszámítási szempontból a következőt mondja. Ha F-re úgy gondolunk, mint
+a megﬁgyelhető események halmazára, akkor a feltételek szerint meg kell tudjuk ﬁgyelni azt, ami
+biztosan bekövetkezik (első feltétel), és azt is, ha egy A esemény nem történik meg (második feltétel).
+A harmadik kicsit trükkösebb, azt modellezi, hogy ha események egy sorozatát külön-külön meg tudjuk
+ﬁgyelni, akkor azt is, hogy legalább az egyikük bekövetkezik-e.
+
+A σ-algebra fogalma a mértékelmélet témaköréből származik. A mértékelmélet az analízis azon
+ága, amely a különböző terület- és térfogatfogalmak általánosításait vizsgálja. Ennek a témának az
+eredményeit használta fel Kolmogorov a valószínűségszámítás megalapozására.
+
+A σ-algebrák több tulajdonsága adódik a deﬁnícióból:
+
+1.2.3. Állítás. Legyen F σ-algebra az Ω alaphalmazon. Ekkor teljesülnek a következők:
+
+• ha A1, A2, ..., Ai, ... ∈ F, akkorT∞
+
+• ∅ ∈ F,
+• ha A, B ∈ F, akkor A ∪ B, A ∩ B, A\B ∈ F,
+i=1 Ai ∈ F.
+∞[
+
+A ∪ B =
+
+Ai ∈ F,
+
+i=1
+
+Bizonyítás. Az (1) tulajdonság miatt Ω ∈ F, így (2) miatt ∅ = Ω ∈ F.
+miatt
+
+A második pont bizonyításához legyen A1 = A, A2 = B, és minden i ≥ 3 esetén Ai = ∅. Ekkor (3)
+
+vagyis az unióra valóban zárt F. A metszetre való zártság ebből már levezethető: ha A, B ∈ F, akkor
+(2) miatt A, B ∈ F. Továbbá, már beláttuk, hogy unió-képzésre zárt az F, tehát A ∪ B ∈ F. Viszont
+a két halmazra vonatkozó De Morgan-azonosság okán tudjuk, hogy A ∪ B = A ∩ B, tehát A ∩ B ∈ F.
+Innen ismét a (2) tulajdonságot használva következik, hogy A ∩ B ∈ F.
+A harmadik pont bizonyításához vegyük észre, hogy Ai ∈ F miatt Ai ∈ F is teljesül (2) miatt. Ezen
+új halmazsorozatra alkalmazhatjuk a (3) tulajdonságot, így
+
+Viszont a végtelen halmazokra vonatkozó De Morgan-azonosság miatt ez éppenT∞
+
+tere. Mivel F zárt a komplementerképzésre, így az állítást ezzel beláttuk.
+
+i=1
+
+Ai ∈ F.
+
+i=1 Ai komplemen-
+(cid:3)
+
+∞[
+
+1.3. Valószínűségi mező
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+6
+
+Volt szó arról, hogy mi az eseménytér, mik az események, de eddig nem kerültek elő valószínűségek.
+Fentebb említettük, hogy azon A ⊆ Ω halmazok események, amiknek szeretnénk a P(A) valószínűségé-
+ről beszélni. Vagyis a valószínűség egy F → [0, 1] függvény kell legyen, ahol F egy σ-algebra. De ennél
+többet is tudnia kell.
+1.3.1. Deﬁníció.
+függvényt valószínűségi mértéknek nevezünk, ha P(Ω) = 1, és teljesül a következő:
+
+Legyen F egy σ-algebra az Ω tetszőleges halmazon. Ekkor egy P : F → [0, 1]
+
+Ha A1, A2, . . . , Ai,··· ∈ F olyan eseménysorozat, amire minden i 6= j esetén Ai ∩ Aj = ∅, akkor
+
+o
+
+P(cid:16) ∞[
+
+i=1
+
+(cid:17) =
+
+∞X
+
+i=1
+
+Ai
+
+P(Ai).
+
+A feltétel röviden úgy olvasható: páronként kizáró eseménysorozat uniójának valószínűsége az esemé-
+nyek valószínűségeinek (végtelen) összege. Röviden ezt a tulajdonságot σ-additivitásnak nevezzük.
+1.3.2. Deﬁníció. Egy (Ω,F, P) hármast (Kolmogorov-féle) valószínűségi mezőnek hívunk, ha F
+σ-algebra az Ω halmazon és P valószínűségi mérték.
+1.3.3. Példa. A mérsékelten kreatív példánknál maradva, egy kockadobás esetén ha Ω = {1, 2, 3, 4, 5, 6},
+és F az összes részhalmaz, akkor egy A esemény P(A) valószínűsége |A|/|Ω|, például P({1, 2, 5, 6}) = 4
+6.
+Az ilyen valószínűségi mezőket (amikor P(A) = |A|/|Ω|) klasszikus valószínűségi mezőnek hívjuk.
+Ennek általánosítása a geometriai valószínűségi mező, amikor Ω a sík, tér (vagy Rn) egy részhal-
+maza, és P(A) = λ(A)/λ(Ω) ahol λ a terület, a térfogat vagy az n-dimenziós térfogat.
+1.3.4. Példa. Nézzünk egy 5 kérdéses tesztet, amin minden kérdés eldöntendő (igen-nem típusú), és a
+kitöltő mindegyikre 60% eséllyel ad helyes választ a többi kérdésre adott választól függetlenül. Ekkor az
+5 hosszú 0-1 sorozatok tere, azaz Ω = {0, 1}5 modellezheti a feladatot (F pedig az összes részhalmaz).
+Ez már nem klasszikus valószínűségi mező, mert a csak a (0, 1, 0, 1, 0) kimenetelt tartalmazó esemény
+valószínűsége 0.43 · 0.62 ≈ 0.023, nem pedig 1
+
+25 ≈ 0.031.
+
+Mit várunk el egy jól működő valószínűség fogalomtól? Például a következő tulajdonságot, ami ugyan
+
+nem szerepel a deﬁnícióban, de könnyen levezethető belőle.
+1.3.5. Állítás. Ha A és B kizáró, akkor P(A ∪ B) = P(A) + P(B).
+Bizonyítás. Használjuk a valószínűségi mérték deﬁníciójában szereplő σ-additivitást azzal a választás-
+sal, hogy A1 = A, A2 = B, illetve Ai = ∅ minden i ≥ 3 esetén. Ekkor
+
+P(A ∪ B) = P(cid:16) ∞[
+
+(cid:17) =
+
+∞X
+
+i=1
+
+Ai
+
+i=1
+
+P(Ai) = P(A) + P(B) +
+
+P(∅).
+
+∞X
+
+i=3
+
+Ez csak úgy történhet, ha P(∅) = 0 (különben a jobb oldal végtelen lenne, míg a bal 0 és 1 közti).
+(cid:3)
+Innen az állítás már következik.
+1.3.6. Következmény. Tetszőleges A, B ∈ F eseményekre a következők teljesülnek:
+
+(1) P(A) + P(A) = 1,
+(2) P(A ∩ B) + P(A ∩ B) = P(A),
+(3) ha B ⊆ A, akkor P(B) ≤ P(A).
+
+Bizonyítás. Az első állításhoz alkalmazzuk a véges additivitást az (egymást kizáró) A és A eseményekre,
+a második állításhoz pedig az A ∩ B és A ∩ B eseményekre. A harmadik tulajdonság következik a
+másodikból, hiszen B ⊆ A esetén A ∩ B = B, és P(A ∩ B) ≥ 0.
+(cid:3)
+Feladat. Vegyünk egyenletesen véletlenszerűen egy egyszerű irányítatlan gráfot az {a, b, c, d} négyele-
+mű csúcshalmazon. (Ekkor az eseménytér egy 64 elemű halmaz.) Melyiknek nagyobb az esélye: hogy a
+gráf fagráf, vagy hogy legfeljebb három éle van?
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+7
+
+1.4. Poincaré-formula
+
+Hogyan lehet kiszámolni az unió valószínűségét, ha az események nem
+feltétlenül kizáróak? A válasz a Poincaré-formula (vagy más néven szita
+formula), amihez szintén csak a fenti véges additivitást kell használnunk.
+1.4.1. Példa. Legyen A, B, C három esemény, például egy céltáblán há-
+rom részhalmaz eltalálásának eseménye, amelyek közül legalább az egyi-
+ket el akarjuk találni.
+A P(A ∪ B ∪ C) valószínűség kiszámolásához kiindulhatunk a P(A) +
+P(B) + P(C) mennyiségből. Vegyük észre, hogy itt a metszetek valószí-
+nűségét duplán számoltuk, vagyis le kell vonjuk a P(A∩ B) + P(A∩ C) +
+P(B ∩ C) összeget, ha jobb közelítést szeretnénk P(A∪ B ∪ C)-ra. De ezzel sem vagyunk kész, hiszen az
+A∩ B ∩ C rész valószínűségét háromszor adtuk hozzá, de háromszor is vontuk le, pedig egyszer kellene
+számoljuk. Tehát végül
+
+o
+
+P(A ∪ B ∪ C) = P(A) + P(B) + P(C) − P(A ∩ B) − P(A ∩ C) − P(B ∩ C) + P(A ∩ B ∩ C)
+
+adódik. Ezt a formulát általánosítja n eseményre a Poincaré-formula.
+
+[n] halmaznak. Ekkor nézhetjük aT
+
+A tétel rövid kimondásához további jelölésre van szükségünk. Jelölje [n] az {1, 2, . . . , n} halmazt. Le-
+gyenek A1, A2, . . . , An ∈ F események, továbbá legyen I = {i1, i2, . . . , ik} egy k elemű részhalmaza az
+i∈I Ai esemény valószínűségét, vagyis valamely k darab különböző
+esemény egyszerre teljesülésének valószínűségét. Végül deﬁniáljuk az
+
+def= X
+
+P(cid:16)\
+
+(cid:17)
+
+Ai
+
+Sk
+
+P(cid:16) n[
+
+j=1
+
+(cid:17) =
+
+nX
+
+k=1
+
+Aj
+
+(−1)k+1Sk.
+
+számot, azaz az összes lehetséges módon kiválasztunk k darab különböző eseményt, majd ezek met-
+
+szeteinek valószínűségét mind összegezzük. Például k = 1 esetén S1 =Pn
+
+i=1 P(Ai).
+1.4.2. Tétel (Poincaré-formula). Legyenek A1, A2, . . . , An ∈ F események. Ekkor
+
+I⊆[n]
+
+i∈I
+
+Felmerülhet kérdésként, hogy mi történik, ha a szummának csak az első néhány tagját nézzük, a
+maradékot elhanyagoljuk (például mert a gyakorlatban annyira kicsik és lassan számolhatók). Az unió
+valószínűségéről ekkor is kaphatunk információt.
+1.4.3. Állítás (Bonferroni-egyenlőtlenségek). Legyenek A1, A2, . . . , An ∈ F események, és 1 ≤ m1, m2 ≤
+n egészek, ahol m1 páratlan, és m2 páros. Ekkor
+(−1)k+1Sk,
+
+és P(cid:16) n[
+
+(cid:17) ≤ m1X
+
+(cid:17) ≥ m2X
+
+P(cid:16) n[
+
+(−1)k+1Sk.
+
+Aj
+
+Aj
+
+A fenti két állítást nem bizonyítjuk. Példákat lásd a gyakorlaton.
+
+j=1
+
+k=1
+
+j=1
+
+k=1
+
+1.4.4. Következmény (Boole-egyenlőtlenség). Legyenek A1, A2, . . . , An ∈ F események. Ekkor
+
+P(cid:16) n[
+
+(cid:17) ≤ nX
+
+Aj
+
+P(Aj),
+
+és P(cid:16) n\
+
+(cid:17) ≥ 1 − nX
+
+Aj
+
+P(Aj).
+
+j=1
+
+j=1
+
+j=1
+
+j=1
+
+Bizonyítás. Alkalmazzuk az első Bonferroni-egyenlőtlenséget m1 = 1 választással, ebből éppen az első
+egyenlőtlenségünk adódik, hiszen S1 a P(Aj)-k összege. A második egyenlőtlenség következik az elsőből
+(cid:3)
+és a De Morgan-azonosságból, ha azt az Aj eseményekre alkalmazzuk.
+
+Az állítás a Bonferroni-egyenlőtlenség nélkül, teljes indukcióval is könnyen belátható.
+
+

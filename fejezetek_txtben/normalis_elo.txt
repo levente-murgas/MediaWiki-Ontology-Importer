@@ -1,0 +1,748 @@
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+8. Normális eloszlás
+
+39
+
+Volt már szó nevezetes eloszlásokról, de a legnevezetesebbről még nem. Ez a Gauss-féle normális
+eloszlás, avagy Gauss-eloszlás, amely elméleti és gyakorlati szempontból is központi jelentőséggel bír.
+Alkalmazásokban tipikusan akkor találkozunk vele, ha nagyszámú, független, de egymagában el-
+hanyagolható méretű hatás eredményeként létrejövő valószínűségi változó eloszlásáról van szó, mint
+amilyen egy ﬁzikai mérés eredménye. Ennek elméleti hátterét, a centrális határeloszlás tételt, a 9.
+előadásban tárgyaljuk.
+8.1. Az eloszlás deﬁníciója
+
+Kezdjük azzal, miről is beszélünk, utána ráérünk megmagyarázni,
+
+miért nevezetes ez az eloszlás.31
+8.1.1. Deﬁníció. Egy Y valószínűségi változó normális eloszlású
+µ és σ2 valós paraméterekkel (σ2 > 0), ha Y folytonos valószínűségi
+változó, aminek sűrűségfüggvénye
+
+fY (x) =
+
+1√2πσ2
+
+− (x−µ)2
+2σ2
+
+e
+
+(x ∈ R).
+
+Jelölése: Y ∼ N(µ; σ2).
+eloszlás). Sűrűségfüggvényét ϕ jelöli, azaz
+
+Ha µ = 0 és σ2 = 1, akkor az eloszlás neve standard normális eloszlás (néha: sztenderd normális
+
+ϕ(x) = 1√2π
+
+e− x2
+
+2
+
+Érdemes rögtön ellenőrizni, hogy a fenti fY valóban sűrűségfüggvény. A 4. előadás szerint ehhez
+elég belátnunk, hogy nemnegatív, és a teljes valós egyenesen az integrálja 1. A nemnegativitás világos
+(hiszen ex mindig pozitív), de az integrált ki kell számolni. Kezdjük a standard esettel.
+
+tetszőleges x ∈ R esetén.
+
+8.1.2. Állítás. R ∞
+
+(cid:18)Z ∞
+
+−∞
+
+−∞ e− x2
+(cid:19)(cid:18)Z ∞
+
+2 dx = √2π.
+(cid:19)
+
+−∞
+
+Bizonyítás. Az eredeti integrál helyett vizsgáljuk először a négyzetét. Ez a következőképp írható át:
+
+e− x2
+
+2 dx
+
+e− y2
+
+2 dy
+
+=
+
+e− x2
+
+2
+
+e− y2
+
+2 dy
+
+dx =
+
+e− x2+y2
+
+2 dydx.
+
+(cid:18)Z ∞
+
+−∞
+
+(cid:19)
+
+Z ∞
+
+Z ∞
+
+−∞
+
+−∞
+
+Ez egy kettős improprius integrál. Mivel e− x2+y2
+
+2
+
+sehol sem negatív, így a kettős integrálja éppen32
+e− x2+y2
+
+2 dxdy,
+
+Z ∞
+Z Z
+
+−∞
+
+lim
+R→∞
+
+ahol BR jelöli az R sugarú, origó körüli zárt körlapot. Ezt pedig polárkoordinátákra való áttéréssel
+számolhatjuk ki: legyen x = r cos(α) és y = r sin(α). Ekkor
+
+e− x2+y2
+
+2 dxdy =
+
+e− r2
+
+2 rdrdα =
+
+dα =
+
+(−e− R2
+
+2 +1)dα = 2π(1− e− R2
+
+2 ).
+
+BR
+
+Z 2π
+
+0
+
+h− e− r2
+
+2
+
+iR
+
+0
+
+Z 2π
+
+0
+
+Z 2π
+
+Z R
+
+0
+
+0
+
+Z Z
+
+BR
+
+Ha R tart végtelenhez, akkor az e− R2
+e−x2 pozitív, így az integrálja is pozitív, ezért innen gyököt vonva kapjuk az állítást.33
+
+tart 0-hoz, így a keresett mennyiségünk négyzete 2π. Mivel az
+(cid:3)
+
+2
+
+31A türelmetlen olvasó addig rákereshet a Galton-deszka fogalmára, lásd pl. [youtube] The Galton Board
+32Ez a kettősintegrál alaptulajdonságaiból belátható, feltéve, hogy a függvény minden véges téglalapon integrálható.
+33Igazából arra is szükségünk van, hogy az integrál értelmes. Ez szintén abból adódik, hogy e− x2
+2 pozitív és folytonos,
+
+tehát az integrál létezik, esetleg végtelen. A fenti számolás pedig meghatározza az értékét.
+
+8.2. Standardizálás
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+40
+
+Az állítás szerint a standard normális eloszlás tényleg egy valószínűségi eloszlás. Mi a helyzet a többi
+normális eloszlással? A hozzájuk tartozó sűrűségfüggvényeket is ki lehetne integrálni, de ennél most
+koncepciózusabb megközelítést alkalmazunk.
+8.2.1. Lemma. Legyen µ, σ ∈ R, σ > 0, és legyen X folytonos valószínűségi változó, aminek sűrűség-
+függvényét fX jelöli. Ekkor Y = σX + µ sűrűségfüggvénye
+(4)
+tetszőleges x ∈ R esetén.
+Bizonyítás. A sűrűségfüggvény deﬁníciója szerint azt kell belátnunk, hogy 1
+
+(cid:1) nemnegatív és
+
+(cid:0) x−µ
+
+(cid:17)
+
+fX
+
+σ fX
+
+σ
+
+σ
+
+(cid:16) x − µ
+(cid:17)dx = FY (a)
+
+σ
+
+fY (x) = 1
+(cid:16) x − µ
+
+1
+σ
+
+fX
+
+σ
+
+Z a
+
+−∞
+
+minden a ∈ R esetén, ahol FY az Y eloszlásfüggvénye. A nemnegativitás világos, hiszen fX nemnegatív
+és σ > 0. Az integrált pedig a következőképp számolhatjuk ki:
+
+Z a
+= P(cid:16)
+felhasználva, hogyR b
+
+−∞
+
+1
+σ
+
+fX
+
+(cid:16) x − µ
+
+σ
+a − µ
+
+σ
+
+X <
+
+Z a−µ
+
+z= x−µ
+σ=
+
+(cid:17) =
+(cid:16) a − µ
+(cid:17)dx
+(cid:17) = P(σX + µ < a) = P(Y < a) = FY (a),
+
+fX(z)σdz = FX
+
+−∞
+
+1
+σ
+
+σ
+
+σ
+
+o
+
+8.2.2. Következmény.
+N(µ; σ2) eloszlású, ha létezik X ∼ N(0; 1) amire Y = σX + µ.
+
+−∞ fX(z)dz = FX(b) = P(X < b) tetszőleges valós b esetén.
+
+(cid:3)
+Legyen µ, σ ∈ R és σ > 0. Egy Y valószínűségi változó pontosan akkor
+
+(cid:16)
+
+(cid:17)2
+
+x−µ
+
+σ
+2
+
+(cid:16) x − µ
+
+(cid:17) = 1
+
+Más szavakal, a többi normális eloszlás nem más, mint a standard normális eloszlás lineáris függvénye
+
+(transzformáltja). Emiatt a legtöbb esetben elegendő megértenünk a standard eset működését.
+Bizonyítás. Először tegyük fel, hogy X ∼ N(0; 1) és Y = σX + µ. A lemma miatt fY kiszámolható
+fX felhasználásával, ahol fX = ϕ. Emiatt
+
+− (x−µ)2
+2σ2
+
+e
+
+,
+
+=
+
+1√2πσ2
+
+fY (x) = 1
+
+1√2π
+Visszafelé, ha Y ∼ N(µ; σ2), akkor legyen X = 1
+
+fX
+
+σ
+
+σ
+
+σ
+
+e−
+
+σ
+
+vagyis Y valóban N(µ; σ2) eloszlású.
+(Y − µ). Átrendezve, Y = σX + µ. Ekkor ismét
+használhatjuk a lemmát, ami miatt tetszőleges x ∈ R esetén (4) egyenlet teljesül. Alkalmazva az
+x = σz + µ helyettesítést, azt kapjuk, hogy
+
+fX(z) = σfY (σz + µ) = σ
+
+= 1√2π
+tetszőleges z ∈ R esetén. Tehát X eloszlása valóban standard normális.
+(cid:3)
+Megjegyzés. A legtöbb eddig tárgyalt eloszlásra nem teljesül, hogy a különböző paraméterű verziók
+egymás egyszerű transzformáltjai. Például, ha egy X valószínűségi változó B(n; p) binomiális eloszlású,
+és emiatt az értékei a {0, 1, 2, . . . , n} halmazból adódnak (mindegyik pozitív eséllyel), akkor 3X-nek
+nem lehet az értéke 2, így már csak emiatt sem lehet 3X binomiális eloszlású. Ugyanígy σX + µ csak
+akkor lehet binomiális, ha σ = 1 és µ = 0.
+Az egyetlen kivételünk ez alól az exponenciális eloszlás, ugyanis ha X ∼ Exp(λ), akkor σX ∼
+Exp(σ−1λ) tetszőleges λ, σ pozitív valósakra.
+
+1√2πσ2
+
+− (σz+µ−µ)2
+
+e− z2
+
+2σ2
+
+e
+
+2
+
+Rendben, láttuk a normális eloszlás sűrűségfüggvényét, de mi van az eloszlásfüggvényével?
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+41
+
+Jelölés: A standard normális eloszlás eloszlásfüggvényét Φ jelöli, azaz
+2 dz.
+
+ϕ(z)dz =
+
+Φ(x) =
+
+e− z2
+
+Z x
+
+−∞
+
+Z x
+
+−∞
+
+1√2π
+
+A titkolózást – mármint hogy csak integrálalakban írjuk fel az eloszlásfüggvényt – az indokolja, hogy
+Φ nem írható fel zárt alakban.34 Ettől függetlenül az integrál létezik és véges minden valós x-re, sőt
+numerikusan is jól közelíthető. Pusztán nem tudjuk kifejezni elemi módon, olyan alakban, ami nem
+használ határértéket. Fontos azonosság Φ-re:
+
+Φ(−x) = 1 − Φ(x)
+
+(∀x ∈ R),
+
+amely tulajdonság abból adódik, hogy ϕ szimmetrikus a 0-ra, azaz ϕ(x) = ϕ(−x).
+
+Mit jelent a normális eloszlás deﬁníciójában a µ és a σ?
+
+8.2.3. Állítás. Legyen Y ∼ N(µ; σ2). Ekkor E(Y ) = µ és D2(Y ) = σ2.
+
+Más szavakkal, a normális eloszlások éppen a várható értékükkel és– a szórásnégyzetükkel vannak
+paraméterezve. A fenti összefüggésből adódik az ún. standardizálás módszere is. Ez azt jelenti, hogy
+ha Y eloszlása normális, akkor
+
+Y − EY
+D(Y ) ∼ N(0; 1).
+
+Ez a gyakorlatban is jól alkalmazható: általában egyszerűbb a valószínűségi változót transzformálni, és
+a standard normális sűrűségfüggvényével vagy eloszlásfüggvényével számolni, lásd még a lenti példát.
+Bizonyítás. A következmény miatt létezik X, amire Y = σX + µ. Emiatt
+
+E(Y ) = E(σX + µ) = σE(X) + µ,
+
+és D2(Y ) = D2(σX + µ) = D2(σX) = σ2D2(X).
+
+Tehát az állításhoz elég a standard normális eloszlású X esetére kiszámolni, hogy E(X) = 0, illetve
+D2(X) = 1. Ez pedig valóban teljesül, hiszen a transzformált várható értékére vonatkozó állítás miatt:
+
+Z ∞
+xe− x2
+2 dx = 1√2π
+
+−∞
+
+h − e− x2
+2 dx = 1√2π
+h
+2 (cid:1)i∞
+x(cid:0) − e− x2
+
+2
+
+i∞
+− 1√2π
+
+−∞
+
+−∞
+
+= 1√2π
+Z ∞
+
+−∞
+
+E(X) = 1√2π
+Z ∞
+x2e− x2
+
+−∞
+
+E(X2) = 1√2π
+
+(0 − 0) = 0,
+
+(cid:0) − e− x2
+
+2 (cid:1)dx = 0 + 1 = 1.
+
+Következésképp, D2(X) = E(X2) − E(X)2 = 1 − 02 = 1.
+(cid:3)
+8.2.4. Példa. Egy tartályból a gyártási folyamat végeztével mintát veszünk. Tegyük fel, hogy a
+minta hőmérséklete Celsius-fokban mérve N(−2; 1,69) eloszlású. Mi a valószínűsége, hogy a minta
+hőmérséklete nagyobb, mint 0°C?
+Jelölje a minta hőmérsékletét Y . A kérdésünk a P(Y > 0) mennyiség. Nézzük az Y standardizáltját:
+def= Y + 2√1,69 ∼ N(0; 1)
+P(Y > 0) = 1 − P(Y ≤ 0) = 1 − P(Y < 0) = 1 − P(cid:16) Y + 2
+
+(cid:17) = P(X < x) = Φ(x)
+
+(cid:17) = 1 − Φ(cid:16) 2
+
+Így P(Y > 0)-ra a következőt kapjuk:
+
+P(cid:16) Y + 2
+
+1,3 < x
+
+(x ∈ R).
+
+azaz
+
+(cid:17)
+
+X
+
+2
+1,3
+
+1,3 <
+
+ahol Φ értéke kiszámoltatható megfelelő szoftver segítségével, de egyszerűen ki is kereshető a Φ értékeit
+tartalmazó táblázatból. Így kapjuk, hogy P(Y > 0) ≈ 0,0620 ≈ 6%.
+Megjegyzés. A szórást vizuálisabban is azonosíthatjuk: a sűrűségfüggvény inﬂexiós pontjai, vagyis azon
+pontok, ahol a graﬁkon konvexitást vált, éppen µ− σ és µ+ σ. Speciálisan, a standard normális eloszlás
+ϕ sűrűségfüggvénye a [−1, 1] intervallumon konkáv, azon kívül konvex. Ez következik abból, hogy
+ϕ00(x) = (x2 − 1)ϕ(x), így ϕ00(x) < 0 pontosan akkor teljesül, ha x ∈ (−1, 1).
+
+,
+
+1,3
+
+34Bővebben lásd: math.stanford.edu/∼conrad/papers/elemint.pdf
+
+8.3. De Moivre–Laplace-tétel
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+42
+
+Miért akarna valaki épp egy ilyen eloszlást használni? Em-
+pirikus tapasztalat, hogy a normális eloszlás sok esetben jó kö-
+zelítést jelent mérési eredmények eloszlására. Ilyen például egy
+ország lakosságának magassága vagy súlya, vagy a napi átlag-
+hőmérséklet az év egy adott hónapjában, stb. A közös ezekben,
+hogy az eredményét rengeteg apró, egymástól többé-kevésbé
+független faktor befolyásolja.
+
+A következő tétel azt állítja, hogy nagy n esetén a binomiális
+
+eloszlás közelíthető a normális eloszlással.35
+8.3.1. Tétel. Legyen p ∈ (0, 1) és Sn ∼ B(n; p). Ekkor minden
+a < b valós számokra
+
+(cid:18)
+
+P
+
+(cid:19)
+
+Z b
+
+a
+
+ahol a binomiális eloszlásról tanultak szerint E(Sn) = np és D(Sn) =pnp(1 − p).
+
+ϕ(x)dx = Φ(b) − Φ(a),
+
+D(Sn)
+
+lim
+n→∞
+
+a <
+
+< b
+
+=
+
+Sn − E(Sn)
+
+A tétel egyik érdekessége, hogy hiába p 6= 1
+
+2, és így a binomiális eloszlás nem szimmetrikus, a
+
+megfelelően lenormált változó határeloszlása mégis 0-ra szimmetrikus sűrűségfüggvényű.
+8.3.2. Példa. A matematikusok 31,4% százaléka szandált hord. Száz találomra választott matemati-
+kust nézve, közelítőleg mi az esélye, hogy kevesebb, mint 25 pár szandált találunk rajtuk. (A szituációt
+némileg idealizálva, tegyük fel, hogy egy matematikuson vagy egy teljes pár szandál van, vagy nincs
+rajta szandál.)
+
+D(Sn) = p100p(1 − p) = 4,6412. A fenti tétel szerint X = (Sn − 31,4)/4,6412 közelítőleg standard
+
+Jelölje Sn a szandálok számát, ahol n = 100 és p = 0,314. Kiszámolható, hogy ESn = 31,4 és
+
+normális eloszlású. Emiatt
+
+(cid:18) Sn − 31,4
+
+4,6412 <
+
+(cid:19)
+
+25 − 31,4
+4,6412
+
+P(Sn < 25) = P
+
+= P(X < −1,3790) ≈
+
+≈ Φ(−1,3790) = 1 − Φ(1,3790) ≈ 0,0839 ≈ 8%.
+
+A tétel segítségével így megspórolhattuk a binomiális eloszlás tagjaival történő fáradtságos számolást.
+Hogy ez a közelítés mennyire jó, arról további tételek rendelkeznek.36
+Megjegyzés. Lehet némi déjà vu érzésünk: a Poisson-eloszlás esetében is elmondtuk, hogy a binomiális
+eloszlás a Poisson-eloszláshoz tart, ha n → ∞. Most meg azt mondjuk, hogy a normálishoz. Nincs itt
+ellentmondás? Nincs, ugyanis másféle paraméterezés esetén kapjuk egyik, illetve másik határértéket.
+A mostani helyzetben p rögzített, n → ∞, és az eloszlás standardizálva van (Sn helyett Sn−ESn
+D(Sn)
+határeloszlását nézzük), míg a Poisson-eloszlás esetében azzal a feltétellel dolgoztunk, hogy p → 0 és
+n → ∞, de olyan ütemben, hogy np → λ.
+
+8.4. Kitekintés: heurisztika a de Moivre–Laplace tételhez
+
+A tételt nem bizonyítjuk, de körbejárjuk a bal oldalán szereplő kifejezést, és hogy miért épp a
+normális eloszlás jelenik meg a jobb oldalon. (A gyakorlat szempontjából a fenti tétel és példa a
+lényeges, nem a most következő vázlatos érvelés.)
+
+35Ettől nem független tény, hogy a normális eloszlás a statisztika szempontjából is központi jelentőségű, lásd pl.
+
+[youtube] Crash course statistics - The shape of the data: distributions
+
+36Lásd még: Berry-Esseen-típusú egyenlőtlenségek, pl. arxiv.org/abs/1111.6554
+
+Jelölje h az
+
+1√
+np(1−p)
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+43
+
+számot. Vizsgáljuk meg a következő valószínűségi változó eloszlását:
+
+Sn − E(Sn)
+
+Ran(cid:16)
+
+D(Sn)
+
+= h(Sn − np),
+
+h(Sn − np)(cid:17) =(cid:8)h(k − np) | k = 0, 1, 2, . . . , n(cid:9),
+
+ahol
+
+(cid:0)n
+(cid:1)pk(1 − p)n−k.
+
+hiszen Sn binomiális. Vegyük észre, hogy minél nagyobb n, annál kisebb h, vagyis a fenti valószínűségi
+változó annál sűrűbben veszi fel az értékeit. Annak a valószínűsége, hogy épp h(k − np) az értéke,
+Készítsünk h(Sn−np) imént végiggondolt eloszlásából egy szakaszonként lineáris, sűrűségfüggvényre
+emlékeztető függvényt a következőképp. Deﬁniáljuk az fn : R → R függvényt úgy, hogy minden
+k ∈ {0, 1, 2, . . . , n} esetén
+
+k
+
+(cid:0)h(k − np)(cid:1) = 1
+
+fn
+
+(cid:18)n
+
+(cid:19)
+
+h
+
+k
+
+pk(1 − p)n−k,
+
+továbbá két szomszédos h(k − np) alakú pont közt legyen fn lineáris, a pontokat tartalmazó interval-
+lumon kívül pedig azonosan nulla.
+a fn(x)dx, precízebben
+
+Mi köze fn-nek a tétel állításához? Az, hogy a bal oldali kifejezés közelítőlegR b
+• limn→∞R b
+Ha ezt a konvergenciát elhisszük, akkor elég bizonyítani, hogyR b
+
+a fn(x)dx − P(cid:0)a < h(Sn − np) < b(cid:1) = 0
+
+ebben szereplő n 7→ fn függvénysorozatról elemi módon belátható a következő:
+
+a ϕ minden a < b esetén. Az
+• Ha x ∈ R, ami nem h(k − np) alakú semmilyen k és n esetén, akkor fn deriválható x-ben
+
+a fn →R b
+
+minden n-re, és
+
+lim
+n→∞
+
+f0
+(x)
+fn(x) = −x.
+
+n
+
+Ez az állítás lényeges információt tartalmaz az fn(x) határértékekről: azt, hogy az f0(x) = −xf(x)
+diﬀerenciálegyenlet aszimptotikus értelemben teljesül fn-re, néhány speciális alakú x kivételével. Ezen
+a ponton viszont számos, nem elhanyagolható technikai kérdésbe ütközünk:
+
+• Létezik-e egyáltalán az fn(x) határértéke minden x ∈ R esetén?
+• Ha létezik az x 7→ f(x) = limn→∞ fn(x) függvény, akkor igaz-e, hogy minden pontban pozitív,
+• Teljesül-e limn→∞ f0
+• Ha fn-ről belátjuk, hogy limn→∞ fn(x) = ϕ(x) minden x ∈ R esetén, abból következik-e, hogy
+
+folytonos, illetve folytonosan diﬀerenciálható? Továbbá sűrűségfüggvény-e?
+
+(x) = f0(x) minden x ∈ R esetén?
+
+n
+
+limn→∞R b
+
+a fn =R b
+
+a ϕ minden a < b esetén?
+
+A fenti vázlatpontok tárgyalása meghaladja a jegyzet kereteit. Ha feltételezzük, hogy ezek a tulajdon-
+ságok teljesülnek, akkor a következőt kapjuk:
+
+−x = lim
+n→∞
+
+fn(x) = limn→∞ f0
+f0
+(x)
+
+limn→∞ fn(x) = f0(x)
+
+(x)
+
+n
+
+n
+
+f(x) =(cid:0) ln f(x)(cid:1)0
+
+majdnem minden x ∈ R esetén (azaz ha x nem h(k− np) alakú). Ezt integrálva adódik, hogy ln f(x) =
+− x2
+
+2 + c valamilyen c ∈ R esetén, azaz
+
+f(x) = e− x2
+
+2 ec
+
+(x ∈ R).
+
+Mivel elfogadtuk, hogy f sűrűségfüggvény, így ec szükségképpen 1√
+2π
+normális sűrűségfüggvényhez tart.
+
+, vagyis fn valóban a standard
+A normális eloszlásnak léteznek további karakterizációi, de ezeket itt idő hiányában megint csak
+
+nem tárgyaljuk.37
+
+37Karakterizációk egy gyűjteményét lásd: [Cross Validated] What is the most surprising characterization of the
+
+Gaussian (normal) distribution?
+
+

@@ -1,0 +1,594 @@
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+56
+
+11. Feltételes várható érték
+
+Az előző fejezetben vizsgált lineáris regresszió egyik hátulütője, hogy csak a változók közötti lineáris
+összefüggést fogja meg, mélyebb relációkat nem. Példán érzékeltetve, hiába lehet X értékéből tökélete-
+sen meghatározni X2 értékét, az X2 lineáris regressziója X-re nem feltétlenül lesz jó közelítése X2-nek.
+Természetes tehát a kérdés, nem lehetne ezt jobban csinálni valahogy? Persze a válasz igenlő, amiben
+a feltételes várható érték fogalma, illetve az ebből adódó regressziós függvény lesz segítségünkre.
+11.1. Feltételes várható érték, diszkrét regresszió
+
+Idézzük fel a feltételes valószínűség deﬁnícióját: ha A olyan esemény, amire P(A) > 0, akkor
+
+P(B | A) = P(B ∩ A)
+P(A)
+
+o
+
+a B-nek az A-ra vett feltételes valószínűsége. Szemléletesen, ez a B esemény valószínűsége arra az esetre
+fókuszálva, amikor A bekövetkezik. A második fejezetben beláttuk, hogy B 7→ P(B | A) is valószínűségi
+mérték. Vagyis bármi, amit valószínűségi mértékekre bizonyítottunk, rá is alkalmazható.
+Legyen Y valószínűségi változó és A olyan esemény, amire P(A) > 0. Ekkor az
+11.1.1. Deﬁníció.
+Y -nak az A-ra vett feltételes várható értéke az Y változó P(. | A) valószínűségi mérték szerinti
+várható értéke. Jelölés: E(Y | A).
+
+A feltételes valószínűséghez hasonlóan, E(Y | A) jelentése az Y átlagos értéke a teljes eseménytér
+
+helyett az A eseményre szorítkozva.
+11.1.2. Lemma. Legyen Y egyszerű valószínűségi változó, és A esemény, amire P(A) > 0. Ekkor
+(10)
+
+E(Y | A) = X
+
+k · P(Y = k | A).
+
+k∈Ran(Y )
+
+Vagyis elég kicserélnünk a várható érték deﬁníciójában a P-t P(. | A)-ra. Általánosabban, az alábbi
+
+módon tudjuk a feltételes várható értéket visszavezetni várható érték számolására.
+11.1.3. Állítás. Legyen Y valószínűségi változó, és P(A) > 0. Ekkor E(Y | A) = 1
+
+P(A)E(Y 1A).48
+
+Mi ennek a fogalomnak az értelme? Több esetben a feltételes várható érték nem kiszámolandó cél,
+hanem a feladat megfogalmazásának eszköze, ahogy ezt a feltételes valószínűség esetén is láttuk. Tegyük
+fel például, hogy egy eszközből kétféle márka is elérhető, az egyik átlagosan 3 évig, míg a másik 4 évig
+nem romlik el. Válasszunk a kettő közül véletlenszerűen egyet, és jelölje Y az élettartamát. Ekkor a
+feladatban lévő információink E(Y | {elsőt választjuk}) = 3 és E(Y | {másodikat választjuk}) = 4.
+Feltétel eseményként használhatjuk egy másik valószínűségi változó {X < x} nívóhalmazát is, azaz
+nézhetjük E(Y | X < x)-et valamilyen X valószínűségi változóra.
+11.1.4. Példa. Legyen Y és Z egy-egy szabályos kockadobás eredménye, X = Y + Z és x = 7. Ekkor
+
+.15
+= 6 − k
+36 = 6 − k
+P(Y = k | X < 7) = P(Y = k, X < 7)
+6X
+15 ,
+36
+k · 6 − k
+15 = 6 · 21 − 91
+4X
+
+= 7
+3 .
+Továbbá, ha P(X = x) > 0, akkor E(Y | X = x) is értelmes. Az előző példánál maradva
+
+P(X < 7)
+k · P(Y = k | X < 7) =
+
+E(Y | X < 7) =
+
+6X
+
+k=1
+
+k=1
+
+15
+
+E(Y | X = 5) =
+
+k · P(Y = k | X = 5) =
+
+k · 1
+
+4 = 2,5.
+
+k=1
+
+Szemléletesen, E(Y | X = 5) az Y átlagos értéke abban az esetben, ha tudjuk, hogy X értéke 5.
+
+6X
+
+k=1
+
+48Az állítás következménye, hogy ha E(Y ) létezik és véges, akkor emiatt E(Y | A) is létezik és véges.
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+57
+Az E(Y | X = x) mennyiségre úgy is tekinthetünk, mint egy függvényre az x változóban. Ez
+egy determinisztikus függvény, azaz nem valószínűségi változó, hiszen tetszőleges x valós szám esetén
+E(Y | X = x) valós szám (feltéve, hogy értelmes és véges).
+11.1.5. Deﬁníció. Legyenek X és Y valószínűségi változók, ahol X diszkrét. Jelölje SX az X lényeges
+értékeinek a halmazát, azaz
+
+Tekintsük a
+
+def= {x ∈ R | P(X = x) > 0}.
+
+SX
+
+g : SX → R,
+
+g(x) = E(Y | X = x)
+
+valós függvényt. Ekkor az Y -nak az X-re vett (diszkrét) regressziója a g(X) valószínűségi változó.
+Jelölése: E(Y | X).
+11.1.6. Példa. Dobunk egy szabályos kockával, majd az eredménynek megfelelő számú szabályos ér-
+mével. Legyen X a kockadobás értéke, Y pedig a fejek száma az érmedobások között. Mi Y regressziója
+X-re? Ha ismerjük X értékét, akkor Y binomiális eloszlású, paraméterei: X értéke és 1
+2. Binomiális
+eloszlású változónak ismerjük a várható értékét (a paraméterek szorzata), ezért E(Y | X = x) = x 1
+2,
+ahol x ∈ {1, 2, 3, 4, 5, 6}.
+
+Az elnevezés motivációja a lineáris regresszió elnevezéséből kiindulva érthető meg: Y lineáris reg-
+ressziója X-re egy olyan βX +α alakú lineáris függvénye az X valószínűségi változónak, ami a „legjobb
+lineáris közelítést” adja Y -ra. Ezt általánosítva, az Y változó X-re vett regressziója nem szorítkozik
+lineáris függvényekre, hanem azt a g(X) függvényét adja vissza az a X valószínűségi változónak, amely
+a „legjobb közelítést” adja Y -ra. Ez a „legjobb” g függvény történetesen a fenti x 7→ E(Y | X = x),
+hiszen mi lehetne jobb közelítés, mint az Y átlagos értéke abban az esetben, amikor X értékéről tudjuk,
+hogy x.
+Hogy mit értünk „legjobb közelítés” alatt? Intuitívan fogalmazva az E(Y | X) valószínűségi változó
+mindent tud az Y -ról, amit X ismeretében tudni lehet, és ezzel a „lehető legtöbb” információval ad
+közelítést Y -ra.49 Ezt precízen úgy tudjuk átfogalmazni, hogy ha további, X-re vonatkozó feltétel
+esetén nézzük Y feltételes várható értékét, akkor az már kiszámolható E(Y | X) regresszióból is, nem
+kell hozzá az eredeti Y -t ismernünk. Még precízebben:
+11.1.7. Állítás. Legyen X diszkrét valószínűségi változó. Tegyük fel, hogy P(X < x) > 0 és E(Y )
+véges. Ekkor
+
+E(cid:0)g(X) | X < x(cid:1) = E(Y | X < x),
+
+ahol g(X) = E(Y | X).
+Bizonyítás. A fenti (10) egyenletből, és a feltételes valószínűség deﬁníciójából adódóan
+
+Itt felhasználhatjuk a fenti állítást és a várható érték additivitását:
+
+g(k) · P(X = k | X < x) =
+
+k∈Ran(X)
+
+E(cid:0)g(X) | X < x(cid:1) (10)= X
+=X
+P(X < x) =X
+g(k)P(X = k)
+P(X = k)E(Y 1{X=k})P(X = k)
+P(X < x) =
+
+k<x
+
+1
+
+k<x
+
+E(Y | X = k)P(X = k)
+P(X < x) .
+X
+
+P(X < x)E(cid:16)
+P(X < x)E(cid:0)Y 1{X<x}(cid:1) = E(Y | X < x).
+
+1
+
+1
+
+Y
+
+(cid:17)
+
+1{X=k}
+
+=X
+
+k<x
+
+Ez éppen a belátandó állítás.
+
+=
+
+49A „legjobb közelítés” másik megfogalmazását lásd a harmadik alfejezet megfelelő állításában.
+
+k<x
+
+(cid:3)
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+58
+
+11.2. Folytonos regresszió
+
+A regresszió fogalmát abban az esetben is szeretnénk bevezetni, ha X folytonos valószínűségi változó.
+Ezzel az a lényeges probléma, hogy P(X = x) = 0 minden x érték esetén, ezért E(Y | X = x) a fenti
+deﬁnícióval értelmetlen. De ne adjuk fel rögtön, ugyanis az „Y legjobb közelítése X függvényében”
+fogalom viszont nem tűnik értelmetlennek.
+
+A regressziót általánosan az előző alfejezet utolsó állításával deﬁniálhatjuk.
+
+11.2.1. Deﬁníció. Legyenek X és Y valószínűségi változók. Az Y -nak az X-re vett regressziója az
+a g(X) alakú50 valószínűségi változó, amire
+(11)
+minden olyan x ∈ R esetén, amire P(X < x) > 0 (ami miatt E(. | X < x) deﬁniált az előző alfejezet
+feltélteles várható érték deﬁníciójával). A g(X) valószínűségi változó jelölése: E(Y | X).
+
+E(cid:0)g(X) | X < x(cid:1) = E(Y | X < x)
+
+Mivel a diszkrét regresszió is regresszió (lásd előző alfejezet utolsó állítása), így a diszkrét jelzőt
+elhagyjuk, és a továbbiakban minden regresszió alatt ezt a deﬁníciót értjük. Emellett itt jegyezzük
+meg, hogy az E(Y | X) regresszió, mint valószínűségi változó, nem egyértelmű (de azért majdnem).
+Ugyanúgy, ahogy a sűrűségfüggvény sem egyértelmű, ugyanis g értékét néhány olyan ponton büntet-
+lenül megváltoztathatjuk, amiket 0 valószínűséggel vesz fel X. Egy ilyen változtatás g(X) értékét is
+megváltoztatja, de a deﬁnícióban szereplő egyenlet érvényben marad.
+A g függvény51 jelölése: x 7→ E(Y | X = x), elnevezése regressziós függvény. A jelölés több
+értelemben sem pontos. Egyrészt a fejezet legelején felírt feltételes várható érték értelemben az E(Y |
+X = x) nem feltétlenül van értelmezve, hiszen P(X = x) lehet nulla is. Ettől függetlenül a jelölés
+szemléletes, hiszen informálisan g(x) az Y átlagos legjobb közelítése az {X = x} feltétel esetén.
+Másrészt a jelölés abban az értelemben sem precíz, hogy g egyáltalán nem egyértelmű, így rögzített
+x-re a függvénynek nincs jóldeﬁniált értéke. Például ha X nemnegatív, akkor g a negatív félegyenesen
+akárhogy megválasztható. Mivel g kiszámolása tipikusan egy köztes lépés az E(Y | X) valószínűségi
+változó kiszámolásához, amely valószínűségi változó már lényegében egyértelmű (lásd előző bekezdés),
+így g nem egyértelmű voltával nem fogunk a továbbiakban foglalkozni.
+Megjegyzés. Ha E(|Y |) < ∞, akkor E(Y | X) is létezik. Ezt nem bizonyítjuk.
+
+Rendben, most már deﬁniálva van a regresszió. De hogyan lehet kiszámolni akár a g regressziós
+függvényt, akár a g(X) = E(Y | X) regressziót? Ha X egyszerű, akkor ez az előző alfejezet (10)
+egyenletéből világos:
+
+E(Y | X = x) = X
+
+y∈Ran(Y )
+
+y · P(Y = y | X = x)
+
+olyan x, y ∈ R számokra értelmezve, amire fX(x) 6= 0, és fY |X(y | x) = 0 ha fX(x) = 0.
+
+50A g nem akármilyen függvény, hiszen g(X) valószínűségi változó kell legyen. Ehhez általában azt követelik meg,
+
+hogy g úgynevezett Borel-mérhető függvény legyen; ekvivalensen, folytonos függvények pontonkénti határértéke.
+51A g értelmezési tartományát nem speciﬁkáltuk, nem is igazán tudjuk, hiszen g nem egyértelmű. Ami lényeges
+feltétel a g értelmezési tartományára, hogy tartalmazza azon x ∈ R pontokat, aminek bármilyen kis környezetébe pozitív
+eséllyel esik X, legfeljebb egy 0 mértékű halmaz kivételével.
+
+minden x ∈ SX esetén, hiszen ez a P(. | X = x) valószínűségi mérték szerinti várható érték. Folytonos
+esetben ehelyett a következőt tudjuk mondani.
+11.2.2. Deﬁníció.
+függvényét fX,Y . Ekkor Y -nak az X-re vett feltételes sűrűségfüggvénye:
+
+Legyen (X, Y ) folytonos valószínűségi vektorváltozó, és jelölje együttes sűrűség-
+
+o
+
+fY |X(y | x) = fX,Y (x, y)
+fX(x) =
+
+R ∞
+−∞ fX,Y (x, u)du
+
+fX,Y (x, y)
+
+,
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+A deﬁníció megjegyzésében segíthet, ha észrevesszük a hasonlóságát a P(B | A) = P(B∩A)
+P(A)
+
+séggel.
+11.2.3. Állítás. Legyen (X, Y ) folytonos valószínűségi vektorváltozó. Ekkor
+
+E(Y | X = x) =
+
+y · fY |X(y | x)dy
+
+Z ∞
+
+−∞
+
+59
+
+egyenlő-
+
+az Y -nak az X-re vett regressziós függvénye.
+
+Bizonyítás. Jelölje g az z 7→R ∞
+
+g-re teljesül a (11) egyenlet.
+
+−∞ y · fY |X(y | z)dy függvényt (z ∈ R). Azt kell leellenőriznünk, hogy
+
+Legyen x ∈ R olyan, amire P(X < x) > 0. A fejezet első állítása miatt
+
+E(cid:0)g(X) | X < x(cid:1) =
+
+P(X < x)E(cid:0)g(X)1{X<x}(cid:1),
+
+1
+
+Z ∞
+
+ahol
+
+−∞
+Ha fX(z) > 0, akkor g deﬁníciója szerint
+
+E(cid:0)g(X)1{X<x}(cid:1) =
+Z ∞
+felhasználva, hogyR ∞
+
+g(z)fX(z) =
+
+−∞
+
+y · fY |X(y | z)dy · fX(z) =
+
+E(cid:0)g(X) | X < x(cid:1) =
+
+1
+
+Z x
+
+−∞
+
+Z ∞
+
+−∞
+
+y · fX,Y (z, y)
+fX(z)
+Z x
+Z ∞
+
+P(X < x)
+
+−∞
+
+−∞
+
+y · fX,Y (z, y)dydz.
+
+g(z)1{z<x}fX(z)dz =
+
+g(z)fX(z)dz.
+
+Ha fX(z) = 0, akkor g(z)fX(z) = 0. Leellenőrizhető, hogy a jobb oldali integrál szintén 0, ha fX(z) = 0,
+−∞ fX,Y (z, y)dy = fX(z). Összességében, az előző három egyenletből az adódik,
+
+Z ∞
+
+−∞
+
+fX(z)dy =
+
+y · fX,Y (z, y)dy.
+
+Itt felhasználhatjuk a valószínűségi vektorváltozó transzformáltjának várható értékére vonatkozó állí-
+tást, és a fejezet első állítását, így a fentit folytatva
+
+1
+
+=
+
+P(X < x)E(Y 1{X<x}) = E(Y | X < x),
+
+(cid:3)
+ami éppen a belátandó állítás.
+11.2.4. Példa. Legyen az (X, Y ) valószínűségi vektorváltozó együttes sűrűségfüggvénye 15x2y, ha
+0 < x < y < 1, és 0 egyébként. Határozzuk meg az E(Y | X) regressziót.
+Először számoljuk ki X sűrűségfüggvényét a 0 < x < 1 esetekben:
+
+Z ∞
+
+−∞
+
+Z 1
+
+x
+
+fX(x) =
+
+fX,Y (x, y)dy =
+
+15x2ydy = 15
+
+2 (x2 − x4).
+
+Tehát a feltételes sűrűségfüggvény értéke 0 < x < y < 1 esetén
+15x2y
+2 (x2 − x4)
+Z 1
+
+fY |X(y | x) = fX,Y (x, y)
+fX(x) =
+és fY |X(y | x) = 0 egyébként. Tehát 0 < x < 1 esetén
+
+Z ∞
+
+15
+
+E(Y | X = x) =
+
+y · fY |X(y | x)dy =
+
+−∞
+
+= 2y
+
+1 − x2 ,
+
+y ·
+
+2y
+1 − x2
+
+dy = 2
+
+3 · 1 − x3
+1 − x2 .
+
+x
+
+Behelyettesítve, az E(Y | X) regresszió a 2
+
+3 · 1−X3
+
+1−X2 valószínűségi változó.52
+
+52Érdekes utánaszámolni, hogy a regresszió egyáltalán nem szimmetrikus X-ben és Y -ban, azaz E(X | Y ) egyáltalán
+
+nem biztos, hogy hasonlít E(Y | X)-re.
+
+11.3. Regresszió tulajdonságai, teljes várható érték tétele
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+60
+
+A regresszió könnyebb meghatározásához érdemes megvizsgálnunk a tulajdonságait, ahogy azt a
+
+korábbi fogalmak esetében is tettük.
+11.3.1. Állítás. Legyenek X, Y, Z valószínűségi változók. Ekkor teljesülnek a következők:
+
+(2) Tetszőleges h folytonos53 függvény esetén E(cid:0)h(X)Y | X(cid:1) = h(X)E(Y | X).
+
+(1) Tetszőleges a, b ∈ R esetén E(aY + bZ | X) = aE(Y | X) + bE(Z | X).
+(3) Ha X és Y függetlenek, akkor E(Y | X) = E(Y ).
+A linearitás nem meglepő. A második tulajdonság szemléletesen azt állítja, hogy mivel h(X) értéke
+meghatározható X-ből, ezért ha a h(X)Y -ra keressük a legjobb becslést X függvényében, akkor elég az
+Y becslését megoldanunk, a h(X) szorzóként kiemelhető a várható értékből. A harmadik tulajdonság
+jelentése, hogy ha X és Y függetlenek, akkor X-ből nem tudunk jobb becslést faragni Y -ra, mint a
+legjobb konstans becslés, ami a várható értéke.
+Az első alfejezetben párhuzamot vontunk a regresszió és a lineáris regresszió közt: mindkét módszer
+jó közelítést keres X függvényében Y -ra. A lineáris regresszió esetében pontosan meg is fogalmaztuk,
+hogy mi az az optimalizálási probléma, amit a lineáris regresszió megold (sőt, ez volt a deﬁníció).
+Hasonlóan, a regresszió is felírható optimalizálási probléma megoldásaként.54
+11.3.2. Állítás. Tegyük fel, hogy E(Y 2) véges. Ekkor a
+
+E(cid:16)(cid:0)Y − g(X)(cid:1)2(cid:17)
+
+várható érték pontosan akkor minimális a g függvényben, ha g(X) és E(Y | X) 1-valószínűséggel
+megegyeznek.
+
+Röviden, itt nem X lineáris függvényével próbáljuk minimalizálni az Y -tól való átlagos négyzetes
+eltérést, hanem ennél általánosabb függvények segítségével. Ilyen értelemben a regresszió a lineáris
+regresszió javítása.
+
+Azt gondolhatnánk, hogy a regresszió szinte sosem egyezik meg a lineáris regresszió esetével, csak
+
+teljesen elfajuló esetekben. A következő állítás mutatja, hogy ez nem igaz.
+
+11.3.3. Állítás. Legyenek Z1, . . . , Zn független, normális eloszlású valószínűségi változók, X =Pn
+és Y =Pn
+
+i=1 biZi valamilyen a1, . . . , an, b1, . . . , bn valós számokra. Ekkor E(Y | X) megegyezik az Y
+
+változó X-re vett lineáris regressziójával.
+
+i=1 aiZi
+
+Hogyan tudjuk hasznosítani a regressziót olyan problémában, ahol a probléma kérdésfelvetésében
+nem szerepel feltételes várható érték? Úgy, hogy a szokásos várható érték is számolható regresszió
+segítségével ugyanúgy, ahogy a második előadáson a szokásos valószínűséget is számoltunk feltételes
+valószínűségekkel (lásd pl. teljes valószínűség tétele). Ilyen módszer a teljes várható érték tétele is.
+11.3.4. Állítás (Teljes várható érték tétele). Legyen X és Y valószínűségi változó, amikre E(X) és
+
+E(Y ) véges. Ekkor E(cid:0)E(Y | X)(cid:1) = E(Y ).
+
+Hát ez mi? Ez nem is úgy néz ki, mint ahogy a teljes valószínűség tétele kinézett. Hol a szumma?
+Minek két várható érték jel egymás után? Nos, a szumma a külső várható értékben van elrejtve.
+A várható értékre pedig azért van szükség, mert – ahogy feljebb megvizsgáltuk – E(Y | X) egy
+valószínűségi változó, így ha számot szeretnénk kapni belőle, ehhez vehetjük a várható értékét.
+További érv amellett, hogy a fenti állítás elnevezése találó, hogy ha a feltételes várható értéket
+
+kiírjuk a diszkrét esetre, akkor pont olyan formulát kapunk, mint a teljes valószínűség tételében.
+
+53A folytonosság itt elégséges feltétel, de valójában csak arra a gyengébb feltételre van szükségünk, hogy h(X) is
+
+valószínűségi változó legyen.
+
+54Hogy nem egy minimalizálási problémával deﬁniáltuk a regressziót, annak az az oka, hogy a karakterizáció feltéte-
+
+lezi, hogy E(Y 2) véges, míg a regresszió létezéséhez elég, ha E(Y ) véges.
+
+o
+
+o
+
+11.3.5. Állítás (Teljes várható érték tétele, diszkrét eset).
+Legyen X diszkrét valószínűségi változó,
+és {x1, . . . , xn, . . .} az X értékkészletének azon pontjai, amire P(X = xi) > 0. Ha E(Y ) < ∞, akkor
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+61
+
+∞X
+
+i=1
+
+E(Y ) =
+
+E(Y | X = xi)P(X = xi).
+
+11.3.6. Példa. Számoljuk ki a geometriai eloszlás szórását. (Oké, már kiszámoltuk máshogy, de ez
+rövidebb.) Dobáljunk fel egy cinkelt pénzérmét, amíg fejet nem kapunk, ahol a fej esélye p. Jelölje a
+szükséges dobások számát Y , és legyen X = 1, ha az első dobás fej, különben 0. Ekkor
+
+E(Y 2) = E(Y 2 | X = 1)P(X = 1) + E(Y 2 | X = 0)P(X = 0).
+
+1 = k) minden k pozitív egészre. Vagyis E(Y 2 | X = 0) = E(cid:0)(Y + 1)2(cid:1), hiszen Y -nak a P(. |
+
+Ha az első dobás írás, akkor összesen eggyel többet kell majd várnunk, mintha most kezdenénk a
+dobálást, a geometriai eloszlás örökifjú tulajdonsága miatt. Egyenlettel P(Y = k | X = 0) = P(Y +
+X = 0) valószínűségi mérték szerinti eloszlása megegyezik az Y szokásos értelemben vett eloszlásával.
+Következésképp,
+
+E(Y 2) = 1 · P(X = 1) + E(cid:0)(Y + 1)2(cid:1)P(X = 0) =
+
+amit átrendezve E(Y 2) = 2−p
+
+= p + E(Y 2 + 2Y + 1)(1 − p),
+p2 adódik, felhasználva hogy E(Y ) = 1
+
+p
+
+. Így D2(Y ) = 1−p
+p2 .
+
+A tétel teljes eseményrendszerre is kimondható.
+
+11.3.7. Állítás (Teljes várható érték tétele, teljes eseményrendszerrel). Legyen A1, . . . , An teljes ese-
+ményrendszer Ω-n, amire P(Ai) > 0 minden i-re. Ha E(Y ) < ∞, akkor
+
+nX
+
+E(Y ) =
+
+E(Y | Ai)P(Ai).
+
+Folytonos esetben pedig a következőképp írható.
+
+i=1
+
+11.3.8. Állítás (Teljes várható érték tétele, folytonos eset).
+E(Y ) < ∞ és jelölje X sűrűségfüggvényét fX. Ekkor
+
+ahol E(Y | X = x) az Y -nak az X-re vett regressziós függvénye.
+
+E(Y ) =
+
+E(Y | X = x)fX(x)dx,
+
+Z ∞
+
+−∞
+
+Legyen X folytonos valószínűségi változó,
+
+

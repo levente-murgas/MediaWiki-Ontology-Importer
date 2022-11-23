@@ -1,0 +1,571 @@
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+28
+
+6. Valószínűségi változók viszonya
+
+Amikor valószínűségi változókról volt szó, mindig egymagukban vizsgáltuk az egyes példákat. Ilyen-
+kor elégséges volt az eloszlásukkal foglalkozni, azaz diszkrét esetben a P(X = k) alakú valószínűségek
+sorozatát, folytonos esetben pedig az FX eloszlásfüggvényt vagy az fX sűrűségfüggvényt nézni. Az
+eloszlás minden lényeges tulajdonságot elmondott a valószínűségi változóról.
+De ne keverjük össze az eloszlást magával a valószínűségi változóval: attól, hogy 100 dobásból mind
+2) binomiális eloszlású, még nyilván nem
+a dobott fejek száma, mind a dobott írások száma B(100; 1
+mondhatjuk, hogy mindig ugyanannyi fejet dobnánk, mint írást. Ez a megkülönböztetés különösen
+lényeges, ha több valószínűségi változóról beszélünk egyszerre.
+
+Ebben a fejezetben két valószínűségi változó függetlenségét, illetve lineáris összefüggőségük mértékét
+
+vizsgáljuk.
+6.1. Függetlenség
+
+o
+
+Események függetlenségének a fogalmát már bevezettük a 2. előadáson: A és B események függetle-
+nek, ha P(A∩ B) = P(A)P(B). Deﬁniáljuk most ezt felhasználva valószínűségi változók függetlenségét.
+Legyenek X és Y valószínűségi változók az (Ω,F, P) valószínűségi mezőn. Azt mond-
+6.1.1. Deﬁníció.
+juk, hogy X és Y függetlenek, ha minden x, y ∈ R esetén az {X < x} és {Y < y} események
+függetlenek.
+
+A valószínűségi mezőt azért kell emlegessük, mert előfordulhatna, hogy X : Ω1 → R, míg Y : Ω2 → R
+alakú függvény, azaz más valószínűségi mezőn vannak értelmezve. Ilyen esetben nem tudunk X és Y
+függetlenségéről beszélni, mert „más világban élnek”.
+6.1.2. Példa. Egy kockadobás eredménye és a ma leeső csapadék mennyisége, amik intuitívan füg-
+getlenek, a fenti deﬁníció értelmében is függetlenek, ahogy ezt események függetlenségénél már megje-
+gyeztük.
+De a függetlenség nem minden esetben ilyen nyilvánvaló. Például legyen Z egy egyenletes eloszlású
+valószínűségi változó az {1, 2, 3, . . . , 11, 12} halmazon, jelölje X a Z hármas maradékát, és Y a Z négyes
+maradékát. Belátható, hogy ekkor X és Y függetlenek.
+
+Hogyan tudjuk ellenőrizni két valószínűségi változó függetlenségét? Ebben az előadásban a diszkrét
+
+esetre koncentrálunk. Ekkor a következő állítás szolgáltat módszert a függetlenség ellenőrzésére.
+6.1.3. Állítás. Két diszkrét valószínűségi változó pontosan akkor független, ha minden x, y ∈ R esetén
+az {X = x} és {Y = y} események függetlenek, azaz
+
+P({X = x} ∩ {Y = y}) = P(X = x)P(Y = y).
+
+Megjegyzés. A deﬁnícióból az is következik, hogy minden X-szel és Y -nal kifejezhető halmazpár füg-
+getlen, például {X = x} és {1 ≤ Y ≤ 5} független események. Általánosan: nézhetjük az X által
+generált σ-algebrát, azaz a legkisebb olyan – σ(X)-el jelölt – halmazt, aminek elemei az {X < x}
+események (x ∈ R), és teljesíti a σ-algebra deﬁnícióját. Ekkor X és Y függetlensége ekvivalens azzal,
+hogy bármilyen A ∈ σ(X) és B ∈ σ(Y ) események függetlenek.
+
+Fontos különbség az események függetlenségével szemben, hogy eseményekre ugyanannyi fáradtság
+volt leellenőrizni a függetlenséget és a nem-függetlenséget, hiszen mindkét esetben csak ki kellett szá-
+moljuk a metszet, illetve a két esemény külön-külön vett valószínűségét. Ezzel szemben valószínűségi
+változókra a függetlenséget cáfolni általában jóval egyszerűbb, mint igazolni: ha találunk egy {X = x}
+és {Y = y} eseményt, amelyek nem függetlenek, akkor a valószínűségi változók sem azok.
+
+Miért tud hasznos lenni a függetlenség? Például, mert segíthet kiszámolni a várható értéket.
+
+o
+
+6.1.4. Állítás.
+
+Ha X és Y független valószínűségi változók, és E(XY ), E(X) és E(Y ) létezik, akkor
+
+E(XY ) = E(X)E(Y ).
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+29
+
+Bizonyítás. Csak arra az esetre bizonyítunk, amikor X és Y egyszerű valószínűségi változók. Az álta-
+lános eset határátmenet segítségével igazolható, ettől itt eltekintünk.
+Először legyen X és Y indikátor valószínűségi változó, azaz X = 1A és Y = 1B valamilyen A és B
+
+eseményekre. Ekkor
+
+E(1A1B) = E(1A∩B) = P(A ∩ B) = P(A)P(B) = E(1A)E(1B),
+
+vagyis az állítás ebben a speciális esetben teljesül.
+
+Nézzük az általánosabb esetet: tegyük fel, hogy X és Y egyszerű valószínűségi változó. Ekkor X és
+
+Y felírható indikátor valószínűségi változók lineáris kombinációjaként:
+
+Az előző bekezdést és a várható érték additivitását felhasználva kapjuk, hogy
+
+és
+
+k∈Ran(X)
+
+k · 1{X=k}
+
+X = X
+
+Y = X
+(cid:19)
+= X
+(cid:18) X
+k · l · E(cid:0)1{X=k}(cid:1)E(cid:0)1{Y =l}(cid:1) = E
+
+k · 1{X=k}
+
+l · 1{Y =l}
+
+X
+
+l∈Ran(Y )
+
+l∈Ran(Y )
+
+X
+
+(cid:18) X
+X
+
+k∈Ran(X)
+
+k∈Ran(X)
+
+l∈Ran(Y )
+
+k · 1{X=k}
+
+k∈Ran(X)
+
+E(XY ) = E
+
+= X
+
+k∈Ran(X)
+
+l∈Ran(Y )
+
+l · 1{Y =l}.
+
+k · l · E(cid:0)1{X=k}1{Y =l}(cid:1) =
+(cid:19)
+(cid:18) X
+(cid:19)
+
+l · 1{Y =l}
+
+E
+
+,
+
+l∈Ran(Y )
+
+(cid:3)
+ahol a jobb oldal éppen E(X)E(Y ), ahogy állítottuk.
+Megjegyzés. Felmerülhetne, hogy miért nem az állításban szereplő, kellemesebb egyenlettel deﬁniál-
+tuk valószínűségi változók függetlenségét. Azért, mert az E(XY ) = E(X)E(Y ) teljesülése gyengébb
+tulajdonság, nem következik belőle a valószínűségi változók függetlensége. Amit ehelyett felhasznál-
+hatnánk, az a következő állítás: ha minden nemnegatív valós f és g függvények esetén E(f(X)g(Y )) =
+E(f(X))E(g(Y )), akkor X és Y függetlenek.
+6.2. Diszkrét együttes eloszlás
+
+Diszkrét valószínűségi változók esetén a függetlenségük vizsgálatához a P(X = k, Y = l) (azaz
+a P({X = k} ∩ {Y = l})) valószínűségekre, vagyis a változók úgynevezett együttes eloszlására van
+szükségünk. (A folytonos esettel a 8. előadáson fogunk foglalkozni.)
+6.2.1. Példa. Legyen X és Y olyan valószínűségi változók, ahol Ran(X) = {2, 3, 5}, Ran(Y ) =
+{0, 1, 2}, és a P(X = k, Y = l) valószínűségeket a következő táblázat foglalja össze. Független-e X és
+Y , illetve mennyi E(XY ) ?
+
+X
+
+Y
+
+0
+1
+2
+
+2
+0,05
+0,1
+0,05
+
+3
+0,15
+0,2
+0,2
+
+5
+0,1
+0,1
+0,05
+
+Egy fentihez hasonló táblázattal megadott együttes eloszlás pontosan akkor lehet két valószínűségi
+változó együttes eloszlása, ha a benne szereplő számok nemnegatívak, és összegük 1. Leellenőrizhetjük,
+hogy ez a példában teljesül.
+A függetlenség kiszámolásához szükségünk van a P(X = k) illetve a P(Y = l) mennyiségekre, vagyis
+
+az X és Y eloszlására.
+6.2.2. Deﬁníció. Legyenek X és Y egyszerű valószínűségi változók. Ha adott X és Y együttes
+eloszlása, vagyis a P(X = k, Y = l) valószínűség minden k ∈ Ran(X) és l ∈ Ran(Y ) esetén, akkor X
+és Y eloszlásait az együttes eloszlás marginális eloszlásainak nevezzük.
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+30
+
+A marginális eloszlásokat a valószínűség additivitása miatt a következőképp számolhatjuk ki:
+
+P(X = k, Y = l)
+
+P(X = k, Y = l),
+
+P(X = k) = X
+
+l∈Ran(Y )
+
+P(Y = l) = X
+
+k∈Ran(X)
+
+vagyis a táblázat sor- és oszlopösszegei adják az X és Y valószínűségi változók eloszlásait. A példa
+esetében így
+
+P(X = 2) = 0,2 ,
+P(Y = 0) = 0,3 ,
+
+P(X = 3) = 0,55 ,
+P(Y = 1) = 0,4 ,
+
+P(X = 5) = 0,25 ,
+P(Y = 2) = 0,3.
+
+Tehát a függetlenség deﬁníciójából adódóan X és Y nem független, hiszen például P(X = 5, Y = 0) =
+0,1, de P(X = 5) · P(Y = 0) = 0,075.
+Számoljuk ki a fenti példában szereplő X és Y esetén az E(XY ) mennyiséget is. Ehhez új deﬁnícióra
+nincs szükség, hiszen XY valószínűségi változó, értékkészlete {k · l | k ∈ Ran(X), l ∈ Ran(Y )}. Így
+k · l · P(X = k, Y = l) =
+
+{X = k, Y = l}(cid:17) = X
+
+E(XY ) = X
+
+m · P(cid:16) [
+
+X
+
+m∈Ran(XY )
+
+k∈Ran(X)
+l∈Ran(Y )
+
+k·l=m
+
+k∈Ran(X)
+
+l∈Ran(Y )
+
+= 0 · 0,05 + 0 · 0,15 + 0 · 0,1 + 2 · 0,1 + 3 · 0,2 + 5 · 0,1 + 4 · 0,05 + 6 · 0,2 + 10 · 0,05 = 3,2.
+Vegyük észre, hogy ugyan a változók nem függetlenek, az E(XY ) mennyiség így is kiszámolható.
+6.3. Kovariancia
+
+Ahogy az a példa esetében is látható, nem független valószínűségi változók esetében is lehet az össze-
+függésük mértéke alacsony (azaz intuitívan a P(X = k)P(Y = l) szorzatok elég közel vannak az egyes
+P(X = k, Y = l) valószínűségekhez). Hogyan tudnánk mérni valószínűségi változók összefüggésének
+fokát? Erre több lehetőség is van,27 kezdjük a kovariancia fogalmával.
+6.3.1. Deﬁníció.
+
+Az X és Y valószínűségi változók kovarianciáját a következőképp deﬁniáljuk:
+
+cov(X, Y ) def= E(cid:0)(X − EX)(Y − EY )(cid:1),
+
+feltéve, hogy a várható érték létezik és véges.
+6.3.2. Állítás.
+Bizonyítás. A deﬁníciót kibontva kapjuk, hogy
+
+E(cid:0)(X − EX)(Y − EY )(cid:1) = E(XY ) − E(cid:16)E(X)Y
+
+Ha cov(X, Y ) értelmes, akkor cov(X, Y ) = E(XY ) − E(X)E(Y ).
+
+(cid:17) − E(cid:16)
+
+XE(Y )(cid:17) + E(cid:16)E(X)E(Y )(cid:17) =
+
+= E(XY ) + (−1 − 1 + 1)E(X)E(Y ) = E(XY ) − E(X)E(Y ),
+
+ami épp a belátandó állítás.
+6.3.3. Következmény. Legyen X és Y valószínűségi változó, amire cov(X, Y ) értelmes.
+
+(1) Ha Y konstans, akkor cov(X, Y ) = 0.
+(2) Ha X és Y függetlenek, akkor cov(X, Y ) = 0.
+(3) Attól, hogy cov(X, Y ) = 0, még nem feltétlenül teljesül, hogy X és Y független.
+
+(cid:3)
+
+Bizonyítás. Jelölje Y konstans értékét c ∈ R. Az előző állítás szerint
+
+cov(X, Y ) = E(XY ) − E(X)E(Y ) = E(Xc) − E(X)c = 0.
+
+A második ponthoz felhasználhatjuk az előző alfejezet második állítását, így cov(X, Y ) = E(XY ) −
+E(X)E(Y ) = 0.
+
+27lásd még például: mediántól vett átlagos abszolút eltérés (mean absolute error); távolság-kovariancia.
+
+o
+
+o
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+A harmadik állításhoz legyen Ran(X) = {−1, 0, 1}, amely értékeket 1
+
+veszi fel X. Legyen Y = |X|. Kiszámolható, hogy cov(X, Y ) = E(XY ) − E(X)E(Y ) = 0 − 0 · 1
+pedig a változók nem függetlenek, hiszen P(X = 0)P(Y = 1) = 1
+2, míg P(X = 0, Y = 1) = 0.
+6.3.4. Példa.
+
+2 · 1
+
+4, 1
+
+2 és 1
+
+(1) Már láttuk, hogy E(XY ) = 3,2. Kiszámolható, hogy E(X) = 3,8 és E(Y ) = 1, így cov(X, Y ) =
+(2) Legyen X egyenletes eloszlású az {1, 2, . . . , 10} halmazon, illetve Y egyenletes eloszlású az
+
+E(XY ) − E(X)E(Y ) = 3,2 − 3,8 · 1 = −0,6.
+{1,−1} halmazon. Tegyük fel, hogy X és Y függetlenek. Ekkor
+
+cov(X, 0,9 · X + 0,1 · Y ) = E(0,9 · X2 + 0,1 · XY ) − E(X)E(0,9 · X + 0,1 · Y ) =
+
+31
+4 valószínűségekkel
+2 = 0,
+(cid:3)
+
+= 0,9 · E(X2) + 0,1 · E(XY ) − 0,9 · E(X)2 − 0,1 · E(XY )
+
+10X
+
+k=1
+
+= 0,9
+
+10 − 0,9 ·(cid:16)11
+
+2
+
+k2 1
+
+(cid:17)2 ≈ 7,425.
+
+A példából is látható, hogy a várható érték additivitása könnyíthet a kovariancia kiszámolásán.
+Megjegyzés. Adódik a kérdés, hogy ha a kovariancia nulla volta nem is karakterizálja a függetlenséget,
+akkor miért ezt a deﬁníciót nézzük? Ennek a fő oka, hogy a kovariancia szimmetrikus és bilineáris,
+azaz
+
+cov(X, Y ) = cov(Y, X)
+
+(a, b ∈ R),
+ha a fenti kovarianciák léteznek. Így a kovariancia a vektorok skaláris szorzatának rokonfogalma.
+6.4. Variancia és szórás
+
+cov(X, aY + bZ) = a · cov(X, Y ) + b · cov(X, Z)
+
+és
+
+Speciális eset a kovariancia számolásában, amikor Y = X.
+
+o
+
+6.4.1. Deﬁníció.
+
+Egy X valószínűségi változó szórásnégyzete, vagy más néven varianciája:
+
+cov(X, X) = E(cid:0)(X − EX)2(cid:1) = E(X2) − E(X)2.
+
+Jelölés: D2(X) (alternatív jelölése: Var(X)). Egy valószínűségi változónak nem mindig létezik szórás-
+négyzete (hiszen lehet olyan eset, hogy már E(X) is értelmetlen), de ha létezik, akkor nemnegatív. A
+szórásnégyzet négyzetgyökét szórásnak hívjuk, jelölése: D(X).
+Megjegyzés. Más szavakkal, X szórásnégyzete az X-nek az átlagos értékétől való négyzetes eltérése. A
+vektoros analógiát felhasználva, ha a kovarianciát a vektorok skaláris szorzatával állítjuk párhuzamba,
+akkor a szórásnégyzet a vektor hossznégyzetének, míg a szórás a vektor hosszának feleltethető meg.
+Nyilván ez a mennyiség nem X-nek a saját magával való összefüggőségéről szolgáltat információt,
+hanem arról, hogy X értékei mennyire terülnek szét az átlaga körül. Ilyen „szétterülést” mérő számot
+többféleképp deﬁniálhatnánk, például nézhetnénk az E(|X − EX|)-et is. Hogy mégis a szórásnégyzet a
+népszerű mérőszám erre, annak az egyik oka az alábbi állítás.
+6.4.2. Állítás.
+Bizonyítás. A szórásnégyzet deﬁnícióját kibontva:
+
+Ha X és Y független, akkor D2(X + Y ) = D2(X) + D2(Y ).
+
+D2(X + Y ) = E(cid:0)(X + Y )2(cid:1) −(cid:0)E(X + Y )(cid:1)2 =
+
+= E(X2) + E(Y 2) + 2E(XY ) − E(X)2 − E(Y )2 − 2E(X)E(Y )
+
+Mivel X és Y függetlenek, így cov(X, Y ) = 0, amiből az állítás már következik.
+
+= D2(X) + D2(Y ) + 2cov(X, Y ).
+
+(cid:3)
+
+o
+
+Megjegyzés. A bizonyításból látható, hogy a fenti állítást függetlenség nélkül is kimondhattuk volna,
+csak úgy valamivel bonyolultabb eredményt kapunk:
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+32
+
+D2(X + Y ) = D2(X) + D2(Y ) + 2cov(X, Y ).
+
+További elemi tulajdonságai a szórásnégyzetnek:
+6.4.3. Állítás. Tegyük fel, hogy D(X) létezik és véges. Ekkor tetszőleges c ∈ R esetén
+
+D(cX) = |c|D(X),
+
+D(X + c) = D(X)
+
+és
+azaz a szórás eltolás-invariáns és abszolút homogén.
+Bizonyítás. A szórásnégyzet deﬁnícióját kibontva
+
+D2(X + c) = E(cid:16)(cid:0)X + c − E(X + c)(cid:1)2(cid:17) = E(cid:0)(X − EX)2(cid:1) = D2(X),
+D2(cX) = E(cid:16)(cid:0)cX − E(cX)(cid:1)2(cid:17) = E(cid:0)c2(X − EX)2(cid:1) = c2D2(X),
+
+illetve
+
+amely egyenletekből gyökvonással adódik az állítás.
+
+(cid:3)
+
+6.4.4. Példa.
+
+(1) Legyen K egyenletes eloszlású valószínűségi változó az {1, 2, 3, 4, 5, 6} halmazon. (Vajon miért
+
+jelöljük K-val?) Ekkor a 3. előadás példája szerint E(K2) = 91
+D2(K) = 91
+
+(cid:17)2 = 182 − 147
+
+6 , míg E(K) = 7
+
+és D(K) =pD2(K) ≈ 1,7078.
+
+2, ezért
+
+= 35
+
+6 −(cid:16)7
+
+2
+
+12 ≈ 2,9167,
+
+12
+
+(2) Vizsgáljuk az 1A indikátor valószínűségi változót, és jelölje az A esemény valószínűségét p.
+
+Ekkor
+
+D2(1A) = E(12
+
+A
+
+) − E(1A)2 = E(1A) − E(1A)2 = P(A) − P(A)2 = p(1 − p).
+
+(3) Legyen X ∼ B(n; p). Bár D2(X) kibontható a deﬁníció alapján is, célszerűbb felhasználni, hogy
+alakban, ahol A1, . . . , An együttesen független, p valószínűségű
+
+felírható X = 1A1 + ··· + 1An
+események. Így a fenti állítás miatt
+D2(X) = D2(1A1 + ··· + 1An
+
+(4) Legyen T ∼ Geo(p). Ekkor
+
+D2(T) = E(T 2) − E(T)2 =
+
+) = np(1 − p).
+
+) = D2(1A1) + ··· + D2(1An
+∞X
+
+k2(1 − p)k−1p −(cid:16)1
+
+(cid:17)2 = 1 − p
+
+,
+
+p2
+
+p
+
+k=1
+
+(6) A szórás deﬁníciója akkor is értelmes, ha a valószínűségi változó például folytonos. Legyen
+Z ∼ Exp(λ) valamilyen λ pozitív valósra. Kiszámolható (és a 10. előadáson ki is számoljuk),
+hogy ekkor D(Z) = 1
+
+.
+
+λ
+
+ahol az első szumma kiszámolható például hatványsorok deriválásával, ettől itt eltekintünk.
+
+(5) Legyen Y ∼ Pois(λ). Ekkor
+
+D2(Y ) = E(Y 2) − E(Y )2 = E(Y 2 − Y ) + E(Y ) − E(Y )2 =
+
+(k2 − k) λk
+
+k! e−λ + λ − λ2 =
+
+∞X
+
+k=0
+
+∞X
+
+k=2
+
+= λ2
+
+λk−2
+(k − 2)! e−λ + λ − λ2 = λ2 · 1 + λ − λ2 = λ.
+
+6.5. Korreláció
+
+VALÓSZÍNŰSÉGSZÁMÍTÁS
+
+33
+
+Fentebb utaltunk rá, hogy a kovariancia segíthet mérni valószínűségi változók összefüggését. De
+hogyan kell ezt érteni, ha a kovariancia épp nem 0? Például az első példából adódó cov(X, Y ) = −0,6
+értéknek mi a jelentése, mennyire függnek ettől össze az X és Y változók?
+Ezt pusztán a kovariancia alapján nem tudjuk megválaszolni, ahhoz egy ebből származtatott mennyi-
+ség lesz a segítségünkre.
+6.5.1. Deﬁníció.
+akkor X és Y korrelációja:
+
+Legyenek X és Y valószínűségi változók. Ha cov(X, Y ), D(X) és D(Y ) értelmes,
+
+o
+
+corr(X, Y ) def= cov(X, Y )
+D(X)D(Y ) .
+
+Belátható, hogy −1 ≤ corr(X, Y ) ≤ 1 mindig teljesül. A szélsőséges esetekben X és Y közt tökéletes
+
+lineáris összefüggés áll fent, azaz teljesül a következő állítás.
+6.5.2. Állítás. Legyenek X és Y valószínűségi változók. Ha corr(X, Y ) ∈ {1,−1}, akkor az Y =
+aX + b állítás 1 valószínűséggel teljesül valamilyen a és b valós számokra, ahol az a előjele megegyezik
+corr(X, Y ) előjelével.
+6.5.3. Példa. A diszkrét együttes eloszlás részben vizsgált példa esetében
+√9,2 · √0,6 ≈ −0,2554.
+
+corr(X, Y ) = cov(X, Y )
+
+Ennek a szemléletes jelentése az, hogy X és Y szívesebben tér el ellentétes irányba az átlagától, mint
+azonos irányba, de a köztük lévő lineáris összefüggés relatíve alacsony (legalábbis amennyire a 0,25 az
+1-hez képest alacsony).
+
+D(X)D(Y ) =
+
+−0,6
+
+Ahogy kovariancia esetében is, a korreláció nulla mivolta nem jelenti, hogy a két valószínűségi
+változó független volna. Valójában a korreláció a két változó közti lineáris összefüggés fokát méri. Más
+szavakkal, hiába függ össze két valószínűségi változó, ha az összefüggésük nemlineáris, azt a korreláció
+nem fogja észrevenni. Például megadható olyan X valószínűségi változó, amire corr(X, X2) = 0.
+
+
