@@ -4,44 +4,64 @@ from pdfminer.layout import LAParams
 from pdfminer.pdfpage import PDFPage
 from io import StringIO
 import nltk as nltk
-from nltk.tokenize import word_tokenize
 import os
 import json as js
 import re
+import hu_core_news_lg
+from nltk.corpus import stopwords
+
+hungarian_stopwords = stopwords.words('hungarian')
+nlp_hu = hu_core_news_lg.load()
 
 dictionary = {}
 path = r"C:\Users\Murgi\Documents\GitHub\temalab\fejezetek"
 save_to = r"C:\Users\Murgi\Documents\GitHub\temalab\fejezetek_txtben"
 
 def add_file_to_index(path):
+    # open the file document that is to be indexed
     file = open(path, encoding='utf8')
+
+    # extract name from file name
     pattern = r".+\\|.txt"
     chapter = re.sub(pattern,'',path)
     read = file.read()
     file.seek(0)
-    #read lines into a list
+
+    # read lines into a list
     lines = file.readlines()
 
+    # open vocabulary
     vocab_file = open('filtered_vocab.txt', encoding='utf-8')
-    keywords = vocab_file.read().splitlines()
+    
+    # read keywords from vocab to list
+    keyword_lines = vocab_file.read().splitlines()
+    keywords = []
+    for line in keyword_lines:
+        keywords.append(line.split(','))
+    print(keywords[29])
 
+    # iterate over every line of the document and check for every keyword if it contains it
     for i in range(len(lines)):
-        check = lines[i].lower()
+        check123 = lines[i].lower()
+        doc = nlp_hu(lines[i].lower())
+        check = ' '.join([token.lemma_ for token in doc if token.lemma_ not in hungarian_stopwords])
         if check.isspace():
             pass
         else:
             for item in keywords:
-                if check.find(item) != -1:
-                    if item not in dictionary:
-                        dictionary[item] =  {}
-                        dictionary[item][chapter] = [1, [i+1]]
-                    else:
-                        if chapter not in dictionary[item]:
-                            dictionary[item][chapter] = [1, [i+1]]
+                for synonym in item:
+                    if check.find(synonym) != -1:
+                        if item[0] not in dictionary:
+                            dictionary[item[0]] =  {}
+                            dictionary[item[0]][chapter] = [1, [i+1]]
                         else:
-                            dictionary[item][chapter][1].append(i+1)
-                            dictionary[item][chapter][0] +=  1
+                            if chapter not in dictionary[item[0]]:
+                                dictionary[item[0]][chapter] = [1, [i+1]]
+                            else:
+                                dictionary[item[0]][chapter][1].append(i+1)
+                                dictionary[item[0]][chapter][0] +=  1
 
+# recursively index each file in the folder
 def add_folder_to_index(foldername):
     for filename in os.listdir(foldername):
         if os.path.isdir(filename):
@@ -54,10 +74,13 @@ def add_folder_to_index(foldername):
 def serialize_index_to_JSON(filename):
     # create json object from dictionary
     json = js.dumps(dictionary,indent=2, ensure_ascii=False)
+
     # open file for writing, "w" 
     f = open(f"{filename}.json","w", encoding='utf8')
+
     # write json object to file
     f.write(json)
+
     # close file
     f.close()
 
@@ -103,13 +126,19 @@ def get_occurences(keyword):
 
 # extract_pdf_to_txt(path,save_to)
 # index_file('test')
-# dictionary = deserialize_index_from_JSON('index1')
+dictionary = deserialize_index_from_JSON('index3_with_stemming')
 
-add_folder_to_index('fejezetek_txtben')
-serialize_index_to_JSON('index1')
+# add_folder_to_index('fejezetek_txtben')
+# serialize_index_to_JSON('index3_with_stemming')
 
 vocab_file = open('filtered_vocab.txt', encoding='utf-8')
 keywords = vocab_file.read().splitlines()
+for item in keywords:
+    get_occurences(item)
+
+print()
+
+dictionary = deserialize_index_from_JSON('index2_with_synonyms')
 for item in keywords:
     get_occurences(item)
 

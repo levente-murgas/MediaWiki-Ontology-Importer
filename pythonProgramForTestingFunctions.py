@@ -3,8 +3,9 @@
 # nltk.download('stopwords')
 # print(stopwords.fileids())
 
-dict = {"asd" : {'1fejezet': (2,[3,4])},
-        "qwerty" : {'2fejezet': (2,[3,4])}}
+dict = {"várható érték" : {'1fejezet': (2,[3,4]),
+                            '2fejezet': (1,[1])},
+        "kovariancia" : {'2fejezet': (2,[3,4])}}
 
 
 print((dict))
