@@ -2,7 +2,7 @@ eseménytér
 kimenetel
 esemény
 valószínűség
-σ-algebra
+algebra
 valószínűségi mérték
 valószínűségi mező
 független

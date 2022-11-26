@@ -9,6 +9,10 @@ import json as js
 import re
 import hu_core_news_lg
 from nltk.corpus import stopwords
+import requests
+import urllib.parse
+from bs4 import BeautifulSoup
+
 
 hungarian_stopwords = stopwords.words('hungarian')
 nlp_hu = hu_core_news_lg.load()
@@ -124,25 +128,37 @@ def get_occurences(keyword):
             cnt += value[0]
         print(f'{keyword} : {cnt}')
 
+
+def thesaurus_func(keywords):
+    for key in keywords:
+        query = requests.post(url = f'https://mek.oszk.hu/cgi-bin/thes.cgi?desc={urllib.parse.quote(key,encoding="windows-1250")}&trunc=1')
+        soup = BeautifulSoup(query.text, 'html.parser')
+        try:
+            for link in soup.body.table.find_all('a')[1:]:
+                print(link.text)
+        except:
+            continue
+
+
 # extract_pdf_to_txt(path,save_to)
 # index_file('test')
-dictionary = deserialize_index_from_JSON('index3_with_stemming')
 
 # add_folder_to_index('fejezetek_txtben')
 # serialize_index_to_JSON('index3_with_stemming')
 
 vocab_file = open('filtered_vocab.txt', encoding='utf-8')
 keywords = vocab_file.read().splitlines()
-for item in keywords:
-    get_occurences(item)
 
-print()
+thesaurus_func(keywords)
 
-dictionary = deserialize_index_from_JSON('index2_with_synonyms')
-for item in keywords:
-    get_occurences(item)
+# dictionary = deserialize_index_from_JSON('index2_with_synonyms')
+# file2 = open("results2.txt", "a", encoding='utf-8') 
+# for item in keywords:
+#     file2.write(get_occurences(item,'results2'))
+# file2.close()
 
-#print(dictionary)
-
-
-
+# dictionary = deserialize_index_from_JSON('index3_with_stemming')
+# file3 = open('results3.txt','a', encoding='utf-8')
+# for item in keywords:
+#     file3.write(get_occurences(item,'results3'))
+# file3.close()

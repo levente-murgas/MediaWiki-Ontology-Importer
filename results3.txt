@@ -1,0 +1,47 @@
+eseménytér : 11
+kimenetel : 9
+esemény : 139
+valószínűség : 523
+σ-algebra : 9
+valószínűségi mérték : 7
+valószínűségi mező : 11
+független : 149
+együttesen függetlenek : 0
+feltételes valószínűség : 21
+teljes eseményrendszer : 0
+páronként függetlenek : 0
+nívóhalmaz : 3
+valószínűségi változó : 230
+várható érték : 89
+standard normális eloszlás : 12
+normális eloszlás : 48
+binomiális eloszlás : 19
+egyenletes eloszlás : 9
+geometriai eloszlás : 10
+exponenciális eloszlás : 18
+Poisson-eloszlás : 0
+örökifjú : 8
+diszkrét : 44
+folytonos : 91
+eloszlásfüggvény : 39
+pozitív rész : 0
+negatív rész : 1
+együttes eloszlás : 18
+marginális eloszlás,peremeloszlás : 0
+kovariancia : 35
+szórásnégyzet, variancia : 0
+korreláció : 9
+valószínűségi vektorváltozó : 33
+sűrűségfüggvény : 78
+konvolúció : 5
+momentumgeneráló függvény : 8
+kovarianciamátrix : 8
+lineáris regresszió : 25
+regressziós egyenes : 2
+regresszió : 64
+regressziós függvény : 7
+feltételes várható érték : 11
+feltételes sűrűségfüggvény : 2
+többdimenziós normális eloszlás : 6
+nemelfajuló : 3
+várható érték vektor : 2
