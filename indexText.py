@@ -11,9 +11,13 @@ import hu_core_news_lg
 from nltk.corpus import stopwords
 import requests
 import urllib.parse
+import rdflib
+import pandas as pd
 from bs4 import BeautifulSoup
+from rdflib import URIRef, BNode, Literal, Namespace
+from rdflib.namespace import FOAF, DCTERMS, XSD, RDF, SDO, SKOS
 
-
+EX = Namespace('http://example.org/')
 hungarian_stopwords = stopwords.words('hungarian')
 nlp_hu = hu_core_news_lg.load()
 
@@ -42,7 +46,6 @@ def add_file_to_index(path):
     keywords = []
     for line in keyword_lines:
         keywords.append(line.split(','))
-    print(keywords[29])
 
     # iterate over every line of the document and check for every keyword if it contains it
     for i in range(len(lines)):
@@ -129,16 +132,49 @@ def get_occurences(keyword):
         print(f'{keyword} : {cnt}')
 
 
-def thesaurus_func(keywords):
-    for key in keywords:
-        query = requests.post(url = f'https://mek.oszk.hu/cgi-bin/thes.cgi?desc={urllib.parse.quote(key,encoding="windows-1250")}&trunc=1')
-        soup = BeautifulSoup(query.text, 'html.parser')
-        try:
-            for link in soup.body.table.find_all('a')[1:]:
-                print(link.text)
-        except:
-            continue
+def get_thesaurus():
+    df = pd.DataFrame(columns=['Subject','Predicate', 'Object'])
 
+    # open vocabulary
+    vocab_file = open('filtered_vocab.txt', encoding='utf-8')
+    
+    # read keywords from vocab to list
+    keyword_lines = vocab_file.read().splitlines()
+    keywords = []
+    for line in keyword_lines:
+        keywords.append(line.split(','))
+
+    for item in keywords:
+        for synonym in item:
+            query = requests.post(url = f'https://mek.oszk.hu/cgi-bin/thes.cgi?desc={urllib.parse.quote(synonym,encoding="windows-1250")}&trunc=1')
+            soup = BeautifulSoup(query.text, 'html.parser')
+            last_predicate = ""
+            # Collecting Data
+            try:
+                for row in soup.body.table.find_all('tr'):
+                    # Find all data for each column
+                    columns = row.find_all('td')
+                    if len(columns) > 1 and columns[0].text.strip() != "ETO":
+                        curr_predicate = columns[0].text.strip()
+                        _object = columns[1].a.text
+                        if curr_predicate != "":
+                            last_predicate = curr_predicate
+                        else:
+                            curr_predicate = last_predicate
+                        print(synonym,_object,curr_predicate)
+                        df = df.append({'Subject': synonym,'Predicate': curr_predicate,'Object': _object},ignore_index=True)
+            except: 
+                continue
+
+            # print(soup.body.table)
+            # for link in soup.body.table.find_all('a')[1:]:
+            #     print(link.text)
+    return df
+
+def build_rdf():
+    g = rdflib.Graph()
+    g.bind('skos', SKOS)
+    g.bind('ex',EX)
 
 # extract_pdf_to_txt(path,save_to)
 # index_file('test')
@@ -146,11 +182,8 @@ def thesaurus_func(keywords):
 # add_folder_to_index('fejezetek_txtben')
 # serialize_index_to_JSON('index3_with_stemming')
 
-vocab_file = open('filtered_vocab.txt', encoding='utf-8')
-keywords = vocab_file.read().splitlines()
-
-thesaurus_func(keywords)
-
+df = get_thesaurus()
+print(df.head(20))
 # dictionary = deserialize_index_from_JSON('index2_with_synonyms')
 # file2 = open("results2.txt", "a", encoding='utf-8') 
 # for item in keywords:
