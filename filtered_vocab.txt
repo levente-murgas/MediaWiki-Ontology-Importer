@@ -2,9 +2,7 @@ eseménytér
 kimenetel
 esemény
 valószínűség
-algebra
 valószínűségi mérték
-valószínűségi mező
 független
 együttesen függetlenek
 feltételes valószínűség
@@ -41,7 +39,6 @@ regressziós egyenes
 regresszió
 regressziós függvény
 feltételes várható érték
-feltételes sűrűségfüggvény
 többdimenziós normális eloszlás
 nemelfajuló
 várható érték vektor

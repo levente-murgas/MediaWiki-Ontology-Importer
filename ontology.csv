@@ -1,0 +1,82 @@
+,Subject,Predicate,Object
+0,esemény,Lásd még,véletlen esemény
+1,esemény,Lásd még általánosabban,energiaszerû valami
+2,esemény,Lásd még speciálisabban,baleset
+3,esemény,Lásd még speciálisabban,botrány
+4,esemény,Lásd még speciálisabban,csoda
+5,esemény,Lásd még speciálisabban,életesemény
+6,esemény,Lásd még speciálisabban,jogeset
+7,esemény,Lásd még speciálisabban,jogi aktus
+8,esemény,Lásd még speciálisabban,katasztrófa
+9,esemény,Lásd még speciálisabban,kockázat
+10,esemény,Lásd még speciálisabban,megváltás
+11,esemény,Lásd még speciálisabban,mûvelet
+12,esemény,Lásd még speciálisabban,rendezvény
+13,esemény,Lásd még speciálisabban,társadalmi esemény
+14,esemény,Lásd még speciálisabban,történelmi esemény
+15,esemény,Lásd még speciálisabban,utolsó ítélet
+16,esemény,Lásd még speciálisabban,ügylet
+17,esemény,Lásd még speciálisabban,ütközés
+18,esemény,Lásd még speciálisabban,véletlen
+19,esemény,Lásd még speciálisabban,világvége
+20,esemény,Lásd még részletesebben,történelmi esemény ábrázolása
+21,esemény,Lásd még oksági összefüggésben,hír
+22,esemény,Lásd még okozati összefüggésben,eseménymodellezés
+23,esemény,Lásd még okozati összefüggésben,esettanulmány
+24,esemény,Lásd még okozati összefüggésben,tevékenység
+25,esemény,Lásd még egyéb összefüggésben,alkalmi zene
+26,valószínűség,Lásd még általánosabban,arányszám
+27,valószínűség,Lásd még általánosabban,elvont összefüggés
+28,valószínűség,Lásd még általánosabban,határérték
+29,valószínűség,Lásd még speciálisabban,cilindrikus valószínûség
+30,valószínűség,Lásd még speciálisabban,feltételes várható érték
+31,valószínűség,Lásd még speciálisabban,valószínûségi mérték
+32,valószínűség,Lásd még átfogóbban,valószínûség-számítás
+33,valószínűség,Lásd még okozati összefüggésben,nagy számok törvénye
+34,valószínűség,Lásd még egyéb összefüggésben,Brown-mozgás
+35,valószínűség,Lásd még egyéb összefüggésben,kockázat
+36,valószínűség,Lásd még egyéb összefüggésben,szükségszerûség
+37,valószínűség,Lásd még egyéb összefüggésben,véletlen
+38,valószínűség,Más értelemben lásd,bizonytalanság
+39,valószínűségi változó,Lásd még általánosabban,változó
+40,valószínűségi változó,Lásd még egyéb összefüggésben,eloszlás
+41,várható érték,Lásd még általánosabban,adat
+42,várható érték,Lásd még egyéb összefüggésben,arányskála
+43,várható érték,Lásd még egyéb összefüggésben,arányszám
+44,várható érték,Lásd még egyéb összefüggésben,átlagérték
+45,várható érték,Lásd még egyéb összefüggésben,középérték
+46,várható érték,Lásd még egyéb összefüggésben,nagy számok törvénye
+47,várható érték,Más értelemben lásd,érték
+48,normális eloszlás,Lásd szinonimáját,Gauss-eloszlás
+49,normális eloszlás,Lásd szinonimáját,Gauss-folyamat
+50,normális eloszlás,Lásd még,Gauss-mérték
+51,normális eloszlás,Lásd még általánosabban,eloszlás
+52,binomiális eloszlás,Lásd szinonimáját,Bernoulli-eloszlás
+53,binomiális eloszlás,Lásd szinonimáját,negatív binomiális eloszlás
+54,binomiális eloszlás,Lásd még általánosabban,eloszlás
+55,binomiális eloszlás,Lásd még egyéb összefüggésben,binom
+56,egyenletes eloszlás,Lásd még,textilszínezés egyenletességét javító eljárások
+57,egyenletes eloszlás,Lásd még általánosabban,eloszlás
+58,exponenciális eloszlás,Lásd szinonimáját,exponenciális család
+59,exponenciális eloszlás,Lásd még általánosabban,eloszlás
+60,Poisson-eloszlás,Lásd még általánosabban,eloszlás
+61,eloszlásfüggvény,Lásd szinonimáját,eloszlás
+62,korreláció,Lásd szinonimáját,autokorreláció
+63,korreláció,Lásd szinonimáját,illuzórikus korreláció
+64,korreláció,Lásd szinonimáját,lineáris korreláció
+65,korreláció,Lásd szinonimáját,logaritmikus korreláció
+66,korreláció,Lásd szinonimáját,nemlineáris korreláció
+67,korreláció,Lásd még általánosabban,statisztikai adat
+68,korreláció,Lásd még átfogóbban,korrelációszámítás
+69,korreláció,Lásd még átfogóbban,projektív transzformáció
+70,korreláció,Lásd még egyéb összefüggésben,szignifikancia
+71,konvolúció,Lásd még átfogóbban,funkcionálanalízis
+72,konvolúció,Lásd még átfogóbban,integráltranszformáció
+73,konvolúció,Lásd még okozati összefüggésben,konvolúcióelmélet
+74,konvolúció,Lásd még egyéb összefüggésben,disztribúció
+75,regresszió,Lásd vagy,látens kép
+76,regresszió,Lásd vagy,neurózis
+77,regresszió,Lásd vagy,regressziószámítás
+78,regresszió,Lásd vagy,regresszív folyamat
+79,regresszió,Lásd vagy,transzgresszió
+80,feltételes várható érték,Lásd még általánosabban,valószínûség

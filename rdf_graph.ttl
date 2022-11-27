@@ -1,0 +1,575 @@
+@prefix ex: <http://example.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+ex:Poisson-eloszlás a skos:Concept ;
+    skos:broader ex:eloszlás ;
+    skos:prefLabel "Poisson-eloszlás" .
+
+ex:binomiális_eloszlás a skos:Concept ;
+    rdf:subject ex:normalis_elo ;
+    owl:sameAs ex:Bernoulli-eloszlás,
+        ex:negatív_binomiális_eloszlás ;
+    skos:broader ex:eloszlás ;
+    skos:definition "3.2.5. Deﬁníció. Egy X valószínűségi változó binomiális eloszlású, n ∈ N és p ∈ [0, 1] paraméte-" ;
+    skos:prefLabel "binomiális eloszlás" ;
+    skos:related ex:binom .
+
+ex:binomiális_tétel a skos:Concept ;
+    rdf:subject ex:egyuttes_elo_konvolucio ;
+    skos:definition "felhasználva a binomiális tételt. Vegyük észre, hogy az eredmény Pois(λ + µ) eloszlású." ;
+    skos:prefLabel "binomiális tétel" .
+
+ex:diszkrét a skos:Concept ;
+    rdf:subject ex:folyt_val_valtozok ;
+    skos:definition "3. Diszkrét valószínűségi változók" ;
+    skos:prefLabel "diszkrét" .
+
+ex:egyenlet a skos:Concept ;
+    rdf:subject ex:folyt_val_valtozok ;
+    skos:definition "harmadikban pedig egy arany és egy ezüst. A dobozok tartalmát nem ismerve, (egyenletesen)" ;
+    skos:prefLabel "egyenlet" .
+
+ex:egyenletes_eloszlás a skos:Concept ;
+    rdf:subject ex:folyt_val_valtozok ;
+    rdfs:seeAlso ex:textilszínezés_egyenletességét_javító_eljárások ;
+    skos:broader ex:eloszlás ;
+    skos:definition "3.2.7. Deﬁníció. Egy X valószínűségi változó egyenletes eloszlású egy n elemű S ⊆ R halmazon," ;
+    skos:prefLabel "egyenletes eloszlás" .
+
+ex:együttes_eloszlás a skos:Concept ;
+    rdf:subject ex:egyuttes_elo_konvolucio ;
+    skos:definition "7. Folytonos együttes eloszlás és konvolúció" ;
+    skos:prefLabel "együttes eloszlás" .
+
+ex:eloszlásfüggvény a skos:Concept ;
+    rdf:subject ex:folyt_val_valtozok ;
+    owl:sameAs ex:eloszlás ;
+    skos:definition "(együttes) eloszlásfüggvénye az" ;
+    skos:prefLabel "eloszlásfüggvény" .
+
+ex:esemény a skos:Concept ;
+    rdf:subject ex:alapfogalmak ;
+    rdfs:seeAlso ex:véletlen_esemény ;
+    skos:broader ex:energiaszerû_valami ;
+    skos:definition "1.1. Eseménytér" ;
+    skos:narrower ex:baleset,
+        ex:botrány,
+        ex:csoda,
+        ex:jogeset,
+        ex:jogi_aktus,
+        ex:katasztrófa,
+        ex:kockázat,
+        ex:megváltás,
+        ex:mûvelet,
+        ex:rendezvény,
+        ex:társadalmi_esemény,
+        ex:történelmi_esemény,
+        ex:utolsó_ítélet,
+        ex:világvége,
+        ex:véletlen,
+        ex:életesemény,
+        ex:ügylet,
+        ex:ütközés ;
+    skos:prefLabel "esemény" ;
+    skos:related ex:alkalmi_zene,
+        ex:eseménymodellezés,
+        ex:esettanulmány,
+        ex:hír,
+        ex:tevékenység,
+        ex:történelmi_esemény_ábrázolása .
+
+ex:eseménytér a skos:Concept ;
+    rdf:subject ex:alapfogalmak ;
+    skos:definition "1.1. Eseménytér" ;
+    skos:prefLabel "eseménytér" .
+
+ex:exponenciális_eloszlás a skos:Concept ;
+    rdf:subject ex:nevezetes_eloszlasok ;
+    owl:sameAs ex:exponenciális_család ;
+    skos:broader ex:eloszlás ;
+    skos:definition "függetlenül, exponenciális eloszlás szerint válaszolnak, λ = 6 paraméterrel.28 Annak az esélye, hogy" ;
+    skos:prefLabel "exponenciális eloszlás" .
+
+ex:faktor a skos:Concept ;
+    rdf:subject ex:normalis_elo ;
+    skos:definition "független faktor befolyásolja." ;
+    skos:prefLabel "faktor" .
+
+ex:feltételes_valószínűség a skos:Concept ;
+    rdf:subject ex:val_tulajdonsagai ;
+    skos:definition "Az előző két előadásban szereplő deﬁníciók (eseményalgebra, feltételes valószínűség) ugyan alapfogal-" ;
+    skos:prefLabel "feltételes valószínűség" .
+
+ex:folytonos a skos:Concept ;
+    rdf:subject ex:folyt_val_valtozok ;
+    skos:definition "7. Folytonos együttes eloszlás és konvolúció" ;
+    skos:prefLabel "folytonos" .
+
+ex:független a skos:Concept ;
+    rdf:subject ex:val_valtozok_viszonya ;
+    skos:definition "kitöltő mindegyikre 60% eséllyel ad helyes választ a többi kérdésre adott választól függetlenül. Ekkor az" ;
+    skos:prefLabel "független" .
+
+ex:geometriai_eloszlás a skos:Concept ;
+    rdf:subject ex:nevezetes_eloszlasok ;
+    skos:definition "11.3.6. Példa. Számoljuk ki a geometriai eloszlás szórását. (Oké, már kiszámoltuk máshogy, de ez" ;
+    skos:prefLabel "geometriai eloszlás" .
+
+ex:kimenetel a skos:Concept ;
+    rdf:subject ex:alapfogalmak ;
+    skos:definition "kísérlettel is igazolhatunk. Ennek magyarázata, hogy eredetileg 6-féle kimenetele lehet" ;
+    skos:prefLabel "kimenetel" .
+
+ex:konvolúció a skos:Concept ;
+    rdf:subject ex:egyuttes_elo_konvolucio ;
+    skos:definition "7. Folytonos együttes eloszlás és konvolúció" ;
+    skos:prefLabel "konvolúció" ;
+    skos:related ex:disztribúció,
+        ex:funkcionálanalízis,
+        ex:integráltranszformáció,
+        ex:konvolúcióelmélet .
+
+ex:korreláció a skos:Concept ;
+    rdf:subject ex:val_valtozok_viszonya ;
+    owl:sameAs ex:autokorreláció,
+        ex:illuzórikus_korreláció,
+        ex:lineáris_korreláció,
+        ex:logaritmikus_korreláció,
+        ex:nemlineáris_korreláció ;
+    skos:broader ex:statisztikai_adat ;
+    skos:definition "korrelációja:" ;
+    skos:prefLabel "korreláció" ;
+    skos:related ex:korrelációszámítás,
+        ex:projektív_transzformáció,
+        ex:szignifikancia .
+
+ex:kovariancia a skos:Concept ;
+    rdf:subject ex:regresszio ;
+    skos:definition "A kovarianciamátrix szintén kifejezhető a várható érték vektor segítségével. Ha oszlopvektorokként" ;
+    skos:prefLabel "kovariancia" .
+
+ex:kovarianciamátrix a skos:Concept ;
+    rdf:subject ex:felt_val_tobbdim_elo ;
+    skos:definition "A kovarianciamátrix szintén kifejezhető a várható érték vektor segítségével. Ha oszlopvektorokként" ;
+    skos:prefLabel "kovarianciamátrix" .
+
+ex:lineáris_algebra a skos:Concept ;
+    rdf:subject ex:val_tulajdonsagai ;
+    skos:definition "A példának van lineáris algebrai analógja is: az (1, 0), (0, 1), (1, 1) vektorok közül bármely pár lineárisan" ;
+    skos:prefLabel "lineáris algebra" .
+
+ex:lineáris_regresszió a skos:Concept ;
+    rdf:subject ex:regresszio ;
+    skos:definition "(3) az E(Y2 | Y1) regresszió megegyezik az Y2-nek az Y1-re vett lineáris regressziójával, azaz" ;
+    skos:prefLabel "lineáris regresszió" .
+
+ex:marginális_eloszlás a skos:Concept ;
+    rdf:subject ex:egyuttes_elo_konvolucio ;
+    skos:definition "Hiányzó fogalom még a marginális eloszlás." ;
+    skos:prefLabel "marginális eloszlás" .
+
+ex:momentumgeneráló_függvény a skos:Concept ;
+    rdf:subject ex:hatar_elo_tetelek ;
+    skos:definition "9.3.4. Deﬁníció. Az X valószínűségi változó momentumgeneráló függvénye:45" ;
+    skos:prefLabel "momentumgeneráló függvény" .
+
+ex:művelet a skos:Concept ;
+    rdf:subject ex:alapfogalmak ;
+    skos:definition "Nézzük, milyen műveleteket végezhetünk eseményekkel." ;
+    skos:prefLabel "művelet" .
+
+ex:negatív_rész a skos:Concept ;
+    rdf:subject ex:folyt_val_valtozok ;
+    skos:definition "részét, és X− = max(−X, 0) az X negatív részét. Ekkor X+ és X− nemnegatív valószínűségi" ;
+    skos:prefLabel "negatív rész" .
+
+ex:nemelfajuló a skos:Concept ;
+    rdf:subject ex:felt_val_tobbdim_elo ;
+    skos:definition "X-et oszlopvektorként kezelve. Az Y eloszlása nemelfajuló, ha A válaszható nemelfajuló mátrixnak" ;
+    skos:prefLabel "nemelfajuló" .
+
+ex:normális_eloszlás a skos:Concept ;
+    rdf:subject ex:felt_val_tobbdim_elo ;
+    rdfs:seeAlso ex:Gauss-mérték ;
+    owl:sameAs ex:Gauss-eloszlás,
+        ex:Gauss-folyamat ;
+    skos:broader ex:eloszlás ;
+    skos:definition "különös tekintettel a többdimenziós normális eloszlásra." ;
+    skos:prefLabel "normális eloszlás" .
+
+ex:nívóhalmaz a skos:Concept ;
+    rdf:subject ex:diszkret_val_valtozok ;
+    skos:definition "zokat az X nívóhalmazainak hívják. Az X függvényt valószínűségi változó-" ;
+    skos:prefLabel "nívóhalmaz" .
+
+ex:polinom a skos:Concept ;
+    rdf:subject ex:regresszio ;
+    skos:definition "12.2.2. Deﬁníció. Az X = (X1, . . . , Xm) valószínűségi vektorváltozó polinomiális (más néven: mul-" ;
+    skos:prefLabel "polinom" .
+
+ex:regresszió a skos:Concept ;
+    rdf:subject ex:felt_varhato_ertek ;
+    skos:definition "akkor P(A | X = k) értelmetlen. A probléma feloldása ugyanaz, mint a regressziós függvény esetében." ;
+    skos:prefLabel "regresszió" ;
+    skos:related ex:látens_kép,
+        ex:neurózis,
+        ex:regressziószámítás,
+        ex:regresszív_folyamat,
+        ex:transzgresszió .
+
+ex:regressziós_egyenes a skos:Concept ;
+    rdf:subject ex:regresszio ;
+    skos:definition "10.2.3. Deﬁníció. Az Y valószínűségi változó X-re vett regressziós egyenese az" ;
+    skos:prefLabel "regressziós egyenes" .
+
+ex:regressziós_függvény a skos:Concept ;
+    rdf:subject ex:felt_varhato_ertek ;
+    skos:definition "akkor P(A | X = k) értelmetlen. A probléma feloldása ugyanaz, mint a regressziós függvény esetében." ;
+    skos:prefLabel "regressziós függvény" .
+
+ex:standard_normális_eloszlás a skos:Concept ;
+    rdf:subject ex:normalis_elo ;
+    skos:definition "A paraméterek alkalmas megválasztásával adódik a standard normális eloszlás. Általánosan, n-" ;
+    skos:prefLabel "standard normális eloszlás" .
+
+ex:szórásnégyzet a skos:Concept ;
+    rdf:subject ex:regresszio ;
+    skos:definition "standard) normális eloszlást a várható értékével és a szórásnégyzetével adtunk meg. Vizsgáljuk meg a" ;
+    skos:prefLabel "szórásnégyzet" .
+
+ex:sűrűségfüggvény a skos:Concept ;
+    rdf:subject ex:egyuttes_elo_konvolucio ;
+    skos:definition "együttes sűrűségfüggvényét is." ;
+    skos:prefLabel "sűrűségfüggvény" .
+
+ex:többdimenziós_normális_eloszlás a skos:Concept ;
+    rdf:subject ex:felt_val_tobbdim_elo ;
+    skos:definition "különös tekintettel a többdimenziós normális eloszlásra." ;
+    skos:prefLabel "többdimenziós normális eloszlás" .
+
+ex:valószínűség a skos:Concept ;
+    rdf:subject ex:val_valtozok_viszonya ;
+    owl:differentFrom ex:bizonytalanság ;
+    skos:broader ex:arányszám,
+        ex:elvont_összefüggés,
+        ex:határérték ;
+    skos:definition "VALÓSZÍNŰSÉGSZÁMÍTÁS" ;
+    skos:narrower ex:cilindrikus_valószínûség,
+        ex:feltételes_várható_érték,
+        ex:valószínûségi_mérték ;
+    skos:prefLabel "valószínűség" ;
+    skos:related ex:Brown-mozgás,
+        ex:kockázat,
+        ex:nagy_számok_törvénye,
+        ex:szükségszerûség,
+        ex:valószínûség-számítás,
+        ex:véletlen .
+
+ex:valószínűségi_mérték a skos:Concept ;
+    rdf:subject ex:felt_varhato_ertek ;
+    skos:definition "függvényt valószínűségi mértéknek nevezünk, ha P(Ω) = 1, és teljesül a következő:" ;
+    skos:prefLabel "valószínűségi mérték" .
+
+ex:valószínűségi_vektorváltozó a skos:Concept ;
+    rdf:subject ex:egyuttes_elo_konvolucio ;
+    skos:definition "7.1. Valószínűségi vektorváltozók" ;
+    skos:prefLabel "valószínűségi vektorváltozó" .
+
+ex:valószínűségi_változó a skos:Concept ;
+    rdf:subject ex:diszkret_val_valtozok ;
+    skos:broader ex:változó ;
+    skos:definition "3. Diszkrét valószínűségi változók" ;
+    skos:prefLabel "valószínűségi változó" ;
+    skos:related ex:eloszlás .
+
+ex:várható_érték a skos:Concept ;
+    rdf:subject ex:felt_varhato_ertek ;
+    owl:differentFrom ex:érték ;
+    skos:broader ex:adat ;
+    skos:definition "amik megﬁgyelhetők. Ilyen probléma például a feltételes várható érték számolása is." ;
+    skos:prefLabel "várható érték" ;
+    skos:related ex:arányskála,
+        ex:arányszám,
+        ex:középérték,
+        ex:nagy_számok_törvénye,
+        ex:átlagérték .
+
+ex:várható_érték_vektor a skos:Concept ;
+    rdf:subject ex:felt_val_tobbdim_elo ;
+    skos:definition "12.3.4. Deﬁníció. Egy Y = (Y1, . . . , Yn) valószínűségi vektorváltozó várható érték vektora az" ;
+    skos:prefLabel "várható érték vektor" .
+
+ex:örökifjú a skos:Concept ;
+    rdf:subject ex:nevezetes_eloszlasok ;
+    skos:definition "A motiváció a következő: ha X exponenciális eloszlású, akkor teljesíti az örökifjúság feltételét, azaz" ;
+    skos:prefLabel "örökifjú" .
+
+ex:Bernoulli-eloszlás a skos:Concept ;
+    skos:prefLabel "Bernoulli-eloszlás" .
+
+ex:Brown-mozgás a skos:Concept ;
+    skos:prefLabel "Brown-mozgás" .
+
+ex:Gauss-eloszlás a skos:Concept ;
+    skos:prefLabel "Gauss-eloszlás" .
+
+ex:Gauss-folyamat a skos:Concept ;
+    skos:prefLabel "Gauss-folyamat" .
+
+ex:Gauss-mérték a skos:Concept ;
+    skos:prefLabel "Gauss-mérték" .
+
+ex:adat a skos:Concept ;
+    skos:prefLabel "adat" .
+
+ex:alkalmi_zene a skos:Concept ;
+    skos:prefLabel "alkalmi zene" .
+
+ex:arányskála a skos:Concept ;
+    skos:prefLabel "arányskála" .
+
+ex:autokorreláció a skos:Concept ;
+    skos:prefLabel "autokorreláció" .
+
+ex:baleset a skos:Concept ;
+    skos:prefLabel "baleset" .
+
+ex:binom a skos:Concept ;
+    rdf:subject ex:normalis_elo ;
+    skos:definition "3.2.5. Deﬁníció. Egy X valószínűségi változó binomiális eloszlású, n ∈ N és p ∈ [0, 1] paraméte-" ;
+    skos:prefLabel "binom" .
+
+ex:bizonytalanság a skos:Concept ;
+    skos:prefLabel "bizonytalanság" .
+
+ex:botrány a skos:Concept ;
+    skos:prefLabel "botrány" .
+
+ex:cilindrikus_valószínûség a skos:Concept ;
+    skos:prefLabel "cilindrikus valószínûség" .
+
+ex:csoda a skos:Concept ;
+    skos:prefLabel "csoda" .
+
+ex:disztribúció a skos:Concept ;
+    skos:prefLabel "disztribúció" .
+
+ex:elvont_összefüggés a skos:Concept ;
+    skos:prefLabel "elvont összefüggés" .
+
+ex:energiaszerû_valami a skos:Concept ;
+    skos:prefLabel "energiaszerû valami" .
+
+ex:eseménymodellezés a skos:Concept ;
+    skos:prefLabel "eseménymodellezés" .
+
+ex:esettanulmány a skos:Concept ;
+    skos:prefLabel "esettanulmány" .
+
+ex:exponenciális_család a skos:Concept ;
+    skos:prefLabel "exponenciális család" .
+
+ex:feltételes_várható_érték a skos:Concept ;
+    rdf:subject ex:felt_varhato_ertek ;
+    skos:broader ex:valószínûség ;
+    skos:definition "amik megﬁgyelhetők. Ilyen probléma például a feltételes várható érték számolása is." ;
+    skos:prefLabel "feltételes várható érték" .
+
+ex:funkcionálanalízis a skos:Concept ;
+    skos:prefLabel "funkcionálanalízis" .
+
+ex:hatar_elo_tetelek a skos:Collection ;
+    skos:prefLabel "hatar_elo_tetelek" .
+
+ex:határérték a skos:Concept ;
+    rdf:subject ex:normalis_elo ;
+    skos:definition "hogy g úgynevezett Borel-mérhető függvény legyen; ekvivalensen, folytonos függvények pontonkénti határértéke." ;
+    skos:prefLabel "határérték" .
+
+ex:hír a skos:Concept ;
+    skos:prefLabel "hír" .
+
+ex:illuzórikus_korreláció a skos:Concept ;
+    skos:prefLabel "illuzórikus korreláció" .
+
+ex:integráltranszformáció a skos:Concept ;
+    skos:prefLabel "integráltranszformáció" .
+
+ex:jogeset a skos:Concept ;
+    skos:prefLabel "jogeset" .
+
+ex:jogi_aktus a skos:Concept ;
+    skos:prefLabel "jogi aktus" .
+
+ex:katasztrófa a skos:Concept ;
+    skos:prefLabel "katasztrófa" .
+
+ex:konvolúcióelmélet a skos:Concept ;
+    skos:prefLabel "konvolúcióelmélet" .
+
+ex:korrelációszámítás a skos:Concept ;
+    skos:prefLabel "korrelációszámítás" .
+
+ex:középérték a skos:Concept ;
+    skos:prefLabel "középérték" .
+
+ex:lineáris_korreláció a skos:Concept ;
+    skos:prefLabel "lineáris korreláció" .
+
+ex:logaritmikus_korreláció a skos:Concept ;
+    skos:prefLabel "logaritmikus korreláció" .
+
+ex:látens_kép a skos:Concept ;
+    skos:prefLabel "látens kép" .
+
+ex:megváltás a skos:Concept ;
+    skos:prefLabel "megváltás" .
+
+ex:mûvelet a skos:Concept ;
+    skos:prefLabel "mûvelet" .
+
+ex:negatív_binomiális_eloszlás a skos:Concept ;
+    rdf:subject ex:egyuttes_elo_konvolucio ;
+    skos:definition "nem geometriai, hanem úgynevezett negatív binomiális eloszlású, r = 2 rend-paraméterrel." ;
+    skos:prefLabel "negatív binomiális eloszlás" .
+
+ex:nemlineáris_korreláció a skos:Concept ;
+    skos:prefLabel "nemlineáris korreláció" .
+
+ex:neurózis a skos:Concept ;
+    skos:prefLabel "neurózis" .
+
+ex:projektív_transzformáció a skos:Concept ;
+    skos:prefLabel "projektív transzformáció" .
+
+ex:regressziószámítás a skos:Concept ;
+    skos:prefLabel "regressziószámítás" .
+
+ex:regresszív_folyamat a skos:Concept ;
+    skos:prefLabel "regresszív folyamat" .
+
+ex:rendezvény a skos:Concept ;
+    skos:prefLabel "rendezvény" .
+
+ex:statisztikai_adat a skos:Concept ;
+    skos:prefLabel "statisztikai adat" .
+
+ex:szignifikancia a skos:Concept ;
+    skos:prefLabel "szignifikancia" .
+
+ex:szükségszerûség a skos:Concept ;
+    skos:prefLabel "szükségszerûség" .
+
+ex:tevékenység a skos:Concept ;
+    skos:prefLabel "tevékenység" .
+
+ex:textilszínezés_egyenletességét_javító_eljárások a skos:Concept ;
+    skos:prefLabel "textilszínezés egyenletességét javító eljárások" .
+
+ex:transzgresszió a skos:Concept ;
+    skos:prefLabel "transzgresszió" .
+
+ex:társadalmi_esemény a skos:Concept ;
+    skos:prefLabel "társadalmi esemény" .
+
+ex:történelmi_esemény a skos:Concept ;
+    skos:prefLabel "történelmi esemény" .
+
+ex:történelmi_esemény_ábrázolása a skos:Concept ;
+    skos:prefLabel "történelmi esemény ábrázolása" .
+
+ex:utolsó_ítélet a skos:Concept ;
+    skos:prefLabel "utolsó ítélet" .
+
+ex:valószínûség a skos:Concept ;
+    skos:prefLabel "valószínûség" .
+
+ex:valószínûség-számítás a skos:Concept ;
+    skos:prefLabel "valószínûség-számítás" .
+
+ex:valószínûségi_mérték a skos:Concept ;
+    skos:prefLabel "valószínûségi mérték" .
+
+ex:világvége a skos:Concept ;
+    skos:prefLabel "világvége" .
+
+ex:változó a skos:Concept ;
+    rdf:subject ex:egyuttes_elo_konvolucio ;
+    skos:definition "(3) Folyamatok, vagyis időben változó véletlen mennyiségek esetében az idő múlásával változhat," ;
+    skos:prefLabel "változó" .
+
+ex:véletlen_esemény a skos:Concept ;
+    skos:prefLabel "véletlen esemény" .
+
+ex:átlagérték a skos:Concept ;
+    skos:prefLabel "átlagérték" .
+
+ex:életesemény a skos:Concept ;
+    skos:prefLabel "életesemény" .
+
+ex:érték a skos:Concept ;
+    rdf:subject ex:felt_varhato_ertek ;
+    skos:definition "halmaznak van értelme beszélni a valószínűségéről (még ha nem is ismerjük a pontos értékét)." ;
+    skos:prefLabel "érték" .
+
+ex:ügylet a skos:Concept ;
+    skos:prefLabel "ügylet" .
+
+ex:ütközés a skos:Concept ;
+    skos:prefLabel "ütközés" .
+
+ex:arányszám a skos:Concept ;
+    skos:prefLabel "arányszám" .
+
+ex:kockázat a skos:Concept ;
+    skos:prefLabel "kockázat" .
+
+ex:nagy_számok_törvénye a skos:Concept ;
+    skos:prefLabel "nagy számok törvénye" .
+
+ex:val_tulajdonsagai a skos:Collection ;
+    skos:prefLabel "val_tulajdonsagai" .
+
+ex:véletlen a skos:Concept ;
+    rdf:subject ex:diszkret_val_valtozok ;
+    skos:definition "véletlenszerűen választva kihúzunk egy dobozból egy érmét. Feltéve, hogy a kihúzott érme arany," ;
+    skos:prefLabel "véletlen" .
+
+ex:diszkret_val_valtozok a skos:Collection ;
+    skos:prefLabel "diszkret_val_valtozok" .
+
+ex:nevezetes_eloszlasok a skos:Collection ;
+    skos:prefLabel "nevezetes_eloszlasok" .
+
+ex:val_valtozok_viszonya a skos:Collection ;
+    skos:prefLabel "val_valtozok_viszonya" .
+
+ex:alapfogalmak a skos:Collection ;
+    skos:prefLabel "alapfogalmak" .
+
+ex:normalis_elo a skos:Collection ;
+    skos:prefLabel "normalis_elo" .
+
+ex:regresszio a skos:Collection ;
+    skos:prefLabel "regresszio" .
+
+ex:felt_val_tobbdim_elo a skos:Collection ;
+    skos:prefLabel "felt_val_tobbdim_elo" .
+
+ex:felt_varhato_ertek a skos:Collection ;
+    skos:prefLabel "felt_varhato_ertek" .
+
+ex:folyt_val_valtozok a skos:Collection ;
+    skos:prefLabel "folyt_val_valtozok" .
+
+ex:eloszlás a skos:Concept ;
+    rdf:subject ex:felt_val_tobbdim_elo ;
+    skos:definition "oszlásának. Nézzünk néhány nevezetes eloszlást:" ;
+    skos:prefLabel "eloszlás" .
+
+ex:egyuttes_elo_konvolucio a skos:Collection ;
+    skos:prefLabel "egyuttes_elo_konvolucio" .
+

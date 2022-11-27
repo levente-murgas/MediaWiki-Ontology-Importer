@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+>
+  <rdf:Description rdf:about="http://example.org/esemény">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>esemény</skos:prefLabel>
+    <rdfs:seeAlso rdf:resource="http://example.org/véletlen_esemény"/>
+    <skos:broader rdf:resource="http://example.org/energiaszerû_valami"/>
+    <skos:narrower rdf:resource="http://example.org/baleset"/>
+    <skos:narrower rdf:resource="http://example.org/botrány"/>
+    <skos:narrower rdf:resource="http://example.org/csoda"/>
+    <skos:narrower rdf:resource="http://example.org/életesemény"/>
+    <skos:narrower rdf:resource="http://example.org/jogeset"/>
+    <skos:narrower rdf:resource="http://example.org/jogi_aktus"/>
+    <skos:narrower rdf:resource="http://example.org/katasztrófa"/>
+    <skos:narrower rdf:resource="http://example.org/kockázat"/>
+    <skos:narrower rdf:resource="http://example.org/megváltás"/>
+    <skos:narrower rdf:resource="http://example.org/mûvelet"/>
+    <skos:narrower rdf:resource="http://example.org/rendezvény"/>
+    <skos:narrower rdf:resource="http://example.org/társadalmi_esemény"/>
+    <skos:narrower rdf:resource="http://example.org/történelmi_esemény"/>
+    <skos:narrower rdf:resource="http://example.org/utolsó_ítélet"/>
+    <skos:narrower rdf:resource="http://example.org/ügylet"/>
+    <skos:narrower rdf:resource="http://example.org/ütközés"/>
+    <skos:narrower rdf:resource="http://example.org/véletlen"/>
+    <skos:narrower rdf:resource="http://example.org/világvége"/>
+    <skos:related rdf:resource="http://example.org/történelmi_esemény_ábrázolása"/>
+    <skos:related rdf:resource="http://example.org/hír"/>
+    <skos:related rdf:resource="http://example.org/eseménymodellezés"/>
+    <skos:related rdf:resource="http://example.org/esettanulmány"/>
+    <skos:related rdf:resource="http://example.org/tevékenység"/>
+    <skos:related rdf:resource="http://example.org/alkalmi_zene"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/eloszlás">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>eloszlás</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/mûvelet">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>mûvelet</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/eloszlásfüggvény">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>eloszlásfüggvény</skos:prefLabel>
+    <owl:sameAs rdf:resource="http://example.org/eloszlás"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/valószínûség">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>valószínûség</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/Gauss-mérték">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>Gauss-mérték</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/véletlen">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>véletlen</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/középérték">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>középérték</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/történelmi_esemény_ábrázolása">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>történelmi esemény ábrázolása</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/megváltás">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>megváltás</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/valószínűség">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>valószínűség</skos:prefLabel>
+    <skos:broader rdf:resource="http://example.org/arányszám"/>
+    <skos:broader rdf:resource="http://example.org/elvont_összefüggés"/>
+    <skos:broader rdf:resource="http://example.org/határérték"/>
+    <skos:narrower rdf:resource="http://example.org/cilindrikus_valószínûség"/>
+    <skos:narrower rdf:resource="http://example.org/feltételes_várható_érték"/>
+    <skos:narrower rdf:resource="http://example.org/valószínûségi_mérték"/>
+    <skos:related rdf:resource="http://example.org/valószínûség-számítás"/>
+    <skos:related rdf:resource="http://example.org/nagy_számok_törvénye"/>
+    <skos:related rdf:resource="http://example.org/Brown-mozgás"/>
+    <skos:related rdf:resource="http://example.org/kockázat"/>
+    <skos:related rdf:resource="http://example.org/szükségszerûség"/>
+    <skos:related rdf:resource="http://example.org/véletlen"/>
+    <owl:differentFrom rdf:resource="http://example.org/bizonytalanság"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/funkcionálanalízis">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>funkcionálanalízis</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/logaritmikus_korreláció">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>logaritmikus korreláció</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arányskála">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>arányskála</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/autokorreláció">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>autokorreláció</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/illuzórikus_korreláció">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>illuzórikus korreláció</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/várható_érték">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>várható érték</skos:prefLabel>
+    <skos:broader rdf:resource="http://example.org/adat"/>
+    <skos:related rdf:resource="http://example.org/arányskála"/>
+    <skos:related rdf:resource="http://example.org/arányszám"/>
+    <skos:related rdf:resource="http://example.org/átlagérték"/>
+    <skos:related rdf:resource="http://example.org/középérték"/>
+    <skos:related rdf:resource="http://example.org/nagy_számok_törvénye"/>
+    <owl:differentFrom rdf:resource="http://example.org/érték"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/regressziószámítás">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>regressziószámítás</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/binom">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>binom</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/korreláció">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>korreláció</skos:prefLabel>
+    <owl:sameAs rdf:resource="http://example.org/autokorreláció"/>
+    <owl:sameAs rdf:resource="http://example.org/illuzórikus_korreláció"/>
+    <owl:sameAs rdf:resource="http://example.org/lineáris_korreláció"/>
+    <owl:sameAs rdf:resource="http://example.org/logaritmikus_korreláció"/>
+    <owl:sameAs rdf:resource="http://example.org/nemlineáris_korreláció"/>
+    <skos:broader rdf:resource="http://example.org/statisztikai_adat"/>
+    <skos:related rdf:resource="http://example.org/korrelációszámítás"/>
+    <skos:related rdf:resource="http://example.org/projektív_transzformáció"/>
+    <skos:related rdf:resource="http://example.org/szignifikancia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/életesemény">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>életesemény</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/szükségszerûség">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>szükségszerûség</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/integráltranszformáció">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>integráltranszformáció</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/neurózis">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>neurózis</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/lineáris_korreláció">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>lineáris korreláció</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/hír">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>hír</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/bizonytalanság">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>bizonytalanság</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/átlagérték">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>átlagérték</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/binomiális_eloszlás">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>binomiális eloszlás</skos:prefLabel>
+    <owl:sameAs rdf:resource="http://example.org/Bernoulli-eloszlás"/>
+    <owl:sameAs rdf:resource="http://example.org/negatív_binomiális_eloszlás"/>
+    <skos:broader rdf:resource="http://example.org/eloszlás"/>
+    <skos:related rdf:resource="http://example.org/binom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/katasztrófa">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>katasztrófa</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/Gauss-eloszlás">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>Gauss-eloszlás</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/konvolúció">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>konvolúció</skos:prefLabel>
+    <skos:related rdf:resource="http://example.org/funkcionálanalízis"/>
+    <skos:related rdf:resource="http://example.org/integráltranszformáció"/>
+    <skos:related rdf:resource="http://example.org/konvolúcióelmélet"/>
+    <skos:related rdf:resource="http://example.org/disztribúció"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/érték">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>érték</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/Bernoulli-eloszlás">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>Bernoulli-eloszlás</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/konvolúcióelmélet">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>konvolúcióelmélet</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arányszám">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>arányszám</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/Gauss-folyamat">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>Gauss-folyamat</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/korrelációszámítás">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>korrelációszámítás</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/szignifikancia">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>szignifikancia</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/regresszív_folyamat">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>regresszív folyamat</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/adat">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>adat</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/cilindrikus_valószínûség">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>cilindrikus valószínûség</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/utolsó_ítélet">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>utolsó ítélet</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/feltételes_várható_érték">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>feltételes várható érték</skos:prefLabel>
+    <skos:broader rdf:resource="http://example.org/valószínûség"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/egyenletes_eloszlás">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>egyenletes eloszlás</skos:prefLabel>
+    <rdfs:seeAlso rdf:resource="http://example.org/textilszínezés_egyenletességét_javító_eljárások"/>
+    <skos:broader rdf:resource="http://example.org/eloszlás"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ügylet">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>ügylet</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/Brown-mozgás">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>Brown-mozgás</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/botrány">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>botrány</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/normális_eloszlás">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>normális eloszlás</skos:prefLabel>
+    <owl:sameAs rdf:resource="http://example.org/Gauss-eloszlás"/>
+    <owl:sameAs rdf:resource="http://example.org/Gauss-folyamat"/>
+    <rdfs:seeAlso rdf:resource="http://example.org/Gauss-mérték"/>
+    <skos:broader rdf:resource="http://example.org/eloszlás"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/látens_kép">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>látens kép</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/nagy_számok_törvénye">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>nagy számok törvénye</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/negatív_binomiális_eloszlás">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>negatív binomiális eloszlás</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/disztribúció">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>disztribúció</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/exponenciális_eloszlás">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>exponenciális eloszlás</skos:prefLabel>
+    <owl:sameAs rdf:resource="http://example.org/exponenciális_család"/>
+    <skos:broader rdf:resource="http://example.org/eloszlás"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/alkalmi_zene">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>alkalmi zene</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/projektív_transzformáció">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>projektív transzformáció</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/valószínûségi_mérték">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>valószínûségi mérték</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/változó">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>változó</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/valószínûség-számítás">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>valószínûség-számítás</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/határérték">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>határérték</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/regresszió">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>regresszió</skos:prefLabel>
+    <skos:related rdf:resource="http://example.org/látens_kép"/>
+    <skos:related rdf:resource="http://example.org/neurózis"/>
+    <skos:related rdf:resource="http://example.org/regressziószámítás"/>
+    <skos:related rdf:resource="http://example.org/regresszív_folyamat"/>
+    <skos:related rdf:resource="http://example.org/transzgresszió"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/Poisson-eloszlás">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>Poisson-eloszlás</skos:prefLabel>
+    <skos:broader rdf:resource="http://example.org/eloszlás"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/baleset">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>baleset</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/világvége">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>világvége</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/esettanulmány">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>esettanulmány</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/energiaszerû_valami">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>energiaszerû valami</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/véletlen_esemény">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>véletlen esemény</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/társadalmi_esemény">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>társadalmi esemény</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/statisztikai_adat">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>statisztikai adat</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/csoda">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>csoda</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/jogi_aktus">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>jogi aktus</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/textilszínezés_egyenletességét_javító_eljárások">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>textilszínezés egyenletességét javító eljárások</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/elvont_összefüggés">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>elvont összefüggés</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/exponenciális_család">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>exponenciális család</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/transzgresszió">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>transzgresszió</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/jogeset">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>jogeset</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/nemlineáris_korreláció">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>nemlineáris korreláció</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/történelmi_esemény">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>történelmi esemény</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/tevékenység">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>tevékenység</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ütközés">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>ütközés</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/rendezvény">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>rendezvény</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/valószínűségi_változó">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>valószínűségi változó</skos:prefLabel>
+    <skos:broader rdf:resource="http://example.org/változó"/>
+    <skos:related rdf:resource="http://example.org/eloszlás"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/eseménymodellezés">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>eseménymodellezés</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/kockázat">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel>kockázat</skos:prefLabel>
+  </rdf:Description>
+</rdf:RDF>
